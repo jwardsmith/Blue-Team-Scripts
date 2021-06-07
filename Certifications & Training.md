@@ -9,3 +9,4 @@ Blue Team
 - Boss of the SOC: https://www.splunk.com/en_us/blog/tag/boss-of-the-soc.html
 - Lets Defend: https://letsdefend.io/
 - CyberDefenders: https://cyberdefenders.org/
+- Malware Traffic Analysis: https://www.malware-traffic-analysis.net/
