@@ -10,3 +10,4 @@ Blue Team
 - Lets Defend: https://letsdefend.io/
 - CyberDefenders: https://cyberdefenders.org/
 - Malware Traffic Analysis: https://www.malware-traffic-analysis.net/
+- Open Security Training https://opensecuritytraining.info/Training.html
