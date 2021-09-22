@@ -118,3 +118,11 @@ NOT status = 200
 - Fast - emphasises speed over completeness
 - Smart - balances speed and completeness (default)
 - Verbose - emphasises completeness over speed. Allows access to underlying events when using reporting or statistical commands (in addition to totals and stats)
+
+### Best Practices
+
+- Time is the most efficient filter
+- Specify one or more index at the beginning of your search string
+- Include as many search terms as possible
+- Make your search terms as specific as possible
+- Inclusion is generally better than exclusion
