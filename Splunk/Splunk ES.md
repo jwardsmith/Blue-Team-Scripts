@@ -29,3 +29,9 @@ Overview
 *Provides a default interface for searching and analysing data. Enables you to create knowledge objects, reports, and dashboards.*
 
 ![s](https://user-images.githubusercontent.com/31498830/134264715-ab3382fd-28ea-4b8f-a7a0-eb8111376b0e.PNG)
+
+### Data Summary
+
+1. Host - Unique identifier of where the events originated (hostname, IP address, etc...)
+2. Source - Name of the file, stream, or other input
+3. Sourcetype - Specific data type or data format
