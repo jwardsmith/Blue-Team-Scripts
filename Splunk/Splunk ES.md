@@ -38,6 +38,7 @@ Overview
 
 ### Events
 
-*Searching for events.*
+*Searching for events in the Search & Reporting App.*
 
-![s](https://user-images.githubusercontent.com/31498830/134265273-747c956a-be49-4e54-aee1-4504bd851f38.PNG)
+![s](https://user-images.githubusercontent.com/31498830/134265434-6b3c15ce-3cf1-4105-a8c3-70bab7c5def0.PNG)
+
