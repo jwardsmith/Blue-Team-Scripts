@@ -4,7 +4,7 @@
 Overview
 ---------
 
-*Comprehensive Security Information and Event Management (SIEM) solution.*
+*Comprehensive Security Information and Event Management (SIEM) solution. Index ANY data from ANY source: computers, network devices, virtual machines, internet devices, communication devices, sensors, databases, logs, configurations, messages, call detail records, clickstream, alerts, metrics, scripts, changes, tickets.*
 
 ### Three Components
 
