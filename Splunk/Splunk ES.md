@@ -157,7 +157,7 @@ Splunk's Search Language
 index=web sourcetype=access_combined | table clientip, action, productId, status
 ```
 
-![sfsdf](https://user-images.githubusercontent.com/31498830/134435307-ff333acb-e0c6-4db8-ab0f-d33be801ac4a.PNG)
+![dsfsdf](https://user-images.githubusercontent.com/31498830/134434934-49f5e5a9-0fc9-43a1-a910-8ba9641cc1c5.PNG)
 
 *To change the name of a field, use the rename command. Useful for giving fields more meaningful names. When including spaces of special characters in field names, use double straight quotes.*
 
@@ -167,4 +167,4 @@ index=web sourcetype=access_combined | table clientip, action, productId, status
 index=web sourcetype=access_combined | table clientip, action, productId, status | rename productId as ProductID, action as "Customer Action", status as "HTTP Status"
 ```
 
-![dsfsdf](https://user-images.githubusercontent.com/31498830/134434934-49f5e5a9-0fc9-43a1-a910-8ba9641cc1c5.PNG)
+![sfsdf](https://user-images.githubusercontent.com/31498830/134435307-ff333acb-e0c6-4db8-ab0f-d33be801ac4a.PNG)
