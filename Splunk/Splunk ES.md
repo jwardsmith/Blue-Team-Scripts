@@ -90,3 +90,10 @@ Searches
 ### Fields
 
 *Fields are searchable key/value pairs in your event data e.g. status=404. Between search terms, AND is implied unless otherwise specified.*
+
+- Selected Fields - a set of configurable fields displayed for each event. Listed under every event that includes those fields. The default selected fields are: host, source, and sourcetype
+- Interesting Fields - occur in at least 20% of resulting events
+
+![s](https://user-images.githubusercontent.com/31498830/134332060-77d15be7-577a-4a2c-958a-58adfe2e94e5.PNG)
+
+- All Fields - link to view all fields (including non-interesting fields)
