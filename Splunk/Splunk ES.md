@@ -171,4 +171,12 @@ index=web sourcetype=access_combined | table clientip, action, productId, status
 
 ### Basic Commands
 
-*Field extraction if one of the most costly parts of a search. fields command allows you to include or exclude specified fields in your search or report. To include, use fields + (default) which occurs before field extraction, and improves performance. To exclude, use fields - which occurs after field extraction, with no performance benefit. Exclude fields used in search to make the table/display easier to read.*
+*Field extraction is one of the most costly parts of a search. fields command allows you to include or exclude specified fields in your search or report. To include, use fields + (default) which occurs before field extraction, and improves performance. To exclude, use fields - which occurs after field extraction, with no performance benefit. Exclude fields used in search to make the table/display easier to read.*
+
+- Extract only specific fields
+
+```
+index=security sourcetype=linux_secure (fail* OR invalid) | fields user, app, src_ip
+```
+
+![d](https://user-images.githubusercontent.com/31498830/134436155-2a4420c0-d69f-4e6a-ba58-728a8ad427fc.PNG)
