@@ -35,3 +35,9 @@ Overview
 1. Host - Unique identifier of where the events originated (hostname, IP address, etc...)
 2. Source - Name of the file, stream, or other input
 3. Sourcetype - Specific data type or data format
+
+### Events
+
+*Searching for events.*
+
+![s](https://user-images.githubusercontent.com/31498830/134265273-747c956a-be49-4e54-aee1-4504bd851f38.PNG)
