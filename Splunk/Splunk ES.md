@@ -42,3 +42,12 @@ Overview
 
 ![s](https://user-images.githubusercontent.com/31498830/134265434-6b3c15ce-3cf1-4105-a8c3-70bab7c5def0.PNG)
 
+### Data Input Types
+
+- Files and directories - monitoring text files and/or directory structures containing text files
+- Network data - listening on a port for network data
+- Script output - executing a script and using the output from the script as the input
+- Windows logs - monitoring Windows event logsm Active Directory etc...
+- HTTP - using the HTTP Event Collector
+
+*You can add data inputs with apps and add-ons from Splunkbase, Splunk Web, CLI, or directly editing inputs.conf.*
