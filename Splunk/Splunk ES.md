@@ -73,3 +73,7 @@ Getting Data In
 - Forward Option - Main source on input in production environments. Remote machines gather and forward data to indexers over a receiving port
 
 ![s](https://user-images.githubusercontent.com/31498830/134287200-4ae16a55-a5eb-43a5-aeab-3747f4ac1f7d.PNG)
+
+### Pretrained Source Types
+
+*Splunk has default settings for many types of data: https://docs.splunk.com/Documentation/Splunk/latest/Data/Listofpretrainedsourcetypes. Splunk apps can be used to define additional source types.*
