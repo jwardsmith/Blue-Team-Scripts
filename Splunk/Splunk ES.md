@@ -8,9 +8,9 @@ Overview
 
 ### Three Components
 
-1. Splunk Forwarders
+1. Splunk Search Head
 2. Splunk Indexer
-3. Splunk Search Head
+3. Splunk Forwarders
 
 ### Splunk Apps
 
