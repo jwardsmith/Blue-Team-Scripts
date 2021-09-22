@@ -64,4 +64,10 @@ Getting Data In
 - sourcetype - Uses the source filename if Splunk cannot automatically determine
 - index - Defaults to main
 
-### Adding an 
+### Adding an Input with Splunk Web
+
+*Settings -> Data inputs -> Add new*
+
+- Upload Option - Upload allows uploading local files that only get indexed once. Useful for testing or data that is created once and never gets updated. Does not create inputs.conf
+- Monitor Option - Provides one-time or continuous monitoring of files, directories, http events, network ports, or data gathering scripts located on Splunk Enterprise instances. Useful for testing inputs
+- Forward Option - Main source on input in production environments. Remote machines gather and forward data to indexers over a receiving port
