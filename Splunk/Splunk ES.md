@@ -180,3 +180,18 @@ index=security sourcetype=linux_secure (fail* OR invalid) | fields user, app, sr
 ```
 
 ![d](https://user-images.githubusercontent.com/31498830/134436155-2a4420c0-d69f-4e6a-ba58-728a8ad427fc.PNG)
+
+- Remove duplicates from your results
+
+```
+index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | table Vendor, VendorCity, VendorStateProvince, VendorCountry
+```
+
+- Order your results in + ascending (default) or - descending (to limit the returned results, use the limit option)
+
+```
+index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | table Vendor, VendorCity, VendorStateProvince, VendorCountry | sort limit=20 
+```
+
+*sort -/+\<fieldname\> sign followed by fieldname sorts results in the sign's order. sort -/+ \<fieldname\> sign followed by space and then fieldname applies sort order to all following fields without a different explicit sort order.*
+
