@@ -149,3 +149,10 @@ Splunk's Search Language
 
 ### Creating a Table
 
+*The table command returns a table formed by only fields in the argument list. Columns are displayed in the order given in the command. Column headers are field names, each row represents a value, each row contains field values for that event.*
+
+```
+index=web sourcetype=access_combined | table clientip, action, productId, status
+```
+
+![dsfsdf](https://user-images.githubusercontent.com/31498830/134434934-49f5e5a9-0fc9-43a1-a910-8ba9641cc1c5.PNG)
