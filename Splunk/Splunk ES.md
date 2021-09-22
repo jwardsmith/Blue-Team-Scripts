@@ -77,3 +77,6 @@ Getting Data In
 ### Pretrained Source Types
 
 *Splunk has default settings for many types of data: https://docs.splunk.com/Documentation/Splunk/latest/Data/Listofpretrainedsourcetypes. Splunk apps can be used to define additional source types.*
+
+Searches
+---------
