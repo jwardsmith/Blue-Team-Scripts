@@ -89,11 +89,26 @@ Searches
 
 ### Fields
 
-*Fields are searchable key/value pairs in your event data e.g. status=404. Between search terms, AND is implied unless otherwise specified.*
+*Fields are searchable key/value pairs in your event data e.g. status=404. Between search terms, AND is implied unless otherwise specified. Field names are case sensitive, field values are not.*
 
 - Selected Fields - a set of configurable fields displayed for each event. Listed under every event that includes those fields. The default selected fields are: host, source, and sourcetype
 - Interesting Fields - occur in at least 20% of resulting events
+- All Fields - link to view all fields (including non-interesting fields)
 
 ![s](https://user-images.githubusercontent.com/31498830/134332060-77d15be7-577a-4a2c-958a-58adfe2e94e5.PNG)
 
-- All Fields - link to view all fields (including non-interesting fields)
+### != vs NOT
+
+*Both != field expression and NOT operator exclude events from your search, but produce different results. The results from a search using != are a subset of the results from a similar search using NOT.*
+
+- Return events where status field exists and value in field doesn't equal 200
+
+```
+status != 200
+```
+
+- Return events where status field exists and value in field doesn't equal 200, and all events where status field doesn't exist
+
+```
+NOT status = 200
+```
