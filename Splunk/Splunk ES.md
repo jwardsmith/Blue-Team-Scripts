@@ -42,6 +42,9 @@ Overview
 
 ![s](https://user-images.githubusercontent.com/31498830/134265434-6b3c15ce-3cf1-4105-a8c3-70bab7c5def0.PNG)
 
+Getting Data In
+------------------
+
 ### Data Input Types
 
 - Files and directories - monitoring text files and/or directory structures containing text files
@@ -51,3 +54,14 @@ Overview
 - HTTP - using the HTTP Event Collector
 
 *You can add data inputs with apps and add-ons from Splunkbase, Splunk Web, CLI, or directly editing inputs.conf.*
+
+### Default Metadata Settings
+
+*When you index a data source, Splunk assigns metadata values. The metadata is applied to the entire source. Splunk applies defaults if not specified. You can also override them at input time or later.
+
+- source - Path of input file, network hostname:port, or script name
+- host - Splunk hostname of the inputting instance (usually a forwarder)
+- sourcetype - Uses the source filename if Splunk cannot automatically determine
+- index - Defaults to main
+
+### Adding an 
