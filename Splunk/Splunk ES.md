@@ -151,8 +151,22 @@ Splunk's Search Language
 
 *The table command returns a table formed by only fields in the argument list. Columns are displayed in the order given in the command. Column headers are field names, each row represents a value, each row contains field values for that event.*
 
+- Create a table
+
 ```
 index=web sourcetype=access_combined | table clientip, action, productId, status
 ```
 
+*To change the name of a field, use the rename command. Useful for giving fields more meaningful names. When including spaces of special characters in field names, use double straight quotes.*
+
+- Rename fields in a table
+
+```
+index=web sourcetype=access_combined | table clientip, action, productId, status | rename productId as ProductID, action as "Customer Action", status as "HTTP Status"
+```
+
+![sfsdf](https://user-images.githubusercontent.com/31498830/134435307-ff333acb-e0c6-4db8-ab0f-d33be801ac4a.PNG)
+
+
+```
 ![dsfsdf](https://user-images.githubusercontent.com/31498830/134434934-49f5e5a9-0fc9-43a1-a910-8ba9641cc1c5.PNG)
