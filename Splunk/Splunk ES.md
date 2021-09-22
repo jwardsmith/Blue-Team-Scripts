@@ -195,3 +195,10 @@ index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | tab
 
 *sort -/+\<fieldname\> sign followed by fieldname sorts results in the sign's order. sort -/+ \<fieldname\> sign followed by space and then fieldname applies sort order to all following fields without a different explicit sort order.*
 
+```
+index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | table Vendor, VendorCity, VendorStateProvince, VendorCountry | sort -Vendor, VendorCity
+```
+
+```
+index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | table Vendor, VendorCity, VendorStateProvince, VendorCountry | sort - Vendor, VendorCity
+```
