@@ -4,6 +4,8 @@
 Overview
 ---------
 
+*Comprehensive Security Information and Event Management (SIEM) solution.*
+
 ### Three Components
 
 1. Splunk Forwarders
