@@ -133,6 +133,8 @@ NOT status = 200
 Splunk's Search Language
 ------------------------
 
+### Syntax
+
 ![sdfg](https://user-images.githubusercontent.com/31498830/134334238-121b3bd4-4d7c-48c4-a92a-3081da989890.PNG)
 
 *Searches are made up of 5 basic components.*
