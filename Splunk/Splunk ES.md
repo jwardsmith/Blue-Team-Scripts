@@ -6,7 +6,7 @@ Overview
 
 *Comprehensive Security Information and Event Management (SIEM) solution. Index ANY data from ANY source: computers, network devices, virtual machines, internet devices, communication devices, sensors, databases, logs, configurations, messages, call detail records, clickstream, alerts, metrics, scripts, changes, tickets.*
 
-### Three Components
+### Components
 
 1. Splunk Search Head - Allows users to use the Search language to search the indexed data
 2. Splunk Indexer - Processes machine data, storing the results in indexes as events, enabling fast search and analysis
