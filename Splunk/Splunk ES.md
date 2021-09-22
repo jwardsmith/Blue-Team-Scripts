@@ -15,3 +15,11 @@ Overview
 ### Splunk Apps
 
 *Designed to address a wide variety of use cases and to extend the power of Splunk. Collections of files containing data inputs, UI elements, and/or knowledge objects. Allows multiple workspaces for different use cases/user roles to co-exist on a single Splunk instance. 1000+ ready-made apps available on Splunkbase (https://splunkbase.splunk.com/) or admins can build their own.*
+
+### Users and Roles
+
+1. Admin
+2. Power
+3. User
+
+*Splunk admins can create additionaal roles.*
