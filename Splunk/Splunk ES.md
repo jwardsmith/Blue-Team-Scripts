@@ -8,8 +8,8 @@ Overview
 
 ### Three Components
 
-1. Splunk Search Head
-2. Splunk Indexer
+1. Splunk Search Head - Allows users to use the Search language to search the indexed data
+2. Splunk Indexer - Processes machine data, storing the results in indexes as events, enabling fast search and analysis
 3. Splunk Forwarders
 
 ### Splunk Apps
