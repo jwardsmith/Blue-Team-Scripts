@@ -8,9 +8,9 @@ Overview
 
 ### Components
 
-1. Splunk Search Head - Allows users to use the Search language to search the indexed data
+1. Splunk Search Head - Allows users to use the Search language to search the indexed data. Distributes user search requests to the Indexers. Consolidates the results and extracts field value pairs from the events to the user. Knowledge Objects on the Search Heads can be created to extract additional fields and transform the data without changing the underlying index data. Also provide tools to enhance the search experience such as reports, dashboards, visualisations
 2. Splunk Indexer - Processes machine data, storing the results in indexes as events, enabling fast search and analysis
-3. Splunk Forwarders
+3. Splunk Forwarders - Splunk Enterprise instances that consume and send data to the index. Require minimal resources and have little impact on performance. Typically reside on the machines where the data originates. Primary way data is supplied for indexing
 
 ### Splunk Apps
 
