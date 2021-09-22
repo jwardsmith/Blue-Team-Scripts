@@ -146,3 +146,6 @@ Splunk's Search Language
 - Clauses - how do you want to group or rename the fields in the results? Give a field another name or group values by or over
 
 ![fdgsfdg](https://user-images.githubusercontent.com/31498830/134335168-2c777c7c-4caf-426d-af33-0e2eb74e5e5d.PNG)
+
+### Creating a Table
+
