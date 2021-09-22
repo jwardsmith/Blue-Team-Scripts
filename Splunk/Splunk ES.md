@@ -205,3 +205,5 @@ index=sales sourcetype=vendor_sales Vendor=Bea* | dedup Vendor, VendorCity | tab
 
 https://docs.splunk.com/Documentation/Splunk/8.2.2/SearchReference/WhatsInThisManual
 https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SplunkEnterpriseQuickReferenceGuide
+
+### Transforming Commands
