@@ -112,3 +112,9 @@ status != 200
 ```
 NOT status = 200
 ```
+
+### Search Modes
+
+- Fast - emphasises speed over completeness
+- Smart - balances speed and completeness (default)
+- Verbose - emphasises completeness over speed. Allows access to underlying events when using reporting or statistical commands (in addition to totals and stats)
