@@ -129,3 +129,8 @@ NOT status = 200
 - Filter as early as possible
 - Avoid using wildcards at the beginning or middle of a string e.g *fail or f*ail or *fail*
 - When possible, use OR instead of wildcards
+
+Splunk's Search Language
+------------------------
+
+![sdfg](https://user-images.githubusercontent.com/31498830/134334238-121b3bd4-4d7c-48c4-a92a-3081da989890.PNG)
