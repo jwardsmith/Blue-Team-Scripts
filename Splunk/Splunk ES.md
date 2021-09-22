@@ -22,4 +22,8 @@ Overview
 2. Power
 3. User
 
-*Splunk admins can create additionaal roles.*
+*Splunk admins can create additional roles.*
+
+### Search & Reporting App
+
+*Provides a default interface for searching and analysing data. Enables you to create knowledge objects, reports, and dashboards.*
