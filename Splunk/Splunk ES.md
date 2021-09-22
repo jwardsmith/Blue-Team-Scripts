@@ -126,3 +126,6 @@ NOT status = 200
 - Include as many search terms as possible
 - Make your search terms as specific as possible
 - Inclusion is generally better than exclusion
+- Filter as early as possible
+- Avoid using wildcards at the beginning or middle of a string e.g *fail or f*ail or *fail*
+- When possible, use OR instead of wildcards
