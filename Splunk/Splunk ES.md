@@ -208,12 +208,14 @@ https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SplunkEnterp
 
 ### Transforming Commands
 
-*The top command finds the most common values of a given field in the result set. By default, output displays in table format.*
+*The top command finds the most common values of a given field in the result set. By default, output displays in table format, and returns top 10 results. Automatically returns count and percent columns. Common constraints: limit, countfield, showperc. top command with limit=20 is automatically added to your search string when you click Top values in a field window.*
 
 - Display the most common value of a given field
 
 ```
 index=security sourcetype=linux_secure (fail* OR invalid) | top src_ip
+OR
+index=security sourcetype=linux_secure (fail* OR invalid) | top limit=20 src_ip
 ```
 
 ![sds](https://user-images.githubusercontent.com/31498830/134437560-baab715c-8a86-4e68-bca6-3e32eb73e254.PNG)
