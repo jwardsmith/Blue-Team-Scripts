@@ -367,8 +367,12 @@ Reports & Dashboards
 2. Use the Pivot interface: Start with a dataset or start with Instant Pivot
 3. Use the Splunk search language transforming commands in the Search bar
 
+![dgfg](https://user-images.githubusercontent.com/31498830/134457286-b390e9c8-8ae2-4f2e-82be-cd9bf6d318da.PNG)
+
 ### Creating a Dashboard
 
 *A dashboard consists of one or more panels displaying data visually in a useful way - such as events, tables, or charts. A report can be used to create a panel on a dashboard.*
 
 *In the report -> Click Add to Dashboard*
+
+![ghfhg](https://user-images.githubusercontent.com/31498830/134457318-6dbd992b-0957-4bc2-b0f4-525cbd2c3e2b.PNG)
