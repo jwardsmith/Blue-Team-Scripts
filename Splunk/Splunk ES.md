@@ -307,3 +307,11 @@ index=network sourcetype=cisco_wsa_squid | stats dc(s_hostname) as "Websites vis
 ```
 
 ![dsfsdf](https://user-images.githubusercontent.com/31498830/134440284-5e361dc3-a550-463f-a619-7da57a4cbaec.PNG)
+
+- Sum the actual values of a field
+
+```
+index=network sourcetype=cisco_wsa_squid | stats sum(sc_bytes) as Bandwidth by s_hostname | sort -Bandwidth
+```
+
+![fdgfdg](https://user-images.githubusercontent.com/31498830/134440366-abd947f7-db2b-41ee-bdc3-0f5abd8caf47.PNG)
