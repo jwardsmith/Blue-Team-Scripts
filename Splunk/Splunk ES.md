@@ -221,3 +221,18 @@ index=security sourcetype=linux_secure (fail* OR invalid) | top limit=0 src_ip  
 ```
 
 ![sds](https://user-images.githubusercontent.com/31498830/134437560-baab715c-8a86-4e68-bca6-3e32eb73e254.PNG)
+
+- Display the most common value of multiple fields
+
+```
+index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full limit=3
+```
+
+![dsf](https://user-images.githubusercontent.com/31498830/134438699-f16da4bd-59dc-4148-9a69-7b7b2b33b58d.PNG)
+
+
+- Display the most common value of a given field with by clause
+
+```
+
+```
