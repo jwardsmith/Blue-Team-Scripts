@@ -358,3 +358,9 @@ Reports & Dashboards
 *Run a search -> Select Save As -> Select Report*
 
 ![ghjgh](https://user-images.githubusercontent.com/31498830/134452559-5ad0474e-934f-4fd8-b6e3-abcb25ad0b22.PNG)
+
+### Creating Tables & Visualisations
+
+1. Select a field from the fields sidebar and choose a report to run
+2. Use the Pivot interface: Start with a dataset or start with Instant Pivot
+3. Use the Splunk search language transforming commands in the Search bar
