@@ -370,3 +370,5 @@ Reports & Dashboards
 ### Creating a Dashboard
 
 *A dashboard consists of one or more panels displaying data visually in a useful way - such as events, tables, or charts. A report can be used to create a panel on a dashboard.*
+
+*In the report -> Click Add to Dashboard*
