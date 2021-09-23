@@ -271,3 +271,15 @@ index=sales sourcetype=vendor_sales | rare product_name showperc=f limit=1
 - values - lists unique values of a given field
 
 https://docs.splunk.com/Documentation/Splunk/7.0.0/SearchReference/CommonStatsFunctions
+
+- Return the number of matching events based on the current search criteria (use the as clause to rename the count field)
+
+```
+index=security sourcetype=linux_secure (invalid OR failed) | stats count
+OR
+index=security sourcetype=linux_secure (invalid OR failed) | stats count as "Potential Issues"
+```
+
+![1](https://user-images.githubusercontent.com/31498830/134439781-753e82b9-e130-4749-9513-b7b71459cea3.PNG)
+
+![2](https://user-images.githubusercontent.com/31498830/134439792-01a0065f-4e2d-4a54-aef3-2fd276c87ed0.PNG)
