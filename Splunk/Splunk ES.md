@@ -376,3 +376,14 @@ Reports & Dashboards
 *In the report -> Click Add to Dashboard*
 
 ![ghfhg](https://user-images.githubusercontent.com/31498830/134457318-6dbd992b-0957-4bc2-b0f4-525cbd2c3e2b.PNG)
+
+
+Pivots & Datasets
+------------------
+
+*The Pivot tool lets you report on a specific data set without the Splunk Search Processing Language (SPL).*
+
+![sfsdf](https://user-images.githubusercontent.com/31498830/134465644-6ef39115-62a1-4e27-948c-16570fa5e9e8.PNG)
+
+![dgd](https://user-images.githubusercontent.com/31498830/134465659-651876be-7102-4608-97d0-ca3466d1588c.PNG)
+
