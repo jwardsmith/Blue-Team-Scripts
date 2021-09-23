@@ -258,3 +258,16 @@ index=sales sourcetype=vendor_sales | rare product_name showperc=f limit=1
 ```
 
 ![fdgd](https://user-images.githubusercontent.com/31498830/134439181-d0d2c02a-b0d1-4b7d-893c-cb82814c27b8.PNG)
+
+### Stats
+
+*stats enables you to calculate statistics on data that matches your search criteria.*
+
+- count - returns the number of events that match the search criteria
+- distinct_countm dc - returns a count of unique values for a given field
+- sum - returns a sum of numeric values
+- avg - returns an average of numeric values
+- list - lists all values of a given field
+- values - lists unique values of a given field
+
+https://docs.splunk.com/Documentation/Splunk/7.0.0/SearchReference/CommonStatsFunctions
