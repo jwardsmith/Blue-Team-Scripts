@@ -331,3 +331,11 @@ index=network sourcetype=cisco_wsa_squid | stats avg(sc_bytes) as "Average Bytes
 ```
 
 ![sdf](https://user-images.githubusercontent.com/31498830/134440684-132af31b-0ec2-42d1-9d18-e8ca846942e1.PNG)
+
+- List all field values for a given field
+
+```
+index=network sourcetype=cisco_wsa_squid | stats list(s_hostname) as "Websites visited:" by cs_username
+```
+
+![Capture](https://user-images.githubusercontent.com/31498830/134441502-074dad56-1190-44fc-a00f-d14d41535b08.PNG)
