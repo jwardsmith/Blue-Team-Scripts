@@ -315,3 +315,11 @@ index=network sourcetype=cisco_wsa_squid | stats sum(sc_bytes) as Bandwidth by s
 ```
 
 ![fdgfdg](https://user-images.githubusercontent.com/31498830/134440366-abd947f7-db2b-41ee-bdc3-0f5abd8caf47.PNG)
+
+*A single stats command can have multiple functions. They by clause is applied to both functions.*
+
+```
+index=sales sourcetype=vendor_sales | stats count(price) as "Units Sold" | sum(price) as "Total Sales" by product_name | sort -"Total Sales"
+```
+
+![sdfs](https://user-images.githubusercontent.com/31498830/134440557-b20e3701-fb1b-4bdd-9c0b-3f28d1aa30f3.PNG)
