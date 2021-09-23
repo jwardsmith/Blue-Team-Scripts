@@ -283,3 +283,11 @@ index=security sourcetype=linux_secure (invalid OR failed) | stats count as "Pot
 ![1](https://user-images.githubusercontent.com/31498830/134439781-753e82b9-e130-4749-9513-b7b71459cea3.PNG)
 
 ![2](https://user-images.githubusercontent.com/31498830/134439792-01a0065f-4e2d-4a54-aef3-2fd276c87ed0.PNG)
+
+- Adding a field as an argument to the count function returns the number of events where a value is present for the specified field
+
+```
+index=security sourcetype=linux_secure | stats count(vendor_action) as ActionEvents, count as TotalEvents
+```
+
+![fggfdg](https://user-images.githubusercontent.com/31498830/134440004-1872c1f1-11c2-4d80-8710-c7cf50063c72.PNG)
