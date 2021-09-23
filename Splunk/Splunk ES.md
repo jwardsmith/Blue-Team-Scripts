@@ -339,3 +339,11 @@ index=network sourcetype=cisco_wsa_squid | stats list(s_hostname) as "Websites v
 ```
 
 ![Capture](https://user-images.githubusercontent.com/31498830/134441502-074dad56-1190-44fc-a00f-d14d41535b08.PNG)
+
+- List unique values for the specified field
+
+```
+index=security sourcetype=linux_secure fail* | stats values(user) as "User Names", count(user) as Attempts by src_ip
+```
+
+![dfgfd](https://user-images.githubusercontent.com/31498830/134442166-d076e94e-c49b-485e-8239-348e9824e92c.PNG)
