@@ -234,5 +234,11 @@ index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full li
 - Display the most common value of a given field with by clause
 
 ```
-
+index=network sourcetype=cisco_wsa_squid | top x_webcat_code_full by cs_username limit=3
+OR
+index=network sourcetype=cisco_wsa_squid | top cs_username by x_webcat_code_full limit=3
 ```
+
+![1](https://user-images.githubusercontent.com/31498830/134438843-0696a4c2-6f72-402e-954b-3f75c2b05f3b.PNG)
+
+![2](https://user-images.githubusercontent.com/31498830/134438850-458b1439-ec6d-4307-abab-c5a12705019f.PNG)
