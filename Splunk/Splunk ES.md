@@ -242,3 +242,11 @@ index=network sourcetype=cisco_wsa_squid | top cs_username by x_webcat_code_full
 ![1](https://user-images.githubusercontent.com/31498830/134438843-0696a4c2-6f72-402e-954b-3f75c2b05f3b.PNG)
 
 ![2](https://user-images.githubusercontent.com/31498830/134438850-458b1439-ec6d-4307-abab-c5a12705019f.PNG)
+
+*By default, the display name of the countfield is count. countfield=string renames the field for display purposes.*
+
+```
+index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full limit=3 countfield="Total Viewed" showperc=f
+```
+
+![gfdg](https://user-images.githubusercontent.com/31498830/134439042-9baf420d-6401-499a-8ebc-5704eec86d9e.PNG)
