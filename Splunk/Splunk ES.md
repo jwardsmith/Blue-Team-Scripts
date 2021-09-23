@@ -207,3 +207,13 @@ https://docs.splunk.com/Documentation/Splunk/8.2.2/SearchReference/WhatsInThisMa
 https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SplunkEnterpriseQuickReferenceGuide
 
 ### Transforming Commands
+
+*The top command finds the most common values of a given field in the result set. By default, output displays in table format.*
+
+- Display the most common value of a given field
+
+```
+index=security sourcetype=linux_secure (fail* OR invalid) | top src_ip
+```
+
+![sds](https://user-images.githubusercontent.com/31498830/134437560-baab715c-8a86-4e68-bca6-3e32eb73e254.PNG)
