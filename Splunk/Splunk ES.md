@@ -216,6 +216,8 @@ https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SplunkEnterp
 index=security sourcetype=linux_secure (fail* OR invalid) | top src_ip
 OR
 index=security sourcetype=linux_secure (fail* OR invalid) | top limit=20 src_ip
+OR
+index=security sourcetype=linux_secure (fail* OR invalid) | top limit=0 src_ip        # returns unlimited results
 ```
 
 ![sds](https://user-images.githubusercontent.com/31498830/134437560-baab715c-8a86-4e68-bca6-3e32eb73e254.PNG)
