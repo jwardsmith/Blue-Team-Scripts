@@ -361,6 +361,12 @@ Reports & Dashboards
 
 ### Creating Tables & Visualisations
 
+*Statistical reports leverage Splunk's built-in visualisations or table format.*
+
 1. Select a field from the fields sidebar and choose a report to run
 2. Use the Pivot interface: Start with a dataset or start with Instant Pivot
 3. Use the Splunk search language transforming commands in the Search bar
+
+### Creating a Dashboard
+
+*A dashboard consists of one or more panels displaying data visually in a useful way - such as events, tables, or charts. A report can be used to create a panel on a dashboard.*
