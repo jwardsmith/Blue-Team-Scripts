@@ -347,3 +347,8 @@ index=security sourcetype=linux_secure fail* | stats values(user) as "User Names
 ```
 
 ![dfgfd](https://user-images.githubusercontent.com/31498830/134442166-d076e94e-c49b-485e-8239-348e9824e92c.PNG)
+
+Reports & Dashboards
+---------------------
+
+*Reports are saved searches. Reports can show events, statistics (tables), or visualisations (charts). Running a report returns fresh results each time you run it. Statistics and visualisations allow you to drill down by default to see the underlying events. Reports can be shared and added to dashboards.*
