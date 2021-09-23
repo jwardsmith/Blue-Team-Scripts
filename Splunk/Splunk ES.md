@@ -299,3 +299,11 @@ index=security sourcetype=linux_secure | stats count by user, app, vendor_action
 ```
 
 ![sdf](https://user-images.githubusercontent.com/31498830/134440155-7b5c91b3-a3ac-4eac-92e0-b337bbde8632.PNG)
+
+- Return a count of how many unique values there are for a given field in the result set
+
+```
+index=network sourcetype=cisco_wsa_squid | stats dc(s_hostname) as "Websites visited:"
+```
+
+![dsfsdf](https://user-images.githubusercontent.com/31498830/134440284-5e361dc3-a550-463f-a619-7da57a4cbaec.PNG)
