@@ -316,10 +316,18 @@ index=network sourcetype=cisco_wsa_squid | stats sum(sc_bytes) as Bandwidth by s
 
 ![fdgfdg](https://user-images.githubusercontent.com/31498830/134440366-abd947f7-db2b-41ee-bdc3-0f5abd8caf47.PNG)
 
-*A single stats command can have multiple functions. They by clause is applied to both functions.*
+*A single stats command can have multiple functions. The by clause is applied to both functions.*
 
 ```
 index=sales sourcetype=vendor_sales | stats count(price) as "Units Sold" | sum(price) as "Total Sales" by product_name | sort -"Total Sales"
 ```
 
 ![sdfs](https://user-images.githubusercontent.com/31498830/134440557-b20e3701-fb1b-4bdd-9c0b-3f28d1aa30f3.PNG)
+
+- Provide the average numeric value for a the given numeric field (an event is not considered in the calculation if it does not have the field or has an invalid value for the field)
+
+```
+index=network sourcetype=cisco_wsa_squid | stats avg(sc_bytes) as "Average Bytes" by usage
+```
+
+![sdf](https://user-images.githubusercontent.com/31498830/134440684-132af31b-0ec2-42d1-9d18-e8ca846942e1.PNG)
