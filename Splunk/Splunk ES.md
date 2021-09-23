@@ -210,7 +210,7 @@ https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SplunkEnterp
 
 *The top command finds the most common values of a given field in the result set. By default, output displays in table format, and returns top 10 results. Automatically returns count and percent columns. Common constraints: limit, countfield, showperc. top command with limit=20 is automatically added to your search string when you click Top values in a field window.*
 
-- Display the most common value of a given field
+- Display the most common values of a given field
 
 ```
 index=security sourcetype=linux_secure (fail* OR invalid) | top src_ip
@@ -222,7 +222,7 @@ index=security sourcetype=linux_secure (fail* OR invalid) | top limit=0 src_ip  
 
 ![sds](https://user-images.githubusercontent.com/31498830/134437560-baab715c-8a86-4e68-bca6-3e32eb73e254.PNG)
 
-- Display the most common value of multiple fields
+- Display the most common values of multiple fields
 
 ```
 index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full limit=3
@@ -231,7 +231,7 @@ index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full li
 ![dsf](https://user-images.githubusercontent.com/31498830/134438699-f16da4bd-59dc-4148-9a69-7b7b2b33b58d.PNG)
 
 
-- Display the most common value of a given field with by clause
+- Display the most common values of a given field with by clause
 
 ```
 index=network sourcetype=cisco_wsa_squid | top x_webcat_code_full by cs_username limit=3
@@ -250,3 +250,11 @@ index=network sourcetype=cisco_wsa_squid | top cs_username x_webcat_code_full li
 ```
 
 ![gfdg](https://user-images.githubusercontent.com/31498830/134439042-9baf420d-6401-499a-8ebc-5704eec86d9e.PNG)
+
+- Display the least common values of a given field (options are identical to the top command)
+
+```
+index=sales sourcetype=vendor_sales | rare product_name showperc=f limit=1
+```
+
+![fdgd](https://user-images.githubusercontent.com/31498830/134439181-d0d2c02a-b0d1-4b7d-893c-cb82814c27b8.PNG)
