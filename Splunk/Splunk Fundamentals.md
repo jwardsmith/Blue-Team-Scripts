@@ -1,5 +1,5 @@
 
-# Splunk Enterprise Security (ES)
+# Splunk Fundamentals
 
 Overview
 ---------
