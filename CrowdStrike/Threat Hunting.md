@@ -316,3 +316,33 @@ timestamp ImageFileName RemoteAddressIP4 CommandLine
 aid=my-aid event_simpleName=UserIdentity LogonType_decimal=10 | table timestamp ComputerName UserName UserPrincipal LogonServer
 ```
 
+Hunting Anomalous Behavior
+------------------------------
+
+- Show me processes that only ran a few of times on a specific host
+
+```
+aid=my-aid event_simpleName=ProcessRollup2 OR event_simpleName=SyntheticProcessRollup2 | stats count by SHA256HashData ImageFileName
+ComputerName UserName | where count <5 | sort – count
+```
+
+- Show me all deleted user accounts
+
+```
+event_simpleName=UserAccountDeleted | table aid UserName UserRid
+```
+
+- Hunt for file name or command line arguments matching Regex
+
+```
+aid=my-aid event_simpleName=ProcessRollup2 OR event_simpleName=SyntheticProcessRollup2 | regex CommandLine="REGEX" | table
+ComputerName UserName FileName ImageFileName CommandLine        # CommandLine Query
+
+aid=my-aid event_simpleName=ProcessRollup2 OR event_simpleName=SyntheticProcessRollup2 | regex ImageFileName="REGEX" | table
+ComputerName UserName FileName ImageFileName CommandLine        # FileName Query
+```
+
+Hunting Anomalies Related to Scheduled Tasks
+---------------------------------------------
+
+- 
