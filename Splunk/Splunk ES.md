@@ -399,3 +399,9 @@ Creating & Using Lookups
 *This example displays a lookup .csv file used to associate product information with productId. First row represents field names (header): productId, product_name, categoryId, price, sale_price, Code. The productId field exists in the access_combined events. This is the input field. All of the fields listed above are available to search after the lookup is defined. These are the output fields.*
 
 ![fsdfsdf](https://user-images.githubusercontent.com/31498830/134616849-e4a35884-ef0b-4dea-9e72-f38640ee49dd.PNG)
+
+- Load the results from a specified static lookup
+
+```
+| inputlookup products.csv
+```
