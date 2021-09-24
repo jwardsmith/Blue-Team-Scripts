@@ -39,7 +39,7 @@ aid=my-aid ImageFileName=*$Recycle.Bin* event_simpleName=ProcessRollup2 | stats 
 values(ComputerName) values(ImageFileName) count by aid
 ```
 
-- Show me a list of processes executing from User Profile file paths (Processes generally shouldn’t be executing from user spaces. These paths cover spaces that are considered to be User Paths)
+- Show me a list of processes executing from User Profile file paths (processes generally shouldn’t be executing from user spaces. These paths cover spaces that are considered to be User Paths)
 
 ```
 aid=my-aid (event_simpleName=ProcessRollup2 OR event_simpleName=SyntheticProcessRollup2) AND (ImageFileName="*\\AppData\\*" OR ImageFi
@@ -48,7 +48,7 @@ ImageFileName=".*\\\\Desktop\\\\\w+\.exe|.*\\\\AppData\\\\\w+\.exe|.*\\\\AppData
 |table ComputerName UserName ImageFileName FileName SHA256HashData
 ```
 
-- Show me a list of processes executing from browser file paths (Similar to the previous query, processes typically shouldn’t be running from these locations)
+- Show me a list of processes executing from browser file paths (similar to the previous query, processes typically shouldn’t be running from these locations)
 
 ```
 aid=my-aid (event_simpleName=ProcessRollup2 OR event_simpleName=SyntheticProcessRollup2) AND (ImageFileName="*\\AppData\\Local\\Micros
@@ -64,4 +64,53 @@ event_simpleName=ProcessRollup2 [search event_simpleName=ServiceStarted | rename
 TargetProcessId_decimal| fields aid ContextProcessId_decimal]
 ```
 
-- 
+- Show me binaries running as a service that do not originate from “System32” (if hunting for anomalous activity, look for services that do not originate from “Windows\System32” location. Remember to escape the directory backslashes (“\”) with another backslash
+
+```
+event_simpleName=ServiceStarted ImageFileName!="*\\System32\\*" | table aid ServiceDisplayName ImageFileName CommandLine
+ClientComputerName RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me an expected service running from an unexpected location (this is similar to the previous query but more specific - this will look for “svchost.exe” running from unexpected locations, e.g. “C:\Windows\Temp”. You can utilize any binary name or service of interest to find anomalous behavior. “ServiceDisplayName” can be substituted for “ImageFileName” if you want to hunt on service names instead)
+
+```
+event_simpleName=ServiceStarted ImageFileName="*\\svchost.exe" ImageFileName!="*\\System32\\*" | table aid ServiceDisplayName
+ImageFileName CommandLine ClientComputerName RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me a specific service name (certain malware and adversary tools may run as a service with specific names - if you wanted to hunt for any of these services names, this query should allow for quick triage)
+
+```
+event_simpleName=ServiceStarted ServiceDisplayName=my-service | table aid ServiceDisplayName ImageFileName CommandLine
+ClientComputerName
+```
+
+- Show me all CreateService events
+
+```
+event_simpleName=CreateService | table RemoteAddressIP4 ClientComputerName ServiceDisplayName ServiceImagePath
+```
+
+- Show me non-System32 binaries running as a hosted service (if hunting for anomalous activity, look for services that do not originate from “Windows\System32” location. Remember to escape the directory backslashes (“\”) with another backslash)
+
+```
+event_simpleName=HostedServiceStarted ImageFileName!="*\\System32\\*" | table aid ServiceDisplayName ImageFileName CommandLine
+ClientComputerName RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me a list of services that were stopped and on which hosts
+
+```
+event_simpleName=*ProcessRollup2 [search event_simpleName=ServiceStopped | fields cid aid TargetProcessId_decimal] | table aid
+ComputerName ImageFileName
+```
+
+- Show me when a specific hosted service has stopped (utilise this query to alert on when key services are stopped, such as Windows Firewall (“Base Filtering Engine”) or other security related services)
+
+```
+event_simpleName=HostedServiceStopped ServiceDisplayName=my-service | table aid ServiceDisplayName
+```
+
+
+Hunting Phishing Attacks & Malicious Attachments
+--------------------------------------------------
