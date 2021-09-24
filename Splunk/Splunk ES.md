@@ -441,3 +441,9 @@ Scheduled Reports & Alerts
 - Number of Hosts - define how many unique hosts are returned before the alert triggers
 - Number of Sources - define how many unique sources are returned before the alert triggers
 - Custom - define custom conditions using the search language
+
+### Viewing Triggered Alerts
+
+*If you elected to list in triggered alerts, you can view the results by accessing Activity -> Triggered Alerts. Click View results to see the matching events that triggered the alert. Click Edit search to modify the alert definition.*
+
+![sfs](https://user-images.githubusercontent.com/31498830/134620682-4c53ecd1-f49d-49b0-9e07-c83741596047.PNG)
