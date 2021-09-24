@@ -420,3 +420,10 @@ Creating Scheduled Reports & Alerts
 *Splunk alerts are based on searches that can run either on a regular scheduled interval, or in real-time. Alerts are triggered when the results of the search meet a specific condition that you define. Based on your needs, alerts can: Create an entry in Triggered Alerts, Log an event, Output results to a lookup file, Send emails, Use a webhook, Perform a custom action.*
 
 *Run a search -> Select Save As -> Select Alert*
+
+*You can set alerts to trigger:*
+- Per-Result - triggers when a result is returned
+- Number of Results - define how many results are returned before the alert triggers
+- Number of Hosts - define how many unique hosts are returned before the alert triggers
+- Number of Sources - define how many unique sources are returned before the alert triggers
+- Custom - define custom conditions using the search language
