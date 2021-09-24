@@ -412,3 +412,7 @@ Creating & Using Lookups
 
 Creating Scheduled Reports & Alerts
 -----------------------------------
+
+*Scheduled reports are useful for monthly, weekly, daily executive/managerial roll up reports, dashboard performance, and automatically sending reports via email. Time range picker cannot be used with scheduled reports.*
+
+![sdf](https://user-images.githubusercontent.com/31498830/134618115-17e03451-a753-44ff-a4a5-5a713bceedd7.PNG)
