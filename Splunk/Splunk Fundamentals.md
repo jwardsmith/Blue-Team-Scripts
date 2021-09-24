@@ -1,46 +1,46 @@
 
 # Splunk Fundamentals
 
-1. - [Overview]
-     - [Help System]
-     - [Components]
-     - [Splunk Apps]
-     - [Users and Roles]
-     - [Search & Reporting App]
-     - [Data Summary]
-     - [Events]
-2. - [Getting Data In]
-     - [Data Input Types]
-     - [Default Metadata Settings]
-     - [Adding an Input with Splunk Web]
-     - [Pretrained Source Types]
-3. - [Searches]
-     - [Search Results]
-     - [Fields]
-     - [!= vs NOT]
-     - [Search Modes]
-     - [Best Practices]
-4. - [Splunk's Search Language]
-     - [Syntax]
-     - [Creating a Table]
-     - [Basic Commands]
-     - [Transforming Commands]
-     - [Stats]
-5. - [Reports & Dashboards]
-     - [Creating a Report]
-     - [Creating Tables & Visualisations]
-     - [Creating a Dashboard]
-6. - [Pivots & Datasets]
-     - [Creating a Pivot]
-7. - [Lookups]
-     - [Creating a Lookup]
-     - [Sample Lookup File]
-8. [Scheduled Reports & Alerts]
-     - [Creating a Scheduled Report]
-     - [Creating a Alert]
-     - [Alert Trigger Conditions]
-     - [Viewing Triggered Alerts]
-     - [Editing Alerts]
+1. - [Overview](#overview)
+     - [Help System](#help-system)
+     - [Components](#components)
+     - [Splunk Apps](#splunk-apps)
+     - [Users and Roles](#users-and-roles)
+     - [Search & Reporting App](#search--reporting-app)
+     - [Data Summary](#data-summary)
+     - [Events](#events)
+2. - [Getting Data In](#getting-data-in)
+     - [Data Input Types](#data-input-types)
+     - [Default Metadata Settings](#default-metadata-settings)
+     - [Adding an Input with Splunk Web](#adding-an-input-with-splunk-web)
+     - [Pretrained Source Types](#pretrained-source-types)
+3. - [Searches](#searches)
+     - [Search Results](#search-results)
+     - [Fields](#fields)
+     - [!= vs NOT](#-vs-not)
+     - [Search Modes](#search-modes)
+     - [Best Practices](#best-practices)
+4. - [Splunk's Search Language](#splunks-search-language)
+     - [Syntax](#syntax)
+     - [Creating a Table](#creating-a-table)
+     - [Basic Commands](#basic-commands)
+     - [Transforming Commands](#transforming-commands)
+     - [Stats](#stats)
+5. - [Reports & Dashboards](#reports--dashboards)
+     - [Creating a Report](#creating-a-report)
+     - [Creating Tables & Visualisations](#creating-tables--visualisations)
+     - [Creating a Dashboard](#creating-a-dashboard)
+6. - [Pivots & Datasets](#pivots--datasets)
+     - [Creating a Pivot](#creating-a-pivot)
+7. - [Lookups](#lookups)
+     - [Creating a Lookup](#creating-a-lookup)
+     - [Sample Lookup File](#sample-lookup-file)
+8. [Scheduled Reports & Alerts](#scheduled-reports--alerts)
+     - [Creating a Scheduled Report](#creating-a-scheduled-report)
+     - [Creating a Alert](#creating-a-report)
+     - [Alert Trigger Conditions](#alert-trigger-conditions)
+     - [Viewing Triggered Alerts](#viewing-triggered-alerts)
+     - [Editing Alerts](#editing-alerts)
 
 Overview
 ---------
