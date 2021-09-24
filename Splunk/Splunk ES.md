@@ -461,8 +461,3 @@ Scheduled Reports & Alerts
 *From the search bar -> Click Alerts -> Select the alert -> Click Edit*
 
 ![sdf](https://user-images.githubusercontent.com/31498830/134620808-32e71ed9-924c-4138-8912-031303abff6a.PNG)
-
-
-
-https://user-images.githubusercontent.com/31498830/134743111-a340d1d2-c932-4b22-9f66-1a172f8cb8b7.mp4
-
