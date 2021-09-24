@@ -387,3 +387,9 @@ Pivots & Datasets
 
 ![dgd](https://user-images.githubusercontent.com/31498830/134465659-651876be-7102-4608-97d0-ca3466d1588c.PNG)
 
+Creating & Using Lookups
+-------------------------
+
+*Sometimes static (or relatively unchanging) data is required for searches, but isn't available in the index. Lookups pull such data from standalone files at search time and add it to search results.*
+
+![gfdgfdg](https://user-images.githubusercontent.com/31498830/134616551-4bd4945d-a905-4e05-903c-009497e75d6c.PNG)
