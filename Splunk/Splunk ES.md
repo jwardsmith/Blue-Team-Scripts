@@ -393,3 +393,9 @@ Creating & Using Lookups
 *Sometimes static (or relatively unchanging) data is required for searches, but isn't available in the index. Lookups pull such data from standalone files at search time and add it to search results.*
 
 ![gfdgfdg](https://user-images.githubusercontent.com/31498830/134616551-4bd4945d-a905-4e05-903c-009497e75d6c.PNG)
+
+*Lookups allow you to add more fields to your events, such as: descriptions for HTTP status codes ("File Not Found", Service Unavailable"), Sale prices for products, Usernames, IP addresses, and workstation IDs associated with RFIDs. After a lookup is configured, you can use the lookup fields in searches. The lookup fields also appear in the Fields sidebar. Lookup field values are case sensitive by default.*
+
+*This example displays a lookup .csv file used to associate product information with productId. First row represents field names (header): productId, product_name, categoryId, price, sale_price, Code. The productId field exists in the access_combined events. This is the input field. All of the fields listed above are available to search after the lookup is defined. These are the output fields.*
+
+![fsdfsdf](https://user-images.githubusercontent.com/31498830/134616849-e4a35884-ef0b-4dea-9e72-f38640ee49dd.PNG)
