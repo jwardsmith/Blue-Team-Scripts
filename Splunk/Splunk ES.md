@@ -6,13 +6,13 @@ Overview
 
 *Comprehensive Security Information and Event Management (SIEM) solution. Index ANY data from ANY source: computers, network devices, virtual machines, internet devices, communication devices, sensors, databases, logs, configurations, messages, call detail records, clickstream, alerts, metrics, scripts, changes, tickets.*
 
-https://www.youtube.com/c/SplunkHowTo
-https://community.splunk.com/t5/Community/ct-p/en-us
-https://www.splunk.com/en_us/blog
-https://docs.splunk.com/Documentation
-https://wiki.splunk.com/Main_Page
-https://wiki.splunk.com/Community:IRC
-https://usergroups.splunk.com/
+https://www.youtube.com/c/SplunkHowTo<br>
+https://community.splunk.com/t5/Community/ct-p/en-us<br>
+https://www.splunk.com/en_us/blog<br>
+https://docs.splunk.com/Documentation<br>
+https://wiki.splunk.com/Main_Page<br>
+https://wiki.splunk.com/Community:IRC<br>
+https://usergroups.splunk.com/<br>
 
 ### Components
 
