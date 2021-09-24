@@ -1,6 +1,47 @@
 
 # Splunk Fundamentals
 
+1. - [Overview]
+     - [Help System]
+     - Components
+     - Splunk Apps
+     - Users and Roles
+     - Search & Reporting App
+     - Data Summary
+     - Events
+2. - Getting Data In
+     - Data Input Types
+     - Default Metadata Settings
+     - Adding an Input with Splunk Web
+     - Pretrained Source Types
+3. - Searches
+     - Search Results
+     - Fields
+     - != vs NOT
+     - Search Modes
+     - Best Practices
+4. - Splunk's Search Language
+     - Syntax
+     - Creating a Table
+     - Basic Commands
+     - Transforming Commands
+     - Stats
+5. - Reports & Dashboards
+     - Creating a Report
+     - Creating Tables & Visualisations
+     - Creating a Dashboard
+6. - Pivots & Datasets
+     - Creating a Pivot
+7. - Lookups
+     - Creating a Lookup
+     - Sample Lookup File
+8. Scheduled Reports & Alerts
+     - Creating a Scheduled Report
+     - Creating a Alert
+     - Alert Trigger Conditions
+     - Viewing Triggered Alerts
+     - Editing Alerts
+
 Overview
 ---------
 
