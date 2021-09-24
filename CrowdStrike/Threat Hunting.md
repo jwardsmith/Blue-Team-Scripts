@@ -114,3 +114,65 @@ event_simpleName=HostedServiceStopped ServiceDisplayName=my-service | table aid 
 
 Hunting Phishing Attacks & Malicious Attachments
 --------------------------------------------------
+
+- Show me a list of attachments sent from Outlook in the past hour that have a file name of "winword.exe", "excel.exe", or
+"POWERPNT.exe"
+
+```
+aid=my-aid event_simpleName=ProcessRollup2 earliest=-60m latest=now CommandLine=*content.outlook* FileName=winword.exe OR
+Filename=excel.exe OR POWERPNT.exe | eval splitter=split(CommandLine,"Outlook\\") | eval ShortFile=mvindex(splitter,-1) | table
+timestamp aid TargetProcessId_decimal ComputerName ShortFile CommandLine | sort – timestamp
+```
+
+- Show me a list of links opened from Outlook in the last hour
+
+```
+aid=my-aid event_simpleName=ProcessRollup2 earliest=-60m latest=now FileName=outlook.exe | dedup aid TargetProcessId_decimal |
+rename FileName as Parent | rename CommandLine as ParentCmd | table aid TargetProcessId_decimal Parent ParentCmd | join max=0 aid
+TargetProcessId_decimal [search event_simpleName=ProcessRollup2 FileName=chrome.exe OR FileName=firefox.exe OR FileName=iexplore.exe
+| rename ParentProcessId_decimal as TargetProcessId_decimal | rename MD5HashData as MD5 | rename FilePath as ChildPath | dedup aid
+TargetProcessId_decimal MD5 | fields aid TargetProcessId_decimal FileName CommandLine] | table Parent ParentCmd FileName CommandLine
+aid
+```
+
+Hunting Configuration and Compliance Vulnerabilities
+-----------------------------------------------------
+
+- Show me a list of web servers or database processes running under a Local System account
+
+```
+event_simpleName="ProcessRollup2" (FileName=w3wp.exe OR FileName=sqlservr.exe OR FileName=httpd.exe OR FileName=nginx.exe)
+UserName="LOCAL SYSTEM" | dedup aid | table ComputerName UserName ImageFileName CommandLine
+```
+
+- Show me user accounts added to Administrator groups (local or domain)
+
+```
+event_simpleName=UserAccountAddedToGroup DomainSid="S-1-5-21-*" | stats dc(ComputerName) AS "Host Count", values(ComputerName) AS
+"Host Name" by DomainSid, UserRid | eval UserRid_dec=tonumber(UserRid, 16) | fillnull UserRid | eval UserSid_readable=DomainSid."-
+".UserRid_dec | lookup usersid_username.csv UserSid_readable OUTPUT UserName | rename UserSid_readable AS UserSid, UserName AS "User
+Name" | table UserSid, "User Name", "Host Count", "Host Name"
+```
+
+- Show me user accounts created with logon
+
+```
+event_simpleName="UserIdentity" [search event_simpleName=UserAccountCreated | fields cid UserName]
+```
+
+- Show me the responsible process for the UserAccountCreated event
+
+```
+event_simpleName=*ProcessRolllup2 [search event_simpleName="UserAccountCreated" | rename RpcClientProcessId as
+TargetProcessId_decimal | fields aid TargetProcessId_decimal]
+```
+
+- Show me all versions of a certain piece of software that are running in my environment (e.g. Adobe Flash, Microsoft Word)
+
+```
+(event_simpleName=ProcessRollup* OR event_simpleName=ImageHash) FileName=SOFTWARE-NAME.EXE | dedup ImageFileName ComputerName |
+stats values(ComputerName) count by ImageFileName
+
+(event_simpleName=ProcessRollup* OR event_simpleName=ImageHash) FileName=WinWord.exe | dedup ImageFileName ComputerName | stats
+values(ComputerName) count by ImageFileName        # Example for Microsoft Word
+```
