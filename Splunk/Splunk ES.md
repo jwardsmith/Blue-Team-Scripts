@@ -447,3 +447,9 @@ Scheduled Reports & Alerts
 *If you elected to list in triggered alerts, you can view the results by accessing Activity -> Triggered Alerts. Click View results to see the matching events that triggered the alert. Click Edit search to modify the alert definition.*
 
 ![sfs](https://user-images.githubusercontent.com/31498830/134620682-4c53ecd1-f49d-49b0-9e07-c83741596047.PNG)
+
+### Editing Alerts
+
+*From the search bar -> Click Alerts -> Select the alert -> Click Edit*
+
+![sdf](https://user-images.githubusercontent.com/31498830/134620808-32e71ed9-924c-4138-8912-031303abff6a.PNG)
