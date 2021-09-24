@@ -431,6 +431,9 @@ Scheduled Reports & Alerts
 
 *Run a search -> Select Save As -> Select Alert*
 
+![sf](https://user-images.githubusercontent.com/31498830/134620264-8bbc5621-7b1e-4e0a-806c-d7001f995af4.PNG)
+
+
 ### Alert Trigger Conditions
 
 - Per-Result - triggers when a result is returned
