@@ -345,4 +345,101 @@ ComputerName UserName FileName ImageFileName CommandLine        # FileName Query
 Hunting Anomalies Related to Scheduled Tasks
 ---------------------------------------------
 
-- 
+- Show me ScheduledTaskRegistered events by host
+
+```
+event_simpleName=ScheduledTaskRegistered |
+stats values(TaskName) as TaskName values(TaskExecCommand) as TaskExecCommand values(TaskAuthor) as TaskAuthor
+values(ClientComputerName) as ClientComputerName values(RemoteAddressIP4) as RemoteAddressIP4 values(RemoteAddressIP6) as
+RemoteAddressIP6 by aid
+```
+
+- Show me remote tasks registered by host
+
+```
+event_simpleName=ScheduledTaskRegistered ClientComputerName!="" |
+stats values(TaskName) as TaskName values(TaskExecCommand) as TaskExecCommand values(TaskAuthor) as TaskAuthor
+values(ClientComputerName) as ClientComputerName values(RemoteAddressIP4) as RemoteAddressIP4 values(RemoteAddressIP6) as
+RemoteAddressIP6 by aid
+```
+
+- Show me ScheduledTaskDeleted events by host
+
+```
+event_simpleName=ScheduledTaskDeleted |
+stats values(TaskName) as TaskName values(ClientComputerName) as ClientComputerName values(RemoteAddressIP4) as RemoteAddressIP4
+values(RemoteAddressIP6) as RemoteAddressIP6 by aid
+```
+
+- Show me remote tasks deleted by host
+
+```
+event_simpleName=ScheduledTaskDeleted ClientComputerName!="" |
+stats values(TaskName) as TaskName values(ClientComputerName) as ClientComputerName values(RemoteAddressIP4) as RemoteAddressIP4
+values(RemoteAddressIP6) as RemoteAddressIP6 by aid
+```
+
+- Show me events triggered at log on
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=Trigger path=Task.Triggers.LogonTrigger | search Trigger=*
+```
+
+- Show me events triggered at startup
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=Trigger path=Task.Triggers.BootTrigger | search Trigger=*
+```
+
+- Show me events triggered at a specific time
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=Trigger path=Task.Triggers.TimeTrigger | search Trigger=*
+```
+
+- Show me events that are scheduled
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=Trigger path=Task.Triggers.CalendarTrigger | search
+Trigger=*
+```
+
+- Show me events triggered on an event
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=Trigger path=Task.Triggers.EventTrigger | search Trigger=*
+```
+
+- Show me tasks scheduled by logon type
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=LogonType path=Task.Principals.Principal.LogonType
+```
+
+- Show me tasks scheduled by user ID
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=UserId path=Task.Principals.Principal.UserId
+```
+
+- Show me tasks scheduled by run level
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=RunLevel path=Task.Principals.Principal.RunLevel
+```
+
+- Show me tasks scheduled with ComHandler
+
+```
+event_simpleName="ScheduledTaskRegistered" | spath input=TaskXml output=ClassId path=Task.Actions.ComHandler.ClassId | search
+ClassId=*
+```
+
+- Show me hidden scheduled tasks
+
+```
+event_simpleName=| spath input=TaskXml output=Hidden path=Task.Settings.Hidden |"ScheduledTaskRegistered" search Hidden=true
+```
+
+Hunting Suspicious Registry Changes
+------------------------------------
