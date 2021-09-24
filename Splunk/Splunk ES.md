@@ -381,20 +381,26 @@ Reports & Dashboards
 Pivots & Datasets
 ------------------
 
+### Creating a Pivot
+
 *The Pivot tool lets you report on a specific data set without the Splunk Search Processing Language (SPL).*
 
 ![sfsdf](https://user-images.githubusercontent.com/31498830/134465644-6ef39115-62a1-4e27-948c-16570fa5e9e8.PNG)
 
 ![dgd](https://user-images.githubusercontent.com/31498830/134465659-651876be-7102-4608-97d0-ca3466d1588c.PNG)
 
-Creating & Using Lookups
+Lookups
 -------------------------
+
+### Creating a Lookup
 
 *Sometimes static (or relatively unchanging) data is required for searches, but isn't available in the index. Lookups pull such data from standalone files at search time and add it to search results.*
 
 ![gfdgfdg](https://user-images.githubusercontent.com/31498830/134616551-4bd4945d-a905-4e05-903c-009497e75d6c.PNG)
 
 *Lookups allow you to add more fields to your events, such as: descriptions for HTTP status codes ("File Not Found", Service Unavailable"), Sale prices for products, Usernames, IP addresses, and workstation IDs associated with RFIDs. After a lookup is configured, you can use the lookup fields in searches. The lookup fields also appear in the Fields sidebar. Lookup field values are case sensitive by default.*
+
+### Sample Lookup File
 
 *This example displays a lookup .csv file used to associate product information with productId. First row represents field names (header): productId, product_name, categoryId, price, sale_price, Code. The productId field exists in the access_combined events. This is the input field. All of the fields listed above are available to search after the lookup is defined. These are the output fields.*
 
@@ -410,18 +416,23 @@ Creating & Using Lookups
 
 *If a lookup is not configured to run automatically, use the lookup command in your search to use the lookup fields.*
 
-Creating Scheduled Reports & Alerts
+Scheduled Reports & Alerts
 -----------------------------------
+
+### Creating a Scheduled Report
 
 *Scheduled reports are useful for monthly, weekly, daily executive/managerial roll up reports, dashboard performance, and automatically sending reports via email. Time range picker cannot be used with scheduled reports.*
 
 ![sdf](https://user-images.githubusercontent.com/31498830/134618115-17e03451-a753-44ff-a4a5-5a713bceedd7.PNG)
 
+### Creating a Alert
+
 *Splunk alerts are based on searches that can run either on a regular scheduled interval, or in real-time. Alerts are triggered when the results of the search meet a specific condition that you define. Based on your needs, alerts can: Create an entry in Triggered Alerts, Log an event, Output results to a lookup file, Send emails, Use a webhook, Perform a custom action.*
 
 *Run a search -> Select Save As -> Select Alert*
 
-*You can set alerts to trigger:*
+### Alert Trigger Conditions
+
 - Per-Result - triggers when a result is returned
 - Number of Results - define how many results are returned before the alert triggers
 - Number of Hosts - define how many unique hosts are returned before the alert triggers
