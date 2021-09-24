@@ -253,3 +253,66 @@ ContextProcessId_decimal as TargetProcessId_decimal | fields aid ContextProcessI
 event_simpleName=ProcessRollup2 [search event_simpleName=FirewallChangeOption FirewallOption=DisableFirewall | rename
 ContextProcessId_decimal as TargetProcessId_decimal | fields aid ContextProcessId_decimal]
 ```
+
+
+Hunting Suspicious Network Connections
+---------------------------------------
+
+- Show me a list of outbound network traffic on non-standard ports
+
+```
+aid=my-aid event_simpleName=NetworkConnect* RemotePort_decimal=PORT (RemoteAddressIP4!=192.168.0.0/16 AND
+RemoteAddressIP4!=10.0.0.0/8 AND RemoteAddressIP4!=172.16.0.0/12 AND RemoteAddressIP4!=127.0.0.0/8) | table ComputerName aid
+LocalAddressIP4 LocalPort_decimal RemoteAddressIP4 RemotePort_decimal
+```
+
+- Show me a list of unusual (fewer than 10%) connections to remote ports, excluding a known good port
+
+```
+aid=my-aid event_simpleName=NetworkConnect* RemotePort_decimal!=PORT | rare RemotePort_decimal | rename RemotePort_decimal TO
+"Remote Port" | where percent < 10 | sort by percent
+```
+
+- Show me all networks connections to well-known remote ports, excluding ephemeral ports
+
+```
+aid=my-aid event_simpleName=NetworkConnect* RemotePort_decimal<=1024 | rare RemotePort_decimal | rename RemotePort_decimal TO
+"Remote Port" | where percent < 10 | sort by percent
+```
+
+- Show me a list of low-volume domain name requests
+
+```
+aid=my-aid event_simpleName=DnsRequest | regex DomainName=".*\..*" | stats values(ComputerName) count by DomainName | where count <4
+| sort – count
+
+aid=my-aid event_simpleName=DnsRequest DomainName!=*google.com | regex DomainName=".*\..*" | stats values(ComputerName) count by
+DomainName | where count <4 | sort – count        # adding the following would remove all DomainName requests to the top level domain "google.com"
+```
+
+- Uncommon processes making network connections or DNS Requests
+
+```
+aid=my-aid event_simpleName="DnsRequest" | rename ContextProcessId_decimal as TargetProcessId_decimal | join TargetProcessId_decimal
+[search aid=my-aid event_simpleName="ProcessRollup2" ImageFileName="*PROCESS"] | table ComputerName timestamp ImageFileName
+DomainName CommandLine
+
+aid=a9e3b67c7883497f6d18fdd1517b177d event_simpleName="DnsRequest" | rename ContextProcessId_decimal as TargetProcessId_decimal |
+join TargetProcessId_decimal [search aid=a9e3b67c7883497f6d18fdd1517b177d event_simpleName="ProcessRollup2"
+ImageFileName="notepad.exe"] | table ComputerName timestamp ImageFileName DomainName CommandLine        # Example for Notepad
+```
+
+- Uncommon processes making network connections to remote IP addresses on a specific host
+
+```
+aid=my-aid event_simpleName="NetworkConnectIP4" | rename ContextProcessId_decimal as TargetProcessId_decimal | join
+TargetProcessId_decimal [search aid=my-aid event_simpleName="ProcessRollup2" ImageFileName="*PROCESS"] | table ComputerName
+timestamp ImageFileName RemoteAddressIP4 CommandLine
+```
+
+- Show all Remote Desktop Protocol (RDP) connections observed on a specific host
+
+```
+aid=my-aid event_simpleName=UserIdentity LogonType_decimal=10 | table timestamp ComputerName UserName UserPrincipal LogonServer
+```
+
