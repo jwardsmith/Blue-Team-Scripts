@@ -176,3 +176,80 @@ stats values(ComputerName) count by ImageFileName
 (event_simpleName=ProcessRollup* OR event_simpleName=ImageHash) FileName=WinWord.exe | dedup ImageFileName ComputerName | stats
 values(ComputerName) count by ImageFileName        # Example for Microsoft Word
 ```
+
+
+Hunting Firewall Anomalies & Vulnerabilities
+-----------------------------------------------------
+
+- Show me all FirewallSetRule events
+
+```
+event_simpleName=FirewallSetRule | table aid FirewallRule RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me all FirewallSetRule events grouped by host
+
+```
+event_simpleName=FirewallSetRule | stats values(FirewallRule) by aid
+```
+
+- Rules set (with FirewallRule key/value extraction). The following query lists all rules created along with extracting out the key/value pairs from the FirewallRule attribute
+
+```
+event_simpleName=FirewallSetRule | rex field=FirewallRule "App=(?<App>(.*?))\|" | rex field=FirewallRule "Active=(?<Active>(.*?))\|"
+| rex field=FirewallRule "Profile=(?<Profile>(.*?))\|" | rex field=FirewallRule "Protocol=(?<Protocol>(.*?))\|" | rex
+field=FirewallRule "Dir=(?<Dir>(.*?))\|" | rex field=FirewallRule "Desc=(?<Desc>(.*?))\|" | rex field=FirewallRule "Name=(?<Name>
+(.*?))\|" | table aid FirewallRule App Name Desc Active Dir Profile RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me the responsible process
+
+```
+event_simpleName=ProcessRollup2 [search event_simpleName=FirewallSetRule | rename ContextProcessId_decimal as
+TargetProcessId_decimal | fields aid ContextProcessId_decimal]
+```
+
+- Show me all FirewallDeleteRule events
+
+```
+event_simpleName=FirewallDeleteRule | table aid FirewallRuleId RemoteAddressIP4 RemoteAddressIP6
+```
+
+- Show me all FirewallDeleteRule events grouped by hosts
+
+```
+event_simpleName=FirewallDeleteRule | stats values(FirewallRule) by aid
+```
+
+- Show me all responsible processes
+
+```
+event_simpleName=ProcessRollup2 [search event_simpleName=FirewallDeleteRule | rename ContextProcessId_decimal as
+TargetProcessId_decimal | fields aid ContextProcessId_decimal]
+```
+
+- Show me all FirewallChangeOption events (with human-readable profile description)
+
+```
+event_simpleName=FirewallChangeOption |
+eval FirewallProfileDescription=case(FirewallProfile=0, "INVALID", FirewallProfile=1, "DOMAIN", FirewallProfile=2, "STANDARD",
+FirewallProfile=3, "PUBLIC") |
+table aid FirewallOption FirewallProfileDescription FirewallOptionNumericValue FirewallOptionStringValue
+```
+
+- Show me the responsible process for the firewall change
+
+```
+event_simpleName=ProcessRollup2 [search event_simpleName=FirewallChangeOption | rename ContextProcessId_decimal as
+TargetProcessId_decimal | fields aid ContextProcessId_decimal]
+Show me the responsible process responsible for disabling firewall
+event_simpleName=ProcessRollup2 [search event_simpleName=FirewallChangeOption FirewallOption=DisableFirewall | rename
+ContextProcessId_decimal as TargetProcessId_decimal | fields aid ContextProcessId_decimal]
+```
+
+- Show me the responsible process responsible for disabling firewall
+
+```
+event_simpleName=ProcessRollup2 [search event_simpleName=FirewallChangeOption FirewallOption=DisableFirewall | rename
+ContextProcessId_decimal as TargetProcessId_decimal | fields aid ContextProcessId_decimal]
+```
