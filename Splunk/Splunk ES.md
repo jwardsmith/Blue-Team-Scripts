@@ -416,3 +416,7 @@ Creating Scheduled Reports & Alerts
 *Scheduled reports are useful for monthly, weekly, daily executive/managerial roll up reports, dashboard performance, and automatically sending reports via email. Time range picker cannot be used with scheduled reports.*
 
 ![sdf](https://user-images.githubusercontent.com/31498830/134618115-17e03451-a753-44ff-a4a5-5a713bceedd7.PNG)
+
+*Splunk alerts are based on searches that can run either on a regular scheduled interval, or in real-time. Alerts are triggered when the results of the search meet a specific condition that you define. Based on your needs, alerts can: Create an entry in Triggered Alerts, Log an event, Output results to a lookup file, Send emails, Use a webhook, Perform a custom action.*
+
+*Run a search -> Select Save As -> Select Alert*
