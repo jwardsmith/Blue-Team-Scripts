@@ -407,3 +407,5 @@ Creating & Using Lookups
 ```
 
 ![sf](https://user-images.githubusercontent.com/31498830/134617060-4a74d67d-859e-45ee-a073-3a067b99ac66.PNG)
+
+*If a lookup is not configured to run automatically, use the lookup command in your search to use the lookup fields.*
