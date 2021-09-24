@@ -443,3 +443,66 @@ event_simpleName=| spath input=TaskXml output=Hidden path=Task.Settings.Hidden |
 
 Hunting Suspicious Registry Changes
 ------------------------------------
+
+- Show me persistence (Run Key)
+
+```
+Run | Search event_simpleName=RegRemoteRegistry | table RemoteAddressIP4 ClientComputerName event_simpleName RegObjectName
+ImageFileName
+```
+
+Hunting Java Malware, Trojans, & Exploits
+------------------------------------------
+
+- Show me DNS requests spawning from javaw.exe process (beaconing):
+
+```
+event_simpleName="DnsRequest" | rename ContextProcessId_decimal as TargetProcessId_decimal | join TargetProcessId_decimal [search
+event_simpleName="ProcessRollup2" ImageFileName="*javaw.exe"] | table ComputerName timestamp ImageFileName DomainName CommandLine
+```
+
+- Show me .JAR files written to %AppData%
+
+```
+event_simpleName=NewExecutableWritten TargetFileName="*\\AppData\\Roaming\\*\\*\.jar" | table ComputerName timestamp ImageFileName
+DomainName CommandLine
+```
+
+- Show me .JAR files executed from %AppData*
+
+```
+event_simpleName=ProcessRollup2 FileName=javaw.exe CommandLine=*appdata* CommandLine=*-jar*| table event_simpleName ComputerName
+timestamp ImageFileName DomainName CommandLine
+```
+
+- Show me ASEP for Java executables
+
+```
+event_simpleName=AsepValueUpdate RegObjectName=*\\Run (RegValueName=*\.jar OR ImageFileName=*\.jar OR CommandLineParameters=*\.jar)
+| table _time event_simpleName ContextImageFileName RegPostObjectName RegObjectName RegStringValue RegValueName
+CommandLineParameters ImageFileName | sort by -_time
+```
+
+- Show me the Java.exe process writing executable files:
+
+```
+event_simpleName=PeFileWritten | rename ContextProcessId_decimal as TargetProcessId_decimal | join TargetProcessId_decimal [search
+event_simpleName=ProcessRollup2 FileName=java.exe] | table _time cid aid Customer ComputerName event_simpleName UserName
+ImageFileName CommandLine TargetFileName FileName MD5HashData SHA256HashData CommandHistory | sort -_time
+```
+
+- This NewExecutableWritten event is generated when an executable file extension is written, whether or not it is truly an executable file type. Any file that ends with a known executable file extension (e.g. .exe, .bat, .scr) will generate this event
+
+```
+event_simpleName=NewExecutableWritten | rename ContextProcessId_decimal as TargetProcessId_decimal | join TargetProcessId_decimal
+[search event_simpleName=ProcessRollup2 FileName=java.exe] | table _time cid aid Customer ComputerName event_simpleName UserName
+ImageFileName CommandLine TargetFileName FileName MD5HashData SHA256HashData CommandHistory | sort -_time
+```
+
+- Hunt for child process of "whoami" spawning underneath Java.exe process (you can substitute "whoami" for any recon commands)
+
+```
+event_simpleName=ProcessRollup2 FileName=java.exe | rename TargetProcessId_decimal as ParentProcessId_decimal | join
+ParentProcessId_decimal [search event_simpleName=ProcessRollup2 FileName=whoami.exe] | table _time cid aid Customer ComputerName
+event_simpleName UserName ImageFileName CommandLine TargetFileName FileName MD5HashData SHA256HashData CommandHistory | sort -_time
+```
