@@ -1,4 +1,4 @@
-# Endpoint-Incident-Response-Cheat-Sheet
+# Endpoint Incident Response Cheat Sheet
 
 Windows
 ---------
