@@ -2,7 +2,6 @@
 # Splunk Fundamentals
 
 1. - [Overview](#overview)
-     - [Help System](#help-system)
      - [Components](#components)
      - [Splunk Apps](#splunk-apps)
      - [Users and Roles](#users-and-roles)
