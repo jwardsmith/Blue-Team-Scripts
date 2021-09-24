@@ -6,6 +6,14 @@ Overview
 
 *Comprehensive Security Information and Event Management (SIEM) solution. Index ANY data from ANY source: computers, network devices, virtual machines, internet devices, communication devices, sensors, databases, logs, configurations, messages, call detail records, clickstream, alerts, metrics, scripts, changes, tickets.*
 
+https://www.youtube.com/c/SplunkHowTo
+https://community.splunk.com/t5/Community/ct-p/en-us
+https://www.splunk.com/en_us/blog
+https://docs.splunk.com/Documentation
+https://wiki.splunk.com/Main_Page
+https://wiki.splunk.com/Community:IRC
+https://usergroups.splunk.com/
+
 ### Components
 
 1. Splunk Search Head - Allows users to use the Search language to search the indexed data. Distributes user search requests to the Indexers. Consolidates the results and extracts field value pairs from the events to the user. Knowledge Objects on the Search Heads can be created to extract additional fields and transform the data without changing the underlying index data. Also provide tools to enhance the search experience such as reports, dashboards, visualisations
