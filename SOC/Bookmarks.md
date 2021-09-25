@@ -58,7 +58,7 @@ Investigative Tools
 - https://www.he.net/
 - https://ipinfo.io/
 - https://maltiverse.com/auth/login
-- https://www.stopbadware.org/?__cf_chl_jschl_tk__=pmd_fuBAVAN7DNSktdnynlP2xHIkuqleYkiLWZC3QQnLwdk-1632611496-0-  gqNtZGzNAdCjcnBszQhl
+- https://www.stopbadware.org/?__cf_chl_jschl_tk__=pmd_pLrcwKQqUhi1GsA43Cevqf2l9KlaWJigM0y2FpP5T0s-1632611912-0-gqNtZGzNAdCjcnBszQel
 - https://www.robtex.com/
 - https://malshare.com/
 - https://yeti-platform.github.io/
