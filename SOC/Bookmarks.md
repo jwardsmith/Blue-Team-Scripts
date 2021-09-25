@@ -20,6 +20,34 @@ News Feeds
 - https://thehackernews.com/
 - https://www.secjuice.com/
 
+Intelligence
+-------------
+- https://phishing.army/download/phishing_army_blocklist_extended.txt
+- https://threatfeeds.io/
+- https://www.misp-project.org/feeds/
+- https://threatmap.checkpoint.com/
+- https://cybermap.kaspersky.com/
+- https://threatmap.fortiguard.com/
+- https://www.fireeye.com/cyber-map/threat-map.html
+- https://norse-corp.com/map/
+- https://www.malwaredomainlist.com/
+- https://app.threatconnect.com/auth/index.xhtml#/
+- https://exchange.xforce.ibmcloud.com/
+- https://abuse.ch/
+- https://threatmap.bitdefender.com/
+- https://pan-unit42.github.io/playbook_viewer/
+- https://www.reversinglabs.com/
+- https://login.mandiant.com/
+
+
+
+
+
+
+
+
+
+
 
 
 
