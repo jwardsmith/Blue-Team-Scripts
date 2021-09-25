@@ -42,35 +42,34 @@ Intelligence
 
 Investigative Tools
 --------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- https://www.thumbalizr.com/
+- https://www.telstra.net/cgi-bin/trace
+- https://www.yougetsignal.com/
+- https://mxtoolbox.com/
+- https://mxtoolbox.com/NetworkTools.aspx
+- https://www.speedguide.net/ports.php
+- https://isc.sans.edu/
+- https://www.infobyip.com/ipbulklookup.php
+- https://www.infobyip.com/
+- https://team-cymru.com/community-services/mhr/
+- https://builtwith.com/
+- https://www.joesandbox.com/#windows
+- https://censys.io/
+- https://www.he.net/
+- https://ipinfo.io/
+- https://maltiverse.com/auth/login
+- https://www.stopbadware.org/?__cf_chl_jschl_tk__=pmd_fuBAVAN7DNSktdnynlP2xHIkuqleYkiLWZC3QQnLwdk-1632611496-0-  gqNtZGzNAdCjcnBszQhl
+- https://www.robtex.com/
+- https://malshare.com/
+- https://yeti-platform.github.io/
+- https://maltiverse.com/search
+- https://www.projecthoneypot.org/index.php
+- https://www.spamcop.net/
+- https://www.spamhaus.org/
+- https://www.fortiguard.com/webfilter
+- https://dnslytics.com/
+- https://www.phishtank.com/
+- https://auth0.com/docs/configure/attack-protection
 
 
 
