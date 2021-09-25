@@ -1,1 +1,27 @@
+# Email Subscriptions
 
+- AlienVault
+- ASIO
+- Bugtraq
+- Auth0
+- BGLU
+- CIS
+- CompTIA
+- CrowdStrike
+- CVE
+- Dark Reading
+- EC-Council
+- FireEye
+- Hybrid Analysis
+- IBM
+- ICS-CERT
+- Intel Stack
+- ISF
+- iTnews
+- Joe Sandbox
+- Rapid7
+- SANS
+- ThreatConnect
+- Threat Post
+- US-CERT
+- VDA
