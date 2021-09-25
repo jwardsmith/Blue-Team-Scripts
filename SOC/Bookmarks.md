@@ -71,21 +71,23 @@ Investigative Tools
 - https://www.phishtank.com/
 - https://auth0.com/docs/configure/attack-protection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Rep Check
+--------------------
+- https://www.abuseipdb.com/
+- https://otx.alienvault.com/
+- https://apility.io/
+- https://www.threatcrowd.org/
+- https://www.shodan.io/
+- https://dns.google.com/
+- https://www.virustotal.com/gui/home/upload
+- https://securitytrails.com/
+- https://www.urlvoid.com/
+- https://www.ipvoid.com/
+- https://urlscan.io/
+- https://www.hybrid-analysis.com/
+- https://talosintelligence.com/
+- https://centralops.net/co/
+- https://metadefender.opswat.com/?lang=en
 
 
 
