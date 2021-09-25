@@ -13,5 +13,15 @@ CVE's
 - https://seclists.org/fulldisclosure/
 - https://defcon.org/html/links/mailing-lists.html
 
+News Feeds
+-----------
+- https://www.darkreading.com/
+- http://bugtraq-team.com/
+- https://thehackernews.com/
+- https://www.secjuice.com/
+
+
+
+
 
 
