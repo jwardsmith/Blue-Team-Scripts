@@ -79,6 +79,7 @@ Rep Check
 - https://www.threatcrowd.org/
 - https://www.shodan.io/
 - https://dns.google.com/
+- https://www.dnswatch.info/
 - https://www.virustotal.com/gui/home/upload
 - https://securitytrails.com/
 - https://www.urlvoid.com/
