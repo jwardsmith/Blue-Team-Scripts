@@ -64,5 +64,7 @@ Overview
     - CIM Setup
     - General
     - Content
+        - Content Management
+        - Use Case Library 
     - Data Enrichment
     - Incident Management 
