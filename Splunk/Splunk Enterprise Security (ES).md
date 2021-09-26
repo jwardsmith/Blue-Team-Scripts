@@ -15,25 +15,33 @@ Overview
     - Protocol Intelligence: Protocol intelligence dashboards use packet capture data from stream capture apps to provide network insights that are relevant to your security investigations. Identify suspicious traffic, DNS activity, email activity, and review the connections and protocols in use in your network traffic
         - Protocol Center: The Protocol Center dashboard provides an overview of security-relevant network protocol data. The dashboard searches display results based on the time period selected using the dashboard time picker
         - Traffic Size Analysis: Use the Traffic Size Analysis dashboard to compare traffic data with statistical data to find outliers, traffic that differs from what is normal in your environment. Any traffic data, such as firewall, router, switch, or network flows, can be summarized and viewed on this dashboard
-        - DNS Activity: The DNS Activity dashboard displays an overview of data relevant to the DNS infrastructure being monitored. The dashboard searches display results based on the time period selected using the dashboard time picker.
-        - DNS Search: The DNS Search dashboard assists in searching DNS protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of DNS data, but is also the primary destination for drilldown searches in the DNS dashboard panels.
+        - DNS Activity: The DNS Activity dashboard displays an overview of data relevant to the DNS infrastructure being monitored. The dashboard searches display results based on the time period selected using the dashboard time picker
+        - DNS Search: The DNS Search dashboard assists in searching DNS protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of DNS data, but is also the primary destination for drilldown searches in the DNS dashboard panels
         - SSL Activity: The SSL Activity dashboard displays an overview of the traffic and connections that use SSL. As an analyst, you can use these dashboards to view and review SSL encrypted traffic by usage, without decrypting the payload. The dashboard searches display results based on the time period selected using the dashboard time picker.
-        - SSL Search: The SSL Search dashboard assists in searching SSL protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of SSL protocol data, but is also the primary destination for drilldown searches in the SSL Activity dashboard panels.
+        - SSL Search: The SSL Search dashboard assists in searching SSL protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of SSL protocol data, but is also the primary destination for drilldown searches in the SSL Activity dashboard panels
         - Email Activity: The Email Activity dashboard displays an overview of data relevant to the email infrastructure being monitored. The dashboard searches displays result based on the time period selected using the dashboard time picker.
-        - Email Search: The Email Search dashboard assists in searching email protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of email protocol data, but is also the primary destination for drilldown searches used in the Email Activity dashboard panels.
-    - Threat Intelligence
-        - Threat Activity
-        - Threat Artifacts 
-    - User Intelligence
-    - Web Intelligence 
-- Security Domains
-    - Access
-        - Access Center
-        - Access Tracker
-        - Access Search
-        - Account Management
-        - Default Account Activity
-    - Endpoint
+        - Email Search: The Email Search dashboard assists in searching email protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of email protocol data, but is also the primary destination for drilldown searches used in the Email Activity dashboard panels
+    - Threat Intelligence: Threat intelligence dashboards use the threat intelligence sources included in Splunk Enterprise Security and custom sources that you configure to provide context to your security incidents and identify known malicious actors in your environment
+        - Threat Activity: The Threat Activity dashboard provides information on threat activity by matching threat intelligence source content to events in Splunk Enterprise.
+        - Threat Artifacts: The Threat Artifacts dashboard provides a single location to explore and review threat content sourced from all configured threat download sources. It provides additional context by showing all threat artifacts related to a user-specified threat source or artifact
+    - User Intelligence: User intelligence dashboards allow you to investigate and monitor the activity of users and assets in your environment
+        - Asset Investigator: The Asset Investigator dashboard displays information about known or unknown assets across a pre-defined set of event categories, such as malware and notable events
+        - Identity Investigator: The Identity Investigator dashboard displays information about known or unknown user identities across a predefined set of event categories, such as change analysis or malware.
+        - User Activity: The User Activity dashboard displays panels representing common risk-generating user activities such as suspicious website activity. For more information about risk scoring, see How Splunk Enterprise Security assigns risk scores
+        - Access Anomalies: The Access Anomalies dashboard displays concurrent authentication attempts from different IP addresses and improbable travel anomalies using internal user credentials and location-relevant data
+    - Web Intelligence: Web intelligence dashboards help you analyze web traffic in your network and identify notable HTTP categories, user agents, new domains, and long URLs
+        - HTTP Category Analysis: The HTTP Category Analysis dashboard looks at categories of traffic data. Any traffic data, such as firewall, router, switch, or network flows, can be summarized and viewed in this dashboard
+        -  HTTP User Agent Analysis: Use the HTTP User Agent Analysis dashboard to investigate user agent strings in your proxy data and determine if there is a possible threat to your environment
+        -  New Domain Analysis: The New Domain Analysis dashboard shows any new domains that appear in your environment. These domains can be newly registered, or simply newly seen by ES
+        -  URL Length Analysis: The URL Length Analysis dashboard looks at any proxy or HTTP data that includes URL string information. Any traffic data containing URL string or path information, such as firewall, router, switch, or network flows, can be summarized and viewed in this dashboard
+- Security Domains: Domain dashboards provided with Splunk Enterprise Security allow you to monitor the events and status of important security domains. You can review the data summarized on the main dashboards, and use the search dashboards for specific domains to investigate the raw events
+    - Access: The Access Protection domain monitors authentication attempts to network devices, endpoints, and applications within the organization. Access Protection is useful for detecting malicious authentication attempts, as well as identifying systems users have accessed in either an authorized or unauthorized manner
+        - Access Center: Access Center provides a summary of all authentication events. This summary is useful for identifying security incidents involving authentication attempts such as brute-force attacks or use of clear text passwords, or for identifying authentications to certain systems outside of work hours
+        - Access Tracker: The Access Tracker dashboard gives an overview of account statuses. Use it to track newly active or inactive accounts, as well as those that have been inactive for a period of time but recently became active. Discover accounts that are not properly de-provisioned or inactivated when a person leaves the organization
+        - Access Search: Use the Access Search dashboard to find specific authentication events. The dashboard is used in ad-hoc searching of authentication data, but is also the primary destination for drilldown searches used in the Access Anomalies dashboard panels
+        - Account Management: The Account Management dashboard shows changes to user accounts, such as account lockouts, newly created accounts, disabled accounts, and password resets. Use this dashboard to verify that accounts are being correctly administered and account administration privileges are being properly restricted. A sudden increase in the number of accounts created, modified, or deleted can indicate malicious behavior or a rogue system. A high number of account lockouts could indicate an attack
+        - Default Account Activity: The Default Account Activity dashboard shows activity on "default accounts", or accounts enabled by default on various systems such as network infrastructure devices, databases, and applications. Default accounts have well-known passwords and are often not disabled properly when a system is deployed
+    - Endpoint: Endpoint domain dashboards display endpoint data relating to malware infections, patch history, system configurations, and time synchronization information
         - Malware Center
         - Malware Search
         - Malware Operations
@@ -42,8 +50,8 @@ Overview
         - Endpoint Changes
         - Update Center
         - Update Search 
-    - Network
-    - Identity 
+    - Network: Network domain dashboards display network traffic data provided by devices such as firewalls, routers, network intrusion detection systems, network vulnerability scanners, proxy servers, and hosts
+    - Identity: Identity domain dashboards display data from your asset and identity lists, as well as the types of sessions in use
 - Audit
     - Incident Review Audit
     - Supression Audit
