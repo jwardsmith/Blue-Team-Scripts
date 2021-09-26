@@ -6,7 +6,7 @@ Overview
 ### Toolbar
 
 - Home
-- Security Posture: Dashboard that shows the stats of the notable events over time
+- Security Posture: Dashboard that shows the stats of the notable events over time (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
 - Incident Review
 - Investigations
 - Glass Tables
