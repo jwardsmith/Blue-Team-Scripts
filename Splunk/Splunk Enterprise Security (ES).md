@@ -10,17 +10,17 @@ Overview
 - Incident Review: Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
 - Investigations: Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
 - Glass Tables
-- Security Intelligence
-    - Risk Analysis
-    - Protocol Intelligence
-        - Protocol Center
-        - Traffic Size Analysis
-        - DNS Activity
-        - DNS Search
-        - SSL Activity
-        - SSL Search
-        - Email Activity
-        - Email Search 
+- Security Intelligence: A set of security intelligence dashboards allow you to investigate incidents with specific types of intelligence
+    - Risk Analysis: Risk analysis allows you to assess the risk scores of systems and users across your network and identify particularly risky devices and users posing a threat to your environment
+    - Protocol Intelligence: Protocol intelligence dashboards use packet capture data from stream capture apps to provide network insights that are relevant to your security investigations. Identify suspicious traffic, DNS activity, email activity, and review the connections and protocols in use in your network traffic
+        - Protocol Center: The Protocol Center dashboard provides an overview of security-relevant network protocol data. The dashboard searches display results based on the time period selected using the dashboard time picker
+        - Traffic Size Analysis: Use the Traffic Size Analysis dashboard to compare traffic data with statistical data to find outliers, traffic that differs from what is normal in your environment. Any traffic data, such as firewall, router, switch, or network flows, can be summarized and viewed on this dashboard
+        - DNS Activity: The DNS Activity dashboard displays an overview of data relevant to the DNS infrastructure being monitored. The dashboard searches display results based on the time period selected using the dashboard time picker.
+        - DNS Search: The DNS Search dashboard assists in searching DNS protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of DNS data, but is also the primary destination for drilldown searches in the DNS dashboard panels.
+        - SSL Activity: The SSL Activity dashboard displays an overview of the traffic and connections that use SSL. As an analyst, you can use these dashboards to view and review SSL encrypted traffic by usage, without decrypting the payload. The dashboard searches display results based on the time period selected using the dashboard time picker.
+        - SSL Search: The SSL Search dashboard assists in searching SSL protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of SSL protocol data, but is also the primary destination for drilldown searches in the SSL Activity dashboard panels.
+        - Email Activity: The Email Activity dashboard displays an overview of data relevant to the email infrastructure being monitored. The dashboard searches displays result based on the time period selected using the dashboard time picker.
+        - Email Search: The Email Search dashboard assists in searching email protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of email protocol data, but is also the primary destination for drilldown searches used in the Email Activity dashboard panels.
     - Threat Intelligence
         - Threat Activity
         - Threat Artifacts 
