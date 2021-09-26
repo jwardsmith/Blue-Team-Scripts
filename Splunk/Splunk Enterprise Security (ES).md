@@ -6,7 +6,7 @@ Overview
 ### Toolbar
 
 - Home
-- Security Posture: Dasboard that shows the stats of the notable events over time
+- Security Posture: Dashboard that shows the stats of the notable events over time
 - Incident Review
 - Investigations
 - Glass Tables
