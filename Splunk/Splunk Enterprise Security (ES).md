@@ -28,6 +28,11 @@ Overview
     - Web Intelligence 
 - Security Domains
     - Access
+        - Access Center
+        - Access Tracker
+        - Access Search
+        - Account Management
+        - Default Account Activity
     - Endpoint
         - Malware Center
         - Malware Search
@@ -55,3 +60,9 @@ Overview
     - Data Protection 
 - Search
 - Configure
+    - All Configurations
+    - CIM Setup
+    - General
+    - Content
+    - Data Enrichment
+    - Incident Management 
