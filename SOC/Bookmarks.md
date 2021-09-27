@@ -38,6 +38,10 @@ Intelligence
 - https://pan-unit42.github.io/playbook_viewer/
 - https://www.reversinglabs.com/
 - https://login.mandiant.com/
+- https://www.iblocklist.com/
+- https://doc.emergingthreats.net/bin/view/Main/AllRulesets
+- http://hailataxii.com/
+- https://www.phishtank.com/
 
 
 Investigative Tools
@@ -68,8 +72,8 @@ Investigative Tools
 - https://www.spamhaus.org/
 - https://www.fortiguard.com/webfilter
 - https://dnslytics.com/
-- https://www.phishtank.com/
 - https://auth0.com/docs/configure/attack-protection
+
 
 Rep Check
 --------------------
