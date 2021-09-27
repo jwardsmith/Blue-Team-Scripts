@@ -8,13 +8,18 @@ Overview
 - ****Home****
 ![1](https://user-images.githubusercontent.com/31498830/134843432-b2c59a55-d9d2-406e-8d4d-1da050a30d11.PNG)
 - ****Security Posture:**** Dashboard that provides a high-level overview of the notable events in your environment over the last 24 hours (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
+![2](https://user-images.githubusercontent.com/31498830/134843465-f82cf11d-e0a3-4644-b48c-dba0f415b405.PNG)
 - ****Incident Review:**** Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
+![3](https://user-images.githubusercontent.com/31498830/134843479-ba91e3a3-9133-4717-afdc-c490780d04b1.PNG)
 - ****Investigations:**** Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
+![4](https://user-images.githubusercontent.com/31498830/134843499-27ab5bab-1e22-431f-9775-18f0c7cf1f4a.PNG)
 - ****Glass Tables****
+![5](https://user-images.githubusercontent.com/31498830/134843513-adc6008f-8850-4619-924b-c1c406ccce20.PNG)
 - ****Security Intelligence:**** A set of security intelligence dashboards allow you to investigate incidents with specific types of intelligence
     - ****Risk Analysis:**** Risk analysis allows you to assess the risk scores of systems and users across your network and identify particularly risky devices and users posing a threat to your environment
     - ****Protocol Intelligence:**** Protocol intelligence dashboards use packet capture data from stream capture apps to provide network insights that are relevant to your security investigations. Identify suspicious traffic, DNS activity, email activity, and review the connections and protocols in use in your network traffic
         - ****Protocol Center:**** The Protocol Center dashboard provides an overview of security-relevant network protocol data. The dashboard searches display results based on the time period selected using the dashboard time picker
+        ![6](https://user-images.githubusercontent.com/31498830/134843542-ef212180-027e-4497-893a-5e939a7a414b.PNG)
         - ****Traffic Size Analysis:**** Use the Traffic Size Analysis dashboard to compare traffic data with statistical data to find outliers, traffic that differs from what is normal in your environment. Any traffic data, such as firewall, router, switch, or network flows, can be summarized and viewed on this dashboard
         - ****DNS Activity:**** The DNS Activity dashboard displays an overview of data relevant to the DNS infrastructure being monitored. The dashboard searches display results based on the time period selected using the dashboard time picker
         - ****DNS Search:**** The DNS Search dashboard assists in searching DNS protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of DNS data, but is also the primary destination for drilldown searches in the DNS dashboard panels
