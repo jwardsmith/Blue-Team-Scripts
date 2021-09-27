@@ -29,6 +29,7 @@ Overview
         - ****Email Search:**** The Email Search dashboard assists in searching email protocol data, refined by the search filters. The dashboard is used in ad-hoc searching of email protocol data, but is also the primary destination for drilldown searches used in the Email Activity dashboard panels
     - ****Threat Intelligence:**** Threat intelligence dashboards use the threat intelligence sources included in Splunk Enterprise Security and custom sources that you configure to provide context to your security incidents and identify known malicious actors in your environment
         - ****Threat Activity:**** The Threat Activity dashboard provides information on threat activity by matching threat intelligence source content to events in Splunk Enterprise.
+        ![7](https://user-images.githubusercontent.com/31498830/134843592-77a8ac10-dbe3-4c7f-b7a6-72b2a9e38d6c.PNG)
         - ****Threat Artifacts:**** The Threat Artifacts dashboard provides a single location to explore and review threat content sourced from all configured threat download sources. It provides additional context by showing all threat artifacts related to a user-specified threat source or artifact
     - ****User Intelligence:**** User intelligence dashboards allow you to investigate and monitor the activity of users and assets in your environment
         - ****Asset Investigator:**** The Asset Investigator dashboard displays information about known or unknown assets across a pre-defined set of event categories, such as malware and notable events
@@ -49,6 +50,7 @@ Overview
         - ****Default Account Activity:**** The Default Account Activity dashboard shows activity on "default accounts", or accounts enabled by default on various systems such as network infrastructure devices, databases, and applications. Default accounts have well-known passwords and are often not disabled properly when a system is deployed
     - ****Endpoint:**** Endpoint domain dashboards display endpoint data relating to malware infections, patch history, system configurations, and time synchronization information
         - ****Malware Center:**** Malware Center is useful to identify possible malware outbreaks in your environment. It displays the status of malware events in your environment, and how that status changes over time based on data gathered by Splunk
+        ![8](https://user-images.githubusercontent.com/31498830/134843611-f847423e-3a71-4e6a-ad76-547e546f959f.PNG)
         - ****Malware Search:**** The Malware Search dashboard assists in searching malware-related events based on the criteria defined by the search filters. The dashboard is used in ad-hoc searching of malware data, but is also the primary destination for drilldown searches used in the Malware Center dashboard panels
         - ****Malware Operations:**** The Malware Operations dashboard tracks the status of endpoint protection products deployed in your environment. Use this dashboard to see the overall health of systems and identify systems that need updates or modifications made to their endpoint protection software. This dashboard can also be used to see how the endpoint protection infrastructure is being administered
         - ****System Center:**** The System Center dashboard shows information related to endpoints beyond the information reported by deployed anti-virus or host-based IDS systems. It reports endpoint statistics and information gathered by the Splunk platform. System configuration and performance metrics for hosts, such as memory usage, CPU usage, or disk usage, can be displayed on this dashboard
@@ -78,6 +80,7 @@ Overview
     - ****Supression Audit:**** The Suppression Audit dashboard provides an overview of notable event suppression activity. This dashboard shows how many events are being suppressed, and by whom, so that notable event suppression can be audited and reported on
     - ****Per-panel Filter Audit:**** The Per-Panel Filter Audit dashboard provides information about the filters currently in use in your deployment
     - ****Adaptive Response Action Center:**** The Adaptive Response Action Center dashboard provides an overview of the response actions initiated by adaptive response actions, including notable event creation and risk scoring
+    ![9](https://user-images.githubusercontent.com/31498830/134843634-3dc0bb55-3cf3-4ecb-ad50-22c52910f2c3.PNG)
     - ****Threat Intelligence Audit:**** The Threat Intelligence Audit dashboard tracks and displays the current status of all threat and generic intelligence sources. As an analyst, you can review this dashboard to determine if threat and generic intelligence sources are current, and troubleshoot issues connecting to threat and generic intelligence sources
     - ****Machine Learning Audit:**** The Machine Learning Audit dashboard displays information related to usage of the Machine Learning Toolkit (MLTK)
     - ****ES Configuration Health:**** Use the ES Configuration Health dashboard to compare the latest installed version of Enterprise Security to prior releases and identify configuration anomalies. The dashboard does not report changes to add-ons (TA.) Select the previous version of Enterprise Security installed in your environment using the Previous ES Version filter
@@ -95,6 +98,7 @@ Overview
     - ****General****
     - ****Content****
         - ****Content Management****
+        ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
         - ****Use Case Library****
     - ****Data Enrichment****
     - ****Incident Management****
