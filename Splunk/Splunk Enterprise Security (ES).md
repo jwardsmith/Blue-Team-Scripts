@@ -6,6 +6,7 @@ Overview
 ### Toolbar
 
 - ****Home****
+![1](https://user-images.githubusercontent.com/31498830/134843432-b2c59a55-d9d2-406e-8d4d-1da050a30d11.PNG)
 - ****Security Posture:**** Dashboard that provides a high-level overview of the notable events in your environment over the last 24 hours (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
 - ****Incident Review:**** Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
 - ****Investigations:**** Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
