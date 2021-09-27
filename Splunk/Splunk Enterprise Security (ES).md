@@ -76,6 +76,7 @@ Overview
         - ****Session Center:**** The Session Center dashboard provides an overview of network sessions. Network sessions are used to correlate network activity to a user using session data provided by DHCP or VPN servers. Use the Session Center to review the session logs and identify the user or machine associated with an IP address used during a session. You can review network session information from the Network Sessions data model, or user and device association data from Splunk UBA
 - ****Audit****
     - ****Incident Review Audit:**** The Incident Review Audit dashboard provides an overview of incident review activity. The panels display how many incidents are being reviewed and by which user, along with a list of the most recently reviewed events. The metrics on this dashboard allow security managers to review the activities of analysts
+    ![1](https://user-images.githubusercontent.com/31498830/134845164-cebe73b1-fc7a-4aa9-8e9c-a63dc52680c8.PNG)
     - ****Investigation Overview:**** The Investigation Overview dashboard gives insight into investigations, including monitoring open investigations, time to completion, and number of collaborators. You can filter by investigations where you're a collaborator or by investigations that exist on the system. you can use the All filter only if you have the "manage_all_investigations" capability
     - ****Supression Audit:**** The Suppression Audit dashboard provides an overview of notable event suppression activity. This dashboard shows how many events are being suppressed, and by whom, so that notable event suppression can be audited and reported on
     - ****Per-panel Filter Audit:**** The Per-Panel Filter Audit dashboard provides information about the filters currently in use in your deployment
@@ -85,11 +86,16 @@ Overview
     - ****Machine Learning Audit:**** The Machine Learning Audit dashboard displays information related to usage of the Machine Learning Toolkit (MLTK)
     - ****ES Configuration Health:**** Use the ES Configuration Health dashboard to compare the latest installed version of Enterprise Security to prior releases and identify configuration anomalies. The dashboard does not report changes to add-ons (TA.) Select the previous version of Enterprise Security installed in your environment using the Previous ES Version filter
     - ****Data Model Audit:**** The Data Model Audit dashboard displays information about the state of data model accelerations in your environment
+    ![2](https://user-images.githubusercontent.com/31498830/134845251-433091a2-74bb-4f7b-a8b5-82e5b682d397.PNG)
     - ****Forwarder Audit:**** The Forwarder Audit dashboard reports on hosts forwarding data to Splunk Enterprise
+    ![3](https://user-images.githubusercontent.com/31498830/134845266-c5b1cc6b-ddf5-4322-9502-f2493ee9b421.PNG)
     - ****Indexing Audit:**** The Indexing Audit dashboard is designed to help administrators estimate the volume of event data being indexed by Splunk Enterprise. The dashboard displays use EPD (Events Per Day) as a metric to track the event volume per index, and the rate of change in the total event counts per index over time. The EPD applies only to event counts, and is unrelated to the Volume Per Day metric used for licensing
+    ![4](https://user-images.githubusercontent.com/31498830/134845294-eac6b169-90bc-45a6-a470-e9bf322a8f66.PNG)
     - ****Search Audit:**** The Search Audit dashboard provides information about the searches being executed in Splunk Enterprise. This dashboard is useful for identifying long running searches, and tracking search activity by user
+    ![5](https://user-images.githubusercontent.com/31498830/134845313-571f9bfd-1d35-49bc-863c-4c4e3622482e.PNG)
     - ****View Audit:**** The View Audit dashboard reports on the most active views in Enterprise Security. View Audit enables tracking of views that are being accessed on a daily basis and helps to identify any errors triggered when users review dashboard panels
     - ****Managed Lookups Audit:**** The Managed Lookups Audit dashboard reports on managed lookups and collections such as services, data, transforms, KV Store lookups, and CSV lookups in Enterprise Security. Managed Lookups Audit shows the growth of lookups over time and the markers for anomalous growth. You can use this to help determine if any managed lookups are growing too large for your particular environment's performance and need to be pruned
+    ![6](https://user-images.githubusercontent.com/31498830/134845326-4a3fa60c-2e08-4d7d-98f9-b8f7f9af2f2a.PNG)
     - ****Data Protection:**** The Data Protection dashboard reports on the the status of the data integrity controls
 - ****Search****
 - ****Configure****
