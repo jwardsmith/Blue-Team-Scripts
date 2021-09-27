@@ -6,10 +6,10 @@ Overview
 ### Toolbar
 
 - ****Home****
-- ****Security Posture: Dashboard that provides a high-level overview of the notable events in your environment over the last 24 hours (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
-- Incident Review: Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
-- Investigations: Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
-- Glass Tables
+- ****Security Posture:**** Dashboard that provides a high-level overview of the notable events in your environment over the last 24 hours (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
+- ****Incident Review:**** Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
+- ****Investigations:**** Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
+- ****Glass Tables****
 - Security Intelligence: A set of security intelligence dashboards allow you to investigate incidents with specific types of intelligence
     - Risk Analysis: Risk analysis allows you to assess the risk scores of systems and users across your network and identify particularly risky devices and users posing a threat to your environment
     - Protocol Intelligence: Protocol intelligence dashboards use packet capture data from stream capture apps to provide network insights that are relevant to your security investigations. Identify suspicious traffic, DNS activity, email activity, and review the connections and protocols in use in your network traffic
