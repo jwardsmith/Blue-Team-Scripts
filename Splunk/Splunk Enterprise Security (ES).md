@@ -67,19 +67,21 @@ Overview
         - Identity Center: Use the Identity Center dashboard to review and search for objects in the identity data added to Enterprise Security. Identity data represents a list of account names, legal names, nicknames, and alternate names, along with other associated information about each identity. The identity data is used to correlate user information to indexed events, providing additional context
         - Session Center: The Session Center dashboard provides an overview of network sessions. Network sessions are used to correlate network activity to a user using session data provided by DHCP or VPN servers. Use the Session Center to review the session logs and identify the user or machine associated with an IP address used during a session. You can review network session information from the Network Sessions data model, or user and device association data from Splunk UBA
 - Audit
-    - Incident Review Audit
-    - Supression Audit
-    - Adaptive Response Action Center
-    - Per-panel Filter Audit
-    - Threat Intelligence Audit
-    - ES Configuration Health
-    - Content Profile
-    - Data Model Audit
-    - Forwarder Audit
-    - Indexing Audit
-    - Search Audit
-    - View Audit
-    - Data Protection 
+    - Incident Review Audit: The Incident Review Audit dashboard provides an overview of incident review activity. The panels display how many incidents are being reviewed and by which user, along with a list of the most recently reviewed events. The metrics on this dashboard allow security managers to review the activities of analysts
+    - Investigation Overview: The Investigation Overview dashboard gives insight into investigations, including monitoring open investigations, time to completion, and number of collaborators. You can filter by investigations where you're a collaborator or by investigations that exist on the system. you can use the All filter only if you have the "manage_all_investigations" capability
+    - Supression Audit: The Suppression Audit dashboard provides an overview of notable event suppression activity. This dashboard shows how many events are being suppressed, and by whom, so that notable event suppression can be audited and reported on
+    - Per-panel Filter Audit: The Per-Panel Filter Audit dashboard provides information about the filters currently in use in your deployment
+    - Adaptive Response Action Center: The Adaptive Response Action Center dashboard provides an overview of the response actions initiated by adaptive response actions, including notable event creation and risk scoring
+    - Threat Intelligence Audit: The Threat Intelligence Audit dashboard tracks and displays the current status of all threat and generic intelligence sources. As an analyst, you can review this dashboard to determine if threat and generic intelligence sources are current, and troubleshoot issues connecting to threat and generic intelligence sources
+    - Machibe Learning Audit: The Machine Learning Audit dashboard displays information related to usage of the Machine Learning Toolkit (MLTK)
+    - ES Configuration Health: Use the ES Configuration Health dashboard to compare the latest installed version of Enterprise Security to prior releases and identify configuration anomalies. The dashboard does not report changes to add-ons (TA.) Select the previous version of Enterprise Security installed in your environment using the Previous ES Version filter
+    - Data Model Audit: The Data Model Audit dashboard displays information about the state of data model accelerations in your environment
+    - Forwarder Audit: The Forwarder Audit dashboard reports on hosts forwarding data to Splunk Enterprise
+    - Indexing Audit: The Indexing Audit dashboard is designed to help administrators estimate the volume of event data being indexed by Splunk Enterprise. The dashboard displays use EPD (Events Per Day) as a metric to track the event volume per index, and the rate of change in the total event counts per index over time. The EPD applies only to event counts, and is unrelated to the Volume Per Day metric used for licensing
+    - Search Audit: The Search Audit dashboard provides information about the searches being executed in Splunk Enterprise. This dashboard is useful for identifying long running searches, and tracking search activity by user
+    - View Audit: The View Audit dashboard reports on the most active views in Enterprise Security. View Audit enables tracking of views that are being accessed on a daily basis and helps to identify any errors triggered when users review dashboard panels
+    - Managed Lookups Audit: The Managed Lookups Audit dashboard reports on managed lookups and collections such as services, data, transforms, KV Store lookups, and CSV lookups in Enterprise Security. Managed Lookups Audit shows the growth of lookups over time and the markers for anomalous growth. You can use this to help determine if any managed lookups are growing too large for your particular environment's performance and need to be pruned
+    - Data Protection: The Data Protection dashboard reports on the the status of the data integrity controls
 - Search
 - Configure
     - All Configurations
