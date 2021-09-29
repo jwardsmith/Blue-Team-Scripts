@@ -123,14 +123,15 @@ Overview
         - ****Permissions:**** View and edit feature-level permissions for managed roles
         - ****Navigation:**** View and edit app navigation
     - ****Content:****
-        - ****Content Management:****
+        - ****Content Management:**** Manage and export content such as correlation searches, saved searches and/or views into an app
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
-        - ****Use Case Library:****
+        - ****Use Case Library:**** Automatically discover new security use cases and determine which can be used within your environment, based on the data currently being ingested
     - ****Data Enrichment:****
-        - ****New Notable Event:****
-        - ****Status Configuration:**** 
-    - ****Incident Management:****
         - ****Asset and Identity Management:****
         - ****Intelligence Downloads:****
         - ****Threat Intelligence Management:****
         - ****Threat Intelligence Uploads:****
+    - ****Incident Management:****
+        - ****New Notable Event:**** Create an ad-hoc notable event
+        - ****Status Configuration:**** Manage notable event and investigation statuses, status transitions, default status, and user authorization
+
