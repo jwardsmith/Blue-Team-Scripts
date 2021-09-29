@@ -127,10 +127,10 @@ Overview
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
         - ****Use Case Library:**** Automatically discover new security use cases and determine which can be used within your environment, based on the data currently being ingested
     - ****Data Enrichment:****
-        - ****Asset and Identity Management:****
-        - ****Intelligence Downloads:****
-        - ****Threat Intelligence Management:****
-        - ****Threat Intelligence Uploads:****
+        - ****Asset and Identity Management:**** Unified interface for enriching and managing asset and identity data via lookups
+        - ****Intelligence Downloads:**** Enable or disable external intelligence downloads
+        - ****Threat Intelligence Management:**** Configure threat intelligence manager settings
+        - ****Threat Intelligence Uploads:**** Upload threat intelligence documents
     - ****Incident Management:****
         - ****New Notable Event:**** Create an ad-hoc notable event
         - ****Status Configuration:**** Manage notable event and investigation statuses, status transitions, default status, and user authorization
