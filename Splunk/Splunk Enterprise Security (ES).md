@@ -12,7 +12,7 @@ Overview
 - ****Incident Review:**** Shows the details of all notable events identified in your environment. Triage, assign, and review the details of notable events from this dashboard
 ![3](https://user-images.githubusercontent.com/31498830/134843479-ba91e3a3-9133-4717-afdc-c490780d04b1.PNG)
 - ****Investigations:**** Shows all investigations in your environment. Open and work investigations to track your progress and activity while investigating multiple related security incidents
-![4](https://user-images.githubusercontent.com/31498830/134843499-27ab5bab-1e22-431f-9775-18f0c7cf1f4a.PNG)
+![1](https://user-images.githubusercontent.com/31498830/135185225-4f388b9b-0420-40ba-b822-dca7a08df335.PNG)
 - ****Glass Tables:**** Create dashboards and visualizations specific to your security environment
 ![5](https://user-images.githubusercontent.com/31498830/134843513-adc6008f-8850-4619-924b-c1c406ccce20.PNG)
 - ****Security Intelligence:**** A set of security intelligence dashboards allow you to investigate incidents with specific types of intelligence
