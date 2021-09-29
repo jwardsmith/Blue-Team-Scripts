@@ -118,9 +118,19 @@ Overview
     - ****All Configurations****
     - ****CIM Setup****
     - ****General****
+        - ****General Settings****
+        - ****Credential Management****
+        - ****Permissions****
+        - ****Navigation****
     - ****Content****
         - ****Content Management****
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
         - ****Use Case Library****
     - ****Data Enrichment****
+        - ****New Notable Event****
+        - ****Status Configuration**** 
     - ****Incident Management****
+        - ****Asset and Identity Management****
+        - ****Intelligence Downloads****
+        - ****Threat Intelligence Management****
+        - ****Threat Intelligence Uploads****
