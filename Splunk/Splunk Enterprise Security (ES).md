@@ -5,7 +5,7 @@ Overview
 
 ### Toolbar
 
-- ****Home****
+- ****Home:****
 ![1](https://user-images.githubusercontent.com/31498830/134843432-b2c59a55-d9d2-406e-8d4d-1da050a30d11.PNG)
 - ****Security Posture:**** Dashboard that provides a high-level overview of the notable events in your environment over the last 24 hours (Access Notables, Endpoint Notables, Network Notables, Identity Notables, Audit Notables, Threat Notables)
 ![2](https://user-images.githubusercontent.com/31498830/134843465-f82cf11d-e0a3-4644-b48c-dba0f415b405.PNG)
@@ -113,24 +113,24 @@ Overview
     - ****Managed Lookups Audit:**** The Managed Lookups Audit dashboard reports on managed lookups and collections such as services, data, transforms, KV Store lookups, and CSV lookups in Enterprise Security. Managed Lookups Audit shows the growth of lookups over time and the markers for anomalous growth. You can use this to help determine if any managed lookups are growing too large for your particular environment's performance and need to be pruned
     ![6](https://user-images.githubusercontent.com/31498830/134845326-4a3fa60c-2e08-4d7d-98f9-b8f7f9af2f2a.PNG)
     - ****Data Protection:**** The Data Protection dashboard reports on the the status of the data integrity controls
-- ****Search****
-- ****Configure****
-    - ****All Configurations****
-    - ****CIM Setup****
-    - ****General****
-        - ****General Settings****
-        - ****Credential Management****
-        - ****Permissions****
-        - ****Navigation****
-    - ****Content****
-        - ****Content Management****
+- ****Search:****
+- ****Configure:****
+    - ****All Configurations:****
+    - ****CIM Setup:****
+    - ****General:****
+        - ****General Settings:****
+        - ****Credential Management:****
+        - ****Permissions:****
+        - ****Navigation:****
+    - ****Content:****
+        - ****Content Management:****
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
-        - ****Use Case Library****
-    - ****Data Enrichment****
-        - ****New Notable Event****
-        - ****Status Configuration**** 
-    - ****Incident Management****
-        - ****Asset and Identity Management****
-        - ****Intelligence Downloads****
-        - ****Threat Intelligence Management****
-        - ****Threat Intelligence Uploads****
+        - ****Use Case Library:****
+    - ****Data Enrichment:****
+        - ****New Notable Event:****
+        - ****Status Configuration:**** 
+    - ****Incident Management:****
+        - ****Asset and Identity Management:****
+        - ****Intelligence Downloads:****
+        - ****Threat Intelligence Management:****
+        - ****Threat Intelligence Uploads:****
