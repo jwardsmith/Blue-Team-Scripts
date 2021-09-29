@@ -118,10 +118,10 @@ Overview
     - ****All Configurations:****
     - ****CIM Setup:****
     - ****General:****
-        - ****General Settings:****
-        - ****Credential Management:****
-        - ****Permissions:****
-        - ****Navigation:****
+        - ****General Settings:**** View and edit general settings
+        - ****Credential Management:**** View and edit user credentials for data inputs
+        - ****Permissions:**** View and edit feature-level permissions for managed roles
+        - ****Navigation:**** View and edit app navigation
     - ****Content:****
         - ****Content Management:****
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
