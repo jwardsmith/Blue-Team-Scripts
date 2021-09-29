@@ -151,5 +151,6 @@ Overview
         - ****Status Configuration:**** Manage notable event and investigation statuses, status transitions, default status, and user authorization
         ![5](https://user-images.githubusercontent.com/31498830/135188151-80c9fb97-1d92-4397-8dea-ff805d94f2ff.PNG)
         - ****Notable Event Supressions:**** View and delete notable event supressions created on the Incident Review dashboard
+        ![1](https://user-images.githubusercontent.com/31498830/135201556-78ed044c-b028-4692-a114-3cd35082c241.PNG)
         - ****Incident Review Settings:**** View and edit the incident review configuration settings
         ![4](https://user-images.githubusercontent.com/31498830/135188136-ed2e83bd-a02b-40af-b9f2-615683b1823b.PNG)
