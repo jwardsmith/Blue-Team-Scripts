@@ -134,3 +134,5 @@ Overview
     - ****Incident Management:****
         - ****New Notable Event:**** Create an ad-hoc notable event
         - ****Status Configuration:**** Manage notable event and investigation statuses, status transitions, default status, and user authorization
+        - ****Notable Event Supressions:**** View and delete notable event supressions created on the Incident Review dashboard
+        - ****Incident Review Settings:**** View and edit the incident review configuration settings
