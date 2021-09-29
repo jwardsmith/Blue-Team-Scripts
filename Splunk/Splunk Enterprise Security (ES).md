@@ -119,20 +119,30 @@ Overview
     - ****CIM Setup:****
     - ****General:****
         - ****General Settings:**** View and edit general settings
+        ![1](https://user-images.githubusercontent.com/31498830/135188065-20ccae4b-a5b6-466f-9145-83f331c9e433.PNG)
         - ****Credential Management:**** View and edit user credentials for data inputs
+        ![2](https://user-images.githubusercontent.com/31498830/135188084-b4c19d42-87df-4516-8360-73fc3769549e.PNG)
         - ****Permissions:**** View and edit feature-level permissions for managed roles
         - ****Navigation:**** View and edit app navigation
+        ![3](https://user-images.githubusercontent.com/31498830/135188091-fdb064cb-bf31-4ffa-8082-46977a26ac63.PNG)
     - ****Content:****
         - ****Content Management:**** Manage and export content such as correlation searches, saved searches and/or views into an app
         ![10](https://user-images.githubusercontent.com/31498830/134843644-dec9272c-4b4d-43b3-9b1e-2af2143f6751.PNG)
         - ****Use Case Library:**** Automatically discover new security use cases and determine which can be used within your environment, based on the data currently being ingested
+        ![10](https://user-images.githubusercontent.com/31498830/135188229-5d2902db-b808-4396-937d-a3e6b4202b69.PNG)
     - ****Data Enrichment:****
         - ****Asset and Identity Management:**** Unified interface for enriching and managing asset and identity data via lookups
+        ![6](https://user-images.githubusercontent.com/31498830/135188180-061c1e57-1d52-4b75-ad2d-0d4d4893c118.PNG)
         - ****Intelligence Downloads:**** Enable or disable external intelligence downloads
+        ![7](https://user-images.githubusercontent.com/31498830/135188192-9ccb23ea-2e48-4bb5-9a3e-79f8b2dfda7f.PNG)
         - ****Threat Intelligence Management:**** Configure threat intelligence manager settings
+        ![8](https://user-images.githubusercontent.com/31498830/135188207-5e6435d0-b6ab-4cf2-8664-94e4d0db630c.PNG)
         - ****Threat Intelligence Uploads:**** Upload threat intelligence documents
+        ![9](https://user-images.githubusercontent.com/31498830/135188218-c7a5f135-4595-440d-871a-c31f801bdda4.PNG)
     - ****Incident Management:****
         - ****New Notable Event:**** Create an ad-hoc notable event
         - ****Status Configuration:**** Manage notable event and investigation statuses, status transitions, default status, and user authorization
+        ![5](https://user-images.githubusercontent.com/31498830/135188151-80c9fb97-1d92-4397-8dea-ff805d94f2ff.PNG)
         - ****Notable Event Supressions:**** View and delete notable event supressions created on the Incident Review dashboard
         - ****Incident Review Settings:**** View and edit the incident review configuration settings
+        ![4](https://user-images.githubusercontent.com/31498830/135188136-ed2e83bd-a02b-40af-b9f2-615683b1823b.PNG)
