@@ -71,6 +71,8 @@ Overview
         - ****Time Center:**** The Time Center dashboard helps ensure data integrity by identifying hosts that are not correctly synchronizing their clocks
         ![10](https://user-images.githubusercontent.com/31498830/134846130-d92638a1-67b7-48c7-95e1-0171a4e6ea11.PNG)
         - ****Endpoint Changes:**** The Endpoint Changes dashboard uses the Splunk change monitoring system, which detects file-system and registry changes, to illustrate changes and highlight trends in the endpoints in your environment. For example, Endpoint Changes can help discover and identify a sudden increase in changes that may be indicative of a security incident
+        ![1](https://user-images.githubusercontent.com/31498830/135200442-a6e4d6ef-3773-4991-b41e-aeea5cb55946.PNG)
+
         - ****Update Center:**** The Update Center dashboard provides additional insight into systems by showing systems that are not updated. It is a good idea to look at this dashboard on a monthly basis to ensure systems are updating properly
         ![9](https://user-images.githubusercontent.com/31498830/134846116-fa3af236-c644-4d6f-93e4-cda28fccd533.PNG)
         - ****Update Search:**** The Update Search dashboard shows patches and updates by package and/or device. This dashboard helps identify which devices have a specific patch installed. This is useful when, for example, there is a problem caused by a patch and you need to determine exactly which systems have that patch installed
