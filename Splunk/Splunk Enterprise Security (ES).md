@@ -123,6 +123,7 @@ Overview
         - ****Credential Management:**** View and edit user credentials for data inputs
         ![2](https://user-images.githubusercontent.com/31498830/135188084-b4c19d42-87df-4516-8360-73fc3769549e.PNG)
         - ****Permissions:**** View and edit feature-level permissions for managed roles
+        ![1](https://user-images.githubusercontent.com/31498830/135188581-5e43f1f2-cbb9-4d94-bbee-6ca3b06c0717.PNG)
         - ****Navigation:**** View and edit app navigation
         ![3](https://user-images.githubusercontent.com/31498830/135188091-fdb064cb-bf31-4ffa-8082-46977a26ac63.PNG)
     - ****Content:****
