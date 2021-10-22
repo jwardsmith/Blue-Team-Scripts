@@ -9,3 +9,7 @@ Incident Tracking
 - FortiSOAR: https://www.fortinet.com/tw/products/fortisoar
 - Request Tracker for Incident Response (RTIR): https://bestpractical.com/rtir 
 - CyberCPR: https://www.cybercpr.com/
+
+Investigative Tools
+--------------------
+- CyberChef: https://gchq.github.io/CyberChef/
