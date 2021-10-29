@@ -29,3 +29,9 @@ Forensic Tools
 Network Investigations
 -----------------------
 - Tcpdump: https://www.tcpdump.org/
+
+Web Proxies
+------------
+- Squid: http://www.squid-cache.org/
+- Bluecoat: https://www.broadcom.com/products/cyber-security/network/gateway/proxy-sg-and-advanced-secure-gateway
+- Forefront TMG: 
