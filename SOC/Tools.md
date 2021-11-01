@@ -49,3 +49,5 @@ Malware Investigations
 - Hybrid Analysis: https://www.hybrid-analysis.com/
 - Regshot: https://code.google.com/archive/p/regshot/
 - Process Monitor: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
+- IDA Pro: https://hex-rays.com/ida-pro/
+- Ghidra: https://ghidra-sre.org/
