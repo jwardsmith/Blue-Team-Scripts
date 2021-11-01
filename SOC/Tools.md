@@ -48,3 +48,4 @@ Malware Investigations
 - VirusTotal: https://www.virustotal.com/gui/home/upload
 - Hybrid Analysis: https://www.hybrid-analysis.com/
 - Regshot: https://code.google.com/archive/p/regshot/
+- Process Monitor: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
