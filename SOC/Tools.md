@@ -34,4 +34,4 @@ Web Proxies
 ------------
 - Squid: http://www.squid-cache.org/
 - Bluecoat: https://www.broadcom.com/products/cyber-security/network/gateway/proxy-sg-and-advanced-secure-gateway
-- Forefront TMG: 
+- Forefront TMG: https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ff827434(v=vs.85)
