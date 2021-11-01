@@ -35,3 +35,10 @@ Web Proxies
 - Squid: http://www.squid-cache.org/
 - Bluecoat: https://www.broadcom.com/products/cyber-security/network/gateway/proxy-sg-and-advanced-secure-gateway
 - Forefront TMG: https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ff827434(v=vs.85)
+
+Memory Investigations
+----------------------
+- FTK Imager Lite: https://accessdata.com/product-download/ftk-imager-lite-version-3-1-1
+- DumpIt: https://moonsols.com/resources.html
+- WinPmem: https://winpmem.velocidex.com/
+- Volatility: https://www.volatilityfoundation.org/
