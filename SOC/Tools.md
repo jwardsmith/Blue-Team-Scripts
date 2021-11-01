@@ -42,3 +42,8 @@ Memory Investigations
 - DumpIt: https://moonsols.com/resources.html
 - WinPmem: https://winpmem.velocidex.com/
 - Volatility: https://www.volatilityfoundation.org/
+
+Malware Investigations
+-----------------------
+- VirusTotal: https://www.virustotal.com/gui/home/upload
+- Hybrid Analysis: https://www.hybrid-analysis.com/
