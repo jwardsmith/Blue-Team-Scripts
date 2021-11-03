@@ -110,4 +110,5 @@ Vulnerability Scanning
 - Nessus: https://www.tenable.com/products/nessus
 - Rapid7 InsightVM: https://www.rapid7.com/info/introducing-insightvm/
 - SAINT Security Suite: https://www.carson-saint.com/products/saint-security-suite/
-- OpenVAS: https://www.openvas.org/ 
+- OpenVAS: https://www.openvas.org/
+- Qualys: https://www.qualys.com/
