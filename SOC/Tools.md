@@ -65,3 +65,10 @@ Website Reconnaissance
 ------------------------
 - FOCA: https://github.com/ElevenPaths/FOCA
 - Exiftool: https://exiftool.org/
+- SEC's Edgar Database: https://www.sec.gov/edgar/searchedgar/companysearch.html
+- LinkedIn: https://www.linkedin.com/
+- Indeed: https://au.indeed.com/
+- Monster: https://www.monster.com/
+- Xlek: https://xlek.com/
+- Namechk: https://www.namechk.com/
+- WhatsMyName: https://whatsmyname.app/
