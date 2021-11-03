@@ -89,4 +89,4 @@ Wireless Scanning
 ------------------
 - inSSIDer: https://www.metageek.com/products/inssider/
 - Kismet: https://www.kismetwireless.net/
-- Wifi Analyzer: https://www.microsoft.com/en-au/p/wifi-analyzer/
+- Wifi Analyzer: https://www.microsoft.com/en-au/p/wifi-analyzer/9nblggh33n0n#activetab=pivot:overviewtab
