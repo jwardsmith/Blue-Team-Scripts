@@ -80,3 +80,7 @@ Search Engine Reconnaissance
 - Baidu: https://www.baidu.com/
 - Yahoo: https://au.yahoo.com/
 - Google Hacking Database (GHDB): https://www.exploit-db.com/google-hacking-database
+- Shodan: https://www.shodan.io/
+- DNSstuff: https://www.dnsstuff.com/freetools
+- Network Tools: https://network-tools.com/
+- SecuritySpace: http://www.securityspace.com/sspace/index.html
