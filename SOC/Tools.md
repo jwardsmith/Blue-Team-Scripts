@@ -118,3 +118,5 @@ SMB Sessions
 - SharpView: https://github.com/tevora-threat/SharpView
 - PowerView: https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
 - BloodHound: https://github.com/BloodHoundAD/BloodHound
+- smbclient: https://www.samba.org/samba/docs/current/man-html/smbclient.1.html
+- rpcclient: https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html
