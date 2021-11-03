@@ -60,3 +60,8 @@ OSINT
 - Certificate Search: https://crt.sh/
 - Have I Been Pwned: https://haveibeenpwned.com/
 - SpiderFoot: https://spiderfoot.net/
+
+Website Reconnaissance
+------------------------
+- FOCA: https://github.com/ElevenPaths/FOCA
+- Exiftool: https://exiftool.org/
