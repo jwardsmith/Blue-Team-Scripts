@@ -59,3 +59,4 @@ Reconnaissance
 - ViewDNS: https://viewdns.info/
 - Certificate Search: https://crt.sh/
 - Have I Been Pwned: https://haveibeenpwned.com/
+- SpiderFoot: https://spiderfoot.net/
