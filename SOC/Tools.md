@@ -55,3 +55,4 @@ Malware Investigations
 Reconnaissance
 ----------------
 - Whois: https://whois.domaintools.com/
+- 12whois: https://12whois.com/
