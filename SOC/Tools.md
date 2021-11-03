@@ -51,3 +51,7 @@ Malware Investigations
 - Process Monitor: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
 - IDA Pro: https://hex-rays.com/ida-pro/
 - Ghidra: https://ghidra-sre.org/
+
+Reconnaissance
+----------------
+- Whois: https://whois.domaintools.com/
