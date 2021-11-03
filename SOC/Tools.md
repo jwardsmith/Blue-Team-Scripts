@@ -57,3 +57,4 @@ Reconnaissance
 - Whois: https://whois.domaintools.com/
 - 12whois: https://12whois.com/
 - ViewDNS: https://viewdns.info/
+- Certificate Search: https://crt.sh/
