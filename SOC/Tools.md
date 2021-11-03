@@ -112,3 +112,9 @@ Vulnerability Scanning
 - SAINT Security Suite: https://www.carson-saint.com/products/saint-security-suite/
 - OpenVAS: https://www.openvas.org/
 - Qualys: https://www.qualys.com/
+
+SMB Sessions
+-------------
+- SharpView: https://github.com/tevora-threat/SharpView
+- PowerView: https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
+- BloodHound: https://github.com/BloodHoundAD/BloodHound
