@@ -72,3 +72,11 @@ Website Reconnaissance
 - Xlek: https://xlek.com/
 - Namechk: https://www.namechk.com/
 - WhatsMyName: https://whatsmyname.app/
+
+Search Engine Reconnaissance
+-----------------------------
+- Google: https://www.google.com/
+- Bing: https://www.bing.com/
+- Baidu: https://www.baidu.com/
+- Yahoo: https://au.yahoo.com/
+- Google Hacking Database (GHDB): https://www.exploit-db.com/google-hacking-database
