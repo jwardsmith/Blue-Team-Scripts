@@ -124,3 +124,7 @@ SMB Sessions
 Defense
 --------
 - DeepBlueCLI: https://github.com/sans-blue-team/DeepBlueCLI
+
+Password Attacks
+-----------------
+- THC Hydra: https://github.com/vanhauser-thc/thc-hydra
