@@ -120,3 +120,7 @@ SMB Sessions
 - BloodHound: https://github.com/BloodHoundAD/BloodHound
 - smbclient: https://www.samba.org/samba/docs/current/man-html/smbclient.1.html
 - rpcclient: https://www.samba.org/samba/docs/current/man-html/rpcclient.1.html
+
+Defense
+--------
+- DeepBlueCLI: https://github.com/sans-blue-team/DeepBlueCLI
