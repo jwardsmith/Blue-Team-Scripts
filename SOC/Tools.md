@@ -94,3 +94,4 @@ Wireless Scanning
 - WiGLE: https://wigle.net/index
 - Asleap: https://github.com/joswr1ght/asleap
 - Hostapd-WPE: https://github.com/OpenSecurityResearch/hostapd-wpe
+- Jackit: https://github.com/insecurityofthings/jackit
