@@ -52,7 +52,7 @@ Malware Investigations
 - IDA Pro: https://hex-rays.com/ida-pro/
 - Ghidra: https://ghidra-sre.org/
 
-Reconnaissance
+OSINT
 ----------------
 - Whois: https://whois.domaintools.com/
 - 12whois: https://12whois.com/
