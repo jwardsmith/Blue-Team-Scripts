@@ -101,4 +101,5 @@ Wireless Scanning
 
 Network Mapping
 ---------------
-Nmap: https://nmap.org/
+- Nmap: https://nmap.org/
+- Masscan: https://github.com/robertdavidgraham/masscan
