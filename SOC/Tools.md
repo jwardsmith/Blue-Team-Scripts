@@ -95,3 +95,6 @@ Wireless Scanning
 - Asleap: https://github.com/joswr1ght/asleap
 - Hostapd-WPE: https://github.com/OpenSecurityResearch/hostapd-wpe
 - Jackit: https://github.com/insecurityofthings/jackit
+- Aruba Networks: https://www.arubanetworks.com/
+- Motorola AirDefense: https://www.extremenetworks.com/product/extreme-airdefense/
+- AirMagnet: https://www.netally.com/products/airmagnet-survey-pro/
