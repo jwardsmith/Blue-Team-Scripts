@@ -124,6 +124,7 @@ SMB Sessions
 Defense
 --------
 - DeepBlueCLI: https://github.com/sans-blue-team/DeepBlueCLI
+- Elastic Stack: https://www.elastic.co/elastic-stack/
 
 Password Attacks
 -----------------
