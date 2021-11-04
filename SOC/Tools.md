@@ -134,3 +134,5 @@ Password Attacks
 - Impacket: https://github.com/SecureAuthCorp/impacket/
 - Hashcat: https://hashcat.net/hashcat/
 - John the Ripper: https://www.openwall.com/john/
+- fgdump: https://sectools.org/tool/fgdump/
+- Windows Credential Editor (WCE): https://www.ampliasecurity.com/research/windows-credentials-editor/
