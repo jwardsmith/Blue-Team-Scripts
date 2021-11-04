@@ -143,3 +143,4 @@ Physical Access Attacks
 - Kon-boot: https://www.piotrbania.com/all/kon-boot/
 - Inception: https://github.com/carmaa/inception
 - LAN Turtle: https://shop.hak5.org/products/lan-turtle
+- Rubber Ducky: https://shop.hak5.org/products/usb-rubber-ducky-deluxe
