@@ -126,6 +126,7 @@ Defense
 - DeepBlueCLI: https://github.com/sans-blue-team/DeepBlueCLI
 - Elastic Stack: https://www.elastic.co/elastic-stack/
 - Domain Password Audit Tool: https://github.com/clr2of8/DPAT
+- Real Intelligence Threat Analytics (RITA): https://github.com/activecm/rita
 
 Password Attacks
 -----------------
