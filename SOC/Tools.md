@@ -148,5 +148,5 @@ Physical Access Attacks
 Exploitation Frameworks
 ------------------------
 - Metasploit: https://www.metasploit.com/
-- Core Impact: https://www.coresecurity.com/products/core-impact#:~:text=Core%20Impact%20is%20designed%20to,same%20techniques%20as%20today's%20adversaries.
+- Core Impact: https://www.coresecurity.com/products/core-impact
 - Immunity CANVAS: https://www.immunityinc.com/products/canvas/
