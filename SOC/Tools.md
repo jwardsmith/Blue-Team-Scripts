@@ -133,3 +133,4 @@ Password Attacks
 - CrackStation: https://crackstation.net/
 - Impacket: https://github.com/SecureAuthCorp/impacket/
 - Hashcat: https://hashcat.net/hashcat/
+- John the Ripper: https://www.openwall.com/john/
