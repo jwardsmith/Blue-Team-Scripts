@@ -132,3 +132,4 @@ Password Attacks
 - RainbowCrack: http://project-rainbowcrack.com/
 - CrackStation: https://crackstation.net/
 - Impacket: https://github.com/SecureAuthCorp/impacket/
+- Hashcat: https://hashcat.net/hashcat/
