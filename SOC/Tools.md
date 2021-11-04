@@ -144,3 +144,9 @@ Physical Access Attacks
 - Inception: https://github.com/carmaa/inception
 - LAN Turtle: https://shop.hak5.org/products/lan-turtle
 - Rubber Ducky: https://shop.hak5.org/products/usb-rubber-ducky-deluxe
+
+Exploitation Frameworks
+------------------------
+- Metasploit: https://www.metasploit.com/
+- Core Impact: https://www.coresecurity.com/products/core-impact#:~:text=Core%20Impact%20is%20designed%20to,same%20techniques%20as%20today's%20adversaries.
+- Immunity CANVAS: https://www.immunityinc.com/products/canvas/
