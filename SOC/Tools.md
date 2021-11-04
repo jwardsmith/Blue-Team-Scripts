@@ -137,3 +137,9 @@ Password Attacks
 - John the Ripper: https://www.openwall.com/john/
 - fgdump: https://sectools.org/tool/fgdump/
 - Windows Credential Editor (WCE): https://www.ampliasecurity.com/research/windows-credentials-editor/
+
+Physical Access Attacks
+------------------------
+- Kon-boot: https://www.piotrbania.com/all/kon-boot/
+- Inception: https://github.com/carmaa/inception
+- LAN Turtle: https://shop.hak5.org/products/lan-turtle
