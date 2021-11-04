@@ -131,3 +131,4 @@ Password Attacks
 - THC Hydra: https://github.com/vanhauser-thc/thc-hydra
 - RainbowCrack: http://project-rainbowcrack.com/
 - CrackStation: https://crackstation.net/
+- Impacket: https://github.com/SecureAuthCorp/impacket/
