@@ -168,4 +168,5 @@ Web Application Attacks
 
 Endpoint Bypass
 ----------------
--DefenderCheck: https://github.com/matterpreter/DefenderCheck
+- DefenderCheck: https://github.com/matterpreter/DefenderCheck
+- LOLBAS: https://lolbas-project.github.io/
