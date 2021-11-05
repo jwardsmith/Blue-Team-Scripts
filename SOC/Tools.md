@@ -29,6 +29,7 @@ Forensic Tools
 Network Investigations
 -----------------------
 - Tcpdump: https://www.tcpdump.org/
+- Wireshark: https://www.wireshark.org/
 
 Web Proxies
 ------------
