@@ -30,6 +30,7 @@ Network Investigations
 -----------------------
 - Tcpdump: https://www.tcpdump.org/
 - Wireshark: https://www.wireshark.org/
+- tshark: https://www.wireshark.org/docs/man-pages/tshark.html
 
 Web Proxies
 ------------
