@@ -33,6 +33,7 @@ Network Investigations
 - tshark: https://www.wireshark.org/docs/man-pages/tshark.html
 - etl2pcapng: https://github.com/microsoft/etl2pcapng
 - Packet Monitor (pktmon): https://docs.microsoft.com/en-us/windows-server/networking/technologies/pktmon/pktmon
+- NetworkMiner: https://www.netresec.com/?page=networkminer
 
 Web Proxies
 ------------
