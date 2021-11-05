@@ -180,3 +180,4 @@ Endpoint Bypass
 MiTM Tools
 -----------
 - Bettercap: https://www.bettercap.org/
+- Flamingo: https://github.com/atredispartners/flamingo
