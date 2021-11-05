@@ -188,3 +188,7 @@ Hijacking Attacks
 ------------------
 - Responder: https://github.com/SpiderLabs/Responder
 - Arpwatch: https://ee.lbl.gov/
+
+Covering Tracks
+---------------
+- Log Wipers: https://packetstormsecurity.com/UNIX/penetration/log-wipers
