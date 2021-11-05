@@ -165,3 +165,7 @@ Web Application Attacks
 - Wapiti: https://wapiti.sourceforge.io/
 - Acunetix: https://www.acunetix.com/
 - Sqlmap: https://sqlmap.org/
+
+Endpoint Bypass
+----------------
+-DefenderCheck: https://github.com/matterpreter/DefenderCheck
