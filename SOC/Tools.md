@@ -159,3 +159,4 @@ Web Application Attacks
 ------------------------
 - Browser Exploitation Framework (BeEF): https://beefproject.com/
 - OWASP ZAP: https://www.zaproxy.org/
+- Burp Suite: https://portswigger.net/burp
