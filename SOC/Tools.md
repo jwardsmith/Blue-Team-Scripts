@@ -151,3 +151,7 @@ Exploitation Frameworks
 - Metasploit: https://www.metasploit.com/
 - Core Impact: https://www.coresecurity.com/products/core-impact
 - Immunity CANVAS: https://www.immunityinc.com/products/canvas/
+
+Web Application Attacks
+------------------------
+- Browser Exploitation Framework (BeEF): https://beefproject.com/
