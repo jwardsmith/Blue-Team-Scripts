@@ -164,3 +164,4 @@ Web Application Attacks
 - Arachni: https://www.arachni-scanner.com/
 - Wapiti: https://wapiti.sourceforge.io/
 - Acunetix: https://www.acunetix.com/
+- Sqlmap: https://sqlmap.org/
