@@ -158,3 +158,4 @@ Exploitation Frameworks
 Web Application Attacks
 ------------------------
 - Browser Exploitation Framework (BeEF): https://beefproject.com/
+- OWASP ZAP: https://www.zaproxy.org/
