@@ -169,4 +169,4 @@ Web Application Attacks
 Endpoint Bypass
 ----------------
 - DefenderCheck: https://github.com/matterpreter/DefenderCheck
-- LOLBAS: https://lolbas-project.github.io/
+- Living Off the Land Binaries and Scripts (LOLBAS): https://lolbas-project.github.io/
