@@ -170,3 +170,4 @@ Endpoint Bypass
 ----------------
 - DefenderCheck: https://github.com/matterpreter/DefenderCheck
 - Living Off the Land Binaries and Scripts (LOLBAS): https://lolbas-project.github.io/
+- Ebowla: https://github.com/Genetic-Malware/Ebowla
