@@ -175,3 +175,7 @@ Endpoint Bypass
 - Living Off the Land Binaries and Scripts (LOLBAS): https://lolbas-project.github.io/
 - Ebowla: https://github.com/Genetic-Malware/Ebowla
 - The Backdoor Factory: https://github.com/secretsquirrel/the-backdoor-factory
+
+MiTM Tools
+-----------
+- Bettercap: https://www.bettercap.org/
