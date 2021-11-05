@@ -177,9 +177,13 @@ Endpoint Bypass
 - Ebowla: https://github.com/Genetic-Malware/Ebowla
 - The Backdoor Factory: https://github.com/secretsquirrel/the-backdoor-factory
 
-MiTM Tools
+MiTM Attacks
 -----------
 - Bettercap: https://www.bettercap.org/
 - Flamingo: https://github.com/atredispartners/flamingo
 - sslstrip: https://github.com/moxie0/sslstrip
 - sslstrip+: https://github.com/LeonardoNve/sslstrip2
+
+Hijacking Attacks
+------------------
+- Responder: https://github.com/SpiderLabs/Responder
