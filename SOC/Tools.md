@@ -182,3 +182,4 @@ MiTM Tools
 - Bettercap: https://www.bettercap.org/
 - Flamingo: https://github.com/atredispartners/flamingo
 - sslstrip: https://github.com/moxie0/sslstrip
+- sslstrip+: https://github.com/LeonardoNve/sslstrip2
