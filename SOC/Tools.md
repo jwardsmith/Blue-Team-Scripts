@@ -129,6 +129,7 @@ Defense
 - Real Intelligence Threat Analytics (RITA): https://github.com/activecm/rita
 - Kansa: https://github.com/davehull/Kansa
 - LogonTracer: https://github.com/JPCERTCC/LogonTracer
+- SRUM-Dump: https://github.com/MarkBaggett/srum-dump
 
 Password Attacks
 -----------------
