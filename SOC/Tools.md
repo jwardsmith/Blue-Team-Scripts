@@ -161,3 +161,6 @@ Web Application Attacks
 - Browser Exploitation Framework (BeEF): https://beefproject.com/
 - OWASP ZAP: https://www.zaproxy.org/
 - Burp Suite: https://portswigger.net/burp
+- Arachni: https://www.arachni-scanner.com/
+- Wapiti: https://wapiti.sourceforge.io/
+- Acunetix: https://www.acunetix.com/
