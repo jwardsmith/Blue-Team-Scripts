@@ -127,6 +127,8 @@ Defense
 - Elastic Stack: https://www.elastic.co/elastic-stack/
 - Domain Password Audit Tool: https://github.com/clr2of8/DPAT
 - Real Intelligence Threat Analytics (RITA): https://github.com/activecm/rita
+- Kansa: https://github.com/davehull/Kansa
+- LogonTracer: https://github.com/JPCERTCC/LogonTracer
 
 Password Attacks
 -----------------
