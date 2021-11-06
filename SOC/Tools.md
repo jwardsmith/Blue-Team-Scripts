@@ -199,7 +199,7 @@ Covering Tracks
 - LADS: https://www.aldeid.com/wiki/LADS
 - Danderspritz: https://danderspritz.com/
 - Event Log Edit: https://github.com/3gstudent/Eventlogedit-evtx--Evolution
-- Ptunnel: https://www.mit.edu/afs.new/sipb/user/golem/tmp/ptunnel-0.61.orig/web/#:~:text=Ptunnel%20is%20an%20application%20that,as%20ping%20requests%20and%20replies.&text=With%20ptunnel%2C%20you%20can%20utilize,other%20things%20that%20require%20TCP.
+- Ptunnel: http://www.cs.uit.no/~daniels/PingTunnel/
 - Loki: https://exchange.xforce.ibmcloud.com/vulnerabilities/1452
 - icmptunnel: https://github.com/DhavalKapil/icmptunnel
 - icmpshell: http://icmpshell.sourceforge.net/
