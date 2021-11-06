@@ -211,3 +211,4 @@ Data Collection:
 ------------------
 - Mimikatz: https://github.com/gentilkiwi/mimikatz
 - Procdump: https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
+- LaZagne: https://github.com/AlessandroZ/LaZagne
