@@ -136,6 +136,9 @@ Defense
 - LogonTracer: https://github.com/JPCERTCC/LogonTracer
 - SRUM-Dump: https://github.com/MarkBaggett/srum-dump
 - Tool Analysis Result Sheet: https://jpcertcc.github.io/ToolAnalysisResultSheet/
+- Microsoft Advanced Threat Analytics (ATA): https://docs.microsoft.com/en-us/advanced-threat-analytics/what-is-ata
+- Rapid7 InsightIDR: https://www.rapid7.com/products/insightidr/
+- Exabeam: https://www.exabeam.com/
 
 Password Attacks
 -----------------
