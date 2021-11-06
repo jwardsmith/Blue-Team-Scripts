@@ -206,3 +206,8 @@ Covering Tracks
 - PingChat: https://www.engadget.com/2011-12-05-pingchat-becomes-touch-delivers-real-time-social-collaboration.html
 - icmpcmd: https://www.fortiguard.com/encyclopedia/virus/311088/hackertool-icmpcmd
 - dnscat2: https://github.com/iagox86/dnscat2
+
+Data Collection:
+------------------
+- Mimikatz: https://github.com/gentilkiwi/mimikatz
+- Procdump: https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
