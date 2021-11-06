@@ -193,3 +193,4 @@ Covering Tracks
 ---------------
 - Log Wipers: https://packetstormsecurity.com/UNIX/penetration/log-wipers
 - LADS: https://www.aldeid.com/wiki/LADS
+- Danderspritz: https://danderspritz.com/
