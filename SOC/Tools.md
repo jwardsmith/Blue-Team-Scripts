@@ -135,6 +135,7 @@ Defense
 - Kansa: https://github.com/davehull/Kansa
 - LogonTracer: https://github.com/JPCERTCC/LogonTracer
 - SRUM-Dump: https://github.com/MarkBaggett/srum-dump
+- Tool Analysis Result Sheet: https://jpcertcc.github.io/ToolAnalysisResultSheet/
 
 Password Attacks
 -----------------
