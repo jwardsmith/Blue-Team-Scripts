@@ -194,3 +194,4 @@ Covering Tracks
 - Log Wipers: https://packetstormsecurity.com/UNIX/penetration/log-wipers
 - LADS: https://www.aldeid.com/wiki/LADS
 - Danderspritz: https://danderspritz.com/
+- Event Log Edit: https://github.com/3gstudent/Eventlogedit-evtx--Evolution
