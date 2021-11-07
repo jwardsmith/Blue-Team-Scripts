@@ -38,6 +38,7 @@ Network Investigations
 - etl2pcapng: https://github.com/microsoft/etl2pcapng
 - Packet Monitor (pktmon): https://docs.microsoft.com/en-us/windows-server/networking/technologies/pktmon/pktmon
 - NetworkMiner: https://www.netresec.com/?page=networkminer
+- TCPView: https://docs.microsoft.com/en-us/sysinternals/downloads/tcpview
 
 Web Proxies
 ------------
@@ -58,6 +59,7 @@ Malware Investigations
 - Hybrid Analysis: https://www.hybrid-analysis.com/
 - Regshot: https://code.google.com/archive/p/regshot/
 - Process Monitor: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
+- Process Explorer: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
 - IDA Pro: https://hex-rays.com/ida-pro/
 - Ghidra: https://ghidra-sre.org/
 
