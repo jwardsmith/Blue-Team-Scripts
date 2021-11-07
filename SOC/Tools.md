@@ -76,6 +76,7 @@ Malware Investigations
 - Ghidra: https://ghidra-sre.org/
 - Windows Command Line Kung-Fu: http://blog.commandlinekungfu.com/
 - Malware Domain List: https://www.malwaredomainlist.com/
+- !exploitable: https://www.microsoft.com/security/blog/2013/06/13/exploitable-crash-analyzer-version-1-6/
 
 OSINT
 ----------------
@@ -179,6 +180,7 @@ Defense
 - Exabeam: https://www.exabeam.com/
 - Suricata: https://suricata.io/
 - Snort: https://www.snort.org/
+- Microsoft Enhanced Mitigation Experience Toolkit (EMET): https://support.microsoft.com/en-us/topic/emet-mitigations-guidelines-b529d543-2a81-7b5a-d529-84b30e1ecee0
 
 Password Attacks
 -----------------
@@ -201,6 +203,7 @@ Physical Access Attacks
 Exploitation Frameworks
 ------------------------
 - Metasploit: https://www.metasploit.com/
+- Armitage: https://www.offensive-security.com/metasploit-unleashed/armitage/
 - Core Impact: https://www.coresecurity.com/products/core-impact
 - Immunity CANVAS: https://www.immunityinc.com/products/canvas/
 - PowerShell Empire: https://github.com/EmpireProject/Empire
@@ -238,7 +241,9 @@ Hijacking Attacks
 ------------------
 - Responder: https://github.com/SpiderLabs/Responder
 - Arpwatch: https://ee.lbl.gov/
-- Firesheel: https://codebutler.github.io/firesheep/
+- Firesheep: https://codebutler.github.io/firesheep/
+- Droidsheep: https://droidsheep.info/
+- pacdoor: https://github.com/SafeBreach-Labs/pacdoor
 
 Covering Tracks
 ---------------
@@ -267,3 +272,14 @@ Adversary Emulation
 - MITRE Caldera: https://github.com/mitre/caldera
 - Metta: https://github.com/uber-common/metta
 - Red Team Automation (RTA): https://github.com/endgameinc/RTA
+
+Code Checking Tools
+---------------------
+- RATS
+- Flawfinder
+- Software Assurance Marketplace (SWAMP):
+- Fortify Source Code Analyser:
+- Coverity Static Analysis:
+- Klockwork Insight Pro:
+- GrammaTech's Code Sonar:
+- Veracodes Suite of Tools:
