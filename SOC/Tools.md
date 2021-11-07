@@ -265,7 +265,7 @@ Covering Tracks
 - icmpcmd: https://www.fortiguard.com/encyclopedia/virus/311088/hackertool-icmpcmd
 - dnscat2: https://github.com/iagox86/dnscat2
 
-Data Collection:
+Data Collection
 ------------------
 - Mimikatz: https://github.com/gentilkiwi/mimikatz
 - Procdump: https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
@@ -290,7 +290,7 @@ Code Checking Tools
 - GrammaTech's CodeSonar: https://www.grammatech.com/codesonar-cc
 - Veracodes Suite of Tools: https://www.veracode.com/security/software-testing-tools
 
-DDOS Tools:
+DDOS Tools
 -----------
 - Low Orbit Ion Cannon (LOIC): https://sourceforge.net/projects/loic/
 - High Orbit Ion Cannon (HOIC): https://sourceforge.net/projects/highorbitioncannon/
@@ -299,7 +299,7 @@ DDOS Tools:
 - Neustar: https://www.home.neustar/ddos-protection
 - CloudFlare: https://www.cloudflare.com/
 
-Backdoor Tools:
+Backdoor Tools
 ---------------
 - Poison Ivy: https://attack.mitre.org/software/S0012/
 - Dameware: https://www.dameware.com/remote-administration-tools
@@ -314,11 +314,11 @@ Packing Tools
 - Themida: https://www.oreans.com/Themida.php
 - Exe32pack: http://www.steelbytes.com/?mid=26
 
-Debuggers:
+Debuggers
 ----------
 - Immunity Debugger: https://www.immunityinc.com/products/debugger/
 
-Rootkits:
+Rootkits
 ----------
 - rooty: https://github.com/jermeyyy/rooty
 - Avatar: https://www.virusradar.com/en/Win32_Rootkit.Avatar/description
@@ -329,3 +329,8 @@ Rootkits:
 - Sophos Anti-Rootkit: https://www.sophos.com/en-us/products/free-tools/sophos-anti-rootkit.aspx
 - McAfee Rootkit Detective: https://www.mcafee.com/enterprise/en-au/downloads/free-tools/rootkitremover.html
 - GMER: http://www.gmer.net/?m=0
+
+File Integrity Tools
+----------------------
+- Tripwire: https://www.tripwire.com/
+- Verisys File Integrity Monitoring System: https://www.ionx.co.uk/
