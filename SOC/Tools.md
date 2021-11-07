@@ -23,7 +23,7 @@ Forensic Tools
 ---------------
 - Autopsy: https://www.autopsy.com/
 - Forensic Toolkit (FTK) AccessData: https://accessdata.com/products-services/forensic-toolkit-ftk
-- EnCase:https://security.opentext.com/encase-forensic
+- EnCase: https://security.opentext.com/encase-forensic
 - Eric Zimmerman's Tools: https://ericzimmerman.github.io/#!index.md
 
 Network Investigations
