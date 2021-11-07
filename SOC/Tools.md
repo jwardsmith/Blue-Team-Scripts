@@ -218,6 +218,9 @@ Web Application Attacks
 - Wapiti: https://wapiti.sourceforge.io/
 - Acunetix: https://www.acunetix.com/
 - Sqlmap: https://sqlmap.org/
+- w3af: http://w3af.org/
+- Fiddler: https://www.telerik.com/fiddler
+- WebScarab: https://github.com/OWASP/OWASP-WebScarab
 
 Endpoint Bypass
 ----------------
