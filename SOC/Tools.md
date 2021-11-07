@@ -181,6 +181,7 @@ Defense
 - Suricata: https://suricata.io/
 - Snort: https://www.snort.org/
 - Microsoft Enhanced Mitigation Experience Toolkit (EMET): https://support.microsoft.com/en-us/topic/emet-mitigations-guidelines-b529d543-2a81-7b5a-d529-84b30e1ecee0
+- NetWitness: https://www.netwitness.com/
 
 Password Attacks
 -----------------
