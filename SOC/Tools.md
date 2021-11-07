@@ -192,6 +192,7 @@ Password Attacks
 - John the Ripper: https://www.openwall.com/john/
 - fgdump: https://sectools.org/tool/fgdump/
 - Windows Credential Editor (WCE): https://www.ampliasecurity.com/research/windows-credentials-editor/
+- Cain and Abel: https://sectools.org/tool/cain/
 
 Physical Access Attacks
 ------------------------
