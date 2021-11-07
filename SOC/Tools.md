@@ -25,6 +25,10 @@ Forensic Tools
 - Forensic Toolkit (FTK) AccessData: https://accessdata.com/products-services/forensic-toolkit-ftk
 - EnCase: https://security.opentext.com/encase-forensic
 - Eric Zimmerman's Tools: https://ericzimmerman.github.io/#!index.md
+- SafeBack: http://www.forensics-intl.com/safeback.html
+- The Sleuth Kit: https://www.sleuthkit.org/sleuthkit/
+- X-Ways Forensics: https://www.x-ways.net/forensics/index-m.html
+- SANS SIFT Workstation: https://www.sans.org/tools/sift-workstation/
 
 Network Investigations
 -----------------------
