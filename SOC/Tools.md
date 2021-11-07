@@ -81,6 +81,8 @@ OSINT
 - Wayback Machine: https://archive.org/web/
 - PowerMeta: https://github.com/dafthack/PowerMeta
 - Diggity Project: https://resources.bishopfox.com/resources/tools/google-hacking-diggity/
+- Recon-ng: https://github.com/lanmaster53/recon-ng
+- Maltego: https://www.maltego.com/
 
 Website Reconnaissance
 ------------------------
