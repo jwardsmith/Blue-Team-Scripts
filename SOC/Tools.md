@@ -219,3 +219,10 @@ Data Collection:
 - Procdump: https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
 - LaZagne: https://github.com/AlessandroZ/LaZagne
 - Fake Logon Screen: https://github.com/bitsadmin/fakelogonscreen
+
+Adversary Emulation
+--------------------
+- Atomic Red Team: https://github.com/redcanaryco/atomic-red-team
+- MITRE Caldera: https://github.com/mitre/caldera
+- Metta: https://github.com/uber-common/metta
+- Red Team Automation (RTA): https://github.com/endgameinc/RTA
