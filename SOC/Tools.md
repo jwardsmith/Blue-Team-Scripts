@@ -341,3 +341,15 @@ File Integrity Tools
 ----------------------
 - Tripwire: https://www.tripwire.com/
 - Verisys File Integrity Monitoring System: https://www.ionx.co.uk/
+
+Steganography Tools
+---------------------
+- jsteg: https://github.com/lukechampine/jsteg
+- mp3stego: https://github.com/DominicBreuker/stego-toolkit/blob/master/install/mp3stego.sh
+- InvisibleSecrets: https://www.east-tec.com/invisiblesecrets/steganography-software/
+- Stash: https://github.com/pkieltyka/stash
+- Hydan: https://www.autistici.org/crypto/index.php/remository/Steganography/linux/hydan-0.13-(linux)/
+- OpenPuff: https://embeddedsw.net/OpenPuff_Steganography_Home.html
+- OpenStego: https://www.openstego.com/
+- SilentEye: https://achorein.github.io/silenteye/
+- StegExpose: https://github.com/b3dk7/StegExpose
