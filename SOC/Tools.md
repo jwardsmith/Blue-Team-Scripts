@@ -289,3 +289,12 @@ Code Checking Tools
 - Klocwork Insight Pro: https://www.perforce.com/products/klocwork
 - GrammaTech's CodeSonar: https://www.grammatech.com/codesonar-cc
 - Veracodes Suite of Tools: https://www.veracode.com/security/software-testing-tools
+
+DDOS Tools:
+-----------
+- Low Orbit Ion Cannon (LOIC): https://sourceforge.net/projects/loic/
+- High Orbit Ion Cannon (HOIC): https://sourceforge.net/projects/highorbitioncannon/
+- Peakflow: https://www.businesswire.com/news/home/20141021005874/en/Arbor-Networks-Peakflow%C2%AE-7.0-Dramatically-Reduces-Time-to-Detect-and-Mitigate-DDoS-Attacks
+- RiverBed NetProfiler: https://www.riverbed.com/en-au/forms/trial-downloads/netprofiler-30-day-trial.html?utm_source=google&utm_medium=cpc&utm_campaign=npm
+- Neustar: https://www.home.neustar/ddos-protection
+- CloudFlare: https://www.cloudflare.com/
