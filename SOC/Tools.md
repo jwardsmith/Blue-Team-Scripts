@@ -224,6 +224,8 @@ Endpoint Bypass
 - Living Off the Land Binaries and Scripts (LOLBAS): https://lolbas-project.github.io/
 - Ebowla: https://github.com/Genetic-Malware/Ebowla
 - The Backdoor Factory: https://github.com/secretsquirrel/the-backdoor-factory
+- Veil: https://github.com/Veil-Framework/Veil-Evasion
+- Unicorn: https://github.com/trustedsec/unicorn
 
 MiTM Attacks
 -----------
