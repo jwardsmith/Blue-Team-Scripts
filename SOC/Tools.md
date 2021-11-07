@@ -298,3 +298,18 @@ DDOS Tools:
 - RiverBed NetProfiler: https://www.riverbed.com/en-au/forms/trial-downloads/netprofiler-30-day-trial.html?utm_source=google&utm_medium=cpc&utm_campaign=npm
 - Neustar: https://www.home.neustar/ddos-protection
 - CloudFlare: https://www.cloudflare.com/
+
+Backdoor Tools:
+---------------
+- Poison Ivy: https://attack.mitre.org/software/S0012/
+- Dameware: https://www.dameware.com/remote-administration-tools
+- Sub7: https://www.giac.org/paper/gsec/453/subseven-giving-control-machine/101094
+- BlackShades: https://krebsonsecurity.com/tag/blackshades-rat/
+- GhostRAT: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/ghostrat
+
+Packing Tools
+-------------
+- UPX: https://upx.github.io/
+- Yoda: https://sourceforge.net/projects/yodap/
+- Themida: https://www.oreans.com/Themida.php
+- Exe32pack: http://www.steelbytes.com/?mid=26
