@@ -49,6 +49,7 @@ Network Investigations
 - Packet Monitor (pktmon): https://docs.microsoft.com/en-us/windows-server/networking/technologies/pktmon/pktmon
 - NetworkMiner: https://www.netresec.com/?page=networkminer
 - TCPView: https://docs.microsoft.com/en-us/sysinternals/downloads/tcpview
+- Xplico: https://www.xplico.org/
 
 Web Proxies
 ------------
@@ -143,6 +144,7 @@ Network Mapping
 - Zenmap: https://nmap.org/zenmap/
 - Masscan: https://github.com/robertdavidgraham/masscan
 - EyeWitness: https://github.com/FortyNorthSecurity/EyeWitness
+- Proxy Cannon: https://github.com/proxycannon/proxycannon-ng
 
 Vulnerability Scanning
 -----------------------
@@ -152,6 +154,7 @@ Vulnerability Scanning
 - OpenVAS: https://www.openvas.org/
 - Qualys: https://www.qualys.com/
 - Rapid7 Nexpose: https://www.rapid7.com/products/nexpose/
+- BeyondTrust: https://www.beyondtrust.com/vulnerability-management
 
 SMB Sessions
 -------------
@@ -192,7 +195,7 @@ Physical Access Attacks
 ------------------------
 - Kon-boot: https://www.piotrbania.com/all/kon-boot/
 - Inception: https://github.com/carmaa/inception
-- LAN Turtle: https://shop.hak5.org/products/lan-turtle
+- LAN Turtle+Responder: https://shop.hak5.org/products/lan-turtle
 - Rubber Ducky: https://shop.hak5.org/products/usb-rubber-ducky-deluxe
 
 Exploitation Frameworks
@@ -200,6 +203,7 @@ Exploitation Frameworks
 - Metasploit: https://www.metasploit.com/
 - Core Impact: https://www.coresecurity.com/products/core-impact
 - Immunity CANVAS: https://www.immunityinc.com/products/canvas/
+- PowerShell Empire: https://github.com/EmpireProject/Empire
 
 Web Application Attacks
 ------------------------
@@ -225,11 +229,16 @@ MiTM Attacks
 - sslstrip: https://github.com/moxie0/sslstrip
 - sslstrip+: https://github.com/LeonardoNve/sslstrip2
 - Evilgrade: https://github.com/infobyte/evilgrade
+- arpspoof: https://github.com/byt3bl33d3r/arpspoof
+- Man-in-The-Middle Framework: https://github.com/byt3bl33d3r/MITMf
+- dsniff: https://www.monkey.org/~dugsong/dsniff/
+- Subterfuge: https://github.com/Subterfuge-Framework/Subterfuge
 
 Hijacking Attacks
 ------------------
 - Responder: https://github.com/SpiderLabs/Responder
 - Arpwatch: https://ee.lbl.gov/
+- Firesheel: https://codebutler.github.io/firesheep/
 
 Covering Tracks
 ---------------
