@@ -323,3 +323,9 @@ Rootkits:
 - rooty: https://github.com/jermeyyy/rooty
 - Avatar: https://www.virusradar.com/en/Win32_Rootkit.Avatar/description
 - Fontanini: https://github.com/mfontanini/Programs-Scripts/blob/master/rootkit/rootkit.c
+- chkrootkit: http://www.chkrootkit.org/
+- Rootkit Hunter: http://rkhunter.sourceforge.net/
+- OSSEC: https://www.ossec.net/
+- Sophos Anti-Rootkit: https://www.sophos.com/en-us/products/free-tools/sophos-anti-rootkit.aspx
+- McAfee Rootkit Detective: https://www.mcafee.com/enterprise/en-au/downloads/free-tools/rootkitremover.html
+- GMER: http://www.gmer.net/?m=0
