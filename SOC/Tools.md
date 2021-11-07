@@ -18,6 +18,12 @@ Investigative Tools
 - CyberChef: https://gchq.github.io/CyberChef/
 - Sysinternals: https://docs.microsoft.com/en-us/sysinternals/
 
+Transfer Tools
+---------------
+- Netcat: http://netcat.sourceforge.net/
+- Ncat: https://nmap.org/ncat/
+- dd: https://man7.org/linux/man-pages/man1/dd.1.html
+
 Hardening Templates & Scoring Tools
 ------------------------------------
 - Center for Internet Security: https://www.cisecurity.org/
