@@ -78,6 +78,9 @@ OSINT
 - Certificate Search: https://crt.sh/
 - Have I Been Pwned: https://haveibeenpwned.com/
 - SpiderFoot: https://spiderfoot.net/
+- Wayback Machine: https://archive.org/web/
+- PowerMeta: https://github.com/dafthack/PowerMeta
+- Diggity Project: https://resources.bishopfox.com/resources/tools/google-hacking-diggity/
 
 Website Reconnaissance
 ------------------------
