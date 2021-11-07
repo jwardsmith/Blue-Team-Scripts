@@ -275,11 +275,11 @@ Adversary Emulation
 
 Code Checking Tools
 ---------------------
-- RATS
-- Flawfinder
-- Software Assurance Marketplace (SWAMP):
-- Fortify Source Code Analyser:
-- Coverity Static Analysis:
-- Klockwork Insight Pro:
-- GrammaTech's Code Sonar:
-- Veracodes Suite of Tools:
+- Rough Auditing Tool for Security (RATS): https://code.google.com/archive/p/rough-auditing-tool-for-security/
+- Flawfinder: https://dwheeler.com/flawfinder/
+- Software Assurance Marketplace (SWAMP): https://continuousassurance.org/
+- Fortify Source Code Analyser: https://www.microfocus.com/en-us/cyberres/application-security/static-code-analyzer
+- Coverity Static Analysis: https://scan.coverity.com/
+- Klocwork Insight Pro: https://www.perforce.com/products/klocwork
+- GrammaTech's CodeSonar: https://www.grammatech.com/codesonar-cc
+- Veracodes Suite of Tools: https://www.veracode.com/security/software-testing-tools
