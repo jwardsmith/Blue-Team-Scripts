@@ -313,3 +313,7 @@ Packing Tools
 - Yoda: https://sourceforge.net/projects/yodap/
 - Themida: https://www.oreans.com/Themida.php
 - Exe32pack: http://www.steelbytes.com/?mid=26
+
+Debugger:
+----------
+- Immunity Debugger: https://www.immunityinc.com/products/debugger/
