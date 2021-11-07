@@ -66,11 +66,14 @@ Malware Investigations
 - Process Explorer: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
 - IDA Pro: https://hex-rays.com/ida-pro/
 - Ghidra: https://ghidra-sre.org/
+- Windows Command Line Kung-Fu: http://blog.commandlinekungfu.com/
+- Malware Domain List: https://www.malwaredomainlist.com/
 
 OSINT
 ----------------
 - Whois: https://whois.domaintools.com/
 - 12whois: https://12whois.com/
+- InterNIC: https://www.internic.net/
 - ViewDNS: https://viewdns.info/
 - Certificate Search: https://crt.sh/
 - Have I Been Pwned: https://haveibeenpwned.com/
@@ -87,6 +90,8 @@ Website Reconnaissance
 - Xlek: https://xlek.com/
 - Namechk: https://www.namechk.com/
 - WhatsMyName: https://whatsmyname.app/
+- Pipl: https://pipl.com/
+- Pushpin: https://github.com/DakotaNelson/pushpin-web
 
 Search Engine Reconnaissance
 -----------------------------
@@ -127,6 +132,7 @@ Vulnerability Scanning
 - SAINT Security Suite: https://www.carson-saint.com/products/saint-security-suite/
 - OpenVAS: https://www.openvas.org/
 - Qualys: https://www.qualys.com/
+- Rapid7 Nexpose: https://www.rapid7.com/products/nexpose/
 
 SMB Sessions
 -------------
@@ -197,6 +203,7 @@ MiTM Attacks
 - Flamingo: https://github.com/atredispartners/flamingo
 - sslstrip: https://github.com/moxie0/sslstrip
 - sslstrip+: https://github.com/LeonardoNve/sslstrip2
+- Evilgrade: https://github.com/infobyte/evilgrade
 
 Hijacking Attacks
 ------------------
