@@ -263,6 +263,7 @@ Covering Tracks
 - Danderspritz: https://danderspritz.com/
 - Event Log Edit: https://github.com/3gstudent/Eventlogedit-evtx--Evolution
 - Ptunnel: http://www.cs.uit.no/~daniels/PingTunnel/
+- covert_tcp: https://github.com/cudeso/security-tools/blob/master/networktools/covert/covert_tcp.c
 - Loki: https://exchange.xforce.ibmcloud.com/vulnerabilities/1452
 - icmptunnel: https://github.com/DhavalKapil/icmptunnel
 - icmpshell: http://icmpshell.sourceforge.net/
