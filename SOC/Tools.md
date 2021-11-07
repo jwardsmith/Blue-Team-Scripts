@@ -140,6 +140,7 @@ Wireless Scanning
 Network Mapping
 ---------------
 - Nmap: https://nmap.org/
+- Zenmap: https://nmap.org/zenmap/
 - Masscan: https://github.com/robertdavidgraham/masscan
 - EyeWitness: https://github.com/FortyNorthSecurity/EyeWitness
 
