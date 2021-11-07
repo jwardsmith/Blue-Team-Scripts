@@ -314,6 +314,12 @@ Packing Tools
 - Themida: https://www.oreans.com/Themida.php
 - Exe32pack: http://www.steelbytes.com/?mid=26
 
-Debugger:
+Debuggers:
 ----------
 - Immunity Debugger: https://www.immunityinc.com/products/debugger/
+
+Rootkits:
+----------
+- rooty: https://github.com/jermeyyy/rooty
+- Avatar: https://www.virusradar.com/en/Win32_Rootkit.Avatar/description
+- Fontanini: https://github.com/mfontanini/Programs-Scripts/blob/master/rootkit/rootkit.c
