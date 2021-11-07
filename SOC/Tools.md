@@ -124,6 +124,11 @@ Wireless Scanning
 - Aruba Networks: https://www.arubanetworks.com/
 - Motorola AirDefense: https://www.extremenetworks.com/product/extreme-airdefense/
 - AirMagnet: https://www.netally.com/products/airmagnet-survey-pro/
+- WarVOX: https://github.com/rapid7/warvox
+- Omnipeek: https://www.liveaction.com/products/omnipeek-network-protocol-analyzer/
+- CoWPAtty: https://github.com/joswr1ght/cowpatty
+- Easy Creds: https://github.com/brav0hax/easy-creds
+- Karmetasploit: https://www.offensive-security.com/metasploit-unleashed/karmetasploit/
 
 Network Mapping
 ---------------
