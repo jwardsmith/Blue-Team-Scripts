@@ -32,6 +32,7 @@ Forensic Tools
 - The Sleuth Kit: https://www.sleuthkit.org/sleuthkit/
 - X-Ways Forensics: https://www.x-ways.net/forensics/index-m.html
 - SANS SIFT Workstation: https://www.sans.org/tools/sift-workstation/
+- Rekall: http://www.rekall-forensic.com/
 
 Network Investigations
 -----------------------
