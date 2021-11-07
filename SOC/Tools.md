@@ -64,6 +64,7 @@ Malware Investigations
 - Regshot: https://code.google.com/archive/p/regshot/
 - Process Monitor: https://docs.microsoft.com/en-us/sysinternals/downloads/procmon
 - Process Explorer: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+- Process Hacker: https://processhacker.sourceforge.io/
 - IDA Pro: https://hex-rays.com/ida-pro/
 - Ghidra: https://ghidra-sre.org/
 - Windows Command Line Kung-Fu: http://blog.commandlinekungfu.com/
