@@ -182,6 +182,10 @@ Defense
 - Snort: https://www.snort.org/
 - Microsoft Enhanced Mitigation Experience Toolkit (EMET): https://support.microsoft.com/en-us/topic/emet-mitigations-guidelines-b529d543-2a81-7b5a-d529-84b30e1ecee0
 - NetWitness: https://www.netwitness.com/
+- FireEye: https://www.fireeye.com/
+- Sourcefire: https://www.cisco.com/c/en/us/services/acquisitions/sourcefire.html
+- TippingPoint: https://www.trendmicro.com/en_au/business/products/network/intrusion-prevention/tipping-point-threat-protection-system.html
+- Forescout: https://www.forescout.com/
 
 Password Attacks
 -----------------
