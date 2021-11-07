@@ -173,6 +173,8 @@ Defense
 - Microsoft Advanced Threat Analytics (ATA): https://docs.microsoft.com/en-us/advanced-threat-analytics/what-is-ata
 - Rapid7 InsightIDR: https://www.rapid7.com/products/insightidr/
 - Exabeam: https://www.exabeam.com/
+- Suricata: https://suricata.io/
+- Snort: https://www.snort.org/
 
 Password Attacks
 -----------------
