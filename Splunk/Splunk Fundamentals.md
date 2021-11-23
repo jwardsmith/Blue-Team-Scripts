@@ -312,7 +312,7 @@ index=sales sourcetype=vendor_sales | rare product_name showperc=f limit=1
 *stats enables you to calculate statistics on data that matches your search criteria.*
 
 - count - returns the number of events that match the search criteria
-- distinct_countm dc - returns a count of unique values for a given field
+- distinct_count - returns a count of unique values for a given field
 - sum - returns a sum of numeric values
 - avg - returns an average of numeric values
 - list - lists all values of a given field
