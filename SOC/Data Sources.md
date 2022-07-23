@@ -14,3 +14,36 @@
 - VPN activity
 - DHCP transactions
 - Network device authentication which usually arrives through RADIUS or TACACS+. Further, network change detection, which usually comes from Syslog events
+
+
+Windows Event Logs (Security, Application, System)
+Active Directory Logs (DC’s Log)
+Microsoft Sysmon
+PowerShell (Module Logging + Script Block Logging)
+Linux System Logs
+Linux Auth Logs
+Linux Auditd Logs
+Mac System Logs
+EDR Logs
+AV Logs
+Endpoint DLP Logs
+Database Logs
+Firewall/NIDS/NIPS Logs
+Network Device Logs
+VPN Logs
+Citrix Logs
+DNS Logs
+DHCP Logs
+Network DLP Logs
+User Authentication (SSO / PAM / IAM / SAML) Logs
+NAC Logs
+Web Server Logs
+Proxy/CASB Logs
+Office 365 Logs
+Vulnerability Management Logs
+CMDB Logs
+Ticketing System Logs
+Email Logs
+Cloud Logs (Azure & AWS)
+Teams Logs
+Internal Application Logs
