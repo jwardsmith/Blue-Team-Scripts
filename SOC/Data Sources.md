@@ -46,3 +46,40 @@
 - Cloud Logs (Azure & AWS)
 - Teams Logs
 - Internal Application Logs
+
+
+AV
+
+Host-based Firewall
+ 
+Intrusion Detection and Intrusion Prevention Systems
+
+Remote Access Software (VPN or Dial-in Modem Pool)
+
+Web Proxies
+
+Data Leakage Prevention System
+
+Vulnerability Management Software
+
+Authentication Servers (Active Directory)
+
+Routers
+
+Core network switches
+
+Wireless Network Controllers
+
+Security devices (e.g. Firewalls, application proxies)
+
+Network Quarantine VLAN, NAC compliance/enforcement
+
+Operating Systems
+
+Applications
+
+Asset Database of Member Firms
+
+DHCP
+
+Cloud services
