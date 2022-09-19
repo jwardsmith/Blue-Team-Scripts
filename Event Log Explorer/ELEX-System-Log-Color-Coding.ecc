@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ELEX_Colors version="2.0">
+	<ColorCodes>
+		<ColorCode>
+			<EventTypes>0</EventTypes>
+			<EventSource>Microsoft-Windows-UserPnp</EventSource>
+			<EventID>20001</EventID>
+			<Code>FF0000FFFFFF</Code>
+			<Bold>0</Bold>
+			<Italic>0</Italic>
+		</ColorCode>
+		<ColorCode>
+			<EventTypes>0</EventTypes>
+			<EventSource>Service Control Manager</EventSource>
+			<EventID>7045</EventID>
+			<Code>0080FFFFFFFF</Code>
+			<Bold>0</Bold>
+			<Italic>0</Italic>
+		</ColorCode>
+		<ColorCode>
+			<EventTypes>0</EventTypes>
+			<EventSource>Service Control Manager</EventSource>
+			<EventID>7034</EventID>
+			<Code>0000FFFFFFFF</Code>
+			<Bold>0</Bold>
+			<Italic>0</Italic>
+		</ColorCode>
+	</ColorCodes>
+</ELEX_Colors>

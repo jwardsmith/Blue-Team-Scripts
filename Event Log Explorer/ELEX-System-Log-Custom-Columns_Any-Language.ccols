@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserData>
+	<CustomColumns>
+		<Col0>
+			<Title>(7045 - Service install) Service Name | File</Title>
+			<EventIDs>7045</EventIDs>
+			<Value>{Param[1]} | {Param[2]}</Value>
+		</Col0>
+		<Col1>
+			<Title>(7034 - Service crash) Service Name</Title>
+			<EventIDs>7034</EventIDs>
+			<Value>{Param[1]}</Value>
+		</Col1>
+		<Col2>
+			<Title>(20001 - Device Installation) Vendor | VID, PID, Serial Number | Installed Driver | Status Code</Title>
+			<EventIDs>20001</EventIDs>
+			<Value>{PARAM[3]} | {PARAM[4]} | {PARAM[1]} | {PARAM[9]}</Value>
+		</Col2>
+	</CustomColumns>
+</UserData>

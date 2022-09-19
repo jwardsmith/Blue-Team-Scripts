@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserData>
+	<CustomColumns>
+		<Col0>
+			<Title>(4624) Logon Type | Logon Account| Logon ID | Logon Source</Title>
+			<EventIDs>4624</EventIDs>
+			<Value>{Logon Information\Logon Type} | {New Logon\Account Name} | {New Logon\Logon ID} | {Network Information\Workstation Name} ({Network Information\Source Network Address})</Value>
+		</Col0>
+		<Col1>
+			<Title>(4625) Logon Type | Account Name | Failure Information | Logon Source</Title>
+			<EventIDs>4625</EventIDs>
+			<Value>{Logon Type} | {Account For Which Logon Failed\Account Name} | {Failure Information\Failure Reason} | {Network Information\Workstation Name} ({Network Information\Source Network Address})</Value>
+		</Col1>
+		<Col2>
+			<Title>(4778) Account Name | Session Name | Client Name | Client Address</Title>
+			<EventIDs>4778</EventIDs>
+			<Value>{Subject\Account Name} | {Session\Session Name} | {Additional Information\Client Name} | {Additional Information\Client Address}</Value>
+		</Col2>
+		<Col3>
+			<Title>(4776) Logon Account | Source Workstation</Title>
+			<EventIDs>4776</EventIDs>
+			<Value>{Logon Account} | {Source Workstation}</Value>
+		</Col3>
+		<Col4>
+			<Title>(5140) Account Name | Source | Share name | Share path</Title>
+			<EventIDs>5140</EventIDs>
+			<Value>{Subject\Account Name} | {Network Information\Source Address} | {Share Information\Share Name} | {Share Information\Share Path}</Value>
+		</Col4>
+	</CustomColumns>
+</UserData>
