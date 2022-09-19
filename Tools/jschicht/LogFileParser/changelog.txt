@@ -1,0 +1,277 @@
+LogFileParser Changelog
+
+v2.0.0.48
+Removed lots of unused code.
+
+v2.0.0.47
+Multiple bugfixes, including one memory leak, related to handling of corrupt pages.
+Fixed bug that caused some offsets reported to be slightly incorrect.
+Fixed a bug that caused undocumented IdentifierAuthority values to not display the correct decimal value in the SID.
+
+v2.0.0.46
+Added mimssing usn reason and source codes.
+Added missing reparse tags.
+Fix bug in decode of $REPARSE_POINT attribute with type WCI.
+Fixed bug in $EA attribute handling.
+
+v2.0.0.45
+Added missing reparse tags.
+
+v2.0.0.44
+Moved the import sql files into the new import-sql sub directory so that compilation works with the project as is.
+
+v2.0.0.43
+Added separate csv for $ObjectId attribute decodes.
+Added break down of GUID/UUID as found in $ObjectId attribute and $O index of $ObjId, according to RFC 4122 (https://www.ietf.org/rfc/rfc4122.txt). That among other things includes timestamp.
+
+v2.0.0.42
+Recompiled with AutoIt version 3.3.14.2, which fixes certain Windows 10 ui issues.
+
+v2.0.0.41
+Improved validation check on detected MFT records.
+Added fixups applied (if applicable) to records regenerated from fragments (for use with /VerifyFragment:).
+
+v2.0.0.40
+Added a BrokenLogFile switch to both gui and commandline (/BrokenLogFile:). Only to be used with reconstructed RCRD's.
+Added filter for reconstructed transactions containing only zero's after header.
+Fixed bug in identification of empty csv files.
+
+v2.0.0.39
+Fixed bug with /LogFileFragmentFile: that caused timestamps not to be adjusted properly to/from UTC 0.
+Fixed general issue with resolving certain parameters in fragment mode (/LogFileFragmentFile:).
+
+v2.0.0.38
+Fixed bug that crashed program when rebuilt fragments where exactly 0x1000 in size.
+
+v2.0.0.37
+Added 3 new parameters. /VerifyFragment:, /OutFragmentName: and /SkipFixups:
+Better support for fragment handling.
+
+v2.0.0.36
+Added feature to optionally add a $LogFile fragment instead of a full $LogFile as input. On command line use /LogFileFragmentFile: with full path to the fragment.
+Synchronized 2 default setttings with gui vs commandline, where SkipSqlite and timestamp precission differed.
+Added exit of program with errorlevel set to 1, when no valid transactions could be decoded (empty output).
+
+v2.0.0.35
+Merged the two outputs, LogFile_INDX_I30.csv and LogFile_UndoWipe_INDX_I30.csv, into LogFile_INDX_I30.csv and added a column for IsRedo to be able to distinguish.
+Added schema and import sql for LogFile_INDX_I30.csv.
+
+v2.0.0.34
+Added more output to debug.log to help identify pages that are not of type RSTR/RCRD.
+Added decode of single entry updates to OpenAttributeTable through OpenNonResidentAttribute for transactions found in slack.
+Changed $SubNodeVCN from hex big endian to decimal in all outputs.
+Added missing column name for IsRedo in LogFile_UpdateFileName_I30.csv.
+Improved db schema for logfile table.
+Added schema and import sql for LogFile_UpdateFileName_I30.csv.
+Changed default output directory prefix from NtfsOutput_ to LogFile_.
+
+v2.0.0.33
+Improvement to filename identification logic through CreateAttribute.
+
+v2.0.0.32
+Improved decode of Checkpoint records to also cover 32-bit OS.
+Changed LogFile_CompensationlogRecord.csv to LogFile_CheckpointRecord.csv.
+Fixed small bug introduced lately, that caused an incorrect Is32bit field in the output for OpenAttributeTable.
+Changed output value for RecordType to be decimal instead of hex.
+Updated schema in logfile.sql.
+
+v2.0.0.31
+Changed incorrect distinction of nt5x vs nt6x to 32bit vs 64bit.
+Split output csv of DirtyPageTable to 32bit and 64bit.
+More changes to the structures of DirtyPageTable and OpenAttributeTable.
+
+v2.0.0.30
+Improvement to the decoder for CompensationlogRecord.
+
+v2.0.0.29
+Fixed errors in DirtyPageTable structure and split decoder into nt5x and nt6x.
+Added logging of CompensationlogRecord.
+Added a new field (excess data) to the output of all transaction headers.
+
+v2.0.0.28
+Fixed bug in the trigger for the text "Non-standard size of $STANDARD_INFORMATION" in lf_TextInformation.
+Fixed incorrect "Missed transaction!" in debug.log for undo operations of type DeallocateFileRecordSegment.
+Added preliminary interpretation of operation code 0x25 to be "JS_NewEndOfRecord".
+
+v2.0.0.27
+Added some missed decodes of undo operations for WriteEndOfIndexBuffer (I30) when absent OpenAttributeTable.
+Added some missed transactions (Windows 10), that where dumped into debug.log (as validation failed) instead of into csv.
+
+v2.0.0.26
+Added command line mode.
+Fixed bug that caused a consequent program crash on certain systems at the end of parsing when calling sqlite3.exe.
+Added x64 compiled binary.
+Updated sqlite3 dll's to newer version.
+Fixed insignificant bug that caused incorrect $SI timestamp error messages to appear in debug.log.
+Removed the last forced filenames, for MftRef 0 - 26.
+Added some more references to respective csv's in lf_TextInformation.
+Added missing field for ReparseTag in UpdateFileNameRoot/UpdateFileNameAllocation.
+Added decode of undo operations for UpdateFileNameRoot/UpdateFileNameAllocation.
+Added new output file LogFile_UpdateFileName_I30.csv for logging of both undo and redo for UpdateFileNameRoot/UpdateFileNameAllocation.
+Added complete transaction dump when verbose mode triggered.
+Added option to skip all sqlite3 stuff.
+Compiled binaries with latest version 3.3.14.2.
+Added Exit button to gui, and tooltip about ESC for exit.
+
+v2.0.0.25
+Added output of bits information of ClearBitsInNonresidentBitMap from redo operations into lf_TextInformation field.
+
+v2.0.0.24
+Added option to specify a second precision separator, to be used as separation between MilliSec and NanoSec.
+Added option to specify a custom error value for invalid timestamps, or incorrectly decoded timestamps.
+Added 2 sql's for database schema and import of data, along with instructions for how to import the csv into a MySql database.
+Changed file encoding to utf8 with BOM, when unicode configured. The previous ucs2 would not import into MySql.
+Fixed bug when parsing $STANDARD_INFORMATION attributes of non-standard size.
+Changed default values (missing values) for certain integer variables from "-" to -1.
+Changed default values (partial values) for certain integer variables from "PARTIAL_VALUE" to -2.
+Changed some values for lf_RealMFTReference from "Parent" to -2.
+
+v2.0.0.23
+Improved the information printed about partial timestamps.
+Added option to specify comma separated list of lsn's to trigger verbose output (to debug.log).
+
+v2.0.0.22
+Fixed bug that caused GUID_ObjectID from being included into the lf_TextInformation field after decoding $OBJECT_ID in function _Get_ObjectID().
+Fixed bug that caused UpdateResidentValue for $STANDARD_INFORMATION to be decoded incorrectly in some rare cases.
+Added identification of partial timestamp updates.
+
+v2.0.0.21
+Fixed bug that caused file names of mft refs 27-31 to be incorrectly overwritten for nt5.x origins.
+
+v2.0.0.20
+Fixed bug that caused sqlite3.exe to sometimes not being able to create table's or import csv's.
+
+v2.0.0.19
+Improved filename identification with dataruns resolver feature.
+
+v2.0.0.18
+A couple of bug fixes related to nt5.x sources and it's handling of target_attribute.
+
+v2.0.0.17
+Fixed bug where global array for open attribute table was not cleared properly before re-use.
+Added a upper limit at 1800 for how many times the _TestSlackSpace() function can be called recursively, to prevent program crash at hardcoded AutoIt limit.
+Added missing flag for FILE_ATTRIBUTE_EA.
+Added missing flags for IO_REPARSE_TAG_FILE_PLACEHOLDER and IO_REPARSE_TAG_WOF.
+Fixed missing GUID decode in $REPARSE_POINT attribute for use with non-Microsoft tags.
+Added missing field for reparse point tag in $I30 index.
+Changed output name of csv for LogFile_INDX.csv to LogFile_INDX_I30.csv and LogFile_UndoWipe_INDX.csv to LogFile_UndoWipe_INDX_I30.csv.
+
+v2.0.0.16
+Fixed incorrect decode of GUID's, relevant for $OBJECT_ID attribute, $ObjId:$O index and security descriptors.
+
+v2.0.0.15
+Update schema for imported Mft2Csv output to support changes in Mft2Csv v2.0.0.26.
+
+v2.0.0.14
+Added optional extraction of all nonresident $EA content.
+Fixed bug that caused program crash with some rare fresh formatted volumes.
+Implemented the already existing slack space version functions of OpenAttributeTable.
+
+v2.0.0.13
+Added optional extraction of all resident $EA content.
+
+v2.0.0.12
+Improved identification of filenames associated with UpdateNonResidentValue.
+Added NonResidentFlag to TextInformation field (used with CreateAttribute).
+Fixed bug that caused the attributes $EA_INFORMATION and $EA to not be decoded properly.
+Removed unused code.
+Deactivated annoying messagebox when target_attribute 0x0018 was not found.
+Fixed bug that caused named data streams to have the stream name appended twice certain times with CreateAttribute.
+Fixed bug that caused certain $SII and $SDH indx's to be missed with UpdateNonResidentValue.
+
+v2.0.0.11
+Added 4 remaining structure members of USN_RECORD_V2/USN_RECORD_V3 to the usn record output (LogFile_lfUsnJrnl.csv); MajorVersion, MinorVersion, SourceInfo and SecurityId.
+
+v2.0.0.10
+Added 1 column for IsNt6.x variable in the LogFile_OpenAttributeTable.csv and LogFile_SlackOpenAttributeTable.csv.
+Fixed a bug that caused single entry updates to OpenAttributeTable through OpenNonresidentAttribute to not work with unnamed attributes (like $MFT:$DATA).
+
+v2.0.0.9
+Improved and finalized the $TXF_DATA parser and activated it.
+
+v2.0.0.8
+Fixed a minor bug that some very few filenames to be incorrect (bug present for a long time).
+Added feature to automatically detect structure of OpenAttributeTableDump and use the appropriate decoding function.
+Improved decode of partial updates to $INDEX_ALLOCATION:$Q in $Quota.
+Added a $TXF_DATA stream decoder (deactivated).
+
+v2.0.0.7
+Fixed bug introduced in v2.0.0.4 that caused many $UsnJrnl transactions to fail on identifiaction.
+
+v2.0.0.6.
+Added association of stream name to DeleteAttribute with $DATA.
+Removed unneded checks within decode of UpdateResidentValue.
+Added information to TextInformation field when content areas with UpdateResidentValue are being initialized with zeros.
+Added information to TextInformation field when new MFT records are initialized as empty records.
+Fixed a tiny bug that caused renames of certain system files to not be caught.
+Implemented a new csv with all file names, MftRef and MftRefSeqNo being parsed, so that a partial $MFT record name history table are built.
+Highly improved file name identification.
+
+v2.0.0.5.
+Added option to extract resident attribute updates.
+
+v2.0.0.4. 
+Added decode and separate logging of $ATTRIBUTE_LIST attributes.
+Added sanity check of certain csv's before importing. 
+Added logging of unicode configuration. 
+Added test for Removed more meaningless messageboxes.
+Added clearing of $UsnJrnlUsn variable when failure in _UsnDecodeRecord2().
+Improved identification of correct filename on certain systemfiles.
+Activated the already existing $Reparse:$R parser.
+Added option to select if source is from an nt5x system (XP,2003).
+Added logging of nt5x configuration.
+Fixed OpenAttributesTableDump for nt5x (which in turn led to lots of improvements for nt5x parsing).
+Added much improved decode of WriteEndOfIndexBuffer (undo).
+Added an IsRedo flag to output of index related outputs to distinguish where the data comes from (redo vs undo).
+Fixed bug in function _Decode_QuotaFlags() that caused certain flags not to be identified.
+Added decode of UpdateRecordDataRoot and UpdateRecordDataAllocation.
+Fixed bug with reparse point handling.
+
+v2.0.0.3. Removed more meaningless messageboxes.
+
+v2.0.0.2. Added decode of deletion of indexes with $ObjId, $Quota and $Secure.
+
+v2.0.0.1. Deactivated meaningless message boxes with internal calculation errors. Improved quality of debug.log
+
+v2.0.0.0. 
+Added decode of security descriptors.
+Added decode of $O, $Q and $R streams.
+Changed text translation of redo/undo codes 0x10, 0x11, 0x17, 0x18, 0x1d, 0x1e and 0x22.
+Added decode of OpenAttributeTableDump, DirtyPageTableDump and TransactionTableDump into separate csv files.
+Added mapping from AttributeNamesDump to OpenAttributeTableDump where applicable.
+Added 10 missing variables from lsn record to main output (appended on right side in main output).
+Improved identification of current attribute and Mft ref.
+Added decode of SetBitsInNonresidentBitMap and ClearBitsInNonresidentBitMap into separate csv file.
+Added decode of $ObjId:$O, $Quota:$O, $Quota:$Q, and $Reparse:$R into separate csv files.
+Improved decode of SetIndexEntryVcnRoot and SetIndexEntryVcnAllocation.
+Implemented postfix of output files with .empty if they have no content.
+Added RSTR decode to output in debug.log.
+Fixed bug in the validation inside _UsnDecodeRecord2() function.
+Added option to exit if predicted MFT ref indicate wrong SectorsPerCluster or MFT_Record_Size configuration.
+Added functionality to decode lost records from bytes within slack space in $LogFile. A configuration value was added to finetune its successrate.
+Added missing decode of certain deleted index entries.
+Improved logging to debug.log.
+
+v1.0.0.22. Added support for configuring (millisec) precision separator.
+
+v1.0.0.21. Added TRANSACTED_CHANGE as reason code 0x00400000 (winioctl.h). Reorganized the concat of reason codes to make it easier reading.
+
+v1.0.0.20. Added support for MFT record size of 4096 bytes.
+
+v1.0.0.19. Fixed a unicode related bug that caused the last character to be incorrect when that character was of 2 bytes.
+
+v1.0.0.18. Added unicode support.
+
+v1.0.0.17. Another major improvement in the identification of the current attribute. 
+
+v1.0.0.16. Fixed bug that caused $UsnJrnl? to sometimes be incorrectly displayed in the lf_TextInformation? column. 
+
+v1.0.0.15. Fixed CurrentAttribute? when $UsnJrnl? is writing zeros to align the initialized data to page boundary. Added reference to LogFile?_INDX.csv in column lf_TextInformation? where due. Corrected CurrentAttribute? for both UpdateFileNameRoot? and UpdateFileNameAllocation?, and changed their timestamps from being FN to SI. Changed interpreted meaning of op code 1000 = ResetAllocation?, and 1100 = ResetRoot?. 
+
+v1.0.0.14. More fixes to the OpenNonresidentAttribute?. Now current attribute is displayed even more detailed like this: $DATA:$SDS, $INDEX_ALLOCATION:$I30, $INDEX_ALLOCATION:$O. Added decode information for DeleteAttribute? operations. Fixed a bug that caused certain corrupted values to be displayed as decoded UsnJrnl? record values. Added more mapping to filename for transactions. Some minor adjustments on the logic/prediction of reference numbers. Added new column for namespace, and real reference. The new column lf_RealMFTReference facilitated the addition of a lot more decode output into the core LogFile? csv. v1.0.0.13. Fixed decode of OpenNonresidentAttribute?, which may appear differently in certain scenarios. Fixed bug in the integrated UsnJrnl? parser. Fixed mapping of MFT ref for SetIndexEntryVcnAllocation? operations. Added more decoding to UpdateNonResidentValue? operations. Added decode of operation code 1000, which is a clearing of an index. Specifically the redo operation is just a reset, while the undo operation is a complete INDX record (without header) of the original content. With this information it is now possible to start building a history of changes to directory content/indexes. 
+
+v1.0.0.12. Fixed a new bug in the reconstruction of dataruns that was introduced in previous version. 
+
+v1.0.0.11. Implemented GUI with configurable options, progressbar etc. Fixed a lot of issues when resolving MFT references. Fixed bug that incorrectly updated CurrentAttribute? when redo operation was UpdateResidentValue?. Added decoding of OpenNonresidentAttribute?. Added 3 columns in output: TextInformation?, RedoChunkSize? and UndoChunkSize?. Added more updating of CurrentAttribute?. Using undo operations to aid in interpreting data. Changed default separator to "|" to minimize chances for hitting filenames that needed to be changed. Added importing to db of the resolved dataruns csv. Added option to import csv of decoded MFT (mft2csv), and joining file paths. Added option to choose timestamp format and precision, with example displayed in gui. Option to split extra timestamps into separate csv (will slow down processing!). 
+
+v1.0.0.5. Added missing reparse types. Added filtering on attribute type for index decoding ($FILE_NAME -> $I30). Removed program exit when import of indx csv failed. Fixed serious bug when loading the sqlite3 dll. The dll is now included. Added more error checking with the sqlite3 stuff. 
