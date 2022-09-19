@@ -1,0 +1,126 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, August 4, 2021 3:55:24 AM
+   Source : C:\Forensic Program Files\Zimmerman\
+     Dest : C:\Forensic Program Files\KAPE\Modules\bin\
+
+    Files : *.exe
+	    
+  Options : /V /DCOPY:DA /COPY:DAT /R:1 /W:1 
+
+------------------------------------------------------------------------------
+
+	                  14	C:\Forensic Program Files\Zimmerman\
+	  *EXTRA File 		   4.4 m	SBECmd.exe
+	    Newer     		   4.9 m	AmcacheParser.exe 10%   20%   30%   40%   50%   61%   71%   81%   91%  100%  
+	    Newer     		   4.7 m	AppCompatCacheParser.exe 10%   20%   31%   41%   52%   62%   73%   83%   94%  100%  
+	    New File  		   2.5 m	bstrings.exe 19%   39%   58%   78%   97%  100%  
+	    Newer     		   4.2 m	JLECmd.exe 11%   23%   35%   47%   58%   70%   82%   94%  100%  
+	    Newer     		   3.2 m	LECmd.exe 15%   30%   45%   61%   76%   91%  100%  
+	    Newer     		   3.8 m	MFTECmd.exe 12%   25%   38%   51%   64%   77%   90%  100%  
+	    Newer     		   3.8 m	PECmd.exe 12%   25%   38%   51%   64%   77%   90%  100%  
+	    Newer     		   2.6 m	RBCmd.exe 19%   38%   57%   76%   95%  100%  
+	    Newer     		   2.1 m	RecentFileCacheParser.exe 23%   46%   69%   92%  100%  
+	    New File  		   4.5 m	SrumECmd.exe 11%   22%   33%   44%   55%   66%   77%   88%   99%  100%  
+	    New File  		   3.5 m	SumECmd.exe 13%   27%   41%   55%   69%   83%   97%  100%  
+	    New File  		  347896	TimeApp.exe 37%   75%  100%  
+	    New File  		   2.3 m	VSCMount.exe 20%   41%   62%   83%  100%  
+	    Newer     		   5.4 m	WxTCmd.exe  9%   18%   27%   36%   46%   55%   64%   73%   82%   92%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :        14        14         0         0         0         1
+   Bytes :   48.51 m   48.51 m         0         0         0    4.45 m
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+
+
+   Speed :           1082349446 Bytes/sec.
+   Speed :            61932.532 MegaBytes/min.
+   Ended : Wednesday, August 4, 2021 3:55:24 AM
+
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, August 4, 2021 3:55:24 AM
+   Source : C:\Forensic Program Files\Zimmerman\ShellBagsExplorer\
+     Dest : C:\Forensic Program Files\KAPE\Modules\bin\
+
+    Files : SBECmd.exe
+	    
+  Options : /V /DCOPY:DA /COPY:DAT /R:1 /W:1 
+
+------------------------------------------------------------------------------
+
+	                   1	C:\Forensic Program Files\Zimmerman\ShellBagsExplorer\
+	    Newer     		   3.9 m	SBECmd.exe 12%   25%   38%   51%   64%   76%   89%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         1         1         0         0         0         0
+   Bytes :    3.90 m    3.90 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : Wednesday, August 4, 2021 3:55:24 AM
+
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, August 4, 2021 3:55:24 AM
+   Source : C:\Forensic Program Files\Zimmerman\EvtxExplorer\
+     Dest : C:\Forensic Program Files\KAPE\Modules\bin\
+
+    Files : EvtxECmd.exe
+	    
+  Options : /V /DCOPY:DA /COPY:DAT /R:1 /W:1 
+
+------------------------------------------------------------------------------
+
+	                   1	C:\Forensic Program Files\Zimmerman\EvtxExplorer\
+	    New File  		   4.3 m	EvtxECmd.exe 11%   22%   34%   45%   56%   68%   79%   91%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         1         1         0         0         0         0
+   Bytes :    4.39 m    4.39 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : Wednesday, August 4, 2021 3:55:24 AM
+
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, August 4, 2021 3:55:24 AM
+   Source : C:\Forensic Program Files\Zimmerman\RegistryExplorer\
+     Dest : C:\Forensic Program Files\KAPE\Modules\bin\
+
+    Files : RECmd.exe
+	    
+  Options : /V /DCOPY:DA /COPY:DAT /R:1 /W:1 
+
+------------------------------------------------------------------------------
+
+	                   1	C:\Forensic Program Files\Zimmerman\RegistryExplorer\
+	    New File  		   6.2 m	RECmd.exe  8.0% 16.1% 24.1% 32.2% 40.2% 48.3% 56.3% 64.4% 72.4% 80.5% 88.5% 96.6%100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         1         0         1         0         0         0
+   Files :         1         1         0         0         0         0
+   Bytes :    6.20 m    6.20 m         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : Wednesday, August 4, 2021 3:55:24 AM
+
