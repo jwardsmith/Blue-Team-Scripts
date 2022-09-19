@@ -1,0 +1,102 @@
+UsnJrnl2Csv Changelog
+
+1.0.0.23
+Added support for new output formats; bodyfile and log2timeline.
+Added db schemas for the new output formats.
+Fixed bug that prevented sql file from running when timestamp format <> 6.
+
+1.0.0.22
+Fixed bug that prevented separator to be configured.
+
+1.0.0.21
+Added missing reason and source codes.
+
+1.0.0.20
+Moved the import sql files into the new import-sql sub directory so that compilation works with the project as is.
+
+1.0.0.19
+Recompiled with AutoIt version 3.3.14.2, which fixes certain Windows 10 ui issues.
+
+1.0.0.18
+Added 3 new parameters. /VerifyFragment:, /OutFragmentName: and /CleanUp:. See readme.
+Added additional exit errorlevel for fragment verification mode.
+Added postfix of .empty to csv's generated with 0 hits.
+
+1.0.0.17
+Fixed bug that did not consider /OutputPath: parameter in commandline mode.
+Added exit errorlevel to make it suite better with batch scripting.
+
+1.0.0.16
+Fix that improve processing time for scan mode by roughly 20%.
+
+1.0.0.15
+Fixed some configuration values not being logged.
+Fixed character set in the generated sql to be utf8 when applicable.
+Changed Reason column in UsnJrnl table of sql to be VARCHAR(255).
+
+1.0.0.14
+Split the extended filename check into 2, 1 for valid character and 1 for valid Windows filename character.
+Made all 3 extended checks independent on unicode configuration.
+Changed default unicode configuration to 1.
+Removed previous scan mode 1, and renamed scan mode 2 to just scan mode.
+
+1.0.0.13
+Added more validation check.
+Added support for identifying records spanning across sectors while in scan mode 2.
+Deactivated scan mode 1 as it no longer makes any sense to use it.
+
+1.0.0.12
+Improved record validation for normal mode.
+
+1.0.0.11
+Added 2 more options for extended checks on filename and timestamp. Used with scan mode.
+Fixed a bug where some configurations was not re-applied when program was run multiple times with different settings.
+
+1.0.0.10
+Suppressed background console when launching gui.
+Compiled binaries with latest version 3.3.14.2.
+Set default configuration for quotation mark to off.
+
+1.0.0.9
+Fixed minor bug that caused timestamp precision 2 and timestamp error val not to be re-read at each call to _Main.
+
+1.0.0.8
+Added command line mode. All configurable option from gui are also exposed on command line.
+Changed file encoding to utf8 with BOM, when unicode configured. The previous ucs2 would not import into MySql.
+Added auto generated sql file with correct settings for import of csv.
+
+1.0.0.7
+Added option to specify a second precision separator, to be used as separation between MilliSec and NanoSec.
+Added option to specify a custom error value for invalid timestamps, or incorrectly decoded timestamps.
+Added 2 sql's for database schema and import of data, along with instructions for how to import the csv into a MySql database.
+
+1.0.0.6
+Fixed bug that caused scan mode 2 to not rescan damaged data within sector after a valid usn record was found. 
+
+1.0.0.5.
+Added 4 remaining structure members to the output; MajorVersion, MinorVersion, SourceInfo and SecurityId.
+Fixed gui to show 100 % when parsing is done. 
+Added total entries parsed to the gui update.
+Implemented a log file for verbose output.
+Fixed bug that caused configured UTC configuration to always be 0.00.
+Added error checking (data sanity) of parsed entries.
+Added optional configuration of USN_PAGE_SIZE.
+Aded missing reason code for USN_REASON_TRANSACTED_CHANGE.
+Added a field for file offset in output.
+Fixed a bug that caused the last record per usn page to sometimes not be processed.
+Added 2 options for scan modes for handling damaged input data.
+
+1.0.0.4. 
+Added support for configuring (millisec) precision separator.
+
+1.0.0.3. 
+Added unicode support.
+
+1.0.0.2. 
+Fixed bug that caused not all records to be processed.
+
+1.0.0.1. 
+Fixed a bug with the quotes around values. Added nicer GUI with progressbar. Added more options for outputted timestamps, like UTC region, timestamp format and precision. And configurable separator.
+
+1.0.0.0. 
+Initial version. 
