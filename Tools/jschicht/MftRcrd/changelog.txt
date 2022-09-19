@@ -1,0 +1,55 @@
+
+v1.0.0.41
+Fixed a small bug in the handling of $INDEX_ROOT attribute with zero $I30 entries. 
+
+v1.0.0.40
+Added missing reparse tags.
+Fix bug in decode of $REPARSE_POINT attribute with type WCI.
+Fixed bug in $EA attribute handling.
+
+v1.0.0.39
+Added support for dumping the decode of $O index (both $INDEX_ALLOCATION and $INDEX_ROOT) for $ObjId.
+Added break down of GUID/UUID as found in $ObjectId attribute and $O index of $ObjId, according to RFC 4122 (https://www.ietf.org/rfc/rfc4122.txt). That among other things includes timestamp.
+
+v1.0.0.38
+Fixed bug that caused only one or the other of $INDEX_ROOT/$INDEX_ALLOCATION to be evaluated for directory content.
+
+v1.0.0.37
+Added missing flag for FILE_ATTRIBUTE_EA.
+Added missing flags for IO_REPARSE_TAG_FILE_PLACEHOLDER and IO_REPARSE_TAG_WOF.
+Fixed missing GUID decode in $REPARSE_POINT attribute for use with non-Microsoft tags.
+Added missing field for reparse point tag in $I30 index.
+
+v1.0.0.36
+Fixed incorrect decode of GUID's, relevant for $OBJECT_ID.
+
+v1.0.0.35
+Expanded the $AttrDef decoder so it will decode also non-default entries.
+
+v1.0.0.34
+Fixed incorrectly filename resolve introduced in v 1.0.0.33.
+Added decode of attribute definitions for $AttrDef.
+Changed license to MIT.
+
+v1.0.0.33
+Fixed incorrect namespace value in $FILE_NAME.
+
+v1.0.0.32
+Fixed bug in the $REPARSE_POINT decoder that caused printname and substitutename not to be resolved correctly.
+
+v1.0.0.31
+Added missing decode of "Quota Charged" in $STANDARD_INFORMATION attribute.
+Added missing decode of "EaSize" in $FILE_NAME attribute.
+Re-arranged slightly the output of $FILE_NAME decode.
+Fixed bug in parsing $EA attribute.
+Added decode of the named stream $TXF_DATA ($LOGGED_UTILITY_STREAM).
+
+
+v1.0.0.30
+Added support for decoding records within files as input (must specify offset). 
+Fixed a few bugs in the output of decoded $INDEX_ALLOCATION and $INDEX_ROOT.
+
+
+v1.0.0.29
+Added complete support for MFT record size of 4096 bytes. 
+Added new switch for extracting record to file.
