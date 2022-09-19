@@ -1,0 +1,16 @@
+Description: Recycle Bin
+Author: Mark Hallman
+Version: 1
+Id: 336abbbb-e9db-4d04-8904-43718e57df85
+RecreateDirectories: true
+Targets:
+    -
+        Name: $Recycle.Bin
+        Category: Deleted Files
+        Path: C:\$Recycle.Bin\
+        Recursive: true
+    -
+        Name: RECYCLER WinXP
+        Category: Deleted Files
+        Path: C:\RECYCLER\
+        Recursive: true
