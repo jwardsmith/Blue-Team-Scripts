@@ -1,0 +1,31 @@
+Content.IE5
+Temporary\ Internet\ Files
+IETldCache
+PrivacIE
+MSIE\ Cache\ File
+\(\$FILE\_NAME\)
+DLL\ LOADTIME
+dashlane
+\/Packages
+\/WinSxS\/
+assembly
+cryptneturlcache
+odlsent
+\.odl
+\/Default\/Cache
+zune
+xbox
+\/windowsapps\/microsoft
+Acrobat Reader DC
+Service Worker
+CertificateTransparency
+SWreporter
+\/Default\/Extensions
+\/Program Files\/WindowsApps
+\/Google\/Chrome\/User Data
+\/Microsoft Office\/
+\/OneDrive\/
+\/Google\/Chrome\/Application
+programdata
+Templates
+\/Office\/
