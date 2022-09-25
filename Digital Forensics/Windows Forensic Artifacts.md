@@ -1,1 +1,71 @@
+# Windows Forensic Artifacts
 
+- User Communications
+    - Web-Based Email
+    - Email
+    - Calendar
+    - Chat/Webmail Memory Artifacts
+    - Chat and IM 
+- File Download
+    - Open/Save MRU
+    - Email
+    - Skype History
+    - Index.dat/Places.sqlite
+    - Downloads.sqlite 
+- Program Execution
+    - UserAssist
+    - Last Visited MRU
+    - RunMRU Start->Run
+    - MUI Cache
+    - Win7-10 Jump Lists
+    - Prefetch
+    - AppCompatCache 
+- File Opening/Creation
+    - Recent Files
+    - Office Recent Files
+    - Shellbags
+    - Link Files
+    - Jump Lists
+    - Prefetch
+    - Index.dat file:// 
+- Deleted File or File Knowledge
+    - XP Search - ACMRU
+    - Win7 + Search - WordWheelQuery
+    - Last Visited MRU
+    - Thumbs.db
+    - Win7+ Thumbnails
+    - Recycle Bin
+    - Browser Artifacts 
+- Physical Location
+    - Time zone
+    - Wireless SSID
+    - Win7+ Network History
+    - Cookies
+    - Browser Search Terms 
+- USB Key Usage
+    - Key Identification
+    - First/Last Times
+    - User
+    - Volume Name
+    - Drive Letter
+    - Link Files
+    - P&P Event Log 
+- Account Usage (SAM)
+    - Last Login
+    - Last Failed Login
+    - Last Password Change
+    - Group Membership 
+- Account Usage (EVT)
+    - Success/Fail Logons
+    - Logon Type
+    - RDP Usage
+    - Account Logon/Authentication
+    - Rogue Local Accounts 
+- Browser Usage
+    - History
+    - Cookies
+    - Cache
+    - Session Restore
+    - Flash and Super Cookies
+    - Suggested Sites
+    - Memory Fragments of Private Browsing 
