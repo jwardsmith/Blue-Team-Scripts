@@ -88,4 +88,6 @@ Cloud services
 
 ![image](https://user-images.githubusercontent.com/31498830/194528404-cd2319b2-afcd-4ab3-8f0b-623a550b7a87.png)
 
+![image](https://user-images.githubusercontent.com/31498830/194529020-ea98f912-dfe7-41a9-9dcf-a0fcc2a325bf.png)
+
 ![image](https://user-images.githubusercontent.com/31498830/194528515-e2eaf403-6333-40ac-bdd8-eb7232f54c97.png)
