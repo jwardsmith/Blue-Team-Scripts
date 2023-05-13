@@ -12,3 +12,4 @@ Blue Team
 - Malware Traffic Analysis: https://www.malware-traffic-analysis.net/
 - Open Security Training: https://opensecuritytraining.info/Training.html
 - The Art of Malware Analysis: https://courses.null-char.com/courses/the-art-of-malware-analysis
+- Zero2Automated: https://courses.zero2auto.com/
