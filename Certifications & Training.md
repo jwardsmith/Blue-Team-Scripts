@@ -3,7 +3,7 @@
 Blue Team
 --------------------
 - Security Blue Team Level 1: https://securityblue.team/courses/blue-team-level-1-certification/
-- Blue Team Labs: https://blueteamlabs.online/
+- Blue Team Labs: :warning: https://blueteamlabs.online/
 - Rangeforce: :warning: https://www.rangeforce.com/
 - ELearnSecurity: https://elearnsecurity.com/
 - Boss of the SOC: :white_check_mark: https://www.splunk.com/en_us/blog/tag/boss-of-the-soc.html
