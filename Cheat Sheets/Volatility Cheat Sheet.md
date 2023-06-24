@@ -1,8 +1,3 @@
 # Volatility Cheat Sheet
 
-- Use Volatility (https://github.com/volatilityfoundation/volatility)
-
-```
-C:\> EvtxECmd.exe -f Security.evtx
-```
-
+Volatility is a framework for performing digital investigations on Windows, Linux, and Mac memory images.
