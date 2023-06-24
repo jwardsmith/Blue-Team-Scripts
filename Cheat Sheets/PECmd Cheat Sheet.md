@@ -1,6 +1,6 @@
 # PECmd Cheat Sheet
 
-- Run PECmd
+- Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
 ```
 C:\> PECmd.exe -f <.pf file>
