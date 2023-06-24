@@ -7,3 +7,9 @@ Kansa was designed to gather data from hundreds of hosts at a time, given two pr
 The Modules folder contains the plugins that Kansa will invoke on remote hosts.
 
 The Analysis folder contains PowerShell scripts for conducting basic analysis of the collected data. Many of the analysis scripts require logparser.exe.
+
+- Run Kansa
+
+```
+PS C:\> .\kansa.ps1 -OutputPath .\Output\ -TargetList .\hostlist -TargetCount 250 -Verbose -Pushbin
+```
