@@ -150,6 +150,8 @@ OR
 
 ```
 # vol.py -f memory.dmp --profile=Win10x64_19041 netscan
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 netscan | egrep -i 'CLOSE|ESTABLISHED|Offset'
 ```
 
 ### Look for Evidence of Code Injection
