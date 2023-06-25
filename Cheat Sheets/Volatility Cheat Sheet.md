@@ -205,8 +205,23 @@ OR
 ```
 # vol.py -f memory.dmp --profile=Win10x64_19041 modscan
 ```
+
 - apihooks: Find DLL function (inline and trampoline) hooks
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 apihooks
+```
+
 - driverirp: Identify I/O Request Objects (IRP) hooks
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 driverirp
+```
+
 - idt: Display Interrupt Descriptor Table hooks
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 idt
+```
 
 ### Dump Suspicious Processes and Drivers
