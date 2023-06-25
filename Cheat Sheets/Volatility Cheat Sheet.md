@@ -63,8 +63,24 @@ Volatility is a framework for performing digital investigations on Windows, Linu
 ```
 
 - pstree: Print process list as a tree showing parent relationships (using EPROCESS linked list)
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 pstree
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 pstree -v
+```
+
 - malprocfind: Automatically identify suspicious system processes
-- processbl: Compare processes and loaded DLLs with a baseline image 
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 malprocfind
+```
+
+- processbl: Compare processes and loaded DLLs with a baseline image
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 -B ./baseline-memory/Win7SP1x86-baseline.img processbl -U 2>error.log
+```
 
 ### Analyse Process DLLs and Handles
 
