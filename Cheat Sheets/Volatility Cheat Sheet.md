@@ -51,7 +51,17 @@ Volatility is a framework for performing digital investigations on Windows, Linu
    - Why would a system process use a user account SID?
  
 - pslist: Print all running processes within the EPROCESS doubly linked list
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 pslist
+```
+
 - psscan: Scan physical memory for EPROCESS pool allocations
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 psscan
+```
+
 - pstree: Print process list as a tree showing parent relationships (using EPROCESS linked list)
 - malprocfind: Automatically identify suspicious system processes
 - processbl: Compare processes and loaded DLLs with a baseline image 
