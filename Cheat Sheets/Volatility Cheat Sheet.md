@@ -188,4 +188,25 @@ OR
 
 ### Check for Signs of a Rootkit
 
+- ssdt: Display System Service Descriptor Table entries
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 ssdt | egrep -v '(ntoskrnl|win32k)'
+```
+
+- psxview: Find hidden processes via cross-view techniques
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 psxview -R
+```
+
+- modscan: Find module via pool tag scanning
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 modscan
+```
+- apihooks: Find DLL function (inline and trampoline) hooks
+- driverirp: Identify I/O Request Objects (IRP) hooks
+- idt: Display Interrupt Descriptor Table hooks
+
 ### Dump Suspicious Processes and Drivers
