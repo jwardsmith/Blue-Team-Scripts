@@ -85,10 +85,40 @@ OR
 ### Analyse Process DLLs and Handles
 
 - dlllist: Print list of loaded DLLs for each process
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 dlllist
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 dlllist -p <PID>
+```
+
 - cmdline: Display command line args for each process
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 cmdline
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 cmdline -p <PID>
+```
+
 - getsids: Print the ownership SIDs for each process
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 getsids
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 getsids -p <PID>
+```
+
 - handles: Print list of open handles for each process
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 handles -t File -p <PID>
+```
+
 - mutantscan: Scan memory for mutant objects (KMUTANT)
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 mutantscan
+```
 
 ### Review Network Artifacts
 
