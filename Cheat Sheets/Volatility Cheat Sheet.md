@@ -122,6 +122,12 @@ OR
 
 ### Review Network Artifacts
 
+- connections: Print list of active, open TCP connection [XP/2003]
+- connscan: Scan memory for TCP connection, including those closed or unlinked [XP/2003]
+- sockets: Print list of active, available sockets (any protocol) [XP/2003]
+- sockscan: Scan memory for sockst, including those closed or unlinked (any protocol) [XP/2003]
+- netscan: All of the above - scan for both connections and sockets [Vista+]
+
 ### Look for Evidence of Code Injection
 
 ### Check for Signs of a Rootkit
