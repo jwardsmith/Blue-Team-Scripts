@@ -225,3 +225,61 @@ OR
 ```
 
 ### Dump Suspicious Processes and Drivers
+
+- dlldump: Dump DLLs from a process
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 dlllist -p <PID>
+# vol.py -f memory.dmp --profile=Win10x64_19041 dlldump -p <PID> -b <base address from above> --dump-dir=/output/
+```
+
+- moddump: Dump a kernel driver to an executable file sample
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 modules
+# vol.py -f memory.dmp --profile=Win10x64_19041 moddump -b <base address from above> --dump-dir=/output/
+```
+
+- procdump: Dump a process to an executable file sample
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 psscan
+# vol.py -f memory.dmp --profile=Win10x64_19041 procdump -p <PID> --dump-dir=/output/
+```
+
+- memdump: Dump all addressable memory for a process into one file
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 psscan
+# vol.py -f memory.dmp --profile=Win10x64_19041 memdump -p <PID> --dump-dir=/output/
+```
+
+- cmdscan: Scan for COMMAND_HISTORY buffers
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 cmdscan
+```
+
+- consoles: Scan for CONSOLE_INFORMATION output
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 consoles
+```
+
+- dumpfiles: Extract files by name or physical offset
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 dumpfiles --dump-dir=/output/
+```
+
+- filescan: Scan memory for FILE_OBJECTs
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 filescan
+```
+
+- shimcachemem: Extract Application Compatibility Cache artifacts from memory
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 shimcachemem
+```
