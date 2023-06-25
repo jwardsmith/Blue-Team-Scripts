@@ -84,6 +84,12 @@ OR
 
 ### Analyse Process DLLs and Handles
 
+- dlllist: Print list of loaded DLLs for each process
+- cmdline: Display command line args for each process
+- getsids: Print the ownership SIDs for each process
+- handles: Print list of open handles for each process
+- mutantscan: Scan memory for mutant objects (KMUTANT)
+
 ### Review Network Artifacts
 
 ### Look for Evidence of Code Injection
