@@ -22,3 +22,21 @@ Volatility is a framework for performing digital investigations on Windows, Linu
 ```
 # vol.py -f memory.dmp kdbgscan
 ```
+
+- Convert crash dumps and hibernation files to raw memory images
+
+```
+# vol.py -f /memory/hiberfil.sys imagecopy -O hiberfil.raw --profile=WinXPSP2x86
+```
+
+### Identify Rouge Processes
+
+### Analyse Process DLLs and Handles
+
+### Review Network Artifacts
+
+### Look for Evidence of Code Injection
+
+### Check for Signs of a Rootkit
+
+### Dump Suspicious Processes and Drivers
