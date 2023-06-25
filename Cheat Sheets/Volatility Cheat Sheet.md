@@ -154,6 +154,38 @@ OR
 
 ### Look for Evidence of Code Injection
 
+- ldrmodules: Detect unlinked DLLs and non-memory-mapped files (look for false)
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 ldrmodules -p <PID>
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 ldrmodules | grep False
+```
+
+- malfind: Find hidden and injected code and dump affected memory sections (memory section marked as Page_Execute_ReadWrite, Memory section not backed with a file on disk, Memory section contains code (PE file or shellcode))
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 malfind --dump-dir=./output_dir/
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 malfind | grep -B4 MZ | grep Process
+```
+
+- hollowfind: Identify evidence of known process hollowing techniques
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 hollowfind
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 hollowfind -p <PID>
+```
+
+- threadmap: Analyse threads to identify process hollowing countermeasures
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 threadmap
+OR
+# vol.py -f memory.dmp --profile=Win10x64_19041 threadmap -p <PID>
+```
+
 ### Check for Signs of a Rootkit
 
 ### Dump Suspicious Processes and Drivers
