@@ -123,10 +123,34 @@ OR
 ### Review Network Artifacts
 
 - connections: Print list of active, open TCP connection [XP/2003]
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 connection
+```
+
 - connscan: Scan memory for TCP connection, including those closed or unlinked [XP/2003]
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 connscan
+```
+
 - sockets: Print list of active, available sockets (any protocol) [XP/2003]
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 sockets
+```
+
 - sockscan: Scan memory for sockst, including those closed or unlinked (any protocol) [XP/2003]
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 sockscan
+```
+
 - netscan: All of the above - scan for both connections and sockets [Vista+]
+
+```
+# vol.py -f memory.dmp --profile=Win10x64_19041 netscan
+```
 
 ### Look for Evidence of Code Injection
 
