@@ -111,7 +111,7 @@ OR
 - handles: Print list of open handles for each process
 
 ```
-# vol.py -f memory.dmp --profile=Win10x64_19041 handles -t File -p <PID>
+# vol.py -f memory.dmp --profile=Win10x64_19041 handles -s -t File,Key -p <PID>
 ```
 
 - mutantscan: Scan memory for mutant objects (KMUTANT)
