@@ -15,6 +15,8 @@ Volatility is a framework for performing digital investigations on Windows, Linu
 # vol.py malfind -h
 ```
 
+### Preliminary Tools
+
 - Find and decrypt KDBG structure to help identify system profile (determine the OS and build) (match the Build string with the Profile suggestion)
 
 ```
