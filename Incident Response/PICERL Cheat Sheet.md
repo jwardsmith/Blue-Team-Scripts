@@ -7,7 +7,7 @@
 *Get the team ready to handle incidents.*
 
 - People - are our people trained?
-- Policy - do we have warning banners that explicitly define our organisation’s policy on the presumption of privacy, and do we have an approach to incident handling (contain and clear, or watch and learn)?
+- Policy - do we have warning banners that explicitly define our organisation’s policy on the presumption of privacy, do we have an approach to incident handling (contain and clear, or watch and learn), and do we have a policy for outside "peer" notification?
 - Processes
 - Technology
 
