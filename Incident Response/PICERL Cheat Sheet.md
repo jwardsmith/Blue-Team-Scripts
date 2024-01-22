@@ -4,6 +4,13 @@
 
 ### Preparation
 
+*Get the team ready to handle incidents.*
+
+- People - are our people trained?
+- Policy - do we have warning banners that explicitly define our organisation’s policy on the presumption of privacy?
+- Processes
+- Technology
+
 ### Identification
 
 ### Containment
