@@ -18,8 +18,9 @@
 - Reporting Facilities - do we have a way user's can report abnormal activity to us (phone hotline, email, intranet website)?
 - Train the Team - are our incident responders trained (tools/techniques training)?
 - Cultivate Relationships - do we have good relationships with our service desk and system admin/network admin employees?
+- Jump Bag - do we have a jump bag stocked with fresh media for storing system images (CDs/USBs/HDDs)?
 - Processes
-- Technology
+- Technology - do we have security tooling e.g. SIEM/EDR/Proxy?
 
 ### Identification
 
