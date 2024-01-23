@@ -12,6 +12,8 @@
 - Building a Team - do we have qualified people on the team?
 - Checklists & Team Issues - do we have system build checklists for backing up and rebuilding, and do we have a compensation plan for the team?
 - Team Organisation - do we have a solid team structure?
+- Emergency Comm Plan - do we have an emergency communications plan, and a call list?
+- Access to Systems & Data - do we have controlled access to systems and data?
 - Processes
 - Technology
 
