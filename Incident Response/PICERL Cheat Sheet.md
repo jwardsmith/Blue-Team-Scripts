@@ -26,6 +26,10 @@
 
 *The bulk of all detects will come from either sensor platforms or the things people just happen to notice.*
 
+- Be willing to alert early!
+- Assigning Handlers - do we have a primary incident handler?
+- Control the Flow of Information - have we enforced a need to know policy?
+
 ### Containment
 
 ### Eradication
