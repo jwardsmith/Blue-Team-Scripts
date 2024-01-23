@@ -24,6 +24,8 @@
 
 ### Identification
 
+*The bulk of all detects will come from either sensor platforms or the things people just happen to notice.*
+
 ### Containment
 
 ### Eradication
