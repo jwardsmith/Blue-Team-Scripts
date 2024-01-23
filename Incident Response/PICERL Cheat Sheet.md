@@ -19,7 +19,7 @@
 - Train the Team - are our incident responders trained (tools/techniques training)?
 - Cultivate Relationships - do we have good relationships with our service desk and system admin/network admin employees?
 - Jump Bag - do we have a jump bag stocked with fresh media for storing system images (CDs/USBs/HDDs)?
-- Processes
+- Processes - do we have playbooks/SOPs/templates?
 - Technology - do we have security tooling e.g. SIEM/EDR/Proxy, do we have binary image-creation software e.g. dd, Netcat, ncat, or Safeback, do we have forensic software e.g. Sleuth Kit, Autopsy, EnCase, Forensics Toolkit (FTK), or X-Ways Forensics, do we have diagnosis software we can trust, and do we have investigative tools e.g. SANS SIFT VM?
 
 ### Identification
