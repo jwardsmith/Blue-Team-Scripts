@@ -43,6 +43,8 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Inform Impacted Business Unit - have we notified the impacted business unit?
 - Incident Tracking Entry - have we created a ticket for documentation and tracking purposes?
 - Short-Term Containment - isolate device so it cannot connect to corporate VPN, disable AD account, force shut down, disconnect network cable, pull power cable (loses volatile memory, and may damage drive), apply filters to routers or firewalls, change a name in DNS to point to a different IP address (most attackers target systems based on their IP address) (altering DNS so that the domain name for the impacted system points to a different IP address, perhaps one where you have a newly installed, secured machine offering up the desired production service).
+- ISP Coordination - do we need to ISP assistance for large packet floods, bot-nets, worms?
+- Creating Forensics Images - can we create an image of memory, as well as the filesystem as soon as possible (dd, Memoryze, FTK)?
 
 ### Eradication
 
