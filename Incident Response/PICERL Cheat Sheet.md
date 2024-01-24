@@ -38,6 +38,9 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 *Stop the bleeding.*
 
+- Characterise Incident - do we know the category (DoS, compromised asset, malware, phish), criticality (critical, high, medium, low, info), and sensitivity of the incident (extremely sensitive, sensitive, less sensitive).
+- Inform Management - have we notified our manager?
+
 ### Eradication
 
 ### Recovery
