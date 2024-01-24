@@ -32,6 +32,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Assigning Handlers - do we have a primary incident handler?
 - Control the Flow of Information - have we enforced a need to know policy?
 - Communication Channels - do we have out-of-band communication channels (use telephone and faxes)?
+- Establish Chain of Custody - do we have a provable chain of custody?
 
 ### Containment
 
