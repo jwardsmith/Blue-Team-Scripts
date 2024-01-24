@@ -24,7 +24,7 @@
 
 ### Identification
 
-*The bulk of all detects will come from either sensor platforms or the things people just happen to notice.*
+*The bulk of all detects will come from either sensor platforms or the things people just happen to notice. Can occur at the network perimeter (external-facing IDS/IPS), host perimeter (personal FW/IDS/IPS), system-level (AV/EDR/FIM), or application-level (web app, cloud service).*
 
 - Be willing to alert early!
 - Assigning Handlers - do we have a primary incident handler?
