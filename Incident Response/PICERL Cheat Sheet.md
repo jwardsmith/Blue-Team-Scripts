@@ -40,6 +40,8 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 - Characterise Incident - do we know the category (DoS, compromised asset, malware, phish), criticality (critical, high, medium, low, info), and sensitivity of the incident (extremely sensitive, sensitive, less sensitive).
 - Inform Management - have we notified our manager?
+- Inform Impacted Business Unit - have we notified the impacted business unit?
+- Incident Tracking Entry - have we created a ticket for documentation and tracking purposes?
 
 ### Eradication
 
