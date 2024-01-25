@@ -49,7 +49,16 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Determine Risk of Continuing Operations - how far did the attacker get, and do we need a recommendation for longer term containment?
 - Long-Term Decision - can the system be kept offline, therefore we can move to the Eradication phase, or does the system have to be kept in production, therefore we need to perform long-term containment?
 - Lomg-Term Containment - patch the system, patch neighbouring systems, insert an IPS, null routing, change passwords, alter trust relationships, apply firewall and router filter rules, remove accounts used by the attacker, and shutdown backdoor processes used by the attacker (the idea for long-term containment is to apply a temporary band-aid to stay in production while you are building a clean system during eradication)?
+- Continue to Consult with System Owners - have we kept the system owners and administrators briefed on progress, and have we ensured not to play the "blame game"?
+
 ### Eradication
+
+*With the bleeding stopped, the goal of the Eradication phase is to get rid of the aftacker’s artifacts on the machine.*
+
+- Restore from Backups - can we wipe the drive (zeroing it out), reformat (without a complete reformat, the attacker's residual data, tools, and access may linger), and rebuild the system (reinstall the OS, and reloading the data from a clean backup)?
+- Remove Malicious Software - have we removed the malware inserted by the attacker?
+- Improve Defenses - have we implemented appropriate protection techniques e.g. applying firewall and router filters, moving the system to a new hostname/IP address, null routing particular IP addresses, changing DNS names, applying patches and hardening the system?
+- Vulnerability Analysis - have we performed vulnerability analysis on the affected system to faciliate hardening?
 
 ### Recovery
 
