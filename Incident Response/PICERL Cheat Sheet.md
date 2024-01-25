@@ -62,4 +62,10 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 ### Recovery
 
+*Put the impacted system back into production in a safe manner.*
+
+- Restore Operations - have we decided when to restore operations?
+- Monitor - are we continuing to monitor for malware that escaped detection?
+- Looking for Artifacts to Come Back - are we checking regularly to see if the attacker has returned?
+
 ### Lessons Learned
