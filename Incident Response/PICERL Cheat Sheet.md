@@ -49,7 +49,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Drive Duplicator Hardware and Write Blockers - do we have drive duplicator (copy entire drives with ease) and write-blocking hardware (read-only copies)?
 - Determine Risk of Continuing Operations - how far did the attacker get, and do we need a recommendation for longer term containment?
 - Long-Term Decision - can the system be kept offline, therefore we can move to the Eradication phase, or does the system have to be kept in production, therefore we need to perform long-term containment?
-- Lomg-Term Containment - patch the system, patch neighbouring systems, insert an IPS, null routing, change passwords, alter trust relationships, apply firewall and router filter rules, remove accounts used by the attacker, and shutdown backdoor processes used by the attacker (the idea for long-term containment is to apply a temporary band-aid to stay in production while you are building a clean system during eradication)?
+- Long-Term Containment - patch the system, patch neighbouring systems, insert an IPS, null routing, change passwords, alter trust relationships, apply firewall and router filter rules, remove accounts used by the attacker, and shutdown backdoor processes used by the attacker (the idea for long-term containment is to apply a temporary band-aid to stay in production while you are building a clean system during eradication)?
 - Continue to Consult with System Owners - have we kept the system owners and administrators briefed on progress, and have we ensured not to play the "blame game"?
 
 ### Eradication
