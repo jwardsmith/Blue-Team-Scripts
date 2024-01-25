@@ -30,6 +30,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 - Be willing to alert early!
 - Assigning Handlers - do we have a primary incident handler?
+- Analyse Logs - who is the user, and what device is involved? Can we identify a root cause? Can we identify point of compromise?
 - Control the Flow of Information - have we enforced a need to know policy?
 - Communication Channels - do we have out-of-band communication channels (use telephone and faxes)?
 - Establish Chain of Custody - do we have a provable chain of custody?
@@ -66,12 +67,14 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 - Restore Operations - have we decided when to restore operations?
 - Monitor - are we continuing to monitor for malware that escaped detection?
+- Create Detections - have we created detections to detect this activity in the future (either attack techniques or IOC's)?
 - Looking for Artifacts to Come Back - are we checking regularly to see if the attacker has returned?
 
 ### Lessons Learned
 
 *Document what happened and improve our capabilities.*
 
-- Report - have we developed a follow-up report?
+- Report - have we developed a follow-up post incident review report? Have all affected parties reviewed, commented, signed off on it?
 - Meeting - have we scheduled a Lessions Learned meeting?
 - Apply Fixes - based on what we learned, have we got appropriate approval and funding to fix our processes, technology, incident-handling capabilties?
+- Update Playbooks/SOP's - have we updated our playbooks/SOP's from what we have learnt?
