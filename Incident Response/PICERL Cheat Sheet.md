@@ -69,3 +69,9 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Looking for Artifacts to Come Back - are we checking regularly to see if the attacker has returned?
 
 ### Lessons Learned
+
+*Document what happened and improve our capabilities.*
+
+- Report - have we developed a follow-up report?
+- Meeting - have we scheduled a Lessions Learned meeting?
+- Apply Fixes - based on what we learned, have we got appropriate approval and funding to fix our processes, technology, incident-handling capabilties?
