@@ -31,6 +31,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Be willing to alert early!
 - Assigning Handlers - do we have a primary incident handler?
 - Analyse Logs - who is the user, and what device is involved? Can we identify a root cause? Can we identify point of compromise?
+- Scope the Incident - have we scoped the incident fully?
 - Control the Flow of Information - have we enforced a need to know policy?
 - Communication Channels - do we have out-of-band communication channels (use telephone and faxes)?
 - Establish Chain of Custody - do we have a provable chain of custody?
