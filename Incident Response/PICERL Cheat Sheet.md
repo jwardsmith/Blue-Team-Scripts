@@ -24,7 +24,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Processes - do we have playbooks/SOPs/templates?
 - Technology - do we have security tooling e.g. SIEM/EDR/Proxy, do we have binary image-creation software e.g. dd, Netcat, ncat, or Safeback, do we have forensic software e.g. Sleuth Kit, Autopsy, EnCase, Forensics Toolkit (FTK), or X-Ways Forensics, do we have diagnosis software we can trust, and do we have investigative tools e.g. SANS SIFT VM?
 
-### Identification
+### Identification / Scoping
 
 *The bulk of all detects will come from either sensor platforms or the things people just happen to notice. Can occur at the network perimeter (external-facing NIDS/NIPS), host perimeter (personal FW/HIDS/HIPS), system-level (AV/EDR/FIM), or application-level (web app, cloud service). https://zeltser.com/security-incident-questionnaire-cheat-sheet/.*
 
@@ -36,7 +36,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Communication Channels - do we have out-of-band communication channels (use telephone and faxes)?
 - Establish Chain of Custody - do we have a provable chain of custody?
 
-### Containment
+### Containment / Intelligence Development
 
 *Stop the bleeding.*
 
@@ -52,8 +52,9 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Long-Term Decision - can the system be kept offline, therefore we can move to the Eradication phase, or does the system have to be kept in production, therefore we need to perform long-term containment (the idea for long-term containment is to apply a temporary band-aid to stay in production while you are building a clean system during eradication)?
 - Long-Term Containment - patch the system, patch neighbouring systems, insert an IPS, null routing, change passwords, alter trust relationships, apply firewall and router filter rules, remove accounts used by the attacker, and shutdown backdoor processes used by the attacker.
 - Continue to Consult with System Owners - have we kept the system owners and administrators briefed on progress, and have we ensured not to play the "blame game"?
+- Intelligence Development - have we developed intelligence on the TTP's and intent of the adversary, and have we gathered the malware, developed IOC's, and identified the campaign? (this will help with additional scoping)
 
-### Eradication
+### Eradication / Remediation
 
 *With the bleeding stopped, the goal of the Eradication phase is to get rid of the aftacker’s artifacts on the machine.*
 
