@@ -59,6 +59,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 
 - Restore from Backups - can we wipe the drive (zeroing it out), reformat (without a complete reformat, the attacker's residual data, tools, and access may linger), and rebuild the system (reinstall the OS, and reloading the data from a clean backup)?
 - Remove Malicious Software - have we removed the malware inserted by the attacker?
+- Block IOC's - have we blocked indicators of compromise (IP addresses, domains, URL's, and hashes)?
 - Improve Defenses - have we implemented appropriate protection techniques e.g. applying firewall and router filters, moving the system to a new hostname/IP address, null routing particular IP addresses, changing DNS names, applying patches and hardening the system?
 - Vulnerability Assessment - have we performed vulnerability assessment on the affected system to faciliate hardening?
 
