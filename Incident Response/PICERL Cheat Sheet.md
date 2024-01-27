@@ -53,6 +53,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Long-Term Containment - patch the system, patch neighbouring systems, insert an IPS, null routing, change passwords, alter trust relationships, apply firewall and router filter rules, remove accounts used by the attacker, and shutdown backdoor processes used by the attacker.
 - Continue to Consult with System Owners - have we kept the system owners and administrators briefed on progress, and have we ensured not to play the "blame game"?
 - Intelligence Development - have we developed intelligence on the TTP's and intent of the adversary, and have we gathered the malware, developed IOC's, and identified the campaign (this will help with additional scoping)?
+- Active Defense - can we prevent or slow additional access during the monitoring and collection phase (data decoy, corrupting data, preventing lateral movement or exfiltration, kill switches, adversary network segmentation)?
 
 ### Eradication / Remediation
 
