@@ -71,6 +71,7 @@ https://www.sans.org/media/score/504-incident-response-cycle.pdf
 - Monitor - are we continuing to monitor for malware that escaped detection?
 - Create Detections - have we created detections to detect this activity in the future (either attack techniques or IOC's)?
 - Looking for Artifacts to Come Back - are we checking regularly to see if the attacker has returned?
+- Improvements - have we improved the overall security of the network (enhanced network visibility, comprehensive patch management program, enforce change management program, centralised logging, enhanced password portal, security awareness training program, and network redesign)?
 
 ### Lessons Learned
 
