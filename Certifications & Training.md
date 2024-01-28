@@ -13,3 +13,4 @@ Blue Team
 - Open Security Training: https://opensecuritytraining.info/Training.html
 - The Art of Malware Analysis: :warning: https://courses.null-char.com/courses/the-art-of-malware-analysis
 - Zero2Automated: https://courses.zero2auto.com/
+- Malware Unicorn: https://malwareunicorn.org/#/
