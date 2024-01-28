@@ -1,6 +1,6 @@
 # What To Collect
 
-1. Machine information and Operating system information:
+### 1. Machine information and Operating system information
 The information collected should include artifacts such as machine name, OS version, licensed organisation, OS install date, boot time, time zone, domain name the machine is logged into, etc. While there are multiple PowerShell Cmdlets to get this information, Windows 10 already has a built-in tool that captures all these information - systeminfo
 
 2. User accounts and current login information
