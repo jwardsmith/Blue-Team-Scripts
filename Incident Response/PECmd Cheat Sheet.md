@@ -10,6 +10,8 @@ Keep an eye out for multiple prefetch files with the same executable name. For m
 
 ***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost.*
 
+***Prefetch Hash Calculator**: http://www.hexacorn.com/blog/2012/06/13/prefetch-hash-calculator-a-hash-lookup-table-xpvistaw7w2k3w2k8/*
+
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
 ```
