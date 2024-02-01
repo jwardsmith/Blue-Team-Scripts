@@ -14,3 +14,5 @@ Blue Team
 - The Art of Malware Analysis: :warning: https://courses.null-char.com/courses/the-art-of-malware-analysis
 - Zero2Automated: https://courses.zero2auto.com/
 - Malware Unicorn: https://malwareunicorn.org/#/
+- Investigating Windows Endpoints 13Cubed: https://training.13cubed.com/investigating-windows-endpoints
+- Practical Threat Hunting: https://www.networkdefense.io/library/practical-threat-hunting-29861/87345/about/
