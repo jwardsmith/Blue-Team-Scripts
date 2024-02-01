@@ -8,7 +8,7 @@ Keep an eye out for multiple prefetch files with the same executable name. For m
 
 ***Naming Convention**: \<Exe name>-\<Hash>.pf. Hash calculated based on \<dir> path of executable and the command line options of certain programs e.g. svchost.exe.*
 
-***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier).*
+***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost.*
 
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
