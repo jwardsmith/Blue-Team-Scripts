@@ -10,11 +10,11 @@ Keep an eye out for multiple prefetch files with the same executable name. For m
 
 ***Prefetch Hash Calculator**: http://www.hexacorn.com/blog/2012/06/13/prefetch-hash-calculator-a-hash-lookup-table-xpvistaw7w2k3w2k8/*
 
-***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost.*
+***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost. Just because a .pf file was created, it does not mean that the program was successful in execution. Many "broken" programs that attempt execution will still be assigned a .pf file.*
 
-***Date/Time .exe was first executed**: Creation date of .pf file (~-10 seconds). Technically the first time we know as the prefetch entries are limited and may have aged out.*
+***Date/Time .exe was first executed**: Creation date of .pf file (~-10 seconds). Technically the first time we know as the prefetch entries are limited and may have aged out. The files don't get created or modified until after 10 seconds after each exeuction as the prefetcher service is watching everything the application touches within the first 10 seconds of execution storing that information inside of the .pf file. This is only necessary for file system timestamps and not for the embedded timestamps inside the .pf file.*
 
-***Date/Time .exe was last executed**: Modification date of .pf file (~-10 seconds). Last time of execution stored inside the .pf file as well. Windows 8+ embeds the last eight execution times in .pf file.*
+***Date/Time .exe was last executed**: Modification date of .pf file (~-10 seconds). Last time of execution stored inside the .pf file as well. Windows 8+ embeds the last eight execution times in .pf file. The files don't get created or modified until after 10 seconds after each exeuction as the prefetcher service is watching everything the application touches within the first 10 seconds of execution storing that information inside of the .pf file. This is only necessary for file system timestamps and not for the embedded timestamps inside the .pf file.*
 
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
