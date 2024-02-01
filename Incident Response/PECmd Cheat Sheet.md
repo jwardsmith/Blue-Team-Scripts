@@ -8,9 +8,13 @@ Keep an eye out for multiple prefetch files with the same executable name. For m
 
 ***Naming Convention**: \<Exe name>-\<Hash>.pf. Hash calculated based on \<dir> path of executable and the command line options of certain programs e.g. svchost.exe.*
 
+***Prefetch Hash Calculator**: http://www.hexacorn.com/blog/2012/06/13/prefetch-hash-calculator-a-hash-lookup-table-xpvistaw7w2k3w2k8/*
+
 ***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost.*
 
-***Prefetch Hash Calculator**: http://www.hexacorn.com/blog/2012/06/13/prefetch-hash-calculator-a-hash-lookup-table-xpvistaw7w2k3w2k8/*
+***Date/Time .exe was first executed**: Creation date of .pf file (~-10 seconds).*
+
+***Date/Time .exe was last executed**: Modification date of .pf file (~-10 seconds). Last time of execution stored inside the .pf file as well. Windows 8+ embeds the last eight execution times in .pf file.*
 
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
