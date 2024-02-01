@@ -14,8 +14,8 @@
 - \W	Any Non-alphanumeric character
 - {m}	m Repetitions
 - {m,n}	m to n Repetitions
-- *	Zero or more repetitions
-- +	One or more repetitions
+- \*	Zero or more repetitions
+- \+	One or more repetitions
 - ?	Optional character
 - \s	Any Whitespace
 - \S	Any Non-whitespace character
