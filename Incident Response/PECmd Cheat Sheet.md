@@ -1,5 +1,7 @@
 # PECmd Cheat Sheet
 
+*Prefetch provides application execution data: executable name, execution time(s), and execution count. Located at C:\Windows\Prefetch.*
+
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
 ```
