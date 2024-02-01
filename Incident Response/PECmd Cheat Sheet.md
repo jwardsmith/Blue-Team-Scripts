@@ -12,7 +12,7 @@ Keep an eye out for multiple prefetch files with the same executable name. For m
 
 ***Limitations**: 1024 prefetch files in Win8+ (limited to 128 files on Win7 and earlier). Running live response tools on a target system will cause new prefetch files to be created for those live response executables which could result in the deletion of the oldest prefetch files. Prioritise the collection of the prefetch directory to ensure important evidence is not lost.*
 
-***Date/Time .exe was first executed**: Creation date of .pf file (~-10 seconds).*
+***Date/Time .exe was first executed**: Creation date of .pf file (~-10 seconds). Technically the first time we know as the prefetch entries are limited and may have aged out.*
 
 ***Date/Time .exe was last executed**: Modification date of .pf file (~-10 seconds). Last time of execution stored inside the .pf file as well. Windows 8+ embeds the last eight execution times in .pf file.*
 
