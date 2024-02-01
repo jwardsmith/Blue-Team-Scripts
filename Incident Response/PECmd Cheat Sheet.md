@@ -4,7 +4,7 @@ Prefetch provides application execution data: executable name, execution time(s)
 
 ***Location**: C:\Windows\Prefetch.*
 
-***Naming Convention**: \<Exe name>-\<Hash>.pf. Hash calculated based on <dir> path of executable and the command line options of certain programs e.g. svchost.exe.*
+***Naming Convention**: \<Exe name>-\<Hash>.pf. Hash calculated based on \<dir> path of executable and the command line options of certain programs e.g. svchost.exe.*
 
 - Run PECmd (https://ericzimmerman.github.io/#!index.md)
 
