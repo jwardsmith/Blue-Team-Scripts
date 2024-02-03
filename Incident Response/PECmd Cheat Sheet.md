@@ -24,5 +24,6 @@ OR
 C:\> PECmd.exe -d "E:\[root]\Windows\Prefetch" --csv "G:\cases" -q
 ```
 
-![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/92a3b608-af0a-4c5d-a482-7f45cb57d906)
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/6bd3fb56-8252-464f-bd7c-d8b0ca6a944b)
+
 
