@@ -6,6 +6,8 @@ Application Compatibility (ShimCache) checks to see if an application needs to b
 
 ***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Server 2003, there are 512 entries.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).<br> On Win10+, it does not maintain execution flag.*
 
+***Notes**: The most recent events are on top (which is helpful since most versions don't include execution time). Also new entries are only written on shutdown.
+
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
 ```
