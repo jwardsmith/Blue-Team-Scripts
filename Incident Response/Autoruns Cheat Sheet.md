@@ -5,5 +5,5 @@ This utility, which has the most comprehensive knowledge of auto-starting locati
 - Use autorunsc.exe (https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns)
 
 ```
-C:\> autorunsc -accepteula -a * -s -h -c -vr > autoruns.csv
+C:\> autorunsc -accepteula -a * -s -h -c -vrt > autoruns.csv
 ```
