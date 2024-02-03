@@ -8,6 +8,10 @@ Tracks installed applications, loaded drivers, and unassociated executables. Wil
 
 ***Limitations**: Entries can be due to automated file discovery or program installation and do not always indicate program execution. Microsoft has also changed the database massively at least four times in the short time it has been available. The format is driven by DLL version, and not OS version. This means the format you find is largely dependent on the patch level of the system. The data structures you see might be radically different if the system being investigated is on an older patch level. There are three major categories of files tracked in the latest version: Executed (and shimmed) GUI applcations, executables and drivers that were copied as part of application execution, and executables present in one of the directories scanned by the Microsoft Compatibility Appraiser scheduled task (Program Files, Program Files x86, and Desktop). The first category is the only one to do with execution, and it only applies to GUI application - this is a small subset of files. Recommendation is to use this artifact as an indication of executable and driver presence on a system, and for all the metadata it tracks for each file. Other artifacts such as Prefetch can be used to prove execution and execution times.*
 
+***Auditing Executable Presence**:
+
+***Auditing Installed Drivers**:
+
 - Run Amcacheparser (https://ericzimmerman.github.io/#!index.md)
 
 ```
