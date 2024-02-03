@@ -4,7 +4,7 @@ Application Compatibility (ShimCache) checks to see if an application needs to b
 
 ***Location**: XP: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility\AppCompatCache.<br> Server 20xx/Win7-10: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatCache\AppCompatCache.*
 
-***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).*
+***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Server 2003, there are 512 entries.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).<br> On Win10+, it does not maintain execution flag.*
 
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
