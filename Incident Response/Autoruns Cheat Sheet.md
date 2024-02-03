@@ -7,3 +7,5 @@ This utility, which has the most comprehensive knowledge of auto-starting locati
 ```
 C:\> autorunsc -accepteula -a * -s -h -c -vrt > autoruns.csv
 ```
+
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/400debf7-a971-479d-b8a4-ddb5991f37f8)
