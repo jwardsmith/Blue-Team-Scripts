@@ -13,3 +13,5 @@ Application Compatibility (ShimCache) checks to see if an application needs to b
 ```
 C:\> AppCompatCacheParser.exe -f .\SYSTEM --csv C:\Temp
 ```
+
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/666f736f-0a2f-43b6-a136-f3ca94288ca8)
