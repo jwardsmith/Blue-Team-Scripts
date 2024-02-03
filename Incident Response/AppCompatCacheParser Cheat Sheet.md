@@ -4,7 +4,7 @@ Application Compatibility checks to see if an application needs to be "shimmed" 
 
 ***Location**: XP: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility\AppCompatCache.<br> Server 20xx/Win7-10: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatCache\AppCompatCache.*
 
-***Limitations**: On XP, there are 96 entries, and the last execution time = last update time. On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).*
+***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).*
 
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
