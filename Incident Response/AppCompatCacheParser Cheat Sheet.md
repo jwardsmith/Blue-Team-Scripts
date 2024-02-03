@@ -14,7 +14,7 @@ You might also have multiple AppCompatCache databases to review, one in each con
 
 ***Date/Time**: The modification time saved in AppCompatCache can also be useful as a comparison value when determining if time manipulation has occurred on an executable. If the last modified time of the AppCompatCache entry is not the same as the actual application, the application likely has its last modified time adjusted.*
 
-***Similar tool**: https://github.com/mandiant/ShimCacheParser*
+***Similar Tool**: https://github.com/mandiant/ShimCacheParser*
 
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
