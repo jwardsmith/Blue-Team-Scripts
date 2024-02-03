@@ -4,9 +4,7 @@ Application Compatibility (ShimCache) checks to see if an application needs to b
 
 ***Location**: XP: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility\AppCompatCache.<br> Server 20xx/Win7-10: SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatCache\AppCompatCache.*
 
-***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Server 2003, there are 512 entries.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).<br> On Win10+, it does not maintain execution flag.*
-
-***Notes**: The most recent events are on top (which is helpful since most versions don't include execution time). Also new entries are only written on shutdown.*
+***Limitations**: On XP, there are 96 entries, and the last execution time = last update time.<br> On Server 2003, there are 512 entries.<br> On Windows 7+, there are 1024 entries, and InsertFlag = True (App Executed) and InsertFlag = False (App Not Executed).<br> On Win10+, it does not maintain execution flag. The most recent events are on top (which is helpful since most versions don't include execution time). Also new entries are only written on shutdown. The registry key containing AppCompatCache entries is only written on system shutdown. In Windows 10, a reboot will also cause the data to be committed to the registry. Prior to shutdown or a reboot, the applications that have been shimmed exist only in memory. A consequence of this is applications executed or identified since the last reboot will not be present in the current SYSTEM hive (the data is buffered in system memory).*
 
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
