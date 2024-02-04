@@ -22,3 +22,5 @@ C:\> amcacheparser.exe -i -f Amcache.hve --csv C:\Temp
 # Amcache_UnassociatedFileEntries = InventoryApplicationFile key. Contains information on executables present on the system that may not have been part of an installation package e.g. where did they come from?
 # 3 most important output files = Amcache_UnassociatedFileEntries, Amcache_DriverBinaries, and Amcache_ProgramEntries
 ```
+
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/6a921f28-136e-4bfa-9d15-18809aedba28)
