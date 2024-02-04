@@ -20,4 +20,5 @@ C:\> amcacheparser.exe -i -f Amcache.hve --csv C:\Temp
 # Amcache_ProgramEntries = InventoryApplication key. Contains metadata on installed applications
 # Amcache_AssociatedFileEntries = InventoryApplicationFile key. Associated with installed software
 # Amcache_UnassociatedFileEntries = InventoryApplicationFile key. Contains information on executables present on the system that may not have been part of an installation package e.g. where did they come from?
+# 3 most important output files = Amcache_UnassociatedFileEntries, Amcache_DriverBinaries, and Amcache_ProgramEntries
 ```
