@@ -12,6 +12,8 @@ Tracks installed applications, loaded drivers, and unassociated executables. Wil
 
 ***Auditing Installed Drivers**: Loaded drivers become important when investigating systems potentially infected with advanced malware. Drivers are used by a wide range of rootkits, bootkits, and security tool evasion capabilities in the wild. The Amcache.hve InventoryDriverBinary key contains a wealth of useful information on drivers seen on the system. Information is stored with one sub-key per driver, and we can look for anomalies based on known good/bad hashes, the modification time of the driver (potentially matching with known timeframes of suspicious activity), whether the driver was signed (on 64-bit systems all drivers should be signed), and any metadata stored in the PE header of the driver.*
 
+***Scaling Execution Analysis**: https://github.com/mbevilacqua/appcompatprocessor*
+
 - Run Amcacheparser (https://ericzimmerman.github.io/#!index.md)
 
 ```
