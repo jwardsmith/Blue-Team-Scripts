@@ -10,7 +10,7 @@
 
 ### Application
 
-- Software events unrelated to operating system. Example: SQL server fails to access a database.
+- Software events unrelated to operating system. Example: SQL server fails to access a database, AV alert.
 
 ### Custom
 
