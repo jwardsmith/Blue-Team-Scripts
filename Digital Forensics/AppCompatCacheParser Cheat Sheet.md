@@ -16,6 +16,8 @@ You might also have multiple AppCompatCache databases to review, one in each con
 
 ***Similar Tool**: https://github.com/mandiant/ShimCacheParser*
 
+***Scaling Execution Analysis**: https://github.com/mbevilacqua/appcompatprocessor*
+
 - Run AppCompatCacheParser (https://ericzimmerman.github.io/#!index.md)
 
 ```
