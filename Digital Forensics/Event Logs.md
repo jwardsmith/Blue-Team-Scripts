@@ -1,5 +1,7 @@
 # Event Logs
 
+***Location**: C:\Windows\System32\winevt\logs.*
+
 ### Security
 
 - Records access control and security settings. Events based on audit and group policies. Example: Failed logon, folder access.
