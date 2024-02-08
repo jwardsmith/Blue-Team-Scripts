@@ -3,7 +3,7 @@
 Unless you have a very specific reason to do otherwise, we recommend primarily focusing on the modified (M) and created (B) times in your investigation. These two timestamps are well understood and well suited to answering most time-based forensic queries.
 
 **M - Data Content Change Time:**
-- Time the data content of a file was last modified.
+- Time the data content of a file was last modified. We can have file modification time pre-dating creation time which indicates the file was copied or move occurred elsewhere - creation time tells us when it happened.
 
 **A - Last Access Time:**
 - Approximate time when the file data was last accessed.
