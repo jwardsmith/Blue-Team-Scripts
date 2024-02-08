@@ -4,7 +4,7 @@ Extract only the metadata from the filesystem. Name, path, timestamps, and file 
 
 **Tools Will Parse:**
 - Filesystem metadata
-  - Directories
+ - Directories
   - Files
     - Deleted Files
     - Unallocated Metadata
