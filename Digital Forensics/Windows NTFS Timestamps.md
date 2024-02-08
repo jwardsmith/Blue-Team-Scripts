@@ -2,6 +2,8 @@
 
 Unless you have a very specific reason to do otherwise, we recommend primarily focusing on the modified (M) and created (B) times in your investigation. These two timestamps are well understood and well suited to answering most time-based forensic queries.
 
+Remember, we only have the last time for each of these timestamps e.g. we only have the last modification time for a Word document, not every time it was modified.
+
 **M - Data Content Change Time:**
 - Time the data content of a file was last modified. We can have file modification time pre-dating creation time which indicates the file was copied or move occurred elsewhere - creation time tells us when it happened.
 
