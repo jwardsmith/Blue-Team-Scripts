@@ -13,3 +13,5 @@ Unless you have a very specific reason to do otherwise, we recommend primarily f
 
 **B - File Creation Time:**
 - Time file was created in the volume.
+
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/d2b06eeb-9774-489c-93ed-72d39efd7208)
