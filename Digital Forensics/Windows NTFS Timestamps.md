@@ -1,6 +1,6 @@
 # Windows NTFS Timestamps
 
-Unless you have a very specific reason to do otherwise, we recommend primarily focusing on the modified (M) and created (B) times in your investigation.
+Unless you have a very specific reason to do otherwise, we recommend primarily focusing on the modified (M) and created (B) times in your investigation. These two timestamps are well understood and well suited to answering most time-based forensic queries.
 
 **M - Data Content Change Time:**
 - Time the data content of a file was last modified.
