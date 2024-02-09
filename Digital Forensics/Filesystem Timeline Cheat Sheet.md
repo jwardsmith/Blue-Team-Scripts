@@ -25,4 +25,12 @@ Extract only the metadata from the filesystem. Name, path, timestamps, and file 
 
 ### MFTECmd.exe
 
-Extract data from $MFT (Master File Table) files, filesystem journals, and several other NTFS system files.
+Extract data from $MFT (Master File Table) files, filesystem journals, and several other NTFS system files. We use MFTECmd to extract data into timeline (bodyfile) format. It easily extracts the contents of a $MFT file into a format that can be easily filtered and made human-readable using a program called mactime. MFTECmd can also be used to output MFT metadata to CSV format. The CSV output format allows much more detail to be included and can be a great supplement to your timeline.
+
+- Use MFTEcmd (https://ericzimmerman.github.io/#!index.md)
+
+```
+C:\> MFTEcmd.exe -f "E:\C\$MFT" --body "G:\timeline" --bodyf mft.body --blf --bdl C:        # For bodyfile format
+C:\> MFTEcmd.exe -f "E:\C\$MFT" --csv "G:\timeline" --csvf mft.csv        # For CSV format
+```
+
