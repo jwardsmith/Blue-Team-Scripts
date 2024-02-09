@@ -22,3 +22,7 @@ Extract only the metadata from the filesystem. Name, path, timestamps, and file 
 - ISO9660 -CDROM
 - HFS+
 - UFS1&2
+
+### MFTECmd.exe
+
+Extract data from $MFT (Master File Table) files, filesystem journals, and several other NTFS system files.
