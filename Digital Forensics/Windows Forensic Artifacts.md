@@ -73,14 +73,14 @@
 ### File Download
 
 #### Open/Save MRU
-Description:
+**Description**:
 In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a majority of commonly used applications.
 
-Location: 
+**Location**: 
 XP: NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
 Win7–10: NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
 
-Interpretation:
+**Interpretation**:
 - The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave dialog.
 - .??? (three-letter extension): This subkey stores file info from the OpenSave dialog by specific extension.
 
