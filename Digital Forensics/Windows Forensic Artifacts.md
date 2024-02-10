@@ -71,20 +71,20 @@
     - Memory Fragments of Private Browsing 
 
 ### File Download
+
 #### Open/Save MRU
 Description:
-In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This
-happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a
-majority of commonly used applications.
-Location:
-XP NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
-Win7–10
-NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a majority of commonly used applications.
+
+Location: 
+XP: NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
+Win7–10: NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+
 Interpretation:
-• The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave
-dialog.
-• .??? (three-letter extension): This subkey stores file info from the OpenSave dialog by specific
-extension.
+- The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave dialog.
+- .??? (three-letter extension): This subkey stores file info from the OpenSave dialog by specific extension.
+
+
 Email Attachments
 Description:
 The email industry estimates that 80% of email data is stored via attachments. Email standards allow only text.
