@@ -34,3 +34,10 @@ C:\> MFTEcmd.exe -f "E:\C\$MFT" --body "G:\timeline" --bodyf mft.body --blf --bd
 C:\> MFTEcmd.exe -f "E:\C\$MFT" --csv "G:\timeline" --csvf mft.csv        # For CSV format
 ```
 
+Extract filename and metadata information for files. fls is designed to extract metadata information using an image of a filesystem volume (e.g. the entire C: drive), while MFTECmd uses just the $MFT file for the C: drive providing timelining capability in times when a disk image is not available or feasible. Also, fls can parse many more filesystems than just NTFS, while MFTECmd supports only NTFS-only. Also, fls can be run against live systems.
+
+- Use fls (https://www.sleuthkit.org/sleuthkit/download.php)
+
+```
+C:\> fls <options> image <inode>
+```
