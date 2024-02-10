@@ -41,5 +41,5 @@ Extract filename and metadata information for files. fls is designed to extract 
 - Use fls (https://www.sleuthkit.org/sleuthkit/download.php)
 
 ```
-C:\> fls <options> image <inode>
+C:\> fls -m image <inode>
 ```
