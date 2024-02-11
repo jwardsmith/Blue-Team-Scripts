@@ -89,7 +89,6 @@ Interpretation:
 dialog.
 • .??? (three-letter extension): This subkey stores file info from the OpenSave dialog by specific
 extension.
----------------------------------------------------------------------------------------------------------------------
 
 **Email Attachments**
 
