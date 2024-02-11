@@ -74,6 +74,7 @@
 ### File Download
 
 **Open/Save MRU**
+
 Description:
 In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This
 happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a
@@ -90,6 +91,7 @@ dialog.
 extension.
 
 **Email Attachments**
+
 Description:
 The email industry estimates that 80% of email data is stored via attachments. Email standards allow only text.
 Attachments must be encoded with MIME/base64 format.
@@ -105,6 +107,7 @@ information on where to find the OLK folder, this link has a handy chart at
 http://www.hancockcomputertech.com/blog/category/microsoft/outlook/
 
 **Skype History**
+
 Description:
 • Skype history keeps a log of chat sessions and files transferred from one machine to another.
 • This is turned on by default in Skype installations.
@@ -117,6 +120,7 @@ Interpretation:
 Each entry will have a date/time value and a Skype username associated with the action.
 
 **Downloads.sqlite**
+
 Description:
 Firefox has a built-in download manager application that keeps a history of every file downloaded by the user.
 This browser artifact can provide excellent information about the sites users have been visiting and the kinds
