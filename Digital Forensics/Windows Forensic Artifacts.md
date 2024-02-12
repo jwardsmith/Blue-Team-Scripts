@@ -586,3 +586,64 @@ Win7–10 %userprofile%\AppData\Roaming\Microsoft\Windows\Cookies\Low
 Location: Firefox
 XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
 Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
+
+### USB or Drive Usage
+
+**Key Identification**
+
+Description:
+Track USB devices plugged into a machine.
+
+Location:
+• SYSTEM\CurrentControlSet\Enum\USBSTOR
+• SYSTEM\CurrentControlSet\Enum\USB
+
+Interpretation:
+• Identify vendor, product, and version of a USB device plugged into a machine.
+• Identify a unique USB device plugged into the machine.
+• Determine the time a device was plugged into the machine.
+• Devices that do not have a unique serial number will have an “&” in the second character of the serial number.
+
+**First/Last Times**
+
+Description:
+Determine temporal usage of specific USB devices connected to a Windows machine.
+
+Location: First Time
+    • Plug and Play Log Files
+
+XP C:\Windows\setupapi.log
+Win7–10 C:\Windows\inf\setupapi.dev.log
+
+Interpretation:
+• Search for Device Serial Number
+• Log File times are set to local time zone
+
+**Location: Last Time**
+• NTUSER.DAT Hive:
+NTUSER//Software/Microsoft/Windows/CurrentVersion/Explorer/MountPoints2/{GUID}
+• Interpretation: Using the Serial Number as the marker, you can determine the time a specific USB
+device was last connected to the local machine.
+
+**User**
+
+Description:
+Find user that used the unique USB device.
+
+Location:
+• Look for GUID from SYSTEM\MountedDevices
+• NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+
+Interpretation:
+This GUID will be used next to identify the user that plugged in the device. The last write time of this key also corresponds to the last time the device was plugged into the machine by that user. The number will be referenced in the user’s personal mountpoints key in the NTUSER.DAT hive.
+
+**Drive Letter and Volume Name**
+
+Description:
+Discover the drive letter of the USB device when it was plugged into the machine.
+
+Location: XP
+• Find ParentIdPrefix.
+    • SYSTEM\CurrentControlSet\Enum\USBSTOR
+• Use ParentIdPrefix Discover Last Mount Point.
+    • SYSTEM\MountedDevices
