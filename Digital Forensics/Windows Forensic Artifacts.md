@@ -647,3 +647,234 @@ Location: XP
     • SYSTEM\CurrentControlSet\Enum\USBSTOR
 • Use ParentIdPrefix Discover Last Mount Point.
     • SYSTEM\MountedDevices
+
+Location: Win7–10
+• SOFTWARE\Microsoft\Windows Portable Devices\Devices
+• SYSTEM\MountedDevices
+    • Examine drive letters looking at value data looking for serial number.
+
+Interpretation:
+• Identify the USB device that was last mapped to a specific drive letter.
+
+**Volume Serial Number**
+
+Description:
+Discover the Volume Serial Number of the filesystem partition on the USB. (Note: This is not the USB Unique Serial Number; this is created when a filesystem is initially formatted.)
+
+Location:
+• SOFTWARE\Microsoft\Windows NT\CurrentVersion\EMDMgmt.
+• Use Volume Name and USB Unique Serial Number to find.
+• Last integer number in line.
+• Convert Decimal Serial Number into Hex Serial Number.
+
+Interpretation:
+• Knowing both the Volume Serial Number and the Volume Name, you can correlate the data across SHORTCUT File (LNK) analysis and the RECENTDOCs key.
+• The Shortcut File (LNK) contains the Volume Serial Number and Name.
+• RecentDocs Registry Key, in most cases, will contain the volume name when the “USB Device” is opened via Explorer.
+
+**Shortcut (LNK) Files**
+
+Description:
+Shortcut files automatically created by Windows
+• Recent Items.
+• Open local and remote data files and documents will generate a shortcut file (.lnk).
+
+Location:
+XP C:\Documents and Settings\<username>\Recent\
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Office\Recent\
+
+Interpretation:
+• Date/Time file of that name was first opened
+• Creation Date of Shortcut (LNK) file
+• Date/Time file of that name was last opened
+• Last Modification Date of Shortcut (LNK) file
+• LNKTarget file (internal LNK file information) data:
+• Modified, Access, and Creation times of the target file
+• Volume Information (Name, Type, Serial Number)
+• Network Share Information
+• Original Location
+• Name of System
+
+**P&P Event Log**
+
+Description:
+When a Plug and Play driver install is attempted, the service will log an ID 20001 event and provide a Status within the event. It is important to note that this event will trigger for any Plug and Play-capable device, including but not limited to USB, Firewire, and PCMCIA devices.
+
+Location: System Log File
+Win7–10 %system root%\System32\winevt\logs\System.evtx
+
+Interpretation:
+• Event ID: 20001 – Plug and Play driver install attempted
+• Event ID 20001
+• Timestamp
+• Device information
+• Device serial num
+• Status (0 = no errors)
+
+### Account Usage
+
+**Last Login**
+
+Description:
+Lists the local accounts of the system and their equivalent security identifiers.
+
+Location:
+• C:\windows\system32\config\SAM
+• SAM\Domains\Account\Users
+
+Interpretation:
+• Only the last login time will be stored in the registry key.
+
+**Success/Fail Logons**
+
+Description:
+Determine which accounts have been used for attempted logons. Track account usage for known compromised accounts.
+
+Location:
+XP %system root%\System32\config\SecEvent.evt
+Win7–10 %system root%\System32\winevt\logs\Security.evtx
+
+Interpretation:
+• XP/Win7–10 - Interpretation
+• Event ID - 528/4624 – Successful Logon
+• Event ID - 529/4625 – Failed Logon
+• Event ID - 538/4634 – Successful Logoff
+• Event ID - 540/4624 – Successful Network Logon (example: file shares)
+
+**Last Password Change**
+
+Description:
+Lists the last time the password of a specific user has been changed.
+
+Location:
+• C:\windows\system32\config\SAM
+• SAM\Domains\Account\Users
+
+Interpretation:
+• Only the last password change time will be stored in the registry key.
+
+**Logon Types**
+
+Description:
+Logon events can give us specific information regarding the nature of account authorizations on a system if we know where to look and how to decipher the data that we find. In addition to telling us the date, time, username, hostname, and success/failure status of a logon, we can also determine by exactly what means a logon was attempted.
+
+Location:
+XP Event ID 528
+Win7–10 Event ID 4624
+
+Interpretation:
+Logon Type Explanation
+2 Logon via console
+3 Network Logon
+4 Batch Logon
+5 Windows Service Logon
+7 Credentials used to unlock screen
+8 Network logon sending credentials (cleartext)
+9 Different credentials used than logged-on user
+10 Remote interactive logon (RDP)
+11 Cached credentials used to logon
+
+**RDP Usage**
+
+Description:
+Track Remote Desktop Protocol logons to target machines.
+
+Location: Security Log
+XP %system root%\System32\config\SecEvent.evt
+Win7–10 %system root%\System32\winevt\logs\Security.evtx
+
+Interpretation:
+• XP/Win7–10 - Interpretation
+    • Event ID 682/4778 – Session Connected/Reconnected
+    • Event ID 683/4779 – Session Disconnected
+• Event log provides hostname and IP address of remote machine making the connection.
+• On workstations, you will often see current console session.
+
+### Browser Usage
+
+**History**
+
+Description:
+Records websites visited by date and time. Details stored for each local user account. Records number of times visited (frequency). Also, tracks access of local system files.
+
+Location: Internet Explorer
+XP %userprofile%\Local Settings\History\ History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\Low\History.IE5
+
+Location: Firefox
+XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
+Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
+
+**Cache**
+
+Description:
+• The cache is where webpage components can be stored locally to speed up subsequent visits.
+• Gives the investigator a “snapshot in time” of what a user was looking at online.
+• Identifies websites that were visited.
+• Provides the actual files the user viewed on a given website.
+• Cached files are tied to a specific local user account.
+• Timestamps show when the site was first saved and last viewed.
+
+Location: Internet Explorer
+XP %userprofile%\Local Settings\Temporary Internet Files\Content.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\Temporary Internet Files\Low\Content.IE5
+
+Location: Firefox
+XP %userprofile%\Local Settings\Application Data\Mozilla\ Firefox\Profiles\<random text>.default\Cache
+Win7–10 %userprofile%\AppData\Local\Mozilla\ Firefox\Profiles\<random text>.default\Cache
+
+**Cookies**
+
+Description:
+Cookies give insight into what websites have been visited and what activities may have taken place there.
+
+Location: Internet Explorer
+XP %userprofile%\Cookies
+Win7–10 %userprofile%\AppData\Roaming\Microsoft\Windows\Cookies
+Win7–10 %userprofile%\AppData\Roaming\Microsoft\Windows\Cookies\Low
+
+Location: Firefox
+XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
+Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
+
+**Flash and Super Cookies**
+
+Description:
+Local Stored Objects (LSOs), or Flash Cookies, have become ubiquitous on most systems due to the extremely high penetration of Flash applications across the internet. LSOs allow a web application to store information that can later be accessed by that same application (or domain). They tend to be much more persistent because they do not expire and there is no built-in mechanism within the browser to remove them. In fact, many sites have begun using LSOs for their tracking mechanisms because they rarely get cleared like traditional cookies.
+
+Location: Internet Explorer
+XP %APPDATA%\Macromedia\Flash Player\
+XP %APPDATA%\Macromedia\Flash
+XP %APPDATA%\Macromedia\Flash Player\macromedia.com\support\flashplayer\sys
+Win7–10 %APPDATA%\Roaming\Macromedia\Flash Player\
+Win7–10 %APPDATA%\Roaming\Macromedia\Flash Player\#SharedObjects\<random profile id>
+Win7–10 %APPDATA%\Roaming\Macromedia\Flash Player\macromedia.com\support\flashplayer\sys
+
+Interpretation:
+• Websites visited
+• User account used to visit the site
+• When cookie was created and last accessed
+
+**Session Restore**
+
+Description:
+Automatic crash recovery features built into the browser.
+
+Location: Internet Explorer
+XP %userprofile%/Local Settings/Application Data/Microsoft/Internet Explorer/Recovery
+Win7–10 %userprofile%/AppData/Local/Microsoft/InternetExplorer/Recovery
+
+Location: Firefox
+XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\sessionstore.js
+Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\sessionstore.js
+
+Interpretation:
+• Historical websites viewed in each tab
+• Referring websites
+• Time session ended
+• Modified time of .dat files in LastActive folder
+• Time each tab opened (only when crash occurred)
+• Creation time of .dat files in Active folder
