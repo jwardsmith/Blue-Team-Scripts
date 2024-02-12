@@ -220,3 +220,62 @@ Interpretation:
 Description:
 • The Windows 7 task bar (Jump List) is engineered to allow users to “jump” or access items they frequently or have recently used quickly and easily. This functionality cannot only be recent media files, but recent tasks as well.
 • The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
+
+Location:
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\ AutomaticDestinations
+
+Interpretation:
+• First time of execution of application.
+• Creation Time = First time item added to the AppID file.
+• Last time of execution of application w/file open.
+• Modification Time = Last time item added to the AppID file.
+• A list of Jump List IDs can be found at https://for508.com/vg-y3
+
+**RunMRU Start->Run**
+
+Description:
+Whenever someone does a Start -> Run command, it will log the entry for the command the person executed.
+
+Location: NTUSER.DAT HIVE
+NTUSER.DAT\Software\Microsoft\Windows\
+CurrentVersion\Explorer\RunMRU
+
+Interpretation:
+The order in which the commands are executed is listed in the RunMRU list value. The letters represent the order in which the commands were executed.
+
+**UserAssist**
+
+Description:
+GUI-based programs launched from the desktop are tracked in the launcher on a Windows system.
+
+Location: NTUSER.DAT HIVE
+NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\Count
+
+Interpretation:
+All values are ROT-13 encoded.
+• GUID for XP
+• 75048700 Active Desktop
+• • GUID for Win7–10
+• CEBFF5CD Executable File Execution
+• F4E57C4B Shortcut File Execution
+• • Program Locations for Win7–10 UserAssist
+• ProgramFilesX64 6D809377-…
+• ProgramFilesX86 7C5A40EF-…
+• System 1AC14E77-…
+• SystemX86 D65231B0-…
+• Desktop B4BFCC3A-…
+• Documents FDD39AD0-…
+• Downloads 374DE290-…
+• UserProfiles 0762D272-…
+
+### File Opening/Creation
+
+**Open/Save MRU**
+
+Description:
+In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a majority of commonly used applications.
+
+Location:
+XP NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
+Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
+
