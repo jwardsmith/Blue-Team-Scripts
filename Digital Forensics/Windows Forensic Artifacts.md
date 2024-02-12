@@ -374,3 +374,56 @@ Description:
 • Increases performance of system by preloading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
 • Limited to 128 files on XP and Vista/Win7–10
 • (exename)-(hash).pf
+
+Location:
+Win7–10/XP C:\Windows\Prefetch
+
+Interpretation:
+• Can examine each .pf file to look for file handles recently used
+• Can examine each .pf file to look for device handles recently used
+
+**Index.dat file://**
+
+Description:
+• A little-known fact about the IE History is that the information stored in the history files is not just related to internet browsing. The history also records local and remote (via network shares) file access, giving us an excellent means for determining which files and applications were accessed on the system, day by day.
+
+Location: Internet Explorer
+XP %userprofile%\Local Settings\History\History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\Low\History.IE5
+
+Interpretation:
+• Stored in index.dat as: file:///C:/directory/filename.ext
+• Does not mean file was opened in browser
+
+**Win7–10 Jump Lists**
+
+Description:
+• The Windows 7 task bar (Jump List) is engineered to allow users to “jump” or access items they frequently or have recently used quickly and easily. This functionality cannot only be recent media files, but recent tasks as well.
+• The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
+
+Location:
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\ AutomaticDestinations
+
+Interpretation:
+• Uses the Structured Storage Viewer to open up one of the AutomaticDestination jump list files.
+• Each one of these files is a separate LNK file. They are also stored numerically in order from the earliest one (usually 1) to the most recent (largest integer value). Deleted File or File Knowledge
+
+**XP Search: ACMRU**
+
+Description:
+You can search for multiple things through the search assistant on a Windows XP machine. The search assistant will remember a user’s search terms for filenames, computers, or words that are inside a file. This is an example of where you can find the “Search History” on the Windows system.
+
+Location: NTUSER.DAT HIVE
+NTUSER.DAT\Software\Microsoft\SearchAssistant\ACMru\####
+
+Interpretation:
+• Search the internet – ####=5001
+• All or part of a document name – ####=5603
+• A word or phrase in a file – ####=5604
+• Printers, computers, and people – ####=5647
+
+**Last Visited MRU**
+
+Description:
+Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
