@@ -279,3 +279,44 @@ Location:
 XP NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSaveMRU
 Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePIDlMRU
 
+Interpretation:
+• The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave dialog.
+• .??? (Three letter extension): This subkey stores file info from the OpenSave dialog by specific extension.
+
+**Recent Files**
+
+Description:
+Registry Key that will track the last files and folders opened and is used to populate data in “Recent” menus of the Start menu.
+
+Location: NTUSER.DAT
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+
+Interpretation:
+• RecentDocs: Overall key will track the overall order of the last 150 files or folders opened. The MRU list will keep track of the temporal order in which each file/folder was opened. The last entry and modification time of this key will be the time and location of the last file of a specific extension that was opened.
+• .???: This subkey stores the last files with a specific extension that were opened. The MRU list will keep track of the temporal order in which each file was opened. The last entry and modification time of this key will be the time and location of the last file of a specific extension that was opened.
+• Folder: This subkey stores the last folders that were opened. The MRU list will keep track of the temporal order in which each folder was opened. The last entry and modification time of this key will be the time and location of the last folder opened.
+
+**Shell bags**
+
+Description:
+• Can track user window viewing preferences to Windows Explorer.
+• Can be utilized to tell if activity occurred in a folder.
+• In some cases, you can see the files from a specific folder as well.
+
+Location:
+XP NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
+XP NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
+XP NTUSER.DAT\Software\Microsoft\Windows\ShellNoRoam\Bags
+XP NTUSER.DAT\Software\Microsoft\Windows\ShellNoRoam\BagMRU
+Win7–10 USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\Bags
+Win7–10 USRCLASS.DAT\Local Settings\Software\Microsoft\Windows\Shell\BagMRU
+Win7–10 NTUSER.DAT\Software\Microsoft\Windows\Shell\BagMRU
+Win7–10 NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
+
+Interpretation:
+Stores information about which folders were most recently browsed by the user.
+
+**Last Visited MRU**
+
+Description:
+Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:\Users\Rob\Desktop folder.
