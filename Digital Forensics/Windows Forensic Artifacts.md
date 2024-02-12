@@ -320,3 +320,57 @@ Stores information about which folders were most recently browsed by the user.
 
 Description:
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:\Users\Rob\Desktop folder.
+
+Location:
+XP NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\ LastVisitedMRU
+Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+
+Interpretation:
+Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
+
+**Office Recent Files**
+
+Description:
+MS Office programs will track their own Recent Files list to make it easier for users to remember the last file they were editing.
+
+Location:
+NTUSER.DAT\Software\Microsoft\Office\VERSION
+• 14.0 = Office 2010
+• 12.0 = Office 2007
+• 11.0 = Office 2003
+• 10.0 = Office XP
+
+Interpretation:
+Similar to the Recent Files, this will track the last files that were opened by each MS Office application. The last entry added, per the MRU, will be the time the last file was opened by a specific MS Office application.
+
+**Shortcut (LNK) Files**
+
+Description:
+• Shortcut files are automatically created by Windows.
+• Recent Items.
+• Opening local and remote data files and documents will generate a shortcut file (.lnk).
+
+Location:
+XP C:\Documents and Settings\<username>\Recent\
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\
+Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Office\Recent\
+Note that these are primary locations of LNK files. They can also be found in other locations.
+
+Interpretation:
+• Date/Time file of that name was first opened
+• Creation Date of Shortcut (LNK) file
+• Date/Time file of that name was last opened
+• Last Modification Date of Shortcut (LNK) file
+• LNKTarget file (internal LNK file information) data:
+• Modified, Access, and Creation times of the target file
+• Volume Information (Name, Type, Serial Number)
+• Network Share Information
+• Original Location
+• Name of System
+
+**Prefetch**
+
+Description:
+• Increases performance of system by preloading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
+• Limited to 128 files on XP and Vista/Win7–10
+• (exename)-(hash).pf
