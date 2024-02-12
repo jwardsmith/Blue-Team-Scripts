@@ -172,9 +172,9 @@ Win7–10 SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
 Interpretation:
 Any executable run on the Windows system can be found in this key. You can use this key to identify systems that specific malware was executed on. In addition, based on the interpretation of the time-based data, you might be able to determine the last time of execution or activity on the system.
 • Windows XP contains at most 96 entries.
-• LastUpdateTime is updated when the files are executed.
+    • LastUpdateTime is updated when the files are executed.
 • Windows 7 contains at most 1,024 entries.
-• LastUpdateTime does not exist on Win7–10 systems.
+    • LastUpdateTime does not exist on Win7–10 systems.
 • Tool to parse:
 • MANDIANTs ShimCacheParser
 
@@ -191,10 +191,10 @@ Win7–10/XP C:\Windows\Prefetch
 Interpretation:
 • Each .pf will include the last time of execution, number of times run, and device and file handles used by the program.
 • Date/Time file by that name and path was first executed.
-• Creation Date of .pf file (-10 seconds).
+    • Creation Date of .pf file (-10 seconds).
 • Date/Time file by that name and path was last executed.
-• Embedded last execution time of .pf file.
-• Last Modification Date of .pf file (-10 seconds).
+    • Embedded last execution time of .pf file.
+    • Last Modification Date of .pf file (-10 seconds).
 
 **Services Events**
 
@@ -226,9 +226,9 @@ Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\ AutomaticDes
 
 Interpretation:
 • First time of execution of application.
-• Creation Time = First time item added to the AppID file.
+    • Creation Time = First time item added to the AppID file.
 • Last time of execution of application w/file open.
-• Modification Time = Last time item added to the AppID file.
+    • Modification Time = Last time item added to the AppID file.
 • A list of Jump List IDs can be found at https://for508.com/vg-y3
 
 **RunMRU Start->Run**
@@ -254,19 +254,19 @@ NTUSER.DAT\Software\Microsoft\Windows\Currentversion\Explorer\UserAssist\{GUID}\
 Interpretation:
 All values are ROT-13 encoded.
 • GUID for XP
-• 75048700 Active Desktop
+    • 75048700 Active Desktop
 • • GUID for Win7–10
-• CEBFF5CD Executable File Execution
-• F4E57C4B Shortcut File Execution
+    • CEBFF5CD Executable File Execution
+    • F4E57C4B Shortcut File Execution
 • • Program Locations for Win7–10 UserAssist
-• ProgramFilesX64 6D809377-…
-• ProgramFilesX86 7C5A40EF-…
-• System 1AC14E77-…
-• SystemX86 D65231B0-…
-• Desktop B4BFCC3A-…
-• Documents FDD39AD0-…
-• Downloads 374DE290-…
-• UserProfiles 0762D272-…
+    • ProgramFilesX64 6D809377-…
+    • ProgramFilesX86 7C5A40EF-…
+    • System 1AC14E77-…
+    • SystemX86 D65231B0-…
+    • Desktop B4BFCC3A-…
+    • Documents FDD39AD0-…
+    • Downloads 374DE290-…
+    • UserProfiles 0762D272-…
 
 ### File Opening/Creation
 
@@ -347,8 +347,8 @@ Similar to the Recent Files, this will track the last files that were opened by 
 
 Description:
 • Shortcut files are automatically created by Windows.
-• Recent Items.
-• Opening local and remote data files and documents will generate a shortcut file (.lnk).
+    • Recent Items.
+    • Opening local and remote data files and documents will generate a shortcut file (.lnk).
 
 Location:
 XP C:\Documents and Settings\<username>\Recent\
@@ -358,15 +358,15 @@ Note that these are primary locations of LNK files. They can also be found in ot
 
 Interpretation:
 • Date/Time file of that name was first opened
-• Creation Date of Shortcut (LNK) file
+    • Creation Date of Shortcut (LNK) file
 • Date/Time file of that name was last opened
-• Last Modification Date of Shortcut (LNK) file
+    • Last Modification Date of Shortcut (LNK) file
 • LNKTarget file (internal LNK file information) data:
-• Modified, Access, and Creation times of the target file
-• Volume Information (Name, Type, Serial Number)
-• Network Share Information
-• Original Location
-• Name of System
+    • Modified, Access, and Creation times of the target file
+    • Volume Information (Name, Type, Serial Number)
+    • Network Share Information
+    • Original Location
+    • Name of System
 
 **Prefetch**
 
@@ -407,7 +407,9 @@ Win7–10 C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Recent\ AutomaticDes
 
 Interpretation:
 • Uses the Structured Storage Viewer to open up one of the AutomaticDestination jump list files.
-• Each one of these files is a separate LNK file. They are also stored numerically in order from the earliest one (usually 1) to the most recent (largest integer value). Deleted File or File Knowledge
+• Each one of these files is a separate LNK file. They are also stored numerically in order from the earliest one (usually 1) to the most recent (largest integer value). 
+
+### Deleted File or File Knowledge
 
 **XP Search: ACMRU**
 
@@ -445,8 +447,8 @@ C:\Users\<username>\AppData\Local\Microsoft\Windows\Explorer\
 
 Interpretation:
 • These are created when a user switches a folder to thumbnail mode or views pictures via a slide show. As it were, our thumbnails are now stored in separate database files. Vista/Win7–10 has four sizes for thumbnails and the files in the cache folder reflect this.
-• 32 -> small - 96 -> medium
-• 256 -> large - 1024 -> extra large
+    • 32 -> small - 96 -> medium
+    • 256 -> large - 1024 -> extra large
 • The thumbcache will store the thumbnail copy of the picture based on the thumbnail size in the content of the equivalent database file.
 
 **XP Recycle Bin**
@@ -457,16 +459,16 @@ The recycle bin is an important location on a Windows filesystem to understand. 
 Location:
 • Hidden System folder
 • Windows XP
-• C:\RECYCLER” 2000/NT/XP/2003
-• Subfolder is created with users SID
-• Hidden file in the directory called “INFO2”
-• INFO2 contains deleted time and original filename
-• Filename in both ASCII and UNICODE
+    • C:\RECYCLER” 2000/NT/XP/2003
+    • Subfolder is created with users SID
+    • Hidden file in the directory called “INFO2”
+    • INFO2 contains deleted time and original filename
+    • Filename in both ASCII and UNICODE
 
 Interpretation:
 • SID can be mapped to user via Registry Analysis.
 • Windows XP
-• INFO2
+    • INFO2
 • Hidden files in Recycle Bin are called INFO2.
 • Maps the filename to the actual name and path it was deleted from
 
@@ -474,3 +476,113 @@ Interpretation:
 
 Description:
 The Recycle Bin is an important location on a Windows filesystem to understand. It can help you when accomplishing a forensic investigation, as every file that is deleted from a Windows Recycle Bin aware program is generally first put in the Recycle Bin.
+
+Location:
+• Hidden System folder
+• Windows 7
+    • C:\$Recycle.bin
+    • Deleted Time and Original Filename contained in separate files for each deleted recovery file
+
+Interpretation:
+• SID can be mapped to users via Registry Analysis.
+• Windows 7
+    • Files preceded by $I###### files contain original PATH and name.
+• Deletion Date/Time
+    • Files preceded by $R###### files contain recovery data.
+
+**Win7–10 Search –WordWheelQuery**
+
+Description:
+Keywords searched for from the START menu bar on a Windows 7 machine.
+
+Location: Win7–10 NTUSER.DAT Hive
+NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
+
+Interpretation:
+Keywords are added in Unicode and listed in temporal order in an MRUlist.
+
+**Thumbs.db**
+
+Description:
+Hidden file in directory where pictures on Windows XP machine exist. It catalogs all the pictures and stores a copy of the thumbnail, even if the pictures were deleted.
+
+Location:
+Each directory where pictures resided that were viewed in thumbnail mode. Many cameras will also auto generate a thumbs.db file when you view the pictures on the camera itself.
+
+Interpretation:
+Include:
+    • Thumbnail picture of original
+    • Last modification time
+    • Original filename
+
+**Index.dat file://**
+
+Description:
+A little-known fact about the IE History is that the information stored in the history files is not just related to internet browsing. The history also records local and remote (via network shares) file access, giving us an excellent means for determining which files and applications were accessed on the system day by day.
+
+Interpretation:
+• Stored in index.dat as file:///C:/directory/filename.ext
+• Does not mean file was opened in browser
+
+### Physical Location
+
+**Timezone**
+
+Description:
+Identifies the current system time zone
+
+Location: SYSTEM Hive
+SYSTEM\CurrentControlSet\Control\TimeZoneInformation
+
+Interpretation:
+• Time activity is incredibly useful for correlation of activity.
+• Internal log files and date/timestamps will be based on the system time zone information.
+• You might have other network devices and you will need to correlate information to the time zone information collected here.
+
+**Browser Search Terms**
+
+Description:
+Records websites visited by date and time. Details stored for each local user account. Records number of times visited (frequency). Also, tracks access of local system files. This includes the website history of search terms in search engines.
+
+Location: Internet Explorer
+XP %userprofile%\Local Settings\History\History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\History.IE5
+Win7–10 %userprofile%\AppData\Local\Microsoft\Windows\History\Low\History.IE5
+
+Location: Firefox
+XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
+Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
+
+**VISTA/Win7–10 Network History**
+
+Description:
+• Identify networks that the computer has been connected to.
+• Networks could be wireless or wired.
+• Identify domain name/intranet name.
+• Identify SSID.
+• Identify Gateway MAC address.
+
+Location: SOFTWARE HIVE
+• SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Unmanaged
+• SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\Managed
+• SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Nla\Cache
+
+Interpretation:
+• Identifying intranets and networks that a computer has connected to is incredibly important.
+• Not only can you tell the intranet name, but you can also tell the last time the network was connected to based on the last write time of the key.
+• This will also list any networks that have been connected to via a VPN.
+• MAC address of SSID for Gateway could be physically triangulated.
+
+**Cookies**
+
+Description:
+Cookies give insight into what websites have been visited and what activities may have taken place there.
+
+Location: Internet Explorer
+XP %userprofile%\Cookies
+Win7–10 %userprofile%\AppData\Roaming\Microsoft\Windows\Cookies
+Win7–10 %userprofile%\AppData\Roaming\Microsoft\Windows\Cookies\Low
+
+Location: Firefox
+XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
+Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
