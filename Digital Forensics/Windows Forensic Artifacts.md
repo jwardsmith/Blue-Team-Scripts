@@ -164,3 +164,59 @@ Tracks the application executables used to open files in OpenSaveMRU and the las
 Description:
 • Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables.
 • Tracks the executable’s filename, file size, last modified time, and in Windows XP the last update time.
+
+Location:
+XP SYSTEM\CurrentControlSet\Control\SessionManager\AppCompatibility\
+Win7–10 SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache
+
+Interpretation:
+Any executable run on the Windows system can be found in this key. You can use this key to identify systems that specific malware was executed on. In addition, based on the interpretation of the time-based data, you might be able to determine the last time of execution or activity on the system.
+• Windows XP contains at most 96 entries.
+• LastUpdateTime is updated when the files are executed.
+• Windows 7 contains at most 1,024 entries.
+• LastUpdateTime does not exist on Win7–10 systems.
+• Tool to parse:
+• MANDIANTs ShimCacheParser
+
+**Prefetch**
+
+Description:
+• Increases performance of a system by preloading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
+• Limited to 128 files on XP and Win7–10
+• (exename)-(hash).pf
+
+Location:
+Win7–10/XP C:\Windows\Prefetch
+
+Interpretation:
+• Each .pf will include the last time of execution, number of times run, and device and file handles used by the program.
+• Date/Time file by that name and path was first executed.
+• Creation Date of .pf file (-10 seconds).
+• Date/Time file by that name and path was last executed.
+• Embedded last execution time of .pf file.
+• Last Modification Date of .pf file (-10 seconds).
+
+**Services Events**
+
+Description:
+• Analyze logs for suspicious services running at boot time.
+• Review services started or stopped around the time of a suspected compromise.
+
+Location:
+All event IDs reference the System Log:
+7034 – Service crashed unexpectedly.
+7035 – Service sent a Start/Stop control.
+7036 – Service started or stopped.
+7040 – Start type changed.
+(Boot | On Request | Disabled)
+
+Interpretation:
+• A large amount of malware and worms in the wild utilize services.
+• Services started on boot illustrate persistence (desirable in malware).
+• Services can crash due to attacks like process injection.
+
+**Win7–10 Jump Lists**
+
+Description:
+• The Windows 7 task bar (Jump List) is engineered to allow users to “jump” or access items they frequently or have recently used quickly and easily. This functionality cannot only be recent media files, but recent tasks as well.
+• The data stored in the AutomaticDestinations folder will each have a unique file prepended with the AppID of the associated application.
