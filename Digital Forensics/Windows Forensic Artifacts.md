@@ -73,7 +73,7 @@
 
 ## File Download
 
-**Open/Save MRU**
+###  Open/Save MRU
 
 Description:
 In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a majority of commonly used applications.
@@ -86,7 +86,7 @@ Interpretation:
 • The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave dialog.
 • .??? (three-letter extension): This subkey stores file info from the OpenSave dialog by specific extension.
 
-**Email Attachments**
+### Email Attachments 
 
 Description:
 The email industry estimates that 80% of email data is stored via attachments. Email standards allow only text. Attachments must be encoded with MIME/base64 format.
@@ -98,7 +98,7 @@ Win7–10 %USERPROFILE%\AppData\Local\Microsoft\Outlook
 Interpretation:
 MS Outlook data files found in these locations include OST and PST files. One should also check the OLK and Content.Outlook folder, which might roam depending on the specific version of Outlook used. For more information on where to find the OLK folder, this link has a handy chart at http://www.hancockcomputertech.com/blog/category/microsoft/outlook/
 
-**Skype History**
+### Skype History
 
 Description:
 • Skype history keeps a log of chat sessions and files transferred from one machine to another.
@@ -111,7 +111,7 @@ Win7–10 C:\Users\<username>\AppData\Roaming\Skype\<skype-name>
 Interpretation:
 Each entry will have a date/time value and a Skype username associated with the action.
 
-**Downloads.sqlite**
+### Downloads.sqlite
 
 Description:
 Firefox has a built-in download manager application that keeps a history of every file downloaded by the user. This browser artifact can provide excellent information about the sites users have been visiting and the kinds of files they have been downloading from them.
@@ -128,7 +128,7 @@ Downloads.sqlite will include:
 • Application used to open file
 • Download start and end times
 
-**Index.dat/ Places.sqlite**
+### Index.dat/ Places.sqlite
 
 Description:
 Not directly related to “File Download.” Details stored for each local user account. Records number of times visited (frequency).
@@ -147,7 +147,7 @@ Many sites in history will list the files that were opened from remote sites and
 
 ## Program Execution
 
-**Last Visited MRU**
+### Last Visited MRU
 
 Description:
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:\Users\<Username>\Desktop folder.
@@ -159,7 +159,7 @@ Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32
 Interpretation:
 Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
 
-**Application Compatibility Cache**
+### Application Compatibility Cache
 
 Description:
 • Windows Application Compatibility Database is used by Windows to identify possible application compatibility challenges with executables.
@@ -178,7 +178,7 @@ Any executable run on the Windows system can be found in this key. You can use t
 • Tool to parse:
 • MANDIANTs ShimCacheParser
 
-**Prefetch**
+### Prefetch
 
 Description:
 • Increases performance of a system by preloading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
@@ -196,7 +196,7 @@ Interpretation:
     • Embedded last execution time of .pf file.
     • Last Modification Date of .pf file (-10 seconds).
 
-**Services Events**
+### Services Events
 
 Description:
 • Analyze logs for suspicious services running at boot time.
@@ -215,7 +215,7 @@ Interpretation:
 • Services started on boot illustrate persistence (desirable in malware).
 • Services can crash due to attacks like process injection.
 
-**Win7–10 Jump Lists**
+### Win7–10 Jump Lists
 
 Description:
 • The Windows 7 task bar (Jump List) is engineered to allow users to “jump” or access items they frequently or have recently used quickly and easily. This functionality cannot only be recent media files, but recent tasks as well.
@@ -231,7 +231,7 @@ Interpretation:
     • Modification Time = Last time item added to the AppID file.
 • A list of Jump List IDs can be found at https://for508.com/vg-y3
 
-**RunMRU Start->Run**
+### RunMRU Start->Run
 
 Description:
 Whenever someone does a Start -> Run command, it will log the entry for the command the person executed.
@@ -243,7 +243,7 @@ CurrentVersion\Explorer\RunMRU
 Interpretation:
 The order in which the commands are executed is listed in the RunMRU list value. The letters represent the order in which the commands were executed.
 
-**UserAssist**
+### UserAssist
 
 Description:
 GUI-based programs launched from the desktop are tracked in the launcher on a Windows system.
@@ -270,7 +270,7 @@ All values are ROT-13 encoded.
 
 ## File Opening/Creation
 
-**Open/Save MRU**
+### Open/Save MRU
 
 Description:
 In simplest terms, this key tracks files that have been opened or saved within a Windows shell dialog box. This happens to be a big dataset, not only including web browsers such as Internet Explorer and Firefox, but also a majority of commonly used applications.
@@ -283,7 +283,7 @@ Interpretation:
 • The “*” key: This subkey tracks the most recent files of any extension input in an OpenSave dialog.
 • .??? (Three letter extension): This subkey stores file info from the OpenSave dialog by specific extension.
 
-**Recent Files**
+### Recent Files
 
 Description:
 Registry Key that will track the last files and folders opened and is used to populate data in “Recent” menus of the Start menu.
@@ -296,7 +296,7 @@ Interpretation:
 • .???: This subkey stores the last files with a specific extension that were opened. The MRU list will keep track of the temporal order in which each file was opened. The last entry and modification time of this key will be the time and location of the last file of a specific extension that was opened.
 • Folder: This subkey stores the last folders that were opened. The MRU list will keep track of the temporal order in which each folder was opened. The last entry and modification time of this key will be the time and location of the last folder opened.
 
-**Shell bags**
+### Shell bags
 
 Description:
 • Can track user window viewing preferences to Windows Explorer.
@@ -316,7 +316,7 @@ Win7–10 NTUSER.DAT\Software\Microsoft\Windows\Shell\Bags
 Interpretation:
 Stores information about which folders were most recently browsed by the user.
 
-**Last Visited MRU**
+### Last Visited MRU
 
 Description:
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application. Example: Notepad.exe was last run using the C:\Users\Rob\Desktop folder.
@@ -328,7 +328,7 @@ Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32
 Interpretation:
 Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
 
-**Office Recent Files**
+### Office Recent Files 
 
 Description:
 MS Office programs will track their own Recent Files list to make it easier for users to remember the last file they were editing.
@@ -343,7 +343,7 @@ NTUSER.DAT\Software\Microsoft\Office\VERSION
 Interpretation:
 Similar to the Recent Files, this will track the last files that were opened by each MS Office application. The last entry added, per the MRU, will be the time the last file was opened by a specific MS Office application.
 
-**Shortcut (LNK) Files**
+### Shortcut (LNK) Files
 
 Description:
 • Shortcut files are automatically created by Windows.
@@ -368,7 +368,7 @@ Interpretation:
     • Original Location
     • Name of System
 
-**Prefetch**
+### Prefetch
 
 Description:
 • Increases performance of system by preloading code pages of commonly used applications. Cache Manager monitors all files and directories referenced for each application or process and maps them into a .pf file. Utilized to know an application was executed on a system.
@@ -382,7 +382,7 @@ Interpretation:
 • Can examine each .pf file to look for file handles recently used
 • Can examine each .pf file to look for device handles recently used
 
-**Index.dat file://**
+### Index.dat file://
 
 Description:
 • A little-known fact about the IE History is that the information stored in the history files is not just related to internet browsing. The history also records local and remote (via network shares) file access, giving us an excellent means for determining which files and applications were accessed on the system, day by day.
@@ -396,7 +396,7 @@ Interpretation:
 • Stored in index.dat as: file:///C:/directory/filename.ext
 • Does not mean file was opened in browser
 
-**Win7–10 Jump Lists**
+### Win7–10 Jump Lists
 
 Description:
 • The Windows 7 task bar (Jump List) is engineered to allow users to “jump” or access items they frequently or have recently used quickly and easily. This functionality cannot only be recent media files, but recent tasks as well.
@@ -411,21 +411,21 @@ Interpretation:
 
 ## Deleted File or File Knowledge
 
-**XP Search: ACMRU**
+### XP Search: ACMRU
 
 Description:
 You can search for multiple things through the search assistant on a Windows XP machine. The search assistant will remember a user’s search terms for filenames, computers, or words that are inside a file. This is an example of where you can find the “Search History” on the Windows system.
 
 Location: NTUSER.DAT HIVE
-NTUSER.DAT\Software\Microsoft\SearchAssistant\ACMru\###
+NTUSER.DAT\Software\Microsoft\SearchAssistant\ACMru\####
 
 Interpretation:
-• Search the internet – ###=5001
-• All or part of a document name – ###=5603
-• A word or phrase in a file – ###=5604
-• Printers, computers, and people – ###=5647
+• Search the internet – ####=5001
+• All or part of a document name – ####=5603
+• A word or phrase in a file – ####=5604
+• Printers, computers, and people – ####=5647
 
-**Last Visited MRU**
+### Last Visited MRU
 
 Description:
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
@@ -437,7 +437,7 @@ Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32
 Interpretation:
 Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
 
-**Vista/Win7–10 Thumbnails**
+### Vista/Win7–10 Thumbnails
 
 Description:
 On Vista/Win7–10 versions of Windows, thumbs.db does not exist. The data now sits under a single directory for the users of the machine, located in their application data directory under their home directory.
@@ -451,7 +451,7 @@ Interpretation:
     • 256 -> large - 1024 -> extra large
 • The thumbcache will store the thumbnail copy of the picture based on the thumbnail size in the content of the equivalent database file.
 
-**XP Recycle Bin**
+### XP Recycle Bin
 
 Description:
 The recycle bin is an important location on a Windows filesystem to understand. It can help you when accomplishing a forensic investigation, as every file that is deleted from a Windows recycle bin aware program is generally first put in the recycle bin.
@@ -472,7 +472,7 @@ Interpretation:
 • Hidden files in Recycle Bin are called INFO2.
 • Maps the filename to the actual name and path it was deleted from
 
-**Win7–10 Recycle Bin**
+### Win7–10 Recycle Bin 
 
 Description:
 The Recycle Bin is an important location on a Windows filesystem to understand. It can help you when accomplishing a forensic investigation, as every file that is deleted from a Windows Recycle Bin aware program is generally first put in the Recycle Bin.
@@ -486,11 +486,11 @@ Location:
 Interpretation:
 • SID can be mapped to users via Registry Analysis.
 • Windows 7
-    • Files preceded by $I#### files contain original PATH and name.
+    • Files preceded by $I###### files contain original PATH and name.
 • Deletion Date/Time
-    • Files preceded by $R#### files contain recovery data.
+    • Files preceded by $R###### files contain recovery data.
 
-**Win7–10 Search –WordWheelQuery**
+### Win7–10 Search –WordWheelQuery
 
 Description:
 Keywords searched for from the START menu bar on a Windows 7 machine.
@@ -501,7 +501,7 @@ NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
 Interpretation:
 Keywords are added in Unicode and listed in temporal order in an MRUlist.
 
-**Thumbs.db**
+### Thumbs.db
 
 Description:
 Hidden file in directory where pictures on Windows XP machine exist. It catalogs all the pictures and stores a copy of the thumbnail, even if the pictures were deleted.
@@ -515,7 +515,7 @@ Include:
     • Last modification time
     • Original filename
 
-**Index.dat file://**
+### Index.dat file://
 
 Description:
 A little-known fact about the IE History is that the information stored in the history files is not just related to internet browsing. The history also records local and remote (via network shares) file access, giving us an excellent means for determining which files and applications were accessed on the system day by day.
@@ -526,7 +526,7 @@ Interpretation:
 
 ## Physical Location
 
-**Timezone**
+### Timezone
 
 Description:
 Identifies the current system time zone
@@ -539,7 +539,7 @@ Interpretation:
 • Internal log files and date/timestamps will be based on the system time zone information.
 • You might have other network devices and you will need to correlate information to the time zone information collected here.
 
-**Browser Search Terms**
+### Browser Search Terms
 
 Description:
 Records websites visited by date and time. Details stored for each local user account. Records number of times visited (frequency). Also, tracks access of local system files. This includes the website history of search terms in search engines.
@@ -553,7 +553,7 @@ Location: Firefox
 XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
 Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
 
-**VISTA/Win7–10 Network History**
+### VISTA/Win7–10 Network History
 
 Description:
 • Identify networks that the computer has been connected to.
@@ -573,7 +573,7 @@ Interpretation:
 • This will also list any networks that have been connected to via a VPN.
 • MAC address of SSID for Gateway could be physically triangulated.
 
-**Cookies**
+### Cookies
 
 Description:
 Cookies give insight into what websites have been visited and what activities may have taken place there.
@@ -589,7 +589,7 @@ Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.d
 
 ## USB or Drive Usage
 
-**Key Identification**
+### Key Identification
 
 Description:
 Track USB devices plugged into a machine.
@@ -604,7 +604,7 @@ Interpretation:
 • Determine the time a device was plugged into the machine.
 • Devices that do not have a unique serial number will have an “&” in the second character of the serial number.
 
-**First/Last Times**
+### First/Last Times
 
 Description:
 Determine temporal usage of specific USB devices connected to a Windows machine.
@@ -619,13 +619,13 @@ Interpretation:
 • Search for Device Serial Number
 • Log File times are set to local time zone
 
-**Location: Last Time**
+### Location: Last Time
 • NTUSER.DAT Hive:
 NTUSER//Software/Microsoft/Windows/CurrentVersion/Explorer/MountPoints2/{GUID}
 • Interpretation: Using the Serial Number as the marker, you can determine the time a specific USB
 device was last connected to the local machine.
 
-**User**
+### User
 
 Description:
 Find user that used the unique USB device.
@@ -637,7 +637,7 @@ Location:
 Interpretation:
 This GUID will be used next to identify the user that plugged in the device. The last write time of this key also corresponds to the last time the device was plugged into the machine by that user. The number will be referenced in the user’s personal mountpoints key in the NTUSER.DAT hive.
 
-**Drive Letter and Volume Name**
+### Drive Letter and Volume Name
 
 Description:
 Discover the drive letter of the USB device when it was plugged into the machine.
@@ -656,7 +656,7 @@ Location: Win7–10
 Interpretation:
 • Identify the USB device that was last mapped to a specific drive letter.
 
-**Volume Serial Number**
+### Volume Serial Number
 
 Description:
 Discover the Volume Serial Number of the filesystem partition on the USB. (Note: This is not the USB Unique Serial Number; this is created when a filesystem is initially formatted.)
@@ -672,7 +672,7 @@ Interpretation:
 • The Shortcut File (LNK) contains the Volume Serial Number and Name.
 • RecentDocs Registry Key, in most cases, will contain the volume name when the “USB Device” is opened via Explorer.
 
-**Shortcut (LNK) Files**
+### Shortcut (LNK) Files
 
 Description:
 Shortcut files automatically created by Windows
@@ -696,7 +696,7 @@ Interpretation:
 • Original Location
 • Name of System
 
-**P&P Event Log**
+### P&P Event Log
 
 Description:
 When a Plug and Play driver install is attempted, the service will log an ID 20001 event and provide a Status within the event. It is important to note that this event will trigger for any Plug and Play-capable device, including but not limited to USB, Firewire, and PCMCIA devices.
@@ -714,7 +714,7 @@ Interpretation:
 
 ## Account Usage
 
-**Last Login**
+### Last Login
 
 Description:
 Lists the local accounts of the system and their equivalent security identifiers.
@@ -726,7 +726,7 @@ Location:
 Interpretation:
 • Only the last login time will be stored in the registry key.
 
-**Success/Fail Logons**
+### Success/Fail Logons
 
 Description:
 Determine which accounts have been used for attempted logons. Track account usage for known compromised accounts.
@@ -742,7 +742,7 @@ Interpretation:
 • Event ID - 538/4634 – Successful Logoff
 • Event ID - 540/4624 – Successful Network Logon (example: file shares)
 
-**Last Password Change**
+### Last Password Change
 
 Description:
 Lists the last time the password of a specific user has been changed.
@@ -754,7 +754,7 @@ Location:
 Interpretation:
 • Only the last password change time will be stored in the registry key.
 
-**Logon Types**
+### Logon Types
 
 Description:
 Logon events can give us specific information regarding the nature of account authorizations on a system if we know where to look and how to decipher the data that we find. In addition to telling us the date, time, username, hostname, and success/failure status of a logon, we can also determine by exactly what means a logon was attempted.
@@ -775,7 +775,7 @@ Logon Type Explanation
 10 Remote interactive logon (RDP)
 11 Cached credentials used to logon
 
-**RDP Usage**
+### RDP Usage
 
 Description:
 Track Remote Desktop Protocol logons to target machines.
@@ -793,7 +793,7 @@ Interpretation:
 
 ## Browser Usage
 
-**History**
+### History
 
 Description:
 Records websites visited by date and time. Details stored for each local user account. Records number of times visited (frequency). Also, tracks access of local system files.
@@ -807,7 +807,7 @@ Location: Firefox
 XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
 Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\places.sqlite
 
-**Cache**
+### Cache
 
 Description:
 • The cache is where webpage components can be stored locally to speed up subsequent visits.
@@ -826,7 +826,7 @@ Location: Firefox
 XP %userprofile%\Local Settings\Application Data\Mozilla\ Firefox\Profiles\<random text>.default\Cache
 Win7–10 %userprofile%\AppData\Local\Mozilla\ Firefox\Profiles\<random text>.default\Cache
 
-**Cookies**
+### Cookies
 
 Description:
 Cookies give insight into what websites have been visited and what activities may have taken place there.
@@ -840,7 +840,7 @@ Location: Firefox
 XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
 Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
 
-**Flash and Super Cookies**
+### Flash and Super Cookies
 
 Description:
 Local Stored Objects (LSOs), or Flash Cookies, have become ubiquitous on most systems due to the extremely high penetration of Flash applications across the internet. LSOs allow a web application to store information that can later be accessed by that same application (or domain). They tend to be much more persistent because they do not expire and there is no built-in mechanism within the browser to remove them. In fact, many sites have begun using LSOs for their tracking mechanisms because they rarely get cleared like traditional cookies.
@@ -858,7 +858,7 @@ Interpretation:
 • User account used to visit the site
 • When cookie was created and last accessed
 
-**Session Restore**
+### Session Restore
 
 Description:
 Automatic crash recovery features built into the browser.
