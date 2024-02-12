@@ -427,3 +427,50 @@ Interpretation:
 
 Description:
 Tracks the specific executable used by an application to open the files documented in the OpenSaveMRU key. In addition, each value also tracks the directory location for the last file that was accessed by that application.
+
+Location:
+XP NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedMRU
+Win7–10 NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+
+Interpretation:
+Tracks the application executables used to open files in OpenSaveMRU and the last file path used.
+
+**Vista/Win7–10 Thumbnails**
+
+Description:
+On Vista/Win7–10 versions of Windows, thumbs.db does not exist. The data now sits under a single directory for the users of the machine, located in their application data directory under their home directory.
+
+Location:
+C:\Users\<username>\AppData\Local\Microsoft\Windows\Explorer\
+
+Interpretation:
+• These are created when a user switches a folder to thumbnail mode or views pictures via a slide show. As it were, our thumbnails are now stored in separate database files. Vista/Win7–10 has four sizes for thumbnails and the files in the cache folder reflect this.
+• 32 -> small - 96 -> medium
+• 256 -> large - 1024 -> extra large
+• The thumbcache will store the thumbnail copy of the picture based on the thumbnail size in the content of the equivalent database file.
+
+**XP Recycle Bin**
+
+Description:
+The recycle bin is an important location on a Windows filesystem to understand. It can help you when accomplishing a forensic investigation, as every file that is deleted from a Windows recycle bin aware program is generally first put in the recycle bin.
+
+Location:
+• Hidden System folder
+• Windows XP
+• C:\RECYCLER” 2000/NT/XP/2003
+• Subfolder is created with users SID
+• Hidden file in the directory called “INFO2”
+• INFO2 contains deleted time and original filename
+• Filename in both ASCII and UNICODE
+
+Interpretation:
+• SID can be mapped to user via Registry Analysis.
+• Windows XP
+• INFO2
+• Hidden files in Recycle Bin are called INFO2.
+• Maps the filename to the actual name and path it was deleted from
+
+**Win7–10 Recycle Bin**
+
+Description:
+The Recycle Bin is an important location on a Windows filesystem to understand. It can help you when accomplishing a forensic investigation, as every file that is deleted from a Windows Recycle Bin aware program is generally first put in the Recycle Bin.
