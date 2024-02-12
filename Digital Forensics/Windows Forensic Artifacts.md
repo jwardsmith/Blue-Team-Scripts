@@ -145,7 +145,7 @@ Win7–10 %userprofile%\AppData\Roaming\Mozilla\ Firefox\Profiles\<random text>.
 Interpretation:
 Many sites in history will list the files that were opened from remote sites and downloaded to the local system. History will record the access to the file on the website that was accessed via a link.
 
-### Program Execution
+## Program Execution
 
 **Last Visited MRU**
 
@@ -268,7 +268,7 @@ All values are ROT-13 encoded.
     • Downloads 374DE290-…
     • UserProfiles 0762D272-…
 
-### File Opening/Creation
+## File Opening/Creation
 
 **Open/Save MRU**
 
@@ -409,7 +409,7 @@ Interpretation:
 • Uses the Structured Storage Viewer to open up one of the AutomaticDestination jump list files.
 • Each one of these files is a separate LNK file. They are also stored numerically in order from the earliest one (usually 1) to the most recent (largest integer value). 
 
-### Deleted File or File Knowledge
+## Deleted File or File Knowledge
 
 **XP Search: ACMRU**
 
@@ -417,13 +417,13 @@ Description:
 You can search for multiple things through the search assistant on a Windows XP machine. The search assistant will remember a user’s search terms for filenames, computers, or words that are inside a file. This is an example of where you can find the “Search History” on the Windows system.
 
 Location: NTUSER.DAT HIVE
-NTUSER.DAT\Software\Microsoft\SearchAssistant\ACMru\####
+NTUSER.DAT\Software\Microsoft\SearchAssistant\ACMru\###
 
 Interpretation:
-• Search the internet – ####=5001
-• All or part of a document name – ####=5603
-• A word or phrase in a file – ####=5604
-• Printers, computers, and people – ####=5647
+• Search the internet – ###=5001
+• All or part of a document name – ###=5603
+• A word or phrase in a file – ###=5604
+• Printers, computers, and people – ###=5647
 
 **Last Visited MRU**
 
@@ -486,9 +486,9 @@ Location:
 Interpretation:
 • SID can be mapped to users via Registry Analysis.
 • Windows 7
-    • Files preceded by $I###### files contain original PATH and name.
+    • Files preceded by $I#### files contain original PATH and name.
 • Deletion Date/Time
-    • Files preceded by $R###### files contain recovery data.
+    • Files preceded by $R#### files contain recovery data.
 
 **Win7–10 Search –WordWheelQuery**
 
@@ -524,7 +524,7 @@ Interpretation:
 • Stored in index.dat as file:///C:/directory/filename.ext
 • Does not mean file was opened in browser
 
-### Physical Location
+## Physical Location
 
 **Timezone**
 
@@ -587,7 +587,7 @@ Location: Firefox
 XP %userprofile%\Application Data\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
 Win7–10 %userprofile%\AppData\Roaming\Mozilla\Firefox\Profiles\<random text>.default\cookies.sqlite
 
-### USB or Drive Usage
+## USB or Drive Usage
 
 **Key Identification**
 
@@ -712,7 +712,7 @@ Interpretation:
 • Device serial num
 • Status (0 = no errors)
 
-### Account Usage
+## Account Usage
 
 **Last Login**
 
@@ -791,7 +791,7 @@ Interpretation:
 • Event log provides hostname and IP address of remote machine making the connection.
 • On workstations, you will often see current console session.
 
-### Browser Usage
+## Browser Usage
 
 **History**
 
