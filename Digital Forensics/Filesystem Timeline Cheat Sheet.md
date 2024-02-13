@@ -43,3 +43,13 @@ Extract filename and metadata information for files. fls is designed to extract 
 ```
 C:\> fls -m image <inode>
 ```
+
+### mactime
+
+Creating filesystem timelines is a simple two-step process. Once you have a bodyfile containing all the file system metadata (output from either fls or MFTECmd), you simply need a tool to make the data humanreadable and sort chronologically. mactime is the tool within The Sleuth Kit (TSK) suite that performs this function. The mactime tool takes a bodyfile as input and parses the file to present it into a format that can easily be analysed by an investigator. Timestamps in Windows NTFS are natively stored in UTC format, and we highly recommend standardizing on UTC to match other artifacts and eliminate time zone and daylight savings challenges.
+
+- Use mactime (https://www.sleuthkit.org/sleuthkit/download.php)
+
+```
+C:\> mactime -d -b bodyfile -z timezone > timeline.csv
+```
