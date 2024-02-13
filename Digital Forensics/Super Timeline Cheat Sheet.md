@@ -10,6 +10,37 @@ The Python-based backend engine now used for creation of super timelines.
 
 This is the main single-machine frontend to the Plaso backend. This is the tool that can be used to extract events from a group of files, mount point, or a forensic image and save the results in a Plaso storage file for future processing and analysis.
 
+- Use log2timeline (https://github.com/log2timeline/plaso)
+
+```
+# log2timeline.py [STORAGE FILE] [SOURCE]
+
+# The storage file is a database file that holds normalized parsed data resulting from log2timeline analysis of artifacts. The source of data to parse is a directory of files, a mount point, or an image file containing artifact files from the subject system.
+# -z = Define the time zone of the system being investigated (not the output).
+```
+
+- Examples
+
+```
+Raw Image
+log2timeline.py /path-to/plaso.dump /path-to/image.dd
+
+EWF Image
+log2timeline.py /path-to/plaso.dump /path-to/image.E01
+
+Virtual Disk Image
+log2timeline.py /path-to/plaso.dump /path-to/triage.vhdx
+
+Physical Device (e.g., attached mounted drive, write-blocked drive, or remotely connected F-Response drive)
+log2timeline.py /path-to/plaso.dump /dev/sdd
+
+Volume via Partition Number (e.g., full disk image rather than partition image)
+log2timeline.py –-partition 2 /path-to/plaso.dump /path-to/image.dd
+
+Triage Folder
+log2timeline.py /path-to/plaso.dump /triage-output/
+```
+
 ### pinfo
 
 The plaso storage file contains a variety of information about how and when the collection took place. It may also contain information from any preprocessing stages that were employed. pinfo is a simple tool designed to print out this information from a storage database file.
