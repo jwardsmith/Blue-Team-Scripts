@@ -43,8 +43,16 @@ log2timeline.py /path-to/plaso.dump /triage-output/
 
 ### pinfo
 
-The plaso storage file contains a variety of information about how and when the collection took place. It may also contain information from any preprocessing stages that were employed. pinfo is a simple tool designed to print out this information from a storage database file.
+The plaso storage file contains a variety of information about how and when the collection took place. It may also contain information from any preprocessing stages that were employed. pinfo is a simple tool designed to print out this information from a storage database file. pinfo.py displays contents of Plaso database. Information stored inside the plaso.dump storage container: Information on when and how the tool was run, List of all plugins/parsers used, Filter file information (if applicable), Information gathered during the preprocessing stage, A count of each artifact parsed, Errors and storage container metadata.
+
+```
+$ pinfo.py -v plaso.dump
+```
 
 ### psort
 
-The post-processing tool used to filter, sort, and process the plaso storage file. This tool is used for all post-processing filtering, sorting, and tagging of the storage file. Because the Plaso storage format is not in human-readable format, it is typically necessary to run this tool on the storage file to create useful output.
+The post-processing tool used to filter, sort, and process the plaso storage file. This tool is used for all post-processing filtering, sorting, deduplication, and tagging of the storage file. Because the Plaso storage format is not in human-readable format, it is typically necessary to run this tool on the storage file to create useful output.
+
+```
+$ psort.py --output-time-zone 'UTC' -o l2tcsv –w supertimeline.csv plaso.dump FILTER
+```
