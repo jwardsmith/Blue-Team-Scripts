@@ -5,4 +5,5 @@
 ```
 C:\> EvtxECmd.exe --sync
 C:\> EvtxECmd.exe -f Security.evtx
+C:\> EvtxECmd.exe -d <Directory to process that contains evtx files>
 ```
