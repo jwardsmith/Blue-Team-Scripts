@@ -109,3 +109,15 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
 | 0xE0  | $EA                    |
 | 0xF0  |                        |
 | 0x100 | $LOGGED_UTILITY_STREAM |
+
+### Common Attributes for FILES
+
+| Type  | Name                                      |
+|-------|-------------------------------------------|
+| 0x10  | $STANDARD_INFORMATION                     |
+| 0x30  | $FILE_NAME (Long)                         |
+| 0x30  | $FILE_NAME (Short - sometimes)            |
+| 0x80  | $DATA                                     |
+| 0x80  | $DATA (alternate data stream - sometimes) |
+
+### Common Attributes for DIRECTORIES
