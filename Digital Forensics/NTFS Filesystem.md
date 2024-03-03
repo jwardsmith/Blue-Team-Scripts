@@ -121,3 +121,11 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
 | 0x80  | $DATA (alternate data stream - sometimes) |
 
 ### Common Attributes for DIRECTORIES
+
+| Type  | Name                                      |
+|-------|-------------------------------------------|
+| 0x10  | $STANDARD_INFORMATION                     |
+| 0x30  | $FILE_NAME (Long)                         |
+| 0x30  | $FILE_NAME (Short - sometimes)            |
+| 0x90  | $INDEX_ROOT                               |
+| 0xA0  | $INDEX_ALLOCATION (sometimes)             |
