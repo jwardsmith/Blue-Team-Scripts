@@ -65,3 +65,5 @@ This file contains an index of all the reparse points on the volume. Reparse poi
 
 ### $EXTEND\$UsnJrnl
 The Update Sequence Number (USN) Journal, also known as the Change Journal, is an index listing all of the files that have changed on the system and why the change took place. We will talk more about this journal later.
+
+-----------------------
