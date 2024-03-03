@@ -67,3 +67,14 @@ This file contains an index of all the reparse points on the volume. Reparse poi
 The Update Sequence Number (USN) Journal, also known as the Change Journal, is an index listing all of the files that have changed on the system and why the change took place. We will talk more about this journal later.
 
 -----------------------
+
+### Metadata Entries - Allocated or Unallocated?
+
+- MFT Entry Allocated:
+  - Metadata filled out (name, timestamps, permissions, etc.)
+  - Pointers to clusters containing file contents (or the data itself, if file is resident)
+ 
+- MFT Entry Unallocated:
+  -  Metadata may or may not be filled out
+  - If filled out, it is from a deleted file (or folder). The clusters pointed to may or may not still contain the deleted file’s data.
+  - The clusters may have been reused
