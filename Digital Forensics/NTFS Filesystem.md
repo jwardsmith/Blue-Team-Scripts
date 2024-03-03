@@ -78,3 +78,15 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
   -  Metadata may or may not be filled out
   - If filled out, it is from a deleted file (or folder). The clusters pointed to may or may not still contain the deleted file’s data.
   - The clusters may have been reused
+
+### Sequential MFT Entries
+
+- As files are created, regardless of their directories, MFT allocation patterns are generally sequential and not random.
+- Use analysis of contiguous metadata values to find files likely created in quick succession, even across different directories.
+
+### Typical MFT Entry Attributes
+
+- MFT is database-like and very structured. In NTFS, the Master File Table (MFT) is at the heart of the file system. It is a very structured database that stores metadata entries for every file and folder on the volume.
+- MFT entries are typically 1024 bytes long. Every object gets an entry within the MFT. Each entry is a pre-defined size, which is usually 1024 bytes long. They contain a series of attributes that fully describe the object. A file gets an entry, a directory gets an entry, even the volume name gets its own entry (always at reserved entry #3, for the $VOLUME system file). Note: In rare circumstances, MFT entries can be set by the file system to be larger than 1024 bytes (usually 4096 bytes).
+
+### Attributes Used in NTFS
