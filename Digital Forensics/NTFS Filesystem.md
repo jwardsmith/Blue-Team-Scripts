@@ -129,3 +129,12 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
 | 0x30  | $FILE_NAME (Short - sometimes)            |
 | 0x90  | $INDEX_ROOT                               |
 | 0xA0  | $INDEX_ALLOCATION (sometimes)             |
+
+### Sleuth Kit - istat
+
+- Use istat to display statistics about a given metadata structure (aka “inode”), including MFT entries.
+
+```
+C:\> istat [options] image inode
+C:\> istat \\.\G: 5
+```
