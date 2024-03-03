@@ -90,3 +90,22 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
 - MFT entries are typically 1024 bytes long. Every object gets an entry within the MFT. Each entry is a pre-defined size, which is usually 1024 bytes long. They contain a series of attributes that fully describe the object. A file gets an entry, a directory gets an entry, even the volume name gets its own entry (always at reserved entry #3, for the $VOLUME system file). Note: In rare circumstances, MFT entries can be set by the file system to be larger than 1024 bytes (usually 4096 bytes).
 
 ### Attributes Used in NTFS
+
+| Type  | Name                   |
+|-------|------------------------|
+| 0x10  | $STANDARD_INFORMATION  |
+| 0x20  | $ATTRIBUTE_LIST        |
+| 0x30  | $FILE_NAME             |
+| 0x40  | $OBJECT_ID             |
+| 0x50  | $SECURITY_DESCRIPTOR   |
+| 0x60  | $VOLUME_NAME           |
+| 0x70  | $VOLUME_INFORMATION    |
+| 0x80  | $DATA                  |
+| 0x90  | $INDEX_ROOT            |
+| 0xA0  | $INDEX_ALLOCATION      |
+| 0xB0  | $BITMAP                |
+| 0xC0  | $REPARSE_POINT         |
+| 0xD0  | $EA_INFORMATION        |
+| 0xE0  | $EA                    |
+| 0xF0  |                        |
+| 0x100 | $LOGGED_UTILITY_STREAM |
