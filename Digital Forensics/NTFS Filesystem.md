@@ -182,3 +182,15 @@ The information it records includes the actual data that is to be changed—not 
 ### $UsnJrnl
 
 The $UsnJrnl logs higher-level actions that can be used by applications to monitor for file and directory changes. This is a boon for applications such as AV and backup software, allowing them to efficiently take action only on new or changed files.
+
+$UsnJrnl stores high-level summary information about changes to files & directories.
+
+Used by applications to determine which files they should act upon.
+
+Tends to last a few days on active systems.
+
+Stored in large $J ADS.
+
+Contrary to the $LogFile, the $UsnJrnl logging mechanism is very consistent and concise.
+
+Given this structure of the $UsnJrnl, it’s actually the $J alternate data stream that needs to be exported for analysis. Forensic tools are generally needed to extract this data since the $UsnJrnl is a locked and hidden system file. One more feature of the $UsnJrnl structure worth noting is its size. The $J a very large sparse data stream, often topping 3 GB.
