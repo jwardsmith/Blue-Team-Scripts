@@ -173,6 +173,11 @@ C:\> Indx2Csv /IndxFile:G:\cases\$I30 /OutputPath:G:\cases
 
 The purpose of the $LogFile is to provide low-level transactional data about the changes to the file system. This provides resiliency to NTFS, so that if a critical error occurs, the file system can restore itself to a consistent state.
 
+Maintains very detailed information, including full payload data to be recorded in MFT, Indexes, UsnJrnl, & more.
+
+Tends to last just a few hours on active systems.
+
+The information it records includes the actual data that is to be changed—not just information about the change (which is closer to how the $UsnJrnl works). It records the actual data in its payload, so that if an issue occurs such as a power outage, the OS can re-run the needed change and have the information available to do so. The $LogFile, therefore, becomes very verbose, effectively recording all the data that is also recorded elsewhere.
 
 ### $UsnJrnl
 
