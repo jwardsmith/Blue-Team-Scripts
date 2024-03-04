@@ -17,3 +17,7 @@ Remember, we only have the last time for each of these timestamps e.g. we only h
 - Time file was created in the volume.
 
 ![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/d2b06eeb-9774-489c-93ed-72d39efd7208)
+
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/86d0bbb1-145f-4aad-874e-d83218a26655)
+
+The $FILE_NAME creation timestamp is updated using almost the same rules as the $STANDARD_INFORMATION timestamp. Seeing discrepancies in a file’s $STANDARD_INFORMATION and $FILE_NAME creation times could be an indication of timestomping.
