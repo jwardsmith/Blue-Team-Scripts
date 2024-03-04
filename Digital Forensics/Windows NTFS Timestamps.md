@@ -4,6 +4,8 @@ Unless you have a very specific reason to do otherwise, we recommend primarily f
 
 Remember, we only have the last time for each of these timestamps e.g. we only have the last modification time for a Word document, not every time it was modified.
 
+### MACB
+
 **M - Data Content Change Time:**
 - Time the data content of a file was last modified. We can have file modification time pre-dating creation time which indicates the file was copied or move occurred elsewhere - creation time tells us when it happened.
 
@@ -16,7 +18,11 @@ Remember, we only have the last time for each of these timestamps e.g. we only h
 **B - File Creation Time:**
 - Time file was created in the volume.
 
+### $STANDARD_INFORMATION
+
 ![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/d2b06eeb-9774-489c-93ed-72d39efd7208)
+
+### $FILENAME
 
 ![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/86d0bbb1-145f-4aad-874e-d83218a26655)
 
