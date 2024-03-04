@@ -179,6 +179,14 @@ Tends to last just a few hours on active systems.
 
 The information it records includes the actual data that is to be changed—not just information about the change (which is closer to how the $UsnJrnl works). It records the actual data in its payload, so that if an issue occurs such as a power outage, the OS can re-run the needed change and have the information available to do so. The $LogFile, therefore, becomes very verbose, effectively recording all the data that is also recorded elsewhere.
 
+### LogFileParser
+
+- Use LogFileParser parse $LogFile
+
+```
+C:\> LogFileParser.exe /LogFileFile:E:\C\$LogFile /OutputPath:G:\ntfs-anti-forensics
+```
+
 ### $UsnJrnl
 
 The $UsnJrnl logs higher-level actions that can be used by applications to monitor for file and directory changes. This is a boon for applications such as AV and backup software, allowing them to efficiently take action only on new or changed files.
@@ -194,3 +202,11 @@ Stored in large $J ADS.
 Contrary to the $LogFile, the $UsnJrnl logging mechanism is very consistent and concise.
 
 Given this structure of the $UsnJrnl, it’s actually the $J alternate data stream that needs to be exported for analysis. Forensic tools are generally needed to extract this data since the $UsnJrnl is a locked and hidden system file. One more feature of the $UsnJrnl structure worth noting is its size. The $J a very large sparse data stream, often topping 3 GB.
+
+### MFTECmd
+
+- Use MFTECmd parse $UsnJrnl
+
+```
+C:\> mftecmd.exe -f E:\C\$Extend\$J --csv G:\ntfs -csvf mftecmd-usnjrnl.csv
+```
