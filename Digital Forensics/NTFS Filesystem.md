@@ -148,6 +148,8 @@ C:\> icat [options] image inode > extracted.data
 C:\> icat /cases/cdrive/base-rd01-cdrive.E01 103841-128-9
 ```
 
+-----------------------
+
 ### $I30
 
 Directories are essentially files themselves, but the data they store is metadata information about their contents. With NTFS, directories store this metadata in an index called the $I30. As we see in so many other artifacts, when entries get deleted from this index, the entries are not initially overwritten, they are just marked unused. We call these unused entries “slack” entries. This additional location for storing file system metadata can be a wonderful resource because it essentially becomes another location for investigators to search for deleted files and folders.The type of index used by NTFS is a B-tree index. 
@@ -164,3 +166,14 @@ A directory is essentially a file, and as such, it will consume an MFT record an
 ```
 C:\> Indx2Csv /IndxFile:G:\cases\$I30 /OutputPath:G:\cases
 ```
+
+-----------------------
+
+### $LogFile
+
+The purpose of the $LogFile is to provide low-level transactional data about the changes to the file system. This provides resiliency to NTFS, so that if a critical error occurs, the file system can restore itself to a consistent state.
+
+
+### $UsnJrnl
+
+The $UsnJrnl logs higher-level actions that can be used by applications to monitor for file and directory changes. This is a boon for applications such as AV and backup software, allowing them to efficiently take action only on new or changed files.
