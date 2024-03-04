@@ -9,101 +9,101 @@ C:\> kape.exe --tsource F --target !SANS_Triage --tdest C:\temp\Output
 For reference, the following file and folder locations provide an example of the type of forensic artifacts that can be
 extracted in a typical KAPE configuration:
 
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Bookmarks\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Cookies\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Current Session
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Current Tabs
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Favicons\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\History\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Last Session
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Last Tabs
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Preferences
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Shortcuts\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Top Sites\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Bookmarks\*
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Visited Links
-Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Web Data\*
-EventLogs: Path: C:\Windows\system32\config\\*.evt
-EventLogs: Path: C:\Windows\system32\winevt\logs\\*.evtx
-EventTraceLogs: Path: C:\Windows\System32\WDI\LogFiles\\*.etl\*
-EventTraceLogs: Path: C:\Windows\System32\WDI\{\*
-EventTraceLogs: Path: C:\Windows\System32\LogFiles\WMI\\*
-EventTraceLogs: Path: C:\Windows\System32\SleepStudy\*
-EventTraceLogs: Path: C:\ProgramData\Microsoft\Windows\PowerEfficiency Diagnostics\energy-ntkl.etl
-EvidenceOfExecution: Path: C:\Windows\prefetch
-EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\RecentFileCache.bcf
-EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\Amcache.hve
-EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\Amcache.hve.LOG\*
-FileSystem: Path: C:\\$MFT
-FileSystem: Path: C:\\$LogFile
-FileSystem: Path: c:\\$Extend\\$UsnJrnl:\$J
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\places.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\downloads.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\formhistory.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\cookies.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\signons.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\webappstore.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\favicons.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\addons.sqlite\*
-FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\search.sqlite\*
-InternetExplorer: Path: C:\Users\\*\AppData\Roaming\Microsoft\Office\Recent\index.dat
-InternetExplorer: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\WebCache\WebCacheV01.dat
-InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Internet Explorer\Recovery
-InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\History\
-InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\Cookies\
-InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\WebCache\
-InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary Internet Files\
-InternetExplorer: Path: C:\Users\*\AppData\Local\Packages\Microsoft.MicrosoftEdge\_\*\AC\MicrosoftEdge\User\Default\DataStore\Data\nouser
-InternetExplorer: Path: C:\Users\*\MicrosoftEdgeBackups\backups\MicrosoftEdgeBackup\*\DatastoreBackup\spartan.edb
-LiveUserFiles: Path: C:\Users\\*\Desktop\\*
-LiveUserFiles: Path: C:\Users\\*\Documents\\*
-LiveUserFiles: Path: C:\Users\\*\Downloads\\*
-LiveUserFiles: Path: C:\Users\\*\Dropbox\*\\*
-LnkFilesAndJumpLists: Path: C:\Users\\*\AppData\Roaming\Microsoft\Windows\Recent
-LnkFilesAndJumpLists: Path: C:\Documents and Settings\\*\Recent
-LnkFilesAndJumpLists: Path: C:\Documents and Settings\\*\Desktop\\*.lnk
-LnkFilesAndJumpLists: Path: C:\Users\\*\Desktop\\*.lnk
-LnkFilesAndJumpLists: Path: C:\Users\\*\AppData\Local\ConnectedDevicesPlatform\\*\\*.db
-MemoryArtifacts: Path: C:\hiberfil.sys
-MemoryArtifacts: Path: C:\pagefile.sys
-MemoryArtifacts: Path: C:\swapfile.sys
-MemoryArtifacts: Path: C:\Windows\memory.dmp
-OutlookPSTOST: Path: C:\Documents and Settings\*\Local Settings\Application Data\Microsoft\Outlook\*.pst
-OutlookPSTOST: Path: C:\Documents and Settings\*\Local Settings\Application Data\Microsoft\Outlook\*.ost
-OutlookPSTOST: Path: C:\Users\\*\AppData\Local\Microsoft\Outlook\\*.pst
-OutlookPSTOST: Path: C:\Users\\*\AppData\Local\Microsoft\Outlook\\*.ost
-Recycle: Path: C:\\$Recycle.Bin\\*
-Recycle: Path: C:\RECYCLER\\*
-RegistryHives: Path: C:\Documents and Settings\\*\ntuser.dat
-RegistryHives: Path: C:\Users\\*\ntuser.dat
-RegistryHives: Path: C:\Users\\*\ntuser.dat.LOG\*
-RegistryHives: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\UsrClass.dat
-RegistryHives: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\UsrClass.dat.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\SAM.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\SECURITY.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\SOFTWARE.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\SYSTEM.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\SAM
-RegistryHives: Path: C:\Windows\System32\config\SECURITY
-RegistryHives: Path: C:\Windows\System32\config\SOFTWARE
-RegistryHives: Path: C:\Windows\System32\config\SYSTEM
-RegistryHives: Path: C:\Windows\System32\config\RegBack\\*.LOG\*
-RegistryHives: Path: C:\Windows\System32\config\RegBack\SAM
-RegistryHives: Path: C:\Windows\System32\config\RegBack\SECURITY
-RegistryHives: Path: C:\Windows\System32\config\RegBack\SOFTWARE
-RegistryHives: Path: C:\Windows\System32\config\RegBack\SYSTEM
-RegistryHives: Path: C:\Windows\System32\config\RegBack\SYSTEM1
-ScheduledTasks: Path: C:\Windows\Tasks\\*.job
-ScheduledTasks: Path: C:\Windows\SchedLgU.txt
-ScheduledTasks: Path: C:\Windows\system32\Tasks
-Skype: Path: C:\Users\\*\AppData\Local\Packages\Microsoft.SkypeApp\_\*\LocalState\\*\main.db
-Skype: Path: C:\Documents and Settings\\*\Application Data\Skype\\*\main.db
-SRUM: Path: C:\Windows\System32\SRU
-ThumbCache: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\Explorer\thumbcache\_\*.db
-USBDevicesLogs: Path: C:\Windows\setupapi.log
-USBDevicesLogs: Path: C:\Windows\inf\setupapi.dev.log
-WBEM: Path: C:\Windows\System32\wbem\Repository\*
-WebBrowsers: Path: InternetExplorer
-WebBrowsers: Path: Chrome
-WebBrowsers: Path: FireFox
-WindowsIndexSearch: Path: C:\programdata\microsoft\search\data\applications\windows\Windows.edb
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Bookmarks\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Cookies\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Current Session
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Current Tabs
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Favicons\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\History\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Last Session
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Last Tabs
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Preferences
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Shortcuts\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Top Sites\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Bookmarks\*
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Visited Links
+- Chrome: Path: C:\Users\\*\AppData\Local\Google\Chrome\User Data\Default\Web Data\*
+- EventLogs: Path: C:\Windows\system32\config\\*.evt
+- EventLogs: Path: C:\Windows\system32\winevt\logs\\*.evtx
+- EventTraceLogs: Path: C:\Windows\System32\WDI\LogFiles\\*.etl\*
+- EventTraceLogs: Path: C:\Windows\System32\WDI\{\*
+- EventTraceLogs: Path: C:\Windows\System32\LogFiles\WMI\\*
+- EventTraceLogs: Path: C:\Windows\System32\SleepStudy\*
+- EventTraceLogs: Path: C:\ProgramData\Microsoft\Windows\PowerEfficiency Diagnostics\energy-ntkl.etl
+- EvidenceOfExecution: Path: C:\Windows\prefetch
+- EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\RecentFileCache.bcf
+- EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\Amcache.hve
+- EvidenceOfExecution: Path: C:\Windows\AppCompat\Programs\Amcache.hve.LOG\*
+- FileSystem: Path: C:\\$MFT
+- FileSystem: Path: C:\\$LogFile
+- FileSystem: Path: c:\\$Extend\\$UsnJrnl:\$J
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\places.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\downloads.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\formhistory.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\cookies.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\signons.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\webappstore.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\favicons.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\addons.sqlite\*
+- FireFox: Path: C:\Users\\*\AppData\Roaming\Mozilla\Firefox\Profiles\\*.default\search.sqlite\*
+- InternetExplorer: Path: C:\Users\\*\AppData\Roaming\Microsoft\Office\Recent\index.dat
+- InternetExplorer: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\WebCache\WebCacheV01.dat
+- InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Internet Explorer\Recovery
+- InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\History\
+- InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\Cookies\
+- InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\Windows\WebCache\
+- InternetExplorer: Path: C:\Windows\System32\config\systemprofile\AppData\Local\Microsoft\Windows\Temporary Internet Files\
+- InternetExplorer: Path: C:\Users\*\AppData\Local\Packages\Microsoft.MicrosoftEdge\_\*\AC\MicrosoftEdge\User\Default\DataStore\Data\nouser
+- InternetExplorer: Path: C:\Users\*\MicrosoftEdgeBackups\backups\MicrosoftEdgeBackup\*\DatastoreBackup\spartan.edb
+- LiveUserFiles: Path: C:\Users\\*\Desktop\\*
+- LiveUserFiles: Path: C:\Users\\*\Documents\\*
+- LiveUserFiles: Path: C:\Users\\*\Downloads\\*
+- LiveUserFiles: Path: C:\Users\\*\Dropbox\*\\*
+- LnkFilesAndJumpLists: Path: C:\Users\\*\AppData\Roaming\Microsoft\Windows\Recent
+- LnkFilesAndJumpLists: Path: C:\Documents and Settings\\*\Recent
+- LnkFilesAndJumpLists: Path: C:\Documents and Settings\\*\Desktop\\*.lnk
+- LnkFilesAndJumpLists: Path: C:\Users\\*\Desktop\\*.lnk
+- LnkFilesAndJumpLists: Path: C:\Users\\*\AppData\Local\ConnectedDevicesPlatform\\*\\*.db
+- MemoryArtifacts: Path: C:\hiberfil.sys
+- MemoryArtifacts: Path: C:\pagefile.sys
+- MemoryArtifacts: Path: C:\swapfile.sys
+- MemoryArtifacts: Path: C:\Windows\memory.dmp
+- OutlookPSTOST: Path: C:\Documents and Settings\*\Local Settings\Application Data\Microsoft\Outlook\*.pst
+- OutlookPSTOST: Path: C:\Documents and Settings\*\Local Settings\Application Data\Microsoft\Outlook\*.ost
+- OutlookPSTOST: Path: C:\Users\\*\AppData\Local\Microsoft\Outlook\\*.pst
+- OutlookPSTOST: Path: C:\Users\\*\AppData\Local\Microsoft\Outlook\\*.ost
+- Recycle: Path: C:\\$Recycle.Bin\\*
+- Recycle: Path: C:\RECYCLER\\*
+- RegistryHives: Path: C:\Documents and Settings\\*\ntuser.dat
+- RegistryHives: Path: C:\Users\\*\ntuser.dat
+- RegistryHives: Path: C:\Users\\*\ntuser.dat.LOG\*
+- RegistryHives: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\UsrClass.dat
+- RegistryHives: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\UsrClass.dat.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\SAM.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\SECURITY.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\SOFTWARE.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\SYSTEM.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\SAM
+- RegistryHives: Path: C:\Windows\System32\config\SECURITY
+- RegistryHives: Path: C:\Windows\System32\config\SOFTWARE
+- RegistryHives: Path: C:\Windows\System32\config\SYSTEM
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\\*.LOG\*
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\SAM
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\SECURITY
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\SOFTWARE
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\SYSTEM
+- RegistryHives: Path: C:\Windows\System32\config\RegBack\SYSTEM1
+- ScheduledTasks: Path: C:\Windows\Tasks\\*.job
+- ScheduledTasks: Path: C:\Windows\SchedLgU.txt
+- ScheduledTasks: Path: C:\Windows\system32\Tasks
+- Skype: Path: C:\Users\\*\AppData\Local\Packages\Microsoft.SkypeApp\_\*\LocalState\\*\main.db
+- Skype: Path: C:\Documents and Settings\\*\Application Data\Skype\\*\main.db
+- SRUM: Path: C:\Windows\System32\SRU
+- ThumbCache: Path: C:\Users\\*\AppData\Local\Microsoft\Windows\Explorer\thumbcache\_\*.db
+- USBDevicesLogs: Path: C:\Windows\setupapi.log
+- USBDevicesLogs: Path: C:\Windows\inf\setupapi.dev.log
+- WBEM: Path: C:\Windows\System32\wbem\Repository\*
+- WebBrowsers: Path: InternetExplorer
+- WebBrowsers: Path: Chrome
+- WebBrowsers: Path: FireFox
+- WindowsIndexSearch: Path: C:\programdata\microsoft\search\data\applications\windows\Windows.edb
