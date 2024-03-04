@@ -155,3 +155,12 @@ Directories are essentially files themselves, but the data they store is metadat
 $I30 = Index composed of $INDEX_ROOT and optionally $INDEX_ALLOCATION.
 
 A directory is essentially a file, and as such, it will consume an MFT record and contain $STANDARD_INFORMATION and $FILE_NAME attributes just like any other MFT “FILE” entry. The difference is that instead of a $DATA attribute to store file data, it stores a structured index that lists the contents of the directory. Overall, the index is named $I30, whether it consists of just the $INDEX_ROOT or is large enough to also need the $INDEX_ALLOCATION attribute. It is implemented as a B-tree structure for performance reasons.
+
+
+### Indx2Csv
+
+- Use Indx2Csv for parsing exported or carved $I30 files
+
+```
+C:\> Indx2Csv /IndxFile:G:\cases\$I30 /OutputPath:G:\cases
+```
