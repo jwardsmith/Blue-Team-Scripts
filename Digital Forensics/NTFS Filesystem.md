@@ -138,3 +138,12 @@ The Update Sequence Number (USN) Journal, also known as the Change Journal, is a
 C:\> istat [options] image inode
 C:\> istat \\.\G: 5
 ```
+
+### Sleuth Kit - icat
+
+- Use icat to go to the metadata entry to extract out file or attribute contents. If providing the MFT entry number (inode number) alone, it will export out the primary $DATA stream. Another option is to provide a specific attribute ID to extract other data, including alternate data streams.
+
+```
+C:\> icat [options] image inode > extracted.data
+C:\> icat /cases/cdrive/base-rd01-cdrive.E01 103841-128-9
+```
