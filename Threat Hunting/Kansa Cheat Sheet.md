@@ -13,3 +13,11 @@ The Analysis folder contains PowerShell scripts for conducting basic analysis of
 ```
 PS C:\> .\kansa.ps1 -OutputPath .\Output\ -TargetList .\hostlist -TargetCount 250 -Verbose -Pushbin
 ```
+
+- Run Kansa Analysis Script
+
+```
+PS C:\> .\Get-ASEPImagePathLaunchStringMD5UnsignedStack.ps1 > asep-workstation-stack.csv
+OR
+PS C:|> Get-LogparserStack.ps1 -FilePattern *SvcAll.csv -Delimiter "," -Direction asc -OutFile SvcAllworkstation-stack.csv
+```
