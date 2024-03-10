@@ -13,6 +13,8 @@ Windows processes are composed of much more than just an executable.
 - **Memory Sections**: Shared memory areas used by a process
 - **Sockets**: Network port and connection information within a process
 
+### Descriptions
+
 - DLLs: Dynamically Linked Libraries define the capabilities of a process. For instance, if a process
 needs to communicate via HTTP, it will load the WININET.dll file. In some cases, malware will load its
 own malicious DLLs to take control of a process.
