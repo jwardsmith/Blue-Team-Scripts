@@ -234,3 +234,33 @@ SELECT Fqdn,FullPath,MTime AS ModifiedTime,BTime as CreationTime, Hash,
 label(client_id=ClientId, labels="compromised", op="set") // label all systems with detections
 FROM source()
 ```
+
+### Cobalt Strike Hunt
+
+*Leveraging the power of Yara, let's just sweep all processes in memory for signatures matching the popular Cobalt Strike attack tool.*
+
+*Hunt Artifact: Windows.Detection.Yara.Process*
+
+*Parameters:*
+*Default yara signature is Cobalt Strike*
+
+```
+SELECT Fqdn, ProcessName, Pid, Rule,
+label(client_id=ClientId, labels="cobaltstrike", op="set") // label all systems with detections
+FROM source()
+```
+
+### Remediation - Quarantine
+
+*Now that we have a solid grasp on the scope of the intrusion, lets quarantine all impacted systems to prevent further damage.*
+
+*Hunt Artifact: Windows.Remediation.Quarantine (run against all systems labeled compromised)*
+
+### Forensics Collection
+
+*Now that compromised systems are quarantined, lets pull back forensics data for deeper analysis.*
+
+*Hunt Artifact: Windows.KapeFiles.Targets (run against all systems labeled compromised)*
+
+*Parameters:*
+*Kape targets: _SANS_Triage
