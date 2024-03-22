@@ -1,6 +1,6 @@
 # Velociraptor Cheat Sheet
 
-### Connected Clients
+### Connected Clients Audit
 
 - View currently connected clients
 
@@ -14,8 +14,12 @@ Click the drop-down next to the search bar -> Select 'Show All'
 Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client
 ```
 
+### Command Execution
+
 - Execute a command on a currently connected client
 
 ```
 Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch -> Click the eye icon to show output
 ```
+
+### Virtual File System (VFS)
