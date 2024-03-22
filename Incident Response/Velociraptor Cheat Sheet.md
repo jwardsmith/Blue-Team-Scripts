@@ -263,4 +263,4 @@ FROM source()
 *Hunt Artifact: Windows.KapeFiles.Targets (run against all systems labeled compromised)*
 
 *Parameters:*
-*Kape targets: _SANS_Triage
+*Kape targets: _SANS_Triage*
