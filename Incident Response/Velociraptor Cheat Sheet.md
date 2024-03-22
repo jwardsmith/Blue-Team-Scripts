@@ -77,7 +77,7 @@ Select a hunt -> Select the Notebook tab -> Click the pencil icon -> Edit VQL ->
 *Hunt Artifact: Windows.Search.FileFinder*
 
 *Parameters:*
-*SearchFilesGlob: C:\Users\*\*\Security_Protocol*\*
+*SearchFilesGlob: C:\Users\**\Security_Protocol*\*
 
 ```
 SELECT Fqdn,FullPath,BTime AS CreatedTime,MTime as ModifiedTime, Hash,
