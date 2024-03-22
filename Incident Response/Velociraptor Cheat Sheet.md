@@ -41,3 +41,23 @@ Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the f
 ```
 Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Textview' or 'HexView'
 ```
+
+### Hunt Manager
+
+- Create a hunt
+
+```
+Click the + button -> Enter a description, expiry and any filters -> Choose the artifact to collect e.g. Windows.Search.FileFinder -> Configure parameters e.g. SearchFilesGlob = C:\Users\**\Security_Protocol* -> Specify resources -> Review -> Launch
+```
+
+- Run a hunt
+
+```
+Select a hunt -> Click the play button
+```
+
+- View the results of a hunt
+
+```
+Select a hunt -> Select the Notebook tab
+```
