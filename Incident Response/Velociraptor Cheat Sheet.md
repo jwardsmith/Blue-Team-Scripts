@@ -5,5 +5,5 @@
 - View currently connected clients
 
 ```
-Navigate to Home -> View Currently Connected Clients panel
+Click the drop-down next to the search bar -> Select 'Show All'
 ```
