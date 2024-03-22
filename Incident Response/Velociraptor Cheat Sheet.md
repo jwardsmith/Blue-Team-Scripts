@@ -84,3 +84,74 @@ SELECT Fqdn,FullPath,BTime AS CreatedTime,MTime as ModifiedTime, Hash,
 label(client_id=ClientId, labels="phish_victim", op="set") // label all systems with detections
 FROM source()
 ```
+
+### Lateral Movement Hunt
+
+- Hunting for lateral movement
+
+*When dealing with advanced adversaries, it is safe to assume the breach has expanded beyond the initial victims of the phish campaign... Let's launch a quick hunt to find possible lateral movement using the usernames of the phish victims.*
+
+*Hunt Artifact: Windows.EventLogs.RDPAuth*
+
+```
+SELECT EventTime,Computer,Channel,EventID,UserName,LogonType,SourceIP,Description,Message,Fqdn FROM source()
+WHERE ( // excluded logons of the user on their own system
+(UserName =~ "Chad.Chan" AND NOT Computer =~ "ACC-01") 
+OR (UserName =~ "Jean.Owen" AND NOT Computer =~ "ACC-05")
+OR (UserName =~ "Albert.Willoughby" AND NOT Computer =~ "ACC-09")
+OR (UserName =~ "Anna.Ward" AND NOT Computer =~ "ACC-04")
+)
+AND NOT EventID = 4634 // less interested in logoff events
+AND NOT (Computer =~ "dc" OR Computer =~ "exchange" OR Computer =~ "fs1")
+ORDER BY EventTime
+```
+
+### Process Analysis Hunt
+
+- Baseline running processes
+
+*Find potentially compromised systems by baselining all running processes in the environment. This notebook returns processes marked as untrusted by Authenticode.*
+
+*Hunt Artifact: Windows.System.Pslist*
+
+```
+SELECT Name,Exe,CommandLine,Hash.SHA256 AS SHA256, Authenticode.Trusted, Username, Fqdn, count() AS Count FROM source()
+WHERE Authenticode.Trusted = "untrusted" // unsigned binaries
+// List of environment-specific processes to exclude
+AND NOT Exe = "C:\\Program Files\\filebeat-rss\\filebeat.exe"
+AND NOT Exe = "C:\\Program Files\\filebeat\\filebeat.exe"
+AND NOT Exe = "C:\\Program Files\\winlogbeat-rss\\winlogbeat.exe"
+AND NOT Exe = "C:\\Program Files\\winlogbeat\\winlogbeat.exe"
+AND NOT Exe = "C:\\user-automation\\user.exe"
+AND NOT Exe = "C:\\salt\\bin\\python.exe"
+// Stack for prevalence analysis
+GROUP BY Exe
+// Sort results ascending
+ORDER BY Count
+```
+
+*Leverage VirusTotal to quickly check untrusted processes for detections. Be mindful that free VT API is limited to 4 lookups / min & 500 / day so we'll be as efficient as possible with what we query against VT.*
+
+*Hunt Artifact: Windows.System.Pslist*
+
+```
+// Get a free VT api key
+LET VTKey <= "<your_api_key>"
+// Build the list of untrusted processes first
+Let Results = SELECT Name,CommandLine,Exe,Hash.SHA256 AS SHA256, count() AS Count FROM source()
+WHERE Authenticode.Trusted = "untrusted"
+AND SHA256 // only entries with the required SHA256
+// List of environment-specific processes to exclude
+AND NOT Exe = "C:\\user-automation\\user.exe"
+GROUP BY Exe,SHA256
+// Now combine the previous query with the Server Enrichment query
+SELECT *, {SELECT VTRating FROM Artifact.Server.Enrichment.Virustotal(VirustotalKey=VTKey, Hash=SHA256) } AS VTResults FROM foreach(row=Results) WHERE Count < 10
+ORDER BY VTResults DESC
+```
+
+*Get process ancestry for known malware. Here we learn important details about how the malware was launched.*
+
+*Hunt Artifact: Generic.System.Pstree*
+
+*Parameters:*
+*Process Regex: .*(tkg|mshta|Security_Protocol).*\*
