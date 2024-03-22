@@ -61,3 +61,9 @@ Select a hunt -> Click the play button
 ```
 Select a hunt -> Select the Notebook tab
 ```
+
+- Edit the VQL for a hunt, and re-execute
+
+```
+Select a hunt -> Select the Notebook tab -> Click the pencil icon -> Edit VQL -> Click the save icon
+```
