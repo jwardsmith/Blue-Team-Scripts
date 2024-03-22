@@ -67,3 +67,20 @@ Select a hunt -> Select the Notebook tab
 ```
 Select a hunt -> Select the Notebook tab -> Click the pencil icon -> Edit VQL -> Click the save icon
 ```
+
+### Intial Access Hunt
+
+- Hunting for phish victims
+
+*Using the name of a suspicious email attachment, we can quickly identify which users/systems may have been impacted.*
+
+*Hunt Artifact: Windows.Search.FileFinder*
+
+*Parameters:*
+*SearchFilesGlob: C:\Users\**\Security_Protocol***
+
+```
+SELECT Fqdn,FullPath,BTime AS CreatedTime,MTime as ModifiedTime, Hash,
+label(client_id=ClientId, labels="phish_victim", op="set") // label all systems with detections
+FROM source()
+```
