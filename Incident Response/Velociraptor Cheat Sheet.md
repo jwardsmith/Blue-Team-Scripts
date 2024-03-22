@@ -1,6 +1,6 @@
 # Velociraptor Cheat Sheet
 
-### Connected Client
+### Connected Clients
 
 - View currently connected clients
 
@@ -12,4 +12,10 @@ Click the drop-down next to the search bar -> Select 'Show All'
 
 ```
 Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client
+```
+
+- Execute a command on a currently connected client
+
+```
+Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client -> Select 'Shell'
 ```
