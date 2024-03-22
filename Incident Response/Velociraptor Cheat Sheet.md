@@ -33,5 +33,11 @@ Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the f
 - Collect a file from a client
 
 ```
-Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Collect from the client'
+Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Collect from the client' -> Click the download icon button
+```
+
+- View a file in Textview (text editor) or HexView (hex editor)
+
+```
+Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Textview' or 'HexView'
 ```
