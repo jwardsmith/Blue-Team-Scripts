@@ -155,3 +155,82 @@ ORDER BY VTResults DESC
 
 *Parameters:*
 *Process Regex: .\*(tkg|mshta|Security_Protocol).*\*
+
+### Persistence Hunt
+
+- Hunting for persistence
+
+*Use a builtin artifact to hunt for potential persistence mechanisms.*
+
+*Hunt Artifact: Windows.Sys.StartupItems*
+
+```
+LET Results = SELECT count() AS Count, Fqdn, Name, FullPath, Command FROM source()
+// filter common FPs
+WHERE NOT FullPath =~ "bginfo.lnk"
+AND NOT FullPath =~ "desktop.ini"
+AND NOT FullPath =~ "Outlook.lnk"
+AND NOT FullPath =~ "chrome.lnk"
+AND NOT (Name =~ "OneDrive" AND FullPath =~ "OneDrive" AND Command =~ "OneDrive")
+// end common FPs
+GROUP BY Name, FullPath, Command // stack them
+SELECT * FROM Results
+WHERE Count < 10
+ORDER BY Count // sorts ascending
+```
+
+*Use a builtin artifact to hunt for potential persistence mechanisms.*
+
+*Hunt Artifact: Windows.System.TaskScheduler*
+
+```
+LET Results = SELECT FullPath,Command,Arguments,Fqdn, count() AS Count FROM source()
+WHERE Command AND Arguments
+AND NOT Command =~ "OneDriveStandaloneUpdater.exe"
+AND NOT (Command = "C:\\Windows\\System32\\Essentials\\RunTask.exe" AND FullPath =~ "Essentials")
+AND NOT Command =~ "MpCmdRun.exe"
+AND NOT Arguments =~ "sildailycollector.vbs"
+AND NOT Command = "C:\\Windows\\system32\\vssadmin.exe"
+AND NOT FullPath =~ "BPA Scheduled Scan"
+AND NOT Arguments =~ "CheckDatabaseRedundancy"
+AND NOT Arguments =~ "silcollector.cmd"
+GROUP BY FullPath,Command,Arguments
+SELECT * FROM Results
+WHERE Count < 5
+ORDER BY Count // sorts ascending
+```
+
+*Leverage Sysinternals Autorunsc to hunt for potential persistence mechanisms.*
+
+*Hunt Artifact: Windows.Sysinternals.Autoruns*
+
+```
+LET Results = SELECT count() AS Count, Fqdn, Entry,Category,Profile,Description,`Image Path` AS ImagePath,`Launch String` AS LaunchString,`SHA-256` AS SHA256 FROM source()
+WHERE NOT Signer
+AND Enabled = "enabled"
+GROUP BY ImagePath,LaunchString
+SELECT * FROM Results
+WHERE Count < 5 // return entries present on fewer than 5 systems
+ORDER BY Count
+```
+
+### Scoping Malware Hunt
+
+*Find all systems with suspected malware on disk.*
+
+*Hunt Artifact: Windows.Search.FileFinder*
+
+*Parameters:*
+*SearchFilesGlobTable:*
+  - *C:\**\msxsl.exe*
+  - *C:\**\*.hta*
+  - *C:\**\drivers\svchost.exe*
+  - *C:\**\tkg.exe*
+  - *C:\**\Security_Protocol*\*
+  - *C:\**\XKnqbpzl.txt*
+
+```
+SELECT Fqdn,FullPath,MTime AS ModifiedTime,BTime as CreationTime, Hash,
+label(client_id=ClientId, labels="compromised", op="set") // label all systems with detections
+FROM source()
+```
