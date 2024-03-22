@@ -223,7 +223,7 @@ ORDER BY Count
 *Parameters:*
 *SearchFilesGlobTable:*
   - *C:\\**\msxsl.exe*
-  - *C:\\**\*.hta*
+  - *C:\\**\\*.hta*
   - *C:\\**\drivers\svchost.exe*
   - *C:\\**\tkg.exe*
   - *C:\\**\Security_Protocol*\*
