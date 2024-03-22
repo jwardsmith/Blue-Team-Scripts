@@ -19,7 +19,19 @@ Click the drop-down next to the search bar -> Select 'Show All' -> Click the Cli
 - Execute a command on a currently connected client
 
 ```
-Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch -> Click the eye icon to show output
+Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch -> Click the eye icon to show output
 ```
 
 ### Virtual File System (VFS)
+
+- View the virtual file system (file, ntfs, registry) on a currently connected client
+
+```
+Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it)
+```
+
+- Collect a file from a client
+
+```
+Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Collect from the client'
+```
