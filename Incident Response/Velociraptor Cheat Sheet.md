@@ -222,12 +222,12 @@ ORDER BY Count
 
 *Parameters:*
 *SearchFilesGlobTable:*
-  - *C:\**\msxsl.exe*
-  - *C:\**\*.hta*
-  - *C:\**\drivers\svchost.exe*
-  - *C:\**\tkg.exe*
-  - *C:\**\Security_Protocol*\*
-  - *C:\**\XKnqbpzl.txt*
+  - *C:\\*\*\msxsl.exe*
+  - *C:\\*\*\\*.hta*
+  - *C:\\*\*\drivers\svchost.exe*
+  - *C:\\*\*\tkg.exe*
+  - *C:\\*\*\Security_Protocol*\*
+  - *C:\\*\*\XKnqbpzl.txt*
 
 ```
 SELECT Fqdn,FullPath,MTime AS ModifiedTime,BTime as CreationTime, Hash,
