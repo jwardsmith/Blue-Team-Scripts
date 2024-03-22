@@ -17,5 +17,5 @@ Click the drop-down next to the search bar -> Select 'Show All' -> Click the Cli
 - Execute a command on a currently connected client
 
 ```
-Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client -> Select 'Shell'
+Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch
 ```
