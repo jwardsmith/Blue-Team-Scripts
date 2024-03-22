@@ -154,4 +154,4 @@ ORDER BY VTResults DESC
 *Hunt Artifact: Generic.System.Pstree*
 
 *Parameters:*
-*Process Regex: .*(tkg|mshta|Security_Protocol).*\*
+*Process Regex: .\*(tkg|mshta|Security_Protocol).*\*
