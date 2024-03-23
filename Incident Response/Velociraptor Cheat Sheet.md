@@ -1,6 +1,33 @@
 # Velociraptor Cheat Sheet
 
-Velociraptor is an open-source endpoint tool that includes event log collection capabilities.
+Velociraptor is an open-source endpoint tool that includes event log collection capabilities. Runs on Windows, Mac, and Linux. Used for triage imaging, incident response, and threat hunting. Can be deployed using software management tools or GPO to deploy agents. Extremely flexible, however rapid development cycle means dealing with frequent updates. Velociraptor allows for the ability to query for IOCs and hunt for intrusions across thousands of hosts. When a suspicious host is found, one-to-one analysis can be performed, including the ability to locate and retrieve files of interest, perform additional targeted analysis with many built-in searches, and even launch an interactive shell to the client if necessary.
+
+- Scalable: Easily supports 10,000+ hosts on a single-server deployment, new multi-frontend server solutions aims to scale horizontally
+- Query-Based: VQL designed to allow relatively easy access to forensic artifacts, queries can be a point-in-time collection, queries can also be ongoing to continually stream back results
+- Flexible: Administrator deployment via WebUI, CLI, or external API, interactive shell for real-time interaction with clients, triage-mode allows collection using a standalone package
+- Multi-OS: Windows, Linux, Mac
+
+While the list of features provided by Velociraptor is very impressive, the simple nature of its architecture is equally impressive. All the functionality is provided by a single executable and an accompanying configuration file. The executable is initiated with a configuration file and command-line parameters telling it to act as either a server or a client. As a server, it hosts a web-based user interface (WebUI) that can be used to check the health of the deployment, initiate IOC “hunts”, analyse individual hosts, and receive files and streamed data from the client. Furthermore, virtually anything that can be accomplished via the WebUI can also be done at the command-line, as well as via a published external API.
+
+While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
+
+Artifacts” are stored VQL queries. Many built-in, such as:
+- List running processes
+- Enumerate users
+- Collect Autoruns persistence data
+- Collect “Evidence of Execution” data
+- Search for specific files or directories
+- Use Kape “target” definitions to automate raw file collection
+
+While some built-in artifacts are ready to use as-is, others need tweaking for the specific query an analyst wants to perform. Or perhaps an entirely new artifact is necessary. In those cases, a new artifact can be created by the analyst, or existing artifacts can easily be copied and customised. For example, at the time of this writing, there isn’t a built-in artifact to search processes for specific command-line arguments. However, there is a built-in artifact called Windows.System.Pslist to search for running processes by name. That artifact accepts a regular expression to filter on the process “Name” field. A simple custom artifact can be created by copying the built-in artifact and changing the VQL to run a regex filter against the “CommandLine” field instead (or in addition).
+
+Easy to modify:
+- Use a built-in artifact as a template to create your own
+- Share back your custom artifacts
+
+The Velociraptor WebUI provides a full-featured interface for configuring analysis jobs and reviewing results. Velociraptor “Hunts” are scheduled queries that are active by default for 7 days. While active, any clients that match the selection criteria specified when the hunt was created will run the job once they come online. For clients that are active when the hunt is first executed, they will typically return results immediately. For clients that are offline, they will return results once the come back online and receive the job request.
+
+The Details pane on the bottom of the screen will show some key information about each hunt, such as the artifact name(s) used in the hunt (multiple artifacts can be run in the same hunt) and any parameters specified by the analyst for the artifact(s). It also includes client counts and a button for downloading the resulting data. Not pictured is a Notebook tab that will list acquired data from the hunt. Additional filtering can be performed in the notebook by editing the default VQL query.
 
 ### Connected Clients Audit
 
