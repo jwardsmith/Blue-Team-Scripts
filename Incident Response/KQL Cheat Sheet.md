@@ -208,7 +208,7 @@ SecurityAlert | extend _ProcessName=extractjson("$.process name", ExtendedProper
 SecurityEvent | search "*KEYWORD*"
 ```
 
-### Operators (==, =~, !=, !~)
+### Operators (==, =\~, !=, !~)
 
 - Search for a specific value (case sensitive)
 
