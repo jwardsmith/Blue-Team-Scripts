@@ -1,5 +1,7 @@
 # Velociraptor Cheat Sheet
 
+Velociraptor is an open-source endpoint tool that includes event log collection capabilities.
+
 ### Connected Clients Audit
 
 - View currently connected clients
