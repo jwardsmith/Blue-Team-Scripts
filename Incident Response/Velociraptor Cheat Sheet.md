@@ -35,6 +35,33 @@ The Velociraptor WebUI provides a full-featured interface for configuring analys
 
 The Details pane on the bottom of the screen will show some key information about each hunt, such as the artifact name(s) used in the hunt (multiple artifacts can be run in the same hunt) and any parameters specified by the analyst for the artifact(s). It also includes client counts and a button for downloading the resulting data. The Notebook tab will list acquired data from the hunt. Additional filtering can be performed in the notebook by editing the default VQL query.
 
+### Favourite Artifacts
+
+- Filesystem Timeline 
+- Memory Acquisition 
+- Autoruns
+- Windows Timeline 
+- Processes, DLLs 
+- Permanent WMI Events
+- Prefetch Timeline
+- VAD, Handles, Mutants
+- Scheduled Tasks
+- KAPE Triage
+- Impersonation Tokens
+- Service Creations
+- Volume Shadow Copy
+- Netstat, ARP
+- Certificate Store
+- MFT, $I30
+- DNS Queries
+- SRUM, BAM
+- File Finder
+- Event Logs
+- ShimCache, AmCache
+- YARA Scanning
+- User ProfileList
+- UserAssist
+
 ### Connected Clients Audit
 
 - View currently connected clients
