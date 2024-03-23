@@ -126,7 +126,7 @@ Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the f
 
 ### Collected
 
-- Show a list of artifacts which have run on the client or launch new artifact collections
+- Show a list of artifacts which have run on the client or launch new artifact collections (You should now see one or more "flows" listed as rows in a table. A "flow" is essentially a query to a client and all the returned information resulting from that query)
 
 ```
 Click the Client ID of a client -> Select 'Collected'
