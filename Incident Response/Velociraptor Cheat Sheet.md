@@ -23,6 +23,12 @@ C:\> velociraptor.exe config generate -i
 C:\> velociraptor.exe --config server.config.yaml frontend -v
 ```
 
+- Start the Velociraptor client
+
+```
+C:\> velociraptor.exe --config client.config.yaml client -v
+```
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
