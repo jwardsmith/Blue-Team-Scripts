@@ -98,7 +98,7 @@ Click the Client ID of a client -> Select 'Overview'
 
 ### Interrogate
 
-- Re-run the Generic.Client.Info artifact on a currently connected client
+- Re-run the Generic.Client.Info artifact on a currently connected client, and refresh the data on the Overview page
 
 ```
 Click the Client ID of a client -> Select 'Interrogate'
