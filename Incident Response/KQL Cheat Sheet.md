@@ -123,3 +123,53 @@ SecurityEvent | summarize by Computer, Account
 ```
 SecurityEvent | summarize count() by Computer, Account
 ```
+
+### Sort
+
+- Sort the rows of the result in descending order
+
+```
+SecurityEvent | where EventID == 4624 | summarize count() by AuthenticationPackageName | sort by count_
+```
+
+*By default, rows are sorted in descending order. Sorting in ascending order is also possible.*
+
+- Sort the rows of the result in ascending order
+
+```
+SecurityEvent | where EventID == 4624 | summarize count() by AuthenticationPackageName | sort by count_ asc
+```
+
+### Strcat
+
+*A variable number of values can be passed through the strcat function. If values are not strings, they will be forcibly converted to strings.*
+
+- Concatenate values (this will be a string data type)
+
+```
+SecurityEvent | project example=strcat(EventID, " - ", Channel)
+```
+
+### Numerical Search
+
+- Search for a specific value
+
+```
+SecurityEvent | where EventID == 4688
+```
+
+- Exclude a specific value from a search
+
+```
+SecurityEvent | where EventID != 4688
+```
+
+- Search for a value less or greater than
+
+- *Greater: >*
+- *Less or Equal: <=*
+- *Greater or Equal: >=*
+
+```
+SecurityEvent | where EventID == 4688 | summarize count() by Process | where count_ < 5
+```
