@@ -194,6 +194,18 @@ Select a hunt -> Select the Notebook tab
 Select a hunt -> Select the Notebook tab -> Click the pencil icon -> Edit VQL -> Click the save icon
 ```
 
+- Overview:
+  - Lists some key facts about the hunt, including the artifacts run against the host, any parameters provided, and the number of clients that responded to the hunt. It also provides a Download button to retrieve all the data from the hunt.
+
+- Requests:
+  - Provides the actual VQL query that was sent to the clients.
+
+- Clients
+  - Provides a list of all clients that responded to the hunt.
+
+- Notebook:
+  - Allows the analyst to customize and format the data reported from the query.
+
 ### Intial Access Hunt
 
 - Hunting for phish victims
