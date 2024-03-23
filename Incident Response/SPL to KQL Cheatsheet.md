@@ -1,5 +1,7 @@
 # SPL to KQL Cheatsheet
 
+Ref: https://github.com/MicrosoftDocs/dataexplorer-docs/blob/main/data-explorer/kusto/query/splunk-cheat-sheet.md
+
 Learn how to write log queries in Kusto Query Language by comparing Splunk and Kusto Query Language concept mappings. This article is intended to assist users who are familiar with Splunk learn the Kusto Query Language to write log queries with Kusto. Direct comparisons are made between the two to highlight key differences and similarities, so you can build on your existing knowledge.
 
 ## Structure and concepts
@@ -172,7 +174,3 @@ In Kusto, you can use `summarize arg_min()` to reverse the order of which record
 |:---|:---|:---|
 | Splunk | `dedup` |  `Event.Rule=330009.2`<br />&#124; `dedup device_id sortby -batterylife` |
 | Kusto | `summarize arg_max()` | `Office_Excel_BI_PivotTableCreate`<br />&#124; `summarize arg_max(batterylife, *) by device_id` |
-
-## Related content
-
-- Walk through a tutorial on the [Kusto Query Language](/azure/data-explorer/kusto/query/tutorials/learn-common-operators?pivots=azuremonitor).
