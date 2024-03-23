@@ -142,7 +142,7 @@ Click the Client ID of a client -> Select 'Collected'
   - Gives the full details of how the request was structured, including the VQL executed, target artifacts parsed, filtering parameters specified, and the like.
 
 - Results:
-  - Provides the raw data returned from VQL queries. It's showing equivalent information to using the "Download Results" > "Prepare Collection Report" button to download details of the query.
+  - Provides the raw data returned from VQL queries. It's showing equivalent information to using the "Download Results" > "Prepare Collection Report" button to download details of the query. The Results tab provides a drop-down list near the top of the flow details pane. If the flow had several artifacts included with it, the drop-down allows the analyst to switch between the artifacts to review the returned data separately, since each artifact could collect very different information.
 
 - Log:
   - Provides diagnostics about the operation of running and collecting the query data.
