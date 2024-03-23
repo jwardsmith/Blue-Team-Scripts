@@ -132,6 +132,24 @@ Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the f
 Click the Client ID of a client -> Select 'Collected'
 ```
 
+- Artifact Collection:
+  - Lists some key facts about the flow. Some artifacts require parameters, such as regular expressions to search for. Any such parameters specified by the analyst will appear here. Notice it also provides a "Download Results" button to retrieve all the data from the flow, including retrieved files if any were collected.
+
+- Uploaded Files:
+  - Provides a list of any files that were collected from the client as part of this flow. This will be empty if the query was not designed to retrieve files from the client.
+
+- Requests:
+  - Gives the full details of how the request was structured, including the VQL executed, target artifacts parsed, filtering parameters specified, and the like.
+
+- Results:
+  - Provides the raw data returned from VQL queries. It's showing equivalent information to using the "Download Results" > "Prepare Collection Report" button to download details of the query.
+
+- Log:
+  - Provides diagnostics about the operation of running and collecting the query data.
+
+- Notebook:
+  - Allows the analyst to customize and format the data reported from the query.
+
 ### VQL Drilldown
 
 - Show additional details about the host, including performance data for the velociraptor processon the host (it may take some time for the performance data to be collected and shown)
