@@ -63,3 +63,11 @@ SecurityEvent | where TimeGenerated between(datetime(2022-08-01 00:00:00) .. dat
 ```
 SecurityEvent | project TimeGenerated, EventID, Account, Computer, LogonType
 ```
+
+### Rename
+
+- Rename  the column Account to UserName
+
+```
+SecurityEvent | project TimeGenerated, EventID, UserName = Account, Computer, LogonType
+```
