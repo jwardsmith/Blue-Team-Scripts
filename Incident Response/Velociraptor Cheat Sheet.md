@@ -176,7 +176,7 @@ Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShe
 Click the + button -> Enter a description, expiry and any filters -> Choose the artifact to collect e.g. Windows.Search.FileFinder -> Configure parameters e.g. SearchFilesGlob = C:\Users\**\Security_Protocol* -> Specify resources -> Review -> Launch
 ```
 
-- Run a hunt
+- Run a hunt (by default, the hunt will be active for 1 week, waiting for new clients to connect)
 
 ```
 Select a hunt -> Click the play button
