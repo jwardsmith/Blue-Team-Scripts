@@ -1,6 +1,14 @@
 # Velociraptor Cheat Sheet
 
-Velociraptor is an open-source endpoint tool that includes event log collection capabilities. Runs on Windows, Mac, and Linux. Used for triage imaging, incident response, and threat hunting. Can be deployed using software management tools or GPO to deploy agents. Extremely flexible, however rapid development cycle means dealing with frequent updates. Velociraptor allows for the ability to query for IOCs and hunt for intrusions across thousands of hosts. When a suspicious host is found, one-to-one analysis can be performed, including the ability to locate and retrieve files of interest, perform additional targeted analysis with many built-in searches, and even launch an interactive shell to the client if necessary.
+Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform. It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
+- Reconstruct attacker activities through digital forensic analysis
+- Hunt for evidence of sophisticated adversaries
+- Investigate malware outbreaks and other suspicious network activities
+- Monitory continuously for suspicious user activities, such as files copied to USB devices
+- Discover whether disclosure of confidential information occurred outside the network
+- Gather endpoint data over time for use in threat hunting and future investigations
+
+Runs on Windows, Mac, and Linux. Used for triage imaging, incident response, and threat hunting. Can be deployed using software management tools or GPO to deploy agents. Extremely flexible, however rapid development cycle means dealing with frequent updates. Velociraptor allows for the ability to query for IOCs and hunt for intrusions across thousands of hosts. When a suspicious host is found, one-to-one analysis can be performed, including the ability to locate and retrieve files of interest, perform additional targeted analysis with many built-in searches, and even launch an interactive shell to the client if necessary.
 
 - Scalable: Easily supports 10,000+ hosts on a single-server deployment, new multi-frontend server solutions aims to scale horizontally
 - Query-Based: VQL designed to allow relatively easy access to forensic artifacts, queries can be a point-in-time collection, queries can also be ongoing to continually stream back results
