@@ -110,6 +110,8 @@ Click the Client ID of a client -> Select 'Interrogate'
 
 ```
 Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it)
+
+# 'file' uses the Windows API to access files and directories, whereas 'ntfs' uses Velociraptor's builtin NTFS parser for accessing files and directories. Use ntfs here to avoid issues with locked files or any other limitations imposed by the API.
 ```
 
 - Collect a file from a client
