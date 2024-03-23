@@ -173,3 +173,9 @@ SecurityEvent | where EventID != 4688
 ```
 SecurityEvent | where EventID == 4688 | summarize count() by Process | where count_ < 5
 ```
+
+- Match on multiple numeric values
+
+```
+SecurityEvent | where EventID in (4624, 4625)
+```
