@@ -179,3 +179,11 @@ SecurityEvent | where EventID == 4688 | summarize count() by Process | where cou
 ```
 SecurityEvent | where EventID in (4624, 4625)
 ```
+
+### Extract
+
+- Extract values from a string or JSON data
+
+```
+SecurityAlert | extend _ProcessName=extract('"processname": "(.*)"', 1, ExtendedProperties)
+```
