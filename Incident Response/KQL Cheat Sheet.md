@@ -241,7 +241,7 @@ SecurityEvent | where CommandLine contains "guest"
 *Because has is more performant, it’s advised to use has over contains when searching for full keywords*
 
 ```
-SecurityEvent | where CommandLine has "guest"
+"North America" has "america"
 ```
 
 *contains and has are case insensitive by default. A case sensitive match can be achieved by adding the suffix _cs: contains_cs / has_cs.*
