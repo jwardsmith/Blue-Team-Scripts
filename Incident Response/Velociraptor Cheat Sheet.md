@@ -88,18 +88,20 @@ The Details pane on the bottom of the screen will show some key information abou
 Click the drop-down next to the search bar -> Select 'Show All'
 ```
 
+### Overview
+
 - View the overview (First Seen, Last Seen, OS, Hostname, Release etc...) for a currently connected client
 
 ```
-Click the drop-down next to the search bar -> Select 'Show All' -> Click the Client ID of a client
+Click the Client ID of a client -> Select 'Overview'
 ```
 
-### Command Execution
+### Interrogate
 
-- Execute a command on a currently connected client
+- Re-run the Generic.Client.Info artifact on a currently connected client
 
 ```
-Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch -> Click the eye icon to show output
+Click the Client ID of a client -> Select 'Interrogate'
 ```
 
 ### Virtual File System (VFS)
@@ -120,6 +122,30 @@ Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the f
 
 ```
 Click the Client ID of a client -> Select 'VFS' -> Select 'file' -> Select the folder icon to refresh the directory (open it) -> Select a file -> Click 'Textview' or 'HexView'
+```
+
+### Collected
+
+- Show a list of artifacts which have run on the client or launch new artifact collections
+
+```
+Click the Client ID of a client -> Select 'Collected'
+```
+
+### VQL Drilldown
+
+- Show additional details about the host, including performance data for the velociraptor processon the host (it may take some time for the performance data to be collected and shown)
+
+```
+Click the Client ID of a client -> Select 'VQL Drilldown'
+```
+
+### Shell
+
+- Execute a command on a currently connected client
+
+```
+Click the Client ID of a client -> Select 'Shell' -> Select shell type (PowerShell, CMD, Bash, VQL) -> Enter command -> Launch -> Click the eye icon to show output
 ```
 
 ### Hunt Manager
