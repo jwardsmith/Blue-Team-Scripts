@@ -1,6 +1,6 @@
 # KQL Cheat Sheet
 
-### Genric
+### Escaping
 
 - Escape a backslash
 
@@ -9,6 +9,8 @@
 OR
 @"a verbatim string literal with a \ that does not need to be escaped"
 ```
+
+### Comments
 
 - Add a comment
 
@@ -70,4 +72,54 @@ SecurityEvent | project TimeGenerated, EventID, Account, Computer, LogonType
 
 ```
 SecurityEvent | project TimeGenerated, EventID, UserName = Account, Computer, LogonType
+```
+
+### Project-Away
+
+- Remove columns from the resulting table of your query
+
+```
+SecurityEvent | project-away EventSourceName, Task, Level
+```
+
+### Extend
+
+- Add calculated columns to the result (EventAge is the new column)
+
+```
+SecurityEvent | extend EventAge=now()-TimeGenerated
+```
+
+### Count
+
+- Count the number of records
+
+```
+SecurityEvent | count
+```
+
+### Logical Operators
+
+- Match based on conditions
+
+```
+SecurityEvent | where EventID == 4624 and LogonType == 3
+OR
+SecurityEvent | where EventID == 4624 or EventID == 4625
+OR
+SecurityEvent | where (EventID == 4624 and LogonType == 3) or EventID == 4625
+```
+
+### Summarize (similar to stats in SPL)
+
+- Aggregate results on multiple columns from your query
+
+```
+SecurityEvent | summarize by Computer, Account
+```
+
+- Aggregate on multiple columns and return the count of the group
+
+```
+SecurityEvent | summarize count() by Computer, Account
 ```
