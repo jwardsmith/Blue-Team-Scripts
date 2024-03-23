@@ -7,7 +7,11 @@ Velociraptor is an open-source endpoint tool that includes event log collection 
 - Flexible: Administrator deployment via WebUI, CLI, or external API, interactive shell for real-time interaction with clients, triage-mode allows collection using a standalone package
 - Multi-OS: Windows, Linux, Mac
 
+### Deployment
+
 While the list of features provided by Velociraptor is very impressive, the simple nature of its architecture is equally impressive. All the functionality is provided by a single executable and an accompanying configuration file. The executable is initiated with a configuration file and command-line parameters telling it to act as either a server or a client. As a server, it hosts a web-based user interface (WebUI) that can be used to check the health of the deployment, initiate IOC “hunts”, analyse individual hosts, and receive files and streamed data from the client. Furthermore, virtually anything that can be accomplished via the WebUI can also be done at the command-line, as well as via a published external API.
+
+### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
 
@@ -24,6 +28,8 @@ While some built-in artifacts are ready to use as-is, others need tweaking for t
 Easy to modify:
 - Use a built-in artifact as a template to create your own
 - Share back your custom artifacts
+
+### Hunting
 
 The Velociraptor WebUI provides a full-featured interface for configuring analysis jobs and reviewing results. Velociraptor “Hunts” are scheduled queries that are active by default for 7 days. While active, any clients that match the selection criteria specified when the hunt was created will run the job once they come online. For clients that are active when the hunt is first executed, they will typically return results immediately. For clients that are offline, they will return results once the come back online and receive the job request.
 
