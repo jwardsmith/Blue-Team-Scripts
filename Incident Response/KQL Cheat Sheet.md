@@ -187,3 +187,61 @@ SecurityEvent | where EventID in (4624, 4625)
 ```
 SecurityAlert | extend _ProcessName=extract('"processname": "(.*)"', 1, ExtendedProperties)
 ```
+
+*Because the column ExtendedProperties contains JSON data you can also use the function extractjson().*
+
+- Extract values from a string or JSON data
+
+```
+SecurityAlert | extend _ProcessName=extractjson("$.process name", ExtendedProperties)
+```
+
+*If you need to extract multiple elements from JSON data, stored as a string, you can use the function parse_json(). Use the dot notation if the data is of the type dictionary or a list of dictionaries in an array. One way to find out is through the gettype() function.*
+
+### Search
+
+- Search across all tables and columns (keep in mind that this is a performance-intensive operation)
+
+```
+SecurityEvent | search "*KEYWORD*"
+```
+
+- Search for a specific value (case sensitive)
+
+```
+SecurityEvent | where ProcessName == @"C:\Windows\System32\svchost.exe"
+```
+
+- Search for a specific value (case insensitive)
+
+```
+SecurityEvent | where ProcessName =~ @"C:\Windows\System32\svchost.exe"
+```
+
+- Exclude a specific value from a search (case sensitive)
+
+```
+SecurityEvent | where ProcessName != @"C:\Windows\System32\svchost.exe"
+```
+
+- Exclude a specific value from a search (case insensitive)
+
+```
+SecurityEvent | where ProcessName !~ @"C:\Windows\System32\svchost.exe"
+```
+
+### Contains/Has
+
+- Match on values that contain a specific string
+
+```
+SecurityEvent | where CommandLine contains "guest"
+```
+
+*Because has is more performant, it’s advised to use has over contains when searching for full keywords*
+
+```
+SecurityEvent | where CommandLine has "guest"
+```
+
+*contains and has are case insensitive by default. A case sensitive match can be achieved by adding the suffix _cs: contains_cs / has_cs.*
