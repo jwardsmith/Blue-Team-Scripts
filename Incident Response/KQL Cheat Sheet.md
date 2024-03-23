@@ -206,6 +206,8 @@ SecurityAlert | extend _ProcessName=extractjson("$.process name", ExtendedProper
 SecurityEvent | search "*KEYWORD*"
 ```
 
+### Operators (==, =~, !=, !~)
+
 - Search for a specific value (case sensitive)
 
 ```
@@ -245,3 +247,97 @@ SecurityEvent | where CommandLine contains "guest"
 ```
 
 *contains and has are case insensitive by default. A case sensitive match can be achieved by adding the suffix _cs: contains_cs / has_cs.*
+
+### Startswith/Endswith
+
+- Match on values starting with a specific string
+
+```
+SecurityEvent | where Computer startswith "DC"
+```
+
+- Match on values ending with a specific string
+
+```
+SecurityEvent | where Computer endwith "APP"
+```
+
+*startswith and endswith are case insensitive by default. A case-sensitive match can be achieved by adding the suffix _cs: startswith_cs / endswith_cs.*
+
+### In (in, in~, !in, !in~)
+
+- Match on multiple string values (case sensitive)
+
+```
+SecurityEvent | where Computer in ("DC01.na.contosohotels.com", "JBOX00")
+```
+
+- Match on multiple string values (case insensitive)
+
+```
+SecurityEvent | where Computer in~ ("DC01.na.contosohotels.com", "JBOX00")
+```
+
+- Exclude multiple values from a search (case sensitive)
+
+```
+SecurityEvent | where Computer !in ("DC01.na.contosohotels.com", "JBOX00")
+```
+
+- Exclude multiple values from a search (case insensitive)
+
+```
+SecurityEvent | where Computer !in~ ("DC01.na.contosohotels.com", "JBOX00")
+```
+
+### Matches Regex
+
+- Match based on a regular expression
+
+```
+SecurityEvent | where Computer matches regex @"\.contoso.+"
+```
+
+*KQL uses the re2 library and also complies with that syntax. Troubleshooting your regex can be done on regex101.com. Select the regex Flavor “Golang” which also makes use of re2.*
+
+- Exclude a match based on a regular expression
+
+```
+SecurityEvent | where not(Computer matches regex @"\.contoso.+")
+```
+
+- Exclude a match based on a regular expression (case insensitive)
+
+```
+SecurityEvent | where Computer matches regex @"(?i)\.contoso.+"
+```
+
+### Let
+
+*Use the let statement to bind names to expressions. See below two examples of a named expression. Of course, much more complex expressions can be created. Such as complete queries that can be nested inside another query (i.e. sub-query). For sub-queries consider using the materialize() function when the sub-query is called multiple times.*
+
+- Bind a name to an expression
+
+```
+let _SearchWindow = ago(24h); SecurityEvent | where TimeGenerated > _SearchWindow
+OR
+let _computers = dynamic(["JBOX00", "DC01.na.contosohotels.com"]); SecurityEvent | where Computer in (_computers)
+```
+
+### Render
+
+- Create a visualisation
+
+```
+AppPageViews | summarize total_page_views=count() by Name | sort by total_page_views | render columnchart
+```
+
+### Join
+
+- Join events from the SecurityEvent with that of VMComputer table
+
+```
+SecurityEvent | where EventID == 4688 | project TimeGenerated, Computer, NewProcessName, CommandLine, ParentProcessName
+| join kind=leftouter (
+ VMComputer | project Computer, Ipv4Addresses, Ipv4DefaultGateways) on Computer
+```
