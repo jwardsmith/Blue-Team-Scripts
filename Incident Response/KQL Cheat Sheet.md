@@ -1,5 +1,7 @@
 # KQL Cheat Sheet
 
+Ref: https://github.com/marcusbakker/KQL/blob/master/kql_cheat_sheet_dark.pdf
+
 ### Escaping
 
 - Escape a backslash
