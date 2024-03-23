@@ -11,6 +11,18 @@ Velociraptor is an open-source endpoint tool that includes event log collection 
 
 While the list of features provided by Velociraptor is very impressive, the simple nature of its architecture is equally impressive. All the functionality is provided by a single executable and an accompanying configuration file. The executable is initiated with a configuration file and command-line parameters telling it to act as either a server or a client. As a server, it hosts a web-based user interface (WebUI) that can be used to check the health of the deployment, initiate IOC “hunts”, analyse individual hosts, and receive files and streamed data from the client. Furthermore, virtually anything that can be accomplished via the WebUI can also be done at the command-line, as well as via a published external API.
 
+- Generate config files (server.config.yaml, client.config.yaml)
+
+```
+C:\> velociraptor.exe config generate -i
+```
+
+- Start the Velociraptor server
+
+```
+C:\> velociraptor.exe --config server.config.yaml frontend -v
+```
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
