@@ -21,6 +21,12 @@ While the list of features provided by Velociraptor is very impressive, the simp
 
 Current recommendations: 10k-15k clients - single server with file based data store (usually cloud VM). SSL load is the biggest load - TLS offloading helps a lot. 8GB RAM/8 cores is generous towards the top of the range. Ubuntu/Debian server recommended.
 
+- Run a testing instance on your local machine
+
+```
+C:\> velociraptor.exe gui
+```
+
 - Generate config files (server.config.yaml, client.config.yaml)
 
 ```
