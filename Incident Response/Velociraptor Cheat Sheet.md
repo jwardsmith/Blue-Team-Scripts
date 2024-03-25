@@ -35,7 +35,7 @@ Current recommendations: 10k-15k clients - single server with file based data st
 C:\> velociraptor.exe gui
 ```
 
-### Cloud Deployment
+##### Steps To Deploy Velociraptor
 
 - Provision a VM in the cloud
   - Configure DNS (static or dynamic)
@@ -44,6 +44,8 @@ C:\> velociraptor.exe gui
 - Build Debian packages and install
 - Build MSI packages for Windows
 - Deploy via GPO/SCCM etc...
+
+##### Installing a New Server
 
 - Generate config files (server.config.yaml, client.config.yaml)
 
