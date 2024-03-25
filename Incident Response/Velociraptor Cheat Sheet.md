@@ -19,6 +19,8 @@ Runs on Windows, Mac, and Linux. Used for triage imaging, incident response, and
 
 While the list of features provided by Velociraptor is very impressive, the simple nature of its architecture is equally impressive. All the functionality is provided by a single executable and an accompanying configuration file. The executable is initiated with a configuration file and command-line parameters telling it to act as either a server or a client. As a server, it hosts a web-based user interface (WebUI) that can be used to check the health of the deployment, initiate IOC “hunts”, analyse individual hosts, and receive files and streamed data from the client. Furthermore, virtually anything that can be accomplished via the WebUI can also be done at the command-line, as well as via a published external API. Server simply collects the results of queries - clients do all the heavy lifting.
 
+Current recommendations: 10k-15k clients - single server with file based data store (usually cloud VM). SSL load is the biggest load - TLS offloading helps a lot. 8GB RAM/8 cores is generous towards the top of the range. Ubuntu/Debian server recommended.
+
 - Generate config files (server.config.yaml, client.config.yaml)
 
 ```
