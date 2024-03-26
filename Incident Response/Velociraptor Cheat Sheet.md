@@ -69,6 +69,8 @@ C:\> scp velociraptor.deb <username>@<IP address>
 
 ```
 $ sudo dpkg -i velociraptor.deb
+
+$ sudo apt-get install -f        # install dependencies
 ```
 
 - Start the Velociraptor server
