@@ -133,15 +133,24 @@ C:\> msiexec /i custom.msi
   - When running hunts or intensive processing, memory and CPU requirements will increase but not too much.
   - You can customise the dashboard - it's also just an artifact.
     
-- Client Overview
-  - The server collects some high-level information about each endpoint.
+- Client Overview - the server collects some high-level information about each endpoint:
   - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
+  - Click Shell to run shell commands on the endpoint using PowerShell, CMD, or Bash. Only Velociraptor administrators can do this.
  
-- VFS - visualises the server-side information we collect about the clients
+- VFS - visualises the server-side information we collect about the clients (click folder to refresh):
   - File = access the file system using the filesystem API
   - NTFS = access the file system using raw NTFS parsing (Windows only) - special files e.g. $MFT, $EXTEND
   - Registry = access the Windows registry using the Registry API (Windows only)
   - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
+ 
+- Artifacts - VQL queries in a human readable YAML file:
+  - Client artifacts run on the endpoint
+  - Client Event artifacts monitor the endpoint
+  - Server artifacts run on the server
+  - Server Event artifacts monitor the server
+ 
+- Hunt Manager - responsible for scheduling collections of clients that met certain criteria, then keep track of these collections inside the hunt:
+  - A logical collection of a one or more artifacts from a group of systems 
 
 ### VQL + Artifacts
 
