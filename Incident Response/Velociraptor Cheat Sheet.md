@@ -29,13 +29,13 @@ Current recommendations: 10k-15k clients - single server with file based data st
   - By default not exposed to the network
   - You can use SSH tunneling to forward the GUI 
 
-- Run a testing instance on your local machine
+- Run a testing instance on your local machine (the GUI command created an instant temporary server/client with self signed SSL and a hard coded admin/password)
 
 ```
 C:\> velociraptor.exe gui
 ```
 
-- Start the Velociraptor server
+- Start the Velociraptor server (same as running the gui command above)
 
 ```
 C:\> velociraptor.exe --config server.config.yaml frontend -v
@@ -97,6 +97,9 @@ $ sudo service velociraptor_server status
 
 ```
 $ sudo -u velociraptor velociraptor user add james@example.com --role reader
+OR
+C:\> velociraptor.exe --config C:\Users\james\AppData\Local\Temp\server.config.yaml user add james
+C:\> velociraptor.exe --config C:\Users\james\AppData\Local\Temp\server.config.yaml user add james --role administrator
 ```
 
 - Authorise a user access to the Velociraptor console
@@ -168,11 +171,27 @@ C:\> msiexec /i custom.msi
 C:\> velociraptor.exe -v query "SELECT * FROM info()"
 ```
 
-- Run VQL on the command line
+- Run VQL on the command line via an artifact
 
 ```
-C:\> velociraptor.exe -v query "SELECT * FROM info()"
+C:\> velociraptor.exe -v --definitions .\artifacts\artifacts collect BasicArtifact
 ```
+
+- Run VQL via the artifact collection GUI
+
+```
+Click the + button
+```
+
+- Run VQL via the Notebook
+
+```
+Click the Notebook button
+```
+
+### VQL Syntax
+
+*SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
 
 ### VQL + Artifacts
 
