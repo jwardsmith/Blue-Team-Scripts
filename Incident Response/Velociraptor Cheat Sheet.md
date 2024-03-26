@@ -102,12 +102,15 @@ $ velociraptor acl show --effective james@example.com
 - Build an MSI to deploy to clients
 
 ```
+Download the latest Windows binary, and source code from GitHub
 C:\> cd velociraptor\docs\wix
 C:\> mkdir output
 C:\> cp ..\velociraptor.exe output\velociraptor.exe
 C:\> cp ..\client.config.yaml output\client.config.yaml
 C:\> build_custom.bat
 C:\> msiexec /i custom.msi
+
+# The main file we use is custom.xml. This file will embed the config file within the MSI and deploy it to the current directory.
 ```
 
 - Start the Velociraptor server
