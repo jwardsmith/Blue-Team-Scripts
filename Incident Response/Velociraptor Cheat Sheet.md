@@ -59,6 +59,18 @@ C:\> velociraptor.exe config generate -i
 C:\> velociraptor.exe --config server.config.yaml debian server --binary velociraptor-linux-amd64
 ```
 
+- SCP the Debian package to the target server
+
+```
+C:\> scp velociraptor.deb <username>@<IP address>
+```
+
+- Install the Debian package
+
+```
+$ sudo dpkg -i velociraptor.deb
+```
+
 - Start the Velociraptor server
 
 ```
