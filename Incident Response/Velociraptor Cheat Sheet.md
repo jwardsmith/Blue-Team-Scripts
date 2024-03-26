@@ -132,6 +132,10 @@ C:\> msiexec /i custom.msi
   - Current CPU load and memory footprint on the server.
   - When running hunts or intensive processing, memory and CPU requirements will increase but not too much.
   - You can customise the dashboard - it's also just an artifact.
+    
+- Client Overview
+  - The server collects some high-level information about each endpoint.
+  - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU))
 
 ### VQL + Artifacts
 
