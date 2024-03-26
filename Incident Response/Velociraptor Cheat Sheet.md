@@ -195,6 +195,22 @@ Click the Notebook button
 
 *Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries). Type ? to show all relevant completions e.g. SELECT * FROM parse_evtx(?*
 
+- Syntax
+
+```
+SELECT = choose columns
+AS = rename
+FROM = choose plugin
+WHERE = choose condition
+-- = comment
+```
+
+- Select all columns from the info() plugin
+
+```
+SELECT * FROM info()
+```
+
 - Select OS, and log from the info() plugin
 
 ```
