@@ -106,6 +106,8 @@ C:\> cd velociraptor\docs\wix
 C:\> mkdir output
 C:\> cp ..\velociraptor.exe output\velociraptor.exe
 C:\> cp ..\client.config.yaml output\client.config.yaml
+C:\> build_custom.bat
+C:\> msiexec /i custom.msi
 ```
 
 - Start the Velociraptor server
