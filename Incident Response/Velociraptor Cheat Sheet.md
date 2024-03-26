@@ -79,6 +79,22 @@ $ sudo apt-get install -f        # install dependencies
 $ sudo service velociraptor_server status
 ```
 
+### User Permissions
+
+- Add a user to the Velociraptor console (you must change to velociraptor user before manipulating any data)
+
+```
+$ sudo -u velociraptor velociraptor user add james@example.com --role reader
+```
+
+- Authorise a user access to the Velociraptor console
+
+```
+$ velociraptor acl grant james@example.com --role reader,investigator
+$ velociraptor acl show james@example.com
+$ velociraptor acl show --effective james@example.com
+```
+
 - Start the Velociraptor server
 
 ```
