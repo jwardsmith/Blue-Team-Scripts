@@ -193,7 +193,13 @@ Click the Notebook button
 
 *SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
 
-*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects).*
+*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries).*
+
+- Select OS, and log from the info() plugin
+
+```
+SELECT OS, log(message="I ran") AS Log FROM info()
+```
 
 ### VQL + Artifacts
 
