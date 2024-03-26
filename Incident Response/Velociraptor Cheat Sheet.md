@@ -150,7 +150,29 @@ C:\> msiexec /i custom.msi
   - Server Event artifacts monitor the server
  
 - Hunt Manager - responsible for scheduling collections of clients that met certain criteria, then keep track of these collections inside the hunt:
-  - A logical collection of a one or more artifacts from a group of systems 
+  - A logical collection of a one or more artifacts from a group of systems
+ 
+### VQL
+
+*Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.*
+
+*There are a number of ways we can evaluate queries:*
+  - *Command line (velociraptor query)*
+  - *Command line via an artifact (velociraptor artifacts collect)*
+  - *Client/Server across the network (schedule artifact collection in GUI)*
+  - *Notebook*
+
+- Run VQL on the command line
+
+```
+C:\> velociraptor.exe -v query "SELECT * FROM info()"
+```
+
+- Run VQL on the command line
+
+```
+C:\> velociraptor.exe -v query "SELECT * FROM info()"
+```
 
 ### VQL + Artifacts
 
