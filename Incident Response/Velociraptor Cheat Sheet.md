@@ -193,7 +193,7 @@ Click the Notebook button
 
 *SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
 
-*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries).*
+*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries). Type ? to show all relevant completions e.g. SELECT * FROM parse_evtx(?*
 
 - Select OS, and log from the info() plugin
 
