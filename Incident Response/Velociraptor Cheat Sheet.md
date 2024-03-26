@@ -109,7 +109,7 @@ $ velociraptor acl show --effective james@example.com
 
 ### Deploying Clients
 
-*We typically distribute signed MSI packages which include the client's config file inside them. This makes it easier to deploy as there is only one package to install. We also change the name of the service/binary to make the service a little bit harder to stop.*
+*We typically distribute signed MSI packages which include the client's config file inside them. This makes it easier to deploy as there is only one package to install. We also change the name of the service/binary to make the service a little bit harder to stop. We deploy the MSI to the entire domain using SCCM or GPO.*
 
 - Build an MSI to deploy to clients
 
