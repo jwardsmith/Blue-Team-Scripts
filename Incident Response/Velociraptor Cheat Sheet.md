@@ -125,6 +125,14 @@ C:\> msiexec /i custom.msi
 # The main file we use is custom.xml. This file will embed the config file within the MSI and deploy it to the current directory.
 ```
 
+### GUI
+
+- Dashboard - shows the current state of the installation:
+  - How many clients are connected.
+  - Current CPU load and memory footprint on the server.
+  - When running hunts or intensive processing, memory and CPU requirements will increase but not too much.
+  - You can customise the dashboard - it's also just an artifact.
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
