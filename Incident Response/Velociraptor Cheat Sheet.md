@@ -56,7 +56,7 @@ C:\> velociraptor.exe config generate -i
 - Create a new server Debian package
 
 ```
-C:\> velociraptor.exe --config server.config.yaml debian server
+C:\> velociraptor.exe --config server.config.yaml debian server --binary velociraptor-linux-amd64
 ```
 
 - Start the Velociraptor server
