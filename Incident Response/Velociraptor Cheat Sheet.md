@@ -73,6 +73,12 @@ $ sudo dpkg -i velociraptor.deb
 $ sudo apt-get install -f        # install dependencies
 ```
 
+- Check the Velociraptor server service is running
+
+```
+$ sudo service velociraptor_server status
+```
+
 - Start the Velociraptor server
 
 ```
