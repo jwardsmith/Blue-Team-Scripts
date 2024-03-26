@@ -99,6 +99,15 @@ $ velociraptor acl show --effective james@example.com
 
 *We typically distribute signed MSI packages which include the client's config file inside them. This makes it easier to deploy as there is only one package to install. We also change the name of the service/binary to make the service a little bit harder to stop.*
 
+- Build an MSI to deploy to clients
+
+```
+C:\> cd velociraptor\docs\wix
+C:\> mkdir output
+C:\> cp ..\velociraptor.exe output\velociraptor.exe
+C:\> cp ..\client.config.yaml output\client.config.yaml
+```
+
 - Start the Velociraptor server
 
 ```
