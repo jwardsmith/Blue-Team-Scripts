@@ -135,7 +135,13 @@ C:\> msiexec /i custom.msi
     
 - Client Overview
   - The server collects some high-level information about each endpoint.
-  - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU))
+  - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
+ 
+- VFS - visualises the server-side information we collect about the clients
+  - File = access the file system using the filesystem API
+  - NTFS = access the file system using raw NTFS parsing (Windows only) - special files e.g. $MFT, $EXTEND
+  - Registry = access the Windows registry using the Registry API (Windows only)
+  - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
 
 ### VQL + Artifacts
 
