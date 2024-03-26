@@ -193,6 +193,8 @@ Click the Notebook button
 
 *SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
 
+*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects).*
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
