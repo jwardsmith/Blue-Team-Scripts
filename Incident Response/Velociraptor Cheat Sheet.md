@@ -201,7 +201,7 @@ Click the Notebook button
 SELECT = choose columns
 AS = rename
 FROM = choose plugin
-WHERE = choose condition
+WHERE = choose condition (evaluates in left to right order)
 -- = comment
 ```
 
