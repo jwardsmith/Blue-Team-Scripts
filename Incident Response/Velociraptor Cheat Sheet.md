@@ -35,6 +35,18 @@ Current recommendations: 10k-15k clients - single server with file based data st
 C:\> velociraptor.exe gui
 ```
 
+- Start the Velociraptor server
+
+```
+C:\> velociraptor.exe --config server.config.yaml frontend -v
+```
+
+- Start the Velociraptor client
+
+```
+C:\> velociraptor.exe --config client.config.yaml client -v
+```
+
 ### Steps To Deploy Velociraptor
 
 - Provision a VM in the cloud
@@ -111,18 +123,6 @@ C:\> build_custom.bat
 C:\> msiexec /i custom.msi
 
 # The main file we use is custom.xml. This file will embed the config file within the MSI and deploy it to the current directory.
-```
-
-- Start the Velociraptor server
-
-```
-C:\> velociraptor.exe --config server.config.yaml frontend -v
-```
-
-- Start the Velociraptor client
-
-```
-C:\> velociraptor.exe --config client.config.yaml client -v
 ```
 
 ### VQL + Artifacts
