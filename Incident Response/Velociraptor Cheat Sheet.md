@@ -248,13 +248,13 @@ Let Foo = 1
 SELECT OS, Foo FROM info()
 ```
 
-- Select the FQDN from clients
+- Select the FQDN from the clients() plugin
 
 ```
 SELECT os_info.fqdn FROM clients()
 ```
 
-- Select the current PID from the pslist() plugin
+- Select all columns from the pslist() plugin using the current PID as an argument
 
 ```
 SELECT * FROM pslist(pid=getpid())
@@ -262,7 +262,7 @@ OR
 SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
 ```
 
-- Select the filename from the stat() plugin
+- Select all columns from the the stat() plugin using a filename as an argument
 
 ```
 SELECT * FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
@@ -279,6 +279,14 @@ row={
 }, query={
   SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
 })
+```
+
+- Select the full path, and hash from the hash() plugin using the full path as an argument
+
+```
+SELECT FullPath, hash(path=FullPath)
+FROM glob(globs="C:/Windows/system32/*")
+WHERE NOT IsDir
 ```
 
 ### VQL + Artifacts
