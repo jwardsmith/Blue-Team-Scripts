@@ -270,7 +270,7 @@ OR
 SELECT Btime, Mtime, FullPath FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
 ```
 
-- Use a JOIN operator to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
+- Use a foreach (JOIN) operator to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
 
 ```
 SELECT * FROM foreach(
@@ -280,6 +280,24 @@ row={
   SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
 })
 ```
+
+*Normally, foreach iterates over each row one at a time. The foreach() plugin also takes the workers parameter. If this is larger than 1, foreach() will use multiple threads. This allows us to parallelise the query.*
+
+- Use a foreach (JOIN) plugin (foreach on steroids) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg).
+
+
+
+```
+SELECT * FROM foreach(row={
+  SELECT FullPath
+  FROM glob(globs="C:/Windows/system32/*")
+  WHERE NOT IsDir
+}, query={
+  SELECT FullPath, hash(path=FullPath)
+  FROM scope()
+}, workers=10)
+```
+
 
 - Select the full path, and hash from the hash() plugin using the full path as an argument
 
