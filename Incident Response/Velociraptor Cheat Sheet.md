@@ -438,7 +438,7 @@ WHERE log(message=format(format="%T %v", args=[CreateTime, CreateTime]))
 LIMIT 5
 ```
 
-- Call an artifact from your own VQL (prepend Artifact.<artifact name>)
+- Call an artifact from your own VQL (prepend Artifact.\<artifact name>)
 
 ```
 SELECT * FROM Artifact.Windows.Sys.Users()
