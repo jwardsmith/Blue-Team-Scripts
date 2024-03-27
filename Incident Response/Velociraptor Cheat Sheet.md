@@ -204,6 +204,7 @@ SELECT = choose columns
 AS = rename
 FROM = choose plugin
 WHERE = choose condition (evaluates in left to right order)
+LET = assign a variable
 -- = comment
 ```
 
@@ -233,6 +234,13 @@ OR
 SELECT OS, log(message="I ran") AS Log FROM info() WHERE OS =~ "Linux" AND Log
 
 # THE ORDER MATTERS: Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter contion, it will be evaluated ONLY IF NECESSARY. We can use this property to control when expensive functions are evaluated: hash(), upload().
+```
+
+- Assign a variable, and select OS, Foo from the info() plugin
+
+```
+Let Foo = 1
+SELECT OS, Foo FROM info()
 ```
 
 ### VQL + Artifacts
