@@ -403,6 +403,30 @@ WHERE Exe =~ "cmd.exe"
 LIMIT 5
 ```
 
+- Select local address, PID, executable, username, and command line information from the netstat() plugin
+
+```
+SELECT Laddr, Pid, Timestamp, {
+  SELECT Exe, Username, CommandLine FROM pslist(pid=Pid)
+} AS ProcessInfo, {
+    SELECT ExePath FROM modules(pid=Pid)
+} AS LinkedDlls
+FROM netstat()
+WHERE Status =~ "Listen"
+LIMIT 5
+OR
+LET GetModules(Pid) = SELECT ExePath FROM modules(pid=Pid)
+
+SELECT Laddr, Pid, Timestamp, {
+  SELECT Exe, parse_pe(file=Exe).VersionInformation AS VerionInformation,
+    authenticode(filename=Exe),
+    Username, CommandLine FROM pslist(pid=Pid)
+} AS ProcessInfo, GetModules(Pid=Pid) AS LinkedDlls
+FROM netstat()
+WHERE Status =~ "Listen"
+LIMIT 5
+```
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
