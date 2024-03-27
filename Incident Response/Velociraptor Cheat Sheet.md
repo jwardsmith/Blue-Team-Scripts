@@ -224,6 +224,13 @@ LIMIT = choose a row limit
 foreach() = JOIN operator (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
 ```
 
+- Definitions
+
+```
+Function = takes a value and returns another value
+Plugin = returns lots and lots of rows
+```
+
 - Select all columns from the info() plugin
 
 ```
