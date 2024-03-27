@@ -146,7 +146,7 @@ C:\> msiexec /i custom.msi
   - Registry = access the Windows registry using the Registry API (Windows only)
   - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
  
-- Artifacts - VQL queries in a human readable YAML file:
+- Artifacts - VQL queries in a human readable YAML file (a way to document and reuse VQL queries):
   - Client artifacts run on the endpoint
   - Client Event artifacts monitor the endpoint
   - Server artifacts run on the server
