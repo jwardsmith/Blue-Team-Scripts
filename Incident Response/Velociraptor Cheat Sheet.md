@@ -285,8 +285,6 @@ row={
 
 - Use a foreach (JOIN) plugin (foreach on steroids) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg).
 
-
-
 ```
 SELECT * FROM foreach(row={
   SELECT FullPath
@@ -298,6 +296,14 @@ SELECT * FROM foreach(row={
 }, workers=10)
 ```
 
+- Use a foreach (JOIN) operator with a LET expression (lazy evaluator) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
+
+```
+LET myprocess = SELECT Exe FROM pslist(pid=getpid())
+LET mystat = SELECT ModTime, Size, FullPath FROM stat(filename=Exe)
+
+SELECT * FROM foreach(row=myprocess, query=mystat)
+```
 
 - Select the full path, and hash from the hash() plugin using the full path as an argument
 
