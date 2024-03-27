@@ -230,7 +230,7 @@ SELECT OS, log(message="I ran") AS Log FROM info() WHERE Log AND OS =~ "Linux"
 OR
 SELECT OS, log(message="I ran") AS Log FROM info() WHERE OS =~ "Linux" AND Log
 
-# Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter contion, it will be evaluated ONLY IF NECESSARY. We can use this property to control when expensive functions are evaluated: hash(), upload().
+# THE ORDER MATTERS: Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter contion, it will be evaluated ONLY IF NECESSARY. We can use this property to control when expensive functions are evaluated: hash(), upload().
 ```
 
 ### VQL + Artifacts
