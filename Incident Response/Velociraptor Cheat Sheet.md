@@ -259,7 +259,7 @@ SELECT os_info.fqdn FROM clients()
 ```
 SELECT * FROM pslist(pid=getpid())
 OR
-SELECT CommandLine, Exe FROM pslist(pid=getpid())
+SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
 ```
 
 - Select the filename from the stat() plugin
@@ -268,6 +268,17 @@ SELECT CommandLine, Exe FROM pslist(pid=getpid())
 SELECT * FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
 OR
 SELECT Btime, Mtime, FullPath FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
+```
+
+- Use a JOIN operator to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
+
+```
+SELECT * FROM foreach(
+row={
+  SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
+}, query={
+  SELECT Btime, Mtime, FullPath FROM stat(filename=Exe)
+})
 ```
 
 ### VQL + Artifacts
