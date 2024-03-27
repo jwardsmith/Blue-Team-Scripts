@@ -138,7 +138,7 @@ C:\> msiexec /i custom.msi
     
 - Client Overview - the server collects some high-level information about each endpoint:
   - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
-  - Click Shell to run shell commands on the endpoint using PowerShell, CMD, or Bash. Only Velociraptor administrators can do this.
+  - Click Shell to run shell commands on the endpoint using PowerShell, CMD, Bash, or VQL. Only Velociraptor administrators can do this.
  
 - VFS - visualises the server-side information we collect about the clients (click folder to refresh):
   - File = access the file system using the filesystem API
