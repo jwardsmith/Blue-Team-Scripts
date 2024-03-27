@@ -254,10 +254,16 @@ SELECT OS, Foo FROM info()
 SELECT os_info.fqdn FROM clients()
 ```
 
-- Select he current PID from the pslist() plugin
+- Select the current PID from the pslist() plugin
 
 ```
 SELECT * FROM pslist(pid=getpid())
+```
+
+- Select the filename from the stat() plugin
+
+```
+SELECT * FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
 ```
 
 ### VQL + Artifacts
