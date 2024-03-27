@@ -206,6 +206,11 @@ FROM = choose plugin
 WHERE = choose condition (evaluates in left to right order)
 LET = assign a variable
 -- = comment
+"" or '' = strings
+''' = multi line raw string
+{} = subquery
+() or [] = arrays
+foreach() = JOIN operator (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
 ```
 
 - Select all columns from the info() plugin
