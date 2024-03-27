@@ -297,7 +297,7 @@ SELECT * FROM foreach(row={
 }, workers=10)
 ```
 
-- Use a foreach (JOIN) operator with a LET expression (lazy evaluator) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
+- Use a foreach (JOIN) operator with a LET expression (stored query - lazy evaluator) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
 
 ```
 LET myprocess = SELECT Exe FROM pslist(pid=getpid())
@@ -320,7 +320,7 @@ WHERE NOT IsDir
 SELECT FullPath, hash(path=FullPath).SHA256 AS SHA256
 FROM glob(globs="C:/Windows/system32/*")
 WHERE NOT IsDir
-``
+```
 
 ### VQL + Artifacts
 
