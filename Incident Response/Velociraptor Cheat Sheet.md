@@ -277,7 +277,7 @@ SELECT * FROM foreach(
 row={
   SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
 }, query={
-  SELECT Btime, Mtime, FullPath FROM stat(filename=Exe)
+  SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
 })
 ```
 
