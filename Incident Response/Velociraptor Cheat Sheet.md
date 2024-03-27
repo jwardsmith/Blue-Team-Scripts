@@ -189,6 +189,14 @@ Click the + button
 Click the Notebook button
 ```
 
+- Search for VQL references
+
+```
+https://github.com/Velocidex/velociraptor/blob/master/docs/references/vql.yaml
+OR
+https://docs.velociraptor.app/vql_reference/
+```
+
 ### VQL Syntax
 
 *SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
@@ -370,11 +378,11 @@ FROM glob(globs="C:/Windows/system32/*")
 WHERE NOT IsDir
 ```
 
-- Use a data type to convert a integer to a string
+- Use a data type to convert a integer to a string for a regex search (=~)
 
 ```
 SELECT * FROM pslist()
-WHERE str(str=Pid) =~ "4."
+WHERE str(str=Pid) =~ "^4."
 ```
 
 ### VQL + Artifacts
