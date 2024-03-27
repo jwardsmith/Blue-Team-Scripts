@@ -330,6 +330,19 @@ SELECT Laddr, Raddr, Status, Pid, {
 FROM netstat()
 ```
 
+- Use a materialised LET expression (fastest approach) - memoize means to remember the results of a query in advance
+
+```
+-- Create a lookup for pid -> name (lookup key is a string)
+LET process_lookup <= memoize(key="pid", query={
+  SELECT str(str=Pid) AS Pid, Name FROM pslist()
+})
+
+SELECT Laddr, Raddr, Status, Pid,
+  get(item=process_lookup, member=str(str=Pid)).Name AS Process
+FROM netstat()
+```
+
 - Select the full path, and hash from the hash() plugin using the full path as an argument
 
 ```
