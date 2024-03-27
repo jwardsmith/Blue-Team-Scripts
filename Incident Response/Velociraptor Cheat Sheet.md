@@ -197,6 +197,8 @@ Click the Notebook button
 
 *A scope is a bag of names that is used to resolve variables, functions, and plugins in the query. A scope is just a lookup between a name e.g. info(), and an actual piece of code that will run e.g. InfoPlugin(). Scopes can nest - this allows sub-scopes to mask names of parent scopes. VQL will walk the scope stack in reverse to resolve a name. When a symbol is not found, Velociraptor will emit a warning and dump the current scope's nesting level. Depending on where in the query the lookup failed, you will get different scopes. The top level scope can be populated via the environment (--env flag) or artifact parameters.*
 
+*VQL syntax is inspired by Python.*
+
 - Syntax
 
 ```
@@ -341,6 +343,15 @@ LET process_lookup <= memoize(key="pid", query={
 SELECT Laddr, Raddr, Status, Pid,
   get(item=process_lookup, member=str(str=Pid)).Name AS Process
 FROM netstat()
+```
+
+- Use a LET expression to declare parameters (local functions)
+
+```
+LET MyFunc(X) = 5 + X
+SELECT MyFunc(X=6) FROM scope()
+
+# This will return 11
 ```
 
 - Select the full path, and hash from the hash() plugin using the full path as an argument
