@@ -306,6 +306,30 @@ LET mystat = SELECT ModTime, Size, FullPath FROM stat(filename=Exe)
 SELECT * FROM foreach(row=myprocess, query=mystat)
 ```
 
+- Use a materialised LET expression (slow approach)
+
+```
+LET process_lookup = SELECT Pid AS ProcessPid, Name FROM pslist()
+
+SELECT Laddr, Raddr, Status, Pid, {
+  SELECT Name FROM process_lookup
+  WHERE Pid = ProcessPid
+} AS Process
+FROM netstat()
+```
+
+- Use a materialised LET expression (fast approach) - all the rows are expanded in memory
+
+```
+LET process_lookup <= SELECT Pid AS ProcessPid, Name FROM pslist()
+
+SELECT Laddr, Raddr, Status, Pid, {
+  SELECT Name FROM process_lookup
+  WHERE Pid = ProcessPid
+} AS Process
+FROM netstat()
+```
+
 - Select the full path, and hash from the hash() plugin using the full path as an argument
 
 ```
