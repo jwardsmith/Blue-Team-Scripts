@@ -427,6 +427,14 @@ WHERE Status =~ "Listen"
 LIMIT 5
 ```
 
+- Print debugging information using the log() function
+
+```
+SELECT * FROM pslist()
+WHERE log(message=format(format="%T %v", args=[CreateTime, CreateTime]))
+LIMIT 5
+```
+
 ### VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
