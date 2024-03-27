@@ -226,9 +226,12 @@ foreach() = JOIN operator (runs one query given by the rows arg, then for each r
 
 - Definitions
 
+*VQL plugins are not the same as VQL functions. A plugin is the subject of the VQL query - i.e. plugins always follow the FROM keyword, while functions (which return a single value instead of a sequence of rows) are only present in column specification (e.g. after SELECT) or in condition clauses (i.e. after the WHERE keyword).*
+
 ```
-Function = takes a value and returns another value
-Plugin = returns lots and lots of rows
+Function e.g. parse_pe() or base64decode() = takes a value and returns another value - return a single value instead of a sequence of rows
+Plugin e.g. pslist() or stat() = returns lots and lots of rows - VQL plugins are the data sources of VQL queries. While SQL queries refer to static tables of data, VQL queries refer to plugins, which generate data rows to be filtered by the query
+Artifact = an Artifact is a way to package one or more VQL queries in a human readable YAML file, name it, and allow users to collect it. An artifact file simply embodies the query required to collect or answer a specific question about the endpoint
 ```
 
 - Select all columns from the info() plugin
@@ -433,6 +436,12 @@ LIMIT 5
 SELECT * FROM pslist()
 WHERE log(message=format(format="%T %v", args=[CreateTime, CreateTime]))
 LIMIT 5
+```
+
+- Call an artifact from your own VQL (prepend Artifact.<artifact name>)
+
+```
+SELECT * FROM Artifact.Windows.Sys.Users()
 ```
 
 ### VQL + Artifacts
