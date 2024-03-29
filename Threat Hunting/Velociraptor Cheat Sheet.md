@@ -233,7 +233,7 @@ OR
 https://docs.velociraptor.app/vql_reference/
 ```
 
-### VQL Syntax
+# VQL Syntax
 
 What is VQL: SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1
 
