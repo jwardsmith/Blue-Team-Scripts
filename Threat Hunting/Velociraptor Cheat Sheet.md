@@ -197,6 +197,8 @@ C:\> msiexec /i custom.msi
 
 # VQL
 
+### Running VQL Queries
+
 Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.
 
 - Run VQL on the command line (velociraptor query)
@@ -231,9 +233,9 @@ OR
 https://docs.velociraptor.app/vql_reference/
 ```
 
-# VQL Syntax
+### VQL Syntax
 
-*SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
+What is VQL: SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1
 
 *Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries). Type ? to show all relevant completions e.g. SELECT * FROM parse_evtx(?*
 
