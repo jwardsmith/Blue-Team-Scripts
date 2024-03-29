@@ -445,7 +445,7 @@ SELECT Laddr, Raddr, Status, Pid,
 FROM netstat()
 ```
 
-### Local Functions
+### LET Local Functions
 
 LET expressions can declare parameters. This is useful for refactoring functions into their own queries. The callsite still uses named args to populate the scope.
 
@@ -504,10 +504,47 @@ WHERE Status =~ "Listen"
 LIMIT 5
 ```
 
+# VQL Artifacts
+
+VQL is very powerful but it is hard to remember and type a query each time. An Artifact is a way to document and reuse VQL queries Artifacts are geared towards collection of a single type of information.. Artifacts accept parameters with default values.
+
+### Main Parts of an Artifact
+
+- Name: We can select artifacts by their name
+
+- Description: Human readable context around the purpose
+
+- Parameters: A set of parameters with default values which users can override (Note - All parameters are passed as strings)
+
+- Sources: Each source represents a single result table. Artifacts may have many sources in which case sources are named.
+
+- Query: Velociraptor runs the entire query using the same scope. The last query MUST be a SELECT and the others MUST be LET.
+
+### Reusable Artifacts
+
+We generally want to make artifacts reusable:
+
+- Artifacts take parameters that users can customized when collecting
+
+- The parameters should have obvious defaults
+
+- Artifacts have precondition queries that determine if the artifact will run on the endpoint.
+
+- Description field is searchable so make it discoverable...
+
+# Artifact Writing Tips
+
+- Use the notebook to write VQL on the target platform.
+
+- Start small - one query at a time
+
+- Inspect the result, figure out what information is available - refine
+  
+- Use LET stored queries generously.
+
 ### Debugging
 
 Use the log() VQL function to provide print debugging. Use format(format="%T %v", args=[X, X]) to learn about a value's type and value.
-
 
 - Print debugging information using the log() function
 
@@ -519,7 +556,7 @@ LIMIT 5
 
 ### Calling Artifacts from VQL
 
-You can call other artifacts from your own VQL using the “Artifact.<artifact name>” plugin notation. Args to the Artifact() plugin are passed as artifact parameters.
+You can call other artifacts from your own VQL using the “Artifact.\<artifact name>” plugin notation. Args to the Artifact() plugin are passed as artifact parameters.
 
 - Call an artifact from your own VQL (prepend Artifact.\<artifact name>)
 
