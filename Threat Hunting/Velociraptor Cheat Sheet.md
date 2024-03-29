@@ -130,34 +130,44 @@ C:\> msiexec /i custom.msi
 # The main file we use is custom.xml. This file will embed the config file within the MSI and deploy it to the current directory.
 ```
 
-### GUI
+# GUI
 
-- Dashboard - shows the current state of the installation:
+### Dashboard
+
+- Shows the current state of the installation:
   - How many clients are connected.
   - Current CPU load and memory footprint on the server.
   - When running hunts or intensive processing, memory and CPU requirements will increase but not too much.
   - You can customise the dashboard - it's also just an artifact.
     
-- Client Overview - the server collects some high-level information about each endpoint:
+### Client Overview
+
+- The server collects some high-level information about each endpoint:
   - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
   - Click Shell to run shell commands on the endpoint using PowerShell, CMD, Bash, or VQL. Only Velociraptor administrators can do this.
  
-- VFS - visualises the server-side information we collect about the clients (click folder to refresh):
+### VFS
+
+- Visualises the server-side information we collect about the clients (click folder to refresh):
   - File = access the file system using the filesystem API
   - NTFS = access the file system using raw NTFS parsing (Windows only) - special files e.g. $MFT, $EXTEND
   - Registry = access the Windows registry using the Registry API (Windows only)
   - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
  
-- Artifacts - VQL queries in a human readable YAML file (a way to document and reuse VQL queries):
+### Artifacts
+
+- VQL queries in a human readable YAML file (a way to document and reuse VQL queries):
   - Client artifacts run on the endpoint
   - Client Event artifacts monitor the endpoint
   - Server artifacts run on the server
   - Server Event artifacts monitor the server
  
-- Hunt Manager - responsible for scheduling collections of clients that met certain criteria, then keep track of these collections inside the hunt:
+### Hunt Manager
+
+- Responsible for scheduling collections of clients that met certain criteria, then keep track of these collections inside the hunt:
   - A logical collection of a one or more artifacts from a group of systems
  
-### VQL
+# VQL
 
 *Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.*
 
@@ -199,7 +209,7 @@ OR
 https://docs.velociraptor.app/vql_reference/
 ```
 
-### VQL Syntax
+# VQL Syntax
 
 *SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1*
 
@@ -446,7 +456,7 @@ LIMIT 5
 SELECT * FROM Artifact.Windows.Sys.Users()
 ```
 
-### VQL + Artifacts
+# VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
 
@@ -464,13 +474,13 @@ Easy to modify:
 - Use a built-in artifact as a template to create your own
 - Share back your custom artifacts
 
-### Hunting
+# Hunting
 
 The Velociraptor WebUI provides a full-featured interface for configuring analysis jobs and reviewing results. Velociraptor “Hunts” are scheduled queries that are active by default for 7 days. While active, any clients that match the selection criteria specified when the hunt was created will run the job once they come online. For clients that are active when the hunt is first executed, they will typically return results immediately. For clients that are offline, they will return results once the come back online and receive the job request.
 
 The Details pane on the bottom of the screen will show some key information about each hunt, such as the artifact name(s) used in the hunt (multiple artifacts can be run in the same hunt) and any parameters specified by the analyst for the artifact(s). It also includes client counts and a button for downloading the resulting data. The Notebook tab will list acquired data from the hunt. Additional filtering can be performed in the notebook by editing the default VQL query.
 
-### Favourite Artifacts
+# Favourite Artifacts
 
 - Filesystem Timeline 
 - Memory Acquisition 
@@ -497,7 +507,7 @@ The Details pane on the bottom of the screen will show some key information abou
 - User ProfileList
 - UserAssist
 
-### Connected Clients Audit
+# Connected Clients Audit
 
 - View currently connected clients
 
@@ -623,7 +633,7 @@ Select a hunt -> Select the Notebook tab -> Click the pencil icon -> Edit VQL ->
 - Notebook:
   - Allows the analyst to customize and format the data reported from the query.
 
-### Intial Access Hunt
+# Intial Access Hunt
 
 - Hunting for phish victims
 
@@ -640,7 +650,7 @@ label(client_id=ClientId, labels="phish_victim", op="set") // label all systems 
 FROM source()
 ```
 
-### Lateral Movement Hunt
+# Lateral Movement Hunt
 
 - Hunting for lateral movement
 
@@ -661,7 +671,7 @@ AND NOT (Computer =~ "dc" OR Computer =~ "exchange" OR Computer =~ "fs1")
 ORDER BY EventTime
 ```
 
-### Process Analysis Hunt
+# Process Analysis Hunt
 
 - Baseline running processes
 
@@ -711,7 +721,7 @@ ORDER BY VTResults DESC
 *Parameters:*
 *Process Regex: .\*(tkg|mshta|Security_Protocol).*\*
 
-### Persistence Hunt
+# Persistence Hunt
 
 - Hunting for persistence
 
@@ -769,7 +779,7 @@ WHERE Count < 5 // return entries present on fewer than 5 systems
 ORDER BY Count
 ```
 
-### Scoping Malware Hunt
+# Scoping Malware Hunt
 
 *Find all systems with suspected malware on disk.*
 
@@ -790,7 +800,7 @@ label(client_id=ClientId, labels="compromised", op="set") // label all systems w
 FROM source()
 ```
 
-### Cobalt Strike Hunt
+# Cobalt Strike Hunt
 
 *Leveraging the power of Yara, let's just sweep all processes in memory for signatures matching the popular Cobalt Strike attack tool.*
 
@@ -805,13 +815,13 @@ label(client_id=ClientId, labels="cobaltstrike", op="set") // label all systems 
 FROM source()
 ```
 
-### Remediation - Quarantine
+# Remediation - Quarantine
 
 *Now that we have a solid grasp on the scope of the intrusion, lets quarantine all impacted systems to prevent further damage.*
 
 *Hunt Artifact: Windows.Remediation.Quarantine (run against all systems labeled compromised)*
 
-### Forensics Collection
+# Forensics Collection
 
 *Now that compromised systems are quarantined, lets pull back forensics data for deeper analysis.*
 
