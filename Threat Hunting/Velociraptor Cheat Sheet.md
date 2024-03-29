@@ -21,13 +21,7 @@ While the list of features provided by Velociraptor is very impressive, the simp
 
 Current recommendations: 10k-15k clients - single server with file based data store (usually cloud VM). SSL load is the biggest load - TLS offloading helps a lot. 8GB RAM/8 cores is generous towards the top of the range. Ubuntu/Debian server recommended.
 
-### Self Signed SSL Mode
-
-- Frontend served using TLS on port 8000 (connected to clients)
-- GUI uses basic authentication with usernames/passwords
-- GUI served over loopback port 8889 (127.0.0.1)
-  - By default not exposed to the network
-  - You can use SSH tunneling to forward the GUI 
+### Testing Mode
 
 - Run a testing instance on your local machine (the GUI command created an instant temporary server/client with self signed SSL and a hard coded admin/password)
 
@@ -47,7 +41,15 @@ C:\> velociraptor.exe --config server.config.yaml frontend -v
 C:\> velociraptor.exe --config client.config.yaml client -v
 ```
 
-### Steps To Deploy Velociraptor
+### Self Signed SSL Mode
+
+- Frontend served using TLS on port 8000 (connected to clients)
+- GUI uses basic authentication with usernames/passwords
+- GUI served over loopback port 8889 (127.0.0.1)
+  - By default not exposed to the network
+  - You can use SSH tunneling to forward the GUI 
+
+### Cloud Mode
 
 - Provision a VM in the cloud
   - Configure DNS (static or dynamic)
