@@ -59,7 +59,7 @@ C:\> velociraptor.exe --config client.config.yaml client -v
 - Build MSI packages for Windows
 - Deploy via GPO/SCCM etc...
 
-### Installing a New Server
+### Deploying a Server
 
 - Generate config files (server.config.yaml, client.config.yaml)
 
@@ -132,41 +132,69 @@ C:\> msiexec /i custom.msi
 
 # GUI
 
-### Dashboard
+### Home
 
 - Shows the current state of the installation:
   - How many clients are connected.
   - Current CPU load and memory footprint on the server.
   - When running hunts or intensive processing, memory and CPU requirements will increase but not too much.
   - You can customise the dashboard - it's also just an artifact.
-    
-### Client Overview
-
-- The server collects some high-level information about each endpoint:
-  - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
-  - Click Shell to run shell commands on the endpoint using PowerShell, CMD, Bash, or VQL. Only Velociraptor administrators can do this.
- 
-### VFS
-
-- Visualises the server-side information we collect about the clients (click folder to refresh):
-  - File = access the file system using the filesystem API
-  - NTFS = access the file system using raw NTFS parsing (Windows only) - special files e.g. $MFT, $EXTEND
-  - Registry = access the Windows registry using the Registry API (Windows only)
-  - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
- 
-### Artifacts
-
-- VQL queries in a human readable YAML file (a way to document and reuse VQL queries):
-  - Client artifacts run on the endpoint
-  - Client Event artifacts monitor the endpoint
-  - Server artifacts run on the server
-  - Server Event artifacts monitor the server
  
 ### Hunt Manager
 
 - Responsible for scheduling collections of clients that met certain criteria, then keep track of these collections inside the hunt:
   - A logical collection of a one or more artifacts from a group of systems
  
+### View Artifacts
+
+- VQL queries in a human readable YAML file (a way to document and reuse VQL queries):
+  - Client artifacts run on the endpoint
+  - Client Events artifacts monitor the endpoint
+  - Server artifacts run on the server
+  - Server Events artifacts monitor the server
+ 
+### Server Events
+
+- View the event artifacts that have been monitored so far on the server
+
+### Server Artifacts
+
+- View the artifacts that have been collected so far for the server
+
+### Notebooks
+
+- Interactive collaborative documents which can interleave markdown and VQL queries in to create an interactive report. Notebooks are typically used to track and post process one or more hunts or collaborate on an investigation
+
+### Users
+
+- Lists the users and orgs in the Velociraptor instance
+
+### Host Information
+
+- The server collects some high-level information about each endpoint:
+  - Click VQL Drilldown to see more detailed information (client version, client footprint (memory and CPU)) - this shows the report of Generic.Client.Info artifact.
+  - Click Shell to run shell commands on the endpoint using PowerShell, CMD, Bash, or VQL. Only Velociraptor administrators can do this.
+
+### Virtual Filesystem (VFS)
+
+- Visualises the server-side information we collect about the clients (click folder to refresh):
+  - File = access the file system using the filesystem API
+  - NTFS = access the file system using raw NTFS parsing (Windows only) - special files e.g. $MFT, $EXTEND
+  - Registry = access the Windows registry using the Registry API (Windows only)
+  - Artifacts = A view of all artifacts collected from the client sorted by artifact type, and then times when they were collected
+
+### Collected Artifacts
+
+- View the artifacts that have been collected so far for the selected client
+
+### Client Events
+
+- View the event artifacts that have been monitored so far on the selected client
+
+### Documentation
+
+- Links to the Velociraptor documentation: https://docs.velociraptor.app/
+
 # VQL
 
 *Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.*
