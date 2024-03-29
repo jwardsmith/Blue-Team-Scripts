@@ -130,7 +130,7 @@ C:\> msiexec /i custom.msi
 # The main file we use is custom.xml. This file will embed the config file within the MSI and deploy it to the current directory.
 ```
 
-# GUI
+# Velociraptor GUI
 
 ### Home
 
@@ -195,7 +195,7 @@ C:\> msiexec /i custom.msi
 
 - Links to the Velociraptor documentation: https://docs.velociraptor.app/
 
-# VQL
+# Velociraptor Query Language (VQL)
 
 ### Running VQL Queries
 
@@ -233,7 +233,7 @@ OR
 https://docs.velociraptor.app/vql_reference/
 ```
 
-# VQL Syntax
+# Velociraptor Query Language (VQL) Syntax
 
 ### What is VQL 
 
@@ -617,7 +617,7 @@ LET myFormat(X) = format(format="%v %v %v %v:%v:%v", args=[X.Day, X.Month, X.Yea
 SELECT myFormat(X=timestamp(epoch=now())) FROM scope()
 ```
 
-# VQL Control Structures
+# Control Structures
 
 ### If Plugin and Function
 
