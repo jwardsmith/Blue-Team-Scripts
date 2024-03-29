@@ -261,6 +261,7 @@ WHERE = choose condition (evaluates in left to right order)
 LET = assign a variable
 LIMIT = choose a row limit
 GROUP_BY = create groups like | stats count by
+=~ = regex match
 -- = comment
 "" or '' = strings
 ''' = multi line raw string
