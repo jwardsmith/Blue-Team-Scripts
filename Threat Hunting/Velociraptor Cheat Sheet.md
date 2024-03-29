@@ -554,6 +554,40 @@ You can call other artifacts from your own VQL using the “Artifact.\<artifact 
 SELECT * FROM Artifact.Windows.Sys.Users()
 ```
 
+### Times
+
+Inside the VQL query, variables have strong types. Usually a type is a dict but sometimes it is a something else (Use format="%T").
+
+Timestamps are given as time.Time types. They have some common methods. VQL can call any method that does not take args:
+- Unix, UnixNano - number of seconds since the epoch
+- Day, Minute, Month etc - convert time to days minutes etc.
+- Timestamps compare to strings...
+
+When times are serialized to JSON they get ISO format strings in UTC. To convert to a time type use the timestamp() VQL function.
+
+- Get the current epoch offset
+
+```
+SELECT timestamp(epoch=now()) FROM scope()
+```
+
+- Identify local accounts logged in since February
+
+```
+SELECT Name, UUID,
+  timestamp(epoch=Mtime) AS LastLogin
+FROM Artifact.Windows.Sys.Users()
+WHERE LastLogin > "2020-01-01"
+```
+
+- Format time
+
+```
+LET myFormat(X) = format(format="%v %v %v %v:%v:%v", args=[X.Day, X.Month, X.Year, X.Hour, X.Minute, X.Second])
+
+SELECT myFormat(X=timestamp(epoch=now())) FROM scope()
+```
+
 # VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
