@@ -511,13 +511,9 @@ VQL is very powerful but it is hard to remember and type a query each time. An A
 ### Main Parts of an Artifact
 
 - Name: We can select artifacts by their name
-
 - Description: Human readable context around the purpose
-
 - Parameters: A set of parameters with default values which users can override (Note - All parameters are passed as strings)
-
 - Sources: Each source represents a single result table. Artifacts may have many sources in which case sources are named.
-
 - Query: Velociraptor runs the entire query using the same scope. The last query MUST be a SELECT and the others MUST be LET.
 
 ### Reusable Artifacts
@@ -525,21 +521,15 @@ VQL is very powerful but it is hard to remember and type a query each time. An A
 We generally want to make artifacts reusable:
 
 - Artifacts take parameters that users can customized when collecting
-
 - The parameters should have obvious defaults
-
 - Artifacts have precondition queries that determine if the artifact will run on the endpoint.
-
 - Description field is searchable so make it discoverable...
 
 # Artifact Writing Tips
 
 - Use the notebook to write VQL on the target platform.
-
 - Start small - one query at a time
-
 - Inspect the result, figure out what information is available - refine
-  
 - Use LET stored queries generously.
 
 ### Debugging
