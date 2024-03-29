@@ -197,27 +197,21 @@ C:\> msiexec /i custom.msi
 
 # VQL
 
-*Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.*
+Velociraptor is a VQL evaluation engine. Many features are implemented in terms of VQL, so VQL is central.
 
-*There are a number of ways we can evaluate queries:*
-  - *Command line (velociraptor query)*
-  - *Command line via an artifact (velociraptor artifacts collect)*
-  - *Client/Server across the network (schedule artifact collection in GUI)*
-  - *Notebook*
-
-- Run VQL on the command line
+- Run VQL on the command line (velociraptor query)
 
 ```
 C:\> velociraptor.exe -v query "SELECT * FROM info()"
 ```
 
-- Run VQL on the command line via an artifact
+- Run VQL on the command line via an artifact (velociraptor artifacts collect)
 
 ```
 C:\> velociraptor.exe -v --definitions .\artifacts\artifacts collect BasicArtifact
 ```
 
-- Run VQL via the artifact collection GUI
+- Run VQL via the artifact collection GUI (schedule artifact collection in GUI)
 
 ```
 Click the + button
