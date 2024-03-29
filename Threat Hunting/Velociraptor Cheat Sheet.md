@@ -284,6 +284,28 @@ Artifact = an Artifact is a way to package one or more VQL queries in a human re
 SELECT * FROM info()
 ```
 
+- Select all columns from the pslist() plugin using the current PID as an argument
+
+```
+SELECT * FROM pslist(pid=getpid())
+OR
+SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
+```
+
+- Select all columns from the the stat() plugin using a filename as an argument
+
+```
+SELECT * FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
+OR
+SELECT Btime, Mtime, FullPath FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
+```
+
+- Select the FQDN from the clients() plugin
+
+```
+SELECT os_info.fqdn FROM clients()
+```
+
 ### AS
 
 - Select OS, and log from the info() plugin
@@ -312,33 +334,15 @@ SELECT OS, log(message="I ran") AS Log FROM info() WHERE OS =~ "Linux" AND Log
 # THE ORDER MATTERS: Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter contion, it will be evaluated ONLY IF NECESSARY. We can use this property to control when expensive functions are evaluated: hash(), upload().
 ```
 
+### LET
+
+A stored query is a lazy evaluator of a query which we can store in the scope. Where-ever the stored query is used it will be evaluated on demand.
+
 - Assign a variable, and select OS, Foo from the info() plugin
 
 ```
 Let Foo = 1
 SELECT OS, Foo FROM info()
-```
-
-- Select the FQDN from the clients() plugin
-
-```
-SELECT os_info.fqdn FROM clients()
-```
-
-- Select all columns from the pslist() plugin using the current PID as an argument
-
-```
-SELECT * FROM pslist(pid=getpid())
-OR
-SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
-```
-
-- Select all columns from the the stat() plugin using a filename as an argument
-
-```
-SELECT * FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
-OR
-SELECT Btime, Mtime, FullPath FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
 ```
 
 ### Foreach Plugin
