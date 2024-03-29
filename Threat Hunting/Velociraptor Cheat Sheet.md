@@ -235,15 +235,23 @@ https://docs.velociraptor.app/vql_reference/
 
 # VQL Syntax
 
-What is VQL: SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1
+### What is VQL 
 
-*Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries). Type ? to show all relevant completions e.g. SELECT * FROM parse_evtx(?*
+SELECT X, Y, Z FROM plugin(arg=1) WHERE X = 1
 
-*A scope is a bag of names that is used to resolve variables, functions, and plugins in the query. A scope is just a lookup between a name e.g. info(), and an actual piece of code that will run e.g. InfoPlugin(). Scopes can nest - this allows sub-scopes to mask names of parent scopes. VQL will walk the scope stack in reverse to resolve a name. When a symbol is not found, Velociraptor will emit a warning and dump the current scope's nesting level. Depending on where in the query the lookup failed, you will get different scopes. The top level scope can be populated via the environment (--env flag) or artifact parameters.*
+### Plugins
 
-*VQL syntax is inspired by Python.*
+Plugins are generators of rows. They accept keyword arguments (some required, some optional). A row is a map of keys (string) and values (objects). Arguments can be other queries (or stored queries). Type ? to show all relevant completions e.g. SELECT * FROM parse_evtx(?
 
-- Syntax
+### Lazy Evaluators
+
+Since many VQL functions can be expensive or have side effects it is critical to understand when they will be evaluated (i.e. when they will run). A good function is the log() function which outputs a log when it gets evaluated. Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter condition, it will be evaluated only if necessary! We can use this property to control when expensive functions are evaluated e.g. hash(), upload().
+
+### Scope
+
+A scope is a bag of names that is used to resolve variables, functions, and plugins in the query. A scope is just a lookup between a name e.g. info(), and an actual piece of code that will run e.g. InfoPlugin(). Scopes can nest - this allows sub-scopes to mask names of parent scopes. VQL will walk the scope stack in reverse to resolve a name. When a symbol is not found, Velociraptor will emit a warning and dump the current scope's nesting level. Depending on where in the query the lookup failed, you will get different scopes. The top level scope can be populated via the environment (--env flag) or artifact parameters.
+
+### Synax Commands
 
 ```
 SELECT = choose columns
@@ -260,13 +268,11 @@ LIMIT = choose a row limit
 foreach() = JOIN operator (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
 ```
 
-- Definitions
-
-*VQL plugins are not the same as VQL functions. A plugin is the subject of the VQL query - i.e. plugins always follow the FROM keyword, while functions (which return a single value instead of a sequence of rows) are only present in column specification (e.g. after SELECT) or in condition clauses (i.e. after the WHERE keyword).*
+### Synax Definitions
 
 ```
 Function e.g. parse_pe() or base64decode() = takes a value and returns another value - return a single value instead of a sequence of rows
-Plugin e.g. pslist() or stat() = returns lots and lots of rows - VQL plugins are the data sources of VQL queries. While SQL queries refer to static tables of data, VQL queries refer to plugins, which generate data rows to be filtered by the query
+Plugin e.g. pslist() or stat() = returns lots and lots of rows - VQL plugins are the data sources of VQL queries. While SQL queries refer to static tables of data, VQL queries refer to plugins, which generate data rows to be filtered by the query. VQL plugins are not the same as VQL functions. A plugin is the subject of the VQL query - i.e. plugins always follow the FROM keyword, while functions (which return a single value instead of a sequence of rows) are only present in column specification (e.g. after SELECT) or in condition clauses (i.e. after the WHERE keyword)
 Artifact = an Artifact is a way to package one or more VQL queries in a human readable YAML file, name it, and allow users to collect it. An artifact file simply embodies the query required to collect or answer a specific question about the endpoint
 ```
 
