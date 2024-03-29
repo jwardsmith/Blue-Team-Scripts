@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/04a36f53-6a02-4399-8636-47ce86fa9f31)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/2187f9a6-6985-4087-9f4f-dcdb28efdc5e)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/9013223d-723c-44eb-9788-48e493a44ce6)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/922ce7b1-2f79-493b-b267-fec791002097)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/f51bb9e7-1f08-4e96-a02b-1bc137a02fe5)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/f17ee470-29a2-4c60-8888-6c9363a0068b)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/4233599c-4bb4-4490-b63d-95545841194b)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -260,6 +260,7 @@ FROM = choose plugin
 WHERE = choose condition (evaluates in left to right order)
 LET = assign a variable
 LIMIT = choose a row limit
+GROUP_BY = create groups like | stats count by
 -- = comment
 "" or '' = strings
 ''' = multi line raw string
@@ -356,7 +357,7 @@ WHERE NOT IsDir
 
 VQL does not have a JOIN operator, instead we have the foreach() plugin. This plugin runs one query (given by the rows arg), then for each row emitted, it builds a new scope in which to evaluate another query (given by the query arg).
 
-- Use a foreach (JOIN) operator to search across two queries, and bring the results together
+- Use a foreach (JOIN) operator to search across two queries, and bring the results together (loop over rows)
 
 ```
 SELECT * FROM foreach(
@@ -365,6 +366,19 @@ row={
 }, query={
   SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
 })
+```
+
+- Use a foreach (JOIN) operator to search across two queries, and bring the results together (loop over arrays)
+
+```
+SELECT * FROM foreach(
+row=<
+  SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
+>, query={<
+  SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
+>})
+
+# if row is an array the value will be assigned to "_value" as a special placeholder.
 ```
 
 ### Foreach Plugin Workers
@@ -504,6 +518,20 @@ WHERE Status =~ "Listen"
 LIMIT 5
 ```
 
+### Tempfile Function
+
+The tempfile() function creates a temporary file and automatically removes it when the scope is destroyed.
+
+```
+LET tmp <= tempfile()
+
+SELECT * FROM foreach(
+row=log(message="Created tempfile " + tmp),
+query={
+  SELECT FullPath FROM stat(filename=tmp)
+})
+```
+
 # VQL Artifacts
 
 VQL is very powerful but it is hard to remember and type a query each time. An Artifact is a way to document and reuse VQL queries Artifacts are geared towards collection of a single type of information.. Artifacts accept parameters with default values.
@@ -586,6 +614,91 @@ WHERE LastLogin > "2020-01-01"
 LET myFormat(X) = format(format="%v %v %v %v:%v:%v", args=[X.Day, X.Month, X.Year, X.Hour, X.Minute, X.Second])
 
 SELECT myFormat(X=timestamp(epoch=now())) FROM scope()
+```
+
+# VQL Control Structures
+
+### If Plugin and Function
+
+The if() plugin and function allows branching in VQL. If the condition is a query it is true if it returns any rows. Then we evaluate the then subquery or the else subquery.
+
+- Use a if() plugin and function to allow branching
+
+```
+SELECT * FROM if(
+    condition=<sub query or value>,
+    then={ <sub query goes here >},
+    else={ <sub query goes here >})
+```
+
+### Switch Plugin
+
+The switch() plugin and function allows multiple branching in VQL. Evaluate all subqueries in order and when any of them returns rows stop. 
+
+- Use a switch() plugin to allow multiple branching
+
+```
+SELECT * FROM switch(
+    a={ <sub query >},
+    b={ <sub query >},
+    c={ <sub query >})
+```
+
+### Chain Plugin
+
+The chain() plugin allows multiple queries to be combined. Evaluate all subqueries in order and append all the rows together.
+
+- Use a chain() plugin to allow multiple queries to be combined
+
+```
+SELECT * FROM chain(
+    a={ <sub query >},
+    b={ <sub query >},
+    c={ <sub query >})
+```
+
+# Aggregate Functions
+
+An aggregate VQL function is a function that keeps state between evaluations. State is kept in an Aggregate Context. Aggregate functions are used to calculate values that consider multiple rows.
+
+Some aggregate functions:
+- count()
+- sum()
+- enumerate()
+- rate()
+
+### Count
+
+Keeps track of the last number in its aggregate context. We can get the row count in that column.
+
+- Use the count() function
+
+```
+SELECT FullPath, Command, Arguments, count() AS Count
+FROM hunt_results(
+  artifact='Windows.System.TaskScheduler/Analysis',
+  hunt_id='H.C280VK7RFC350')
+LIMIT 50
+```
+
+### GROUP BY
+
+The GROUP BY clause causes VQL to create groups of same value rows. Each group shares the same aggregate context - but this is different from other groups. Groups keep only the last row in that group.
+
+- Use a GROUP BY to group values
+
+```
+SELECT *, count() AS Count
+FROM psinfo()
+GROUP BY Command, Arguments
+```
+
+- Use a GROUP BY and count() function to count all rows of a particular value. This works because it creates a single aggregate context (since 1 is always the same value for all rows) and puts all the rows in it
+
+```
+SELECT count() AS Count FROM ….
+WHERE ….
+GROUP BY 1
 ```
 
 # VQL + Artifacts
