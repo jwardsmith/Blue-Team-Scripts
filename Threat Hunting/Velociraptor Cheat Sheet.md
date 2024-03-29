@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/31e7bf59-9ba9-43d7-9988-e9bacb2d4e89)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -704,6 +704,51 @@ GROUP BY 1
 
 # VQL Forensics
 
+### Searching For Files - glob()
+
+Velociraptor has the glob() plugin to search for files using a glob expression. Glob expressions use wildcards to search the filesystem for matches.
+- Paths are separated by / or \ into components
+- A * is a wildcard match (e.g. *.exe matches all files ending with .exe)
+- Alternatives are expressed as comma separated strings in {} e.g. *.{exe,dll,sys}
+- A ** denotes recursive search. e.g. C:\Users\**\*.exe
+
+- Search for an executable in a user's home directory
+
+```
+SELECT * FROM glob(globs='C:\\Users\\**\\*.exe')
+```
+
+- Search for an executable or DLL in a user's home directory using multiple globs
+
+```
+SELECT * FROM glob(globs=['C:/Users/**/*.exe', 
+                          'C:/Users/**/*.dll'])
+```
+
+### Filesystem Accessors
+
+Glob is a very useful concept to search hierarchical trees. Velociraptor supports direct access to many different such trees via accessors (essentially FS drivers):
+- file - uses OS APIs to access files.
+- ntfs - uses raw NTFS parsing to access low level files
+- reg - uses OS APIs to access the windows registry
+
+### Registry Accessor
+
+- Uses the OS API to access the registry
+- Top level consists of the major hives (HKEY_USERS etc...)
+- Values appear as files, Keys appear as directories
+- Default value is named “@”
+- Value content is included inside the Data attribute
+- Can escape components with / using quotes
+  - HKEY_LOCAL_MACHINE\Microsoft\Windows\"http://www.microsoft.com/"
+
+- Search for values in the Registry Run keys (the FullPath includes the key (as directory) and the value (as a filename) in the path. The Registry accessor also includes value contents if they are small enough in the Data column)
+
+```
+LET GlobExpression = 'HKEY_USERS/**/Run*'
+SELECT * FROM glob(globs=GlobExpression, accessor='reg')
+LIMIT 5
+```
 
 
 # VQL + Artifacts
