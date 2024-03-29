@@ -276,11 +276,15 @@ Plugin e.g. pslist() or stat() = returns lots and lots of rows - VQL plugins are
 Artifact = an Artifact is a way to package one or more VQL queries in a human readable YAML file, name it, and allow users to collect it. An artifact file simply embodies the query required to collect or answer a specific question about the endpoint
 ```
 
+### SELECT
+
 - Select all columns from the info() plugin
 
 ```
 SELECT * FROM info()
 ```
+
+### AS
 
 - Select OS, and log from the info() plugin
 
@@ -288,11 +292,15 @@ SELECT * FROM info()
 SELECT OS, log(message="I ran") AS Log FROM info()
 ```
 
+### WHERE
+
 - Select OS, and log from the info() plugin using a condition
 
 ```
 SELECT OS, log(message="I ran") AS Log FROM info() WHERE OS =~ "Linux"
 ```
+
+### WHERE BOOLEAN
 
 - Select OS, and log from the info() plugin using two conditions
 
@@ -333,7 +341,13 @@ OR
 SELECT Btime, Mtime, FullPath FROM stat(filename="C:\\Users\\james\\Downloads\\velociraptor.exe")
 ```
 
-- Use a foreach (JOIN) operator to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
+### Foreach Plugin
+
+VQL does not have a JOIN operator, instead we have the foreach() plugin.
+
+This plugin runs one query (given by the rows arg), then for each row emitted, it builds a new scope in which to evaluate another query (given by the query arg).
+
+- Use a foreach (JOIN) operator to search across two queries, and bring the results together
 
 ```
 SELECT * FROM foreach(
@@ -344,9 +358,11 @@ row={
 })
 ```
 
-*Normally, foreach iterates over each row one at a time. The foreach() plugin also takes the workers parameter. If this is larger than 1, foreach() will use multiple threads. This allows us to parallelise the query.*
+### Foreach Plugin Workers
 
-- Use a foreach (JOIN) plugin (foreach on steroids) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg).
+Normally, foreach iterates over each row one at a time. The foreach() plugin also takes the workers parameter. If this is larger than 1, foreach() will use multiple threads. This allows us to parallelise the query.
+
+- Use a foreach (JOIN) plugin (foreach on steroids) to search across two queries, and bring the results together
 
 ```
 SELECT * FROM foreach(row={
