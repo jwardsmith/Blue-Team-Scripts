@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/9cb6ea4f-6c07-4ec0-b888-eeb11b03d9d2)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/8cbddb7b-f7f5-4bbc-9e2f-b6d9dc546b5e)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/810f8faf-f81a-49ed-bd0b-b0667da27c84)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -251,7 +251,7 @@ Since many VQL functions can be expensive or have side effects it is critical to
 
 A scope is a bag of names that is used to resolve variables, functions, and plugins in the query. A scope is just a lookup between a name e.g. info(), and an actual piece of code that will run e.g. InfoPlugin(). Scopes can nest - this allows sub-scopes to mask names of parent scopes. VQL will walk the scope stack in reverse to resolve a name. When a symbol is not found, Velociraptor will emit a warning and dump the current scope's nesting level. Depending on where in the query the lookup failed, you will get different scopes. The top level scope can be populated via the environment (--env flag) or artifact parameters.
 
-### Synax Commands
+### Syntax Commands
 
 ```
 SELECT = choose columns
@@ -334,105 +334,7 @@ SELECT OS, log(message="I ran") AS Log FROM info() WHERE OS =~ "Linux" AND Log
 # THE ORDER MATTERS: Log function is not evaluated for filtered rows. When the Log variable is mentioned in the filter contion, it will be evaluated ONLY IF NECESSARY. We can use this property to control when expensive functions are evaluated: hash(), upload().
 ```
 
-### LET
-
-A stored query is a lazy evaluator of a query which we can store in the scope. Where-ever the stored query is used it will be evaluated on demand.
-
-- Assign a variable, and select OS, Foo from the info() plugin
-
-```
-Let Foo = 1
-SELECT OS, Foo FROM info()
-```
-
-### Foreach Plugin
-
-VQL does not have a JOIN operator, instead we have the foreach() plugin.
-
-This plugin runs one query (given by the rows arg), then for each row emitted, it builds a new scope in which to evaluate another query (given by the query arg).
-
-- Use a foreach (JOIN) operator to search across two queries, and bring the results together
-
-```
-SELECT * FROM foreach(
-row={
-  SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
-}, query={
-  SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
-})
-```
-
-### Foreach Plugin Workers
-
-Normally, foreach iterates over each row one at a time. The foreach() plugin also takes the workers parameter. If this is larger than 1, foreach() will use multiple threads. This allows us to parallelise the query.
-
-- Use a foreach (JOIN) plugin (foreach on steroids) to search across two queries, and bring the results together
-
-```
-SELECT * FROM foreach(row={
-  SELECT FullPath
-  FROM glob(globs="C:/Windows/system32/*")
-  WHERE NOT IsDir
-}, query={
-  SELECT FullPath, hash(path=FullPath)
-  FROM scope()
-}, workers=10)
-```
-
-- Use a foreach (JOIN) operator with a LET expression (stored query - lazy evaluator) to search across two queries, and bring the results together (runs one query given by the rows arg, then for each row emitted, build a new scope in which to evaluate another query given by the query arg)
-
-```
-LET myprocess = SELECT Exe FROM pslist(pid=getpid())
-LET mystat = SELECT ModTime, Size, FullPath FROM stat(filename=Exe)
-
-SELECT * FROM foreach(row=myprocess, query=mystat)
-```
-
-- Use a materialised LET expression (slow approach)
-
-```
-LET process_lookup = SELECT Pid AS ProcessPid, Name FROM pslist()
-
-SELECT Laddr, Raddr, Status, Pid, {
-  SELECT Name FROM process_lookup
-  WHERE Pid = ProcessPid
-} AS Process
-FROM netstat()
-```
-
-- Use a materialised LET expression (fast approach) - all the rows are expanded in memory
-
-```
-LET process_lookup <= SELECT Pid AS ProcessPid, Name FROM pslist()
-
-SELECT Laddr, Raddr, Status, Pid, {
-  SELECT Name FROM process_lookup
-  WHERE Pid = ProcessPid
-} AS Process
-FROM netstat()
-```
-
-- Use a materialised LET expression (fastest approach) - memoize means to remember the results of a query in advance
-
-```
--- Create a lookup for pid -> name (lookup key is a string)
-LET process_lookup <= memoize(key="pid", query={
-  SELECT str(str=Pid) AS Pid, Name FROM pslist()
-})
-
-SELECT Laddr, Raddr, Status, Pid,
-  get(item=process_lookup, member=str(str=Pid)).Name AS Process
-FROM netstat()
-```
-
-- Use a LET expression to declare parameters (local functions)
-
-```
-LET MyFunc(X) = 5 + X
-SELECT MyFunc(X=6) FROM scope()
-
-# This will return 11
-```
+### WHERE NOT
 
 - Select the full path, and hash from the hash() plugin using the full path as an argument
 
@@ -450,12 +352,122 @@ FROM glob(globs="C:/Windows/system32/*")
 WHERE NOT IsDir
 ```
 
+### Foreach Plugin
+
+VQL does not have a JOIN operator, instead we have the foreach() plugin. This plugin runs one query (given by the rows arg), then for each row emitted, it builds a new scope in which to evaluate another query (given by the query arg).
+
+- Use a foreach (JOIN) operator to search across two queries, and bring the results together
+
+```
+SELECT * FROM foreach(
+row={
+  SELECT Name, CommandLine, Exe FROM pslist(pid=getpid())
+}, query={
+  SELECT Name, CommandLine, Btime, Mtime, FullPath FROM stat(filename=Exe)
+})
+```
+
+### Foreach Plugin Workers
+
+Normally, foreach iterates over each row one at a time. The foreach() plugin also takes the workers parameter. If this is larger than 1, foreach() will use multiple threads. This allows us to parallelise the query.
+
+- Use a foreach (JOIN) plugin with the workers parameter (foreach on steroids) to search across two queries, and bring the results together
+
+```
+SELECT * FROM foreach(row={
+  SELECT FullPath
+  FROM glob(globs="C:/Windows/system32/*")
+  WHERE NOT IsDir
+}, query={
+  SELECT FullPath, hash(path=FullPath)
+  FROM scope()
+}, workers=10)
+```
+
+### LET
+
+A stored query is a lazy evaluator of a query which we can store in the scope. Where-ever the stored query is used it will be evaluated on demand. LET expressions are more readable. LET expressions are lazy!
+
+- Assign a variable, and select OS, Foo from the info() plugin
+
+```
+Let Foo = 1
+SELECT OS, Foo FROM info()
+```
+
+- Use a foreach (JOIN) operator with a LET expression (stored query - lazy evaluator) to search across two queries, and bring the results together
+
+```
+LET myprocess = SELECT Exe FROM pslist(pid=getpid())
+LET mystat = SELECT ModTime, Size, FullPath FROM stat(filename=Exe)
+
+SELECT * FROM foreach(row=myprocess, query=mystat)
+```
+
+### Materialized LET
+
+Sometimes we do not want a lazy expression! VQL calls a query that is expanded in memory materialized.
+
+- Use a materialised LET expression (slow approach)
+
+```
+LET process_lookup = SELECT Pid AS ProcessPid, Name FROM pslist()
+
+SELECT Laddr, Raddr, Status, Pid, {
+  SELECT Name FROM process_lookup
+  WHERE Pid = ProcessPid
+} AS Process
+FROM netstat()
+```
+
+- Use a materialized LET expression (faster approach) - all the rows are expanded in memory (materialize the query with <= operator)
+
+```
+LET process_lookup <= SELECT Pid AS ProcessPid, Name FROM pslist()
+
+SELECT Laddr, Raddr, Status, Pid, {
+  SELECT Name FROM process_lookup
+  WHERE Pid = ProcessPid
+} AS Process
+FROM netstat()
+```
+
+- Use a materialized LET expression (fastest approach) - memoize means to remember the results of a query in advance
+
+```
+-- Create a lookup for pid -> name (lookup key is a string)
+LET process_lookup <= memoize(key="pid", query={
+  SELECT str(str=Pid) AS Pid, Name FROM pslist()
+})
+
+SELECT Laddr, Raddr, Status, Pid,
+  get(item=process_lookup, member=str(str=Pid)).Name AS Process
+FROM netstat()
+```
+
+### Local Functions
+
+LET expressions can declare parameters. This is useful for refactoring functions into their own queries. The callsite still uses named args to populate the scope.
+
+- Use a LET expression to declare parameters (local functions)
+
+```
+LET MyFunc(X) = 5 + X
+SELECT MyFunc(X=6) FROM scope()
+
+# This will return 11
+```
+
+### Data Types
+
 - Use a data type to convert a integer to a string for a regex search (=~)
 
 ```
 SELECT * FROM pslist()
 WHERE str(str=Pid) =~ "^4."
 ```
+
+### Subquery
 
 - Select the name, PID, PPID from the pslist() plugin
 
@@ -492,6 +504,11 @@ WHERE Status =~ "Listen"
 LIMIT 5
 ```
 
+### Debugging
+
+Use the log() VQL function to provide print debugging. Use format(format="%T %v", args=[X, X]) to learn about a value's type and value.
+
+
 - Print debugging information using the log() function
 
 ```
@@ -499,6 +516,10 @@ SELECT * FROM pslist()
 WHERE log(message=format(format="%T %v", args=[CreateTime, CreateTime]))
 LIMIT 5
 ```
+
+### Calling Artifacts from VQL
+
+You can call other artifacts from your own VQL using the “Artifact.<artifact name>” plugin notation. Args to the Artifact() plugin are passed as artifact parameters.
 
 - Call an artifact from your own VQL (prepend Artifact.\<artifact name>)
 
