@@ -750,6 +750,69 @@ SELECT * FROM glob(globs=GlobExpression, accessor='reg')
 LIMIT 5
 ```
 
+### Raw Registry Parsing
+
+Any artifacts looking in HKEY_USERS using the Windows API are limited to the set of users currently logged in! We need to parse the raw hive to reliably recover all users. Each user’s setting is stored in: C:\Users\<name>\ntuser.dat. It is a raw registry hive file format. We need to use raw_reg accessor. The raw reg accessor uses a URL scheme to access the underlying file.
+
+Some accessors need to delegate their access to other accessors. For example registry parser needs to open the file using another accessor. Therefore the path they receive is interpreted as a URL with three parts:
+- scheme - this is the name of the underlying accessor
+- path - this will be passed to the underlying accessor to get the file to parse
+- fragment - this will be interpreted as a path within the parsed file
+
+Escaping rules for urls are complex. We recommend using the url() VQL function to construct the url from its parts - especially when you dont control the filename itself.
+
+- Search for values in the Registry Run keys by parsing the raw registry
+
+```
+SELECT * FROM glob(globs=url(scheme='file', path='C:/Users/test/ntuser.dat', fragment='/**/Run/*').String, accessor='raw_reg')"
+```
+
+### Data Accessor
+
+VQL contains many plugins that work on files. Sometimes we load data into memory as a string. It is handy to be able to use all the normal file plugins with literal string data - this is what the data accessor is for. The data accessor creates an in memory file-like object from the filename data.
+
+- Hash a literal string
+
+```
+SELECT hash(path="Hello world", accessors="data") FROM scope()
+```
+
+### Searching Data
+
+A powerful DFIR technique is searching bulk data for patterns:
+- Searching for CC data in process memory
+- Searching for URLs in process memory 
+- Searching binaries for malware signatures
+- Searching registry for patterns
+
+Bulk searching helps to identify evidence without needing to parse file formats.
+
+### YARA - The swiss army knife
+
+YARA is a powerful keyword scanner. Uses rules designed to identify binary patterns in bulk data. YARA is optimised to scan for many rules simultaneously. Velociraptor supports YARA scanning of bulk data (via accessors) and memory e.g. yara() and proc_yara()
+
+- Use a YARA rule to recover URL's from the Edge browser directory
+
+```
+LET Globs = 'C:/Users/*/AppData/Local/Microsoft/Edge/**'
+LET YaraRule = "rule URL {
+  strings: $a = /https?:\\/\\/[a-z0-9\\/+&#:\\?.-]+/i
+  condition: any of them
+  }"
+
+SELECT * FROM foreach(row={
+  SELECT FullPath FROM glob(globs=Globs)
+}, query={
+  SELECT str(str=String.Data) AS Hit,
+         String.Offset AS Offset,
+         FileName FROM yara(files=FullPath, rules=YaraRule)
+})
+LIMIT 100
+```
+
+You can get yara rules from many sources (threat intel, blog posts etc). YARA is really a first level triage tool. Depending on signature  many false positives expected. Some signatures are extremely specific so make a great signal. Try to collect additional context around the hits to eliminate false positives. Yara scanning is relatively expensive! Consider more targeted glob expressions and client side throttling since usually YARA scanning is not time critical.
+
+### Uploading Files
 
 # VQL + Artifacts
 
