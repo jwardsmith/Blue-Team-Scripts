@@ -1,4 +1,4 @@
-![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/5d388f21-1d76-49f4-8487-70b5d247c226)# Velociraptor Cheat Sheet
+# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -969,12 +969,37 @@ Update Sequence Number Journal or Change journal is maintained by NTFS to record
 - Records are appended to the file at the end
 - The file is sparse - periodically NTFS will remove the range at the start of the file to make it sparse
 - Therefore the file will report a huge size but will actually only take about 30-40mb on disk
-- When collecting the journal file, Velociraptor will collect the sparse file.
+- When collecting the journal file, Velociraptor will collect the sparse file
   - Downloading the file from the "Uploaded Files" tab will pad the sparse regions
   - Exporting the data in a zip file will include both the sparse file and the idx file
 
+- Velociraptor can parse each entry in the journal
+- Remember the beginning of the file is sparse, we start parsing from the first valid range
+- The USN value is the offset in the file
+- The journal records many interactions with each file.
+- The USN journal can go back a week or two
+- You can find evidence of files long removed!
 
+- Use parse_usn to parse the USN Journal
 
+```
+SELECT * FROM parse_usn(device="C:")
+LIMIT 10
+```
+
+- Use parse_usn to parse the USN Journal for Prefetch files
+
+```
+SELECT Timestamp, FullPath FROM parse_usn(device="C:")
+WHERE Reason =~ "EXTEND" AND FullPath =~ ".pf$"
+```
+
+- Use parse_usn to parse the USN Journal for LNK files
+
+```
+SELECT Timestamp, FullPath FROM parse_usn(device="C:")
+WHERE Reason =~ "EXTEND" AND FullPath =~ ".lnk$"
+```
 
 # VQL + Artifacts
 
