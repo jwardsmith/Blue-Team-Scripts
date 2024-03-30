@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/fa042661-12c9-4521-a02d-7d3d83b38f06)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/e5692c45-3b6a-456b-8aa8-79f1a550412e)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1208,6 +1208,70 @@ WHERE NAME =~ "powershell"
 ```
 
 # Interactive Triage
+
+### Collecting Artifacts (KAPE)
+
+Being able to efficiently and quickly collect and preserve evidence is important:
+- Capture machine state at a point in time
+- Collect files for further analysis by forensic tools
+
+Windows.Kape.Targets() is the most popular artifact for mass file collection. It does no analysis but just collects a bunch of files. Uses low level NTFS accessor. Simply select the target to collect. Many targets automatically include sub-targets.
+
+- Use the Windows.Kape.Targets() artifact to retrieve collect files
+
+```
+SELECT * FROM Artifact.Windows.Kape.Targets()
+```
+
+### Resource Control
+
+Collecting artifacts can generate huge amount of data. Because Velociraptor is so fast and efficient it is easy to accidentally overwhelm networks. Collecting 100Mb from 10,000 endpoints = 1Tb (e.g. $MFT is usually around 300-400Mb).
+
+Every artifact collection is limited automatically:
+- Op/Sec - how fast to run on the endpoint
+- Max Time - Cancel if collection takes too long
+- Max Rows - Cancel if query returns crazy rows
+- Max Mbytes - Cancel if too much data is collected
+
+### Offline Collection
+
+We want to collect artifacts from an endpoint, but Velociraptor is not installed on the endpoint. Or the endpoint is inaccessible to the Velociraptor server (no egress, firewalls etc). But Velociraptor is just a VQL engine! It does not really need a server anyway. Creating an offline collector looks very similar to collecting client artifacts. Only difference is that results are delivered over sneakernet!
+
+- Create an offline collector
+
+```
+Server Artifacts -> Build offline collector -> Run executable on target system (collector binary automatically starts collection as soon as it is run… No need for user to enter command line parameters)
+```
+
+### Local Artifact Collection
+
+- Print the output of the artifact to the console
+
+```
+C:\> velociraptor.exe -v artifacts collect "Windows.Forensics.SRUM/Execution Stats"
+```
+
+- Redirect the output of the artifact to a ZIP file
+
+```
+C:\> velociraptor.exe -v artifacts collect "Windows.Forensics.SRUM/Execution Stats" --output test.zip
+```
+
+### Embedding Configurations
+
+Normally when we run Velociraptor we need to provide a configuration file. Sometimes it is easier to embed the configuration file inside the binary - this way the user does not need to remember another file. When Velociraptor starts up without the --config flag supplied - it will check its own binary for embedded configuration. 
+
+- Show the config of a Velociraptor binary
+
+```
+C:\> velociraptor.exe config show
+```
+
+- Repack a Velociraptor binary with a config file
+
+```
+C:\> velociraptor.exe config repack client_config.yaml velociraptor_new.exe
+```
 
 # VQL + Artifacts
 
