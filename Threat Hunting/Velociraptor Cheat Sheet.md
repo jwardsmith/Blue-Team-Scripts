@@ -715,7 +715,11 @@ Velociraptor has the glob() plugin to search for files using a glob expression. 
 - Search for an executable in a user's home directory
 
 ```
-SELECT * FROM glob(globs='C:\\Users\\**\\*.exe')
+SELECT * FROM glob(globs='C:\\Users\\**\\*.exe')        # using backslash escaping
+OR
+SELECT * FROM glob(globs='C:/Users/**/*.exe')        # using forward slash
+OR
+SELECT * FROM glob(globs='''C:\Users\**\*.exe''')        # using raw string
 ```
 
 - Search for an executable or DLL in a user's home directory using multiple globs
