@@ -848,7 +848,7 @@ Bulk searching helps to identify evidence without needing to parse file formats.
 
 ### YARA - The swiss army knife
 
-YARA is a powerful keyword scanner. Uses rules designed to identify binary patterns in bulk data. YARA is optimised to scan for many rules simultaneously. Velociraptor supports YARA scanning of bulk data (via accessors) and memory e.g. yara() and proc_yara()
+YARA is a powerful keyword scanner. Uses rules designed to identify binary patterns in bulk data. YARA is optimised to scan for many rules simultaneously. Velociraptor supports YARA scanning of bulk data (via accessors) and memory e.g. yara() = scans the file and proc_yara() = scans process memory
 
 - Use a YARA rule to recover URL's from the Edge browser directory
 
@@ -867,6 +867,26 @@ SELECT * FROM foreach(row={
          FileName FROM yara(files=FullPath, rules=YaraRule)
 })
 LIMIT 100
+```
+
+- Use a YARA rule to recover URL's from the Google Chrome browser directory
+
+```
+LET YaraRule = '''rule URL {
+  strings: $a = /https?:\\/\\/[a-z0-9\\/+&#:\\?.-]+/i
+  condition: any of them
+  }
+'''
+
+SELECT * FROM foreach(
+row={
+    SELECT Size, FullPath FROM glob(globs='''C:\Users\james\AppData\Local\Google\Chrome\User Data\Default\**''')
+    WHERE NOT IsDir
+    LIMIT 50
+}, query={
+    SELECT str(str=String.Data) AS URL, String.Offset, FileName
+    FROM yara(files=FullPath, rules=YaraRule, number=10000000)
+})
 ```
 
 You can get yara rules from many sources (threat intel, blog posts etc). YARA is really a first level triage tool. Depending on signature  many false positives expected. Some signatures are extremely specific so make a great signal. Try to collect additional context around the hits to eliminate false positives. Yara scanning is relatively expensive! Consider more targeted glob expressions and client side throttling since usually YARA scanning is not time critical.
