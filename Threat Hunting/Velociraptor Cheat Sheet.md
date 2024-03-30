@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/dfcad3f1-692e-4cff-9bdf-4ce2a03f2254)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -813,6 +813,86 @@ LIMIT 100
 You can get yara rules from many sources (threat intel, blog posts etc). YARA is really a first level triage tool. Depending on signature  many false positives expected. Some signatures are extremely specific so make a great signal. Try to collect additional context around the hits to eliminate false positives. Yara scanning is relatively expensive! Consider more targeted glob expressions and client side throttling since usually YARA scanning is not time critical.
 
 ### Uploading Files
+
+Velociraptor can collect file data:
+- Over the network
+- Locally to a collection zip file
+- Driven by VQL
+
+The upload() VQL function copies a file using an accessor to the relevant container.
+
+### NTFS Analysis
+
+NTFS is the standard Windows filesystem. 
+- All files are represented in a Master File Table
+- Files can contain multiple attributes:
+  - Filename (Long name/Short name)
+  - Data attribute – contains file data
+  - I30 attribute (contains directory listing)
+- Data attributes may be compressed or sparse
+- Filename attributes contain their own timestamps
+
+The NTFS file system contains a file called the master file table, or MFT. There is at least one entry in the MFT for every file on an NTFS file system volume, including the MFT itself. All information about a file, including its size, time and date stamps, permissions, and data content, is stored either in MFT entries, or in space outside the MFT that is described by MFT entries.
+
+Velociraptor has 2 accessors providing access to NTFS:
+- ntfs - Supports Alternate Data Streams in directory listings
+- lazy_ntfs - much faster but does not detect ADS
+
+Due to these accessors it is possible to operate on files in the NTFS volume using all the usual plugins.
+
+- Search for files using the NTFS accessor
+
+```
+SELECT * FROM glob(globs='C:\\Users\\**\\*.exe', accessor='ntfs')
+LIMIT 5
+```
+
+The NTFS accessor makes NTFS specific information available in the Data field. For regular files it includes the inode string. The NTFS accessor considers all paths to begin with a device name. For convenience the accessor also accepts a drive letter.
+
+### VSS
+
+NTFS allows for a special copy on write snapshot feature called “Volume Shadow Copy”. When a VSS copy is created, it is accessible via a special device. Velociraptor allows the VSS copies to be enumerated by listing them at the top level of the filesystem. At the top level, the accessor provides metadata about each device in the “Data” column, including its creation time. This is essentially the same output as vssadmin list shadows.
+
+- Search for VSS using the NTFS accessor
+
+```
+SELECT Name, Data FROM glob(globs='/*', accessor='ntfs')
+LIMIT 5
+```
+
+- Search for VSS copies of the event logs using the NTFS accessor
+
+```
+SELECT FullPath, Mtime FROM glob(globs='/*/Windows/System32/winevt/logs/system.evtx', accessor='ntfs')
+```
+
+### $MFT
+
+You can download the entire $MFT file from the endpoint using the ntfs accessor, then process it offline. You can also parse the $MFT on the endpoint using Velociraptor. This is most useful when you need to pass over all the files in the disk - it is more efficient than a recursive glob and might recover deleted files.
+
+- Parse $MFT on the endpoint
+
+```
+SELECT * FROM parse_mft(filename='C:/$MFT', accessor='ntfs')
+WHERE FileName =~ '.exe$'
+LIMIT 5
+```
+
+- Parse $MFT on the endpoint to find all .exe on disk that were created after Jan 20, 2020
+
+```
+SELECT EntryNumber, FullPath, InUse, FileSize, Created0x10 FROM parse_mft(filename='C:\\$MFT', accessor='ntfs')
+WHERE FullPath =~ '.exe$' AND Created0x10 > '2020-01-20'
+```
+
+An MFT Entry can have multiple attributes and streams. The previous plugin just shows high level information about each MFT entry - we can dig deeper with the parse_ntfs() plugin which accepts an mft ID. An inode is a triple of mft id, type id and id e.g. 974-16-0.
+
+- Inspect a $MFT entry deeper
+
+```
+SELECT parse_ntfs(device='c:/', mft=368)
+FROM scope()
+```
 
 # VQL + Artifacts
 
