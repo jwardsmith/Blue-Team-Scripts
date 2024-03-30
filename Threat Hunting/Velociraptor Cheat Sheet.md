@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/5d388f21-1d76-49f4-8487-70b5d247c226)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -893,6 +893,88 @@ An MFT Entry can have multiple attributes and streams. The previous plugin just 
 SELECT parse_ntfs(device='c:/', mft=368)
 FROM scope()
 ```
+
+### Timestomping
+
+An MFT entry can have up to 16 timestamps! Timestamps are critical to forensic investigations:
+- Determine when files were copied
+- When files were modified
+- And sometimes we can determine when a file was accessed
+
+In NTFS there are timestamps
+- In $STANDARD_INFORMATION stream (usually only 1)
+- In the $FILENAME  stream (sometimes 2 or 3)
+- In the $I30 stream of the parent directory
+
+Attackers sometimes change the timestamps of files to make them less obvious. E.g make malware look like it was installed many years ago. Timestomping uses the API to change the times of a file but this only changed the $STANDARD_INFORMATION stream. The real times are still present on the $FILENAME attributes.
+
+- Use parse_ntfs to detect timestomping
+
+```
+LET GlobExpression = 'C:\\Program Files\\Velociraptor\\Velociraptor.exe'
+
+SELECT Data.mft, parse_ntfs(device=FullPath, inode=Data.mft)
+FROM glob(globs=GlobExpression, accessor='ntfs')
+```
+
+This is not necessarily a smoking gun - many installers will update a file’s timestamps during installation. Many binaries are timestomped naturally because they come from CAB or MSI files. To eliminate noise you can narrow the created time from the $FILE_NAME attribute. Created0x30 is the real time the file was created.
+
+- Use parse_ntfs to detect timestomping by comparing $STANDARD_INFORMATION and $FILE_NAME
+
+```
+SELECT FullPath, Created0x10, Created0x30
+FROM parse_mft(filename='C:/$MFT', accessor='ntfs')
+WHERE Created0x10 < Created0x30
+  AND FullPath =~ '.exe$'
+  AND Created0x30 > '2020-01-20'
+LIMIT 10
+```
+
+We can get a timeline by sorting the table on the modified or birth timestamps. It is more efficient to narrow the time of interest first. When post processing large tables it is better to work in stages.
+
+### $I30
+
+In NTFS a directory is simply an MFT entry with $I30 streams. The streams contains a B+ tree of the MFT entries in the directory. Since INDX streams are a B+ tree when a record is deleted, the tree will be reordered. Sometimes this leaves old entries in the slack space.
+
+- Use parse_ntfs_i30 to parse $I30
+
+```
+SELECT Name, IsSlack, SlackOffset FROM parse_ntfs_i30(device='C:\\", inode='1075')
+WHERE Name =~ 'txt'
+```
+
+Sometimes we need to prove that a file used to exist in a directory - just the presence of the name and timestamps is significant!
+
+- Use parse_ntfs_i30 to recover the filenames of deleted files in directories
+
+```
+SELECT * FROM foreach(
+   row={
+     SELECT FullPath, Data.mft AS MFT
+     FROM glob(globs=DirectoryGlobs, accessor="ntfs")
+     WHERE IsDir
+   },
+   query={
+     SELECT FullPath, Name, NameType, Size, AllocatedSize,
+            IsSlack, SlackOffset, Mtime, Atime, Ctime, Btime, MFTId
+     FROM parse_ntfs_i30(device=FullPath, inode=MFT)
+})
+```
+
+### USN Journal
+
+Update Sequence Number Journal or Change journal is maintained by NTFS to record filesystem changes.
+- Records metadata about filesystem changes
+- Resides in the path $Extend\$UsnJrnl:$J
+- Records are appended to the file at the end
+- The file is sparse - periodically NTFS will remove the range at the start of the file to make it sparse
+- Therefore the file will report a huge size but will actually only take about 30-40mb on disk
+- When collecting the journal file, Velociraptor will collect the sparse file.
+  - Downloading the file from the "Uploaded Files" tab will pad the sparse regions
+  - Exporting the data in a zip file will include both the sparse file and the idx file
+
+
+
 
 # VQL + Artifacts
 
