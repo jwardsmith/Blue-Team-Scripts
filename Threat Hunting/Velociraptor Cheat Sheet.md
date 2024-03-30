@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/29e0a40e-d0b2-4c18-839f-3318a7e3e33f)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1089,6 +1089,29 @@ SELECT * FROM Artifact.Windows.Forensic.Prefetch()
 WHERE Executable =~ 'velociraptor'
 ```
 
+- Use the Windows.Timeline.Prefetch() artifact to retrieve Prefetch files in a timeline format
+
+```
+SELECT * FROM Artifact.Windows.Timeline.Prefetch()
+WHERE Executable =~ 'velociraptor'
+```
+
+### Shimcache
+
+- Use the Windows.Registry.AppCompatCache() artifact to retrieve Shimcache artifacts
+
+```
+SELECT * FROM Artifact.Windows.Registry.AppCompatCache()
+```
+
+### Amcache
+
+- Use the Windows.System.Amcache() artifact to retrieve Amcache artifacts (note the key location is a URL - Velociraptor uses URL notation to access raw registry hives. This one uses the ntfs file accessor to access the raw hive data since it is usually locked at runtime)
+
+```
+SELECT * FROM Artifact.Windows.System.Amcache()
+```
+
 ### Windows Event Logs
 
 Stored in files with extension of *.evtx typically in C:\Windows\System32\WinEVT\Logs\*.evtx
@@ -1104,6 +1127,8 @@ File format features:
 SELECT * FROM parse_evtx(filename='C:/Windows/System32/winevt/logs/System.evtx')
 LIMIT 1
 ```
+
+The event message is actually written in XML but Velociraptor convert it into a JSON object to make it easier to filter specific fields.
 
 Windows Event Logs architecture does NOT store the event message in the evtx file!
 - This allows for event message internationalization
@@ -1140,6 +1165,27 @@ instead of watch_evtx().
 
 ```
 SELECT * FROM watch_etw(guid="{7D44233D-3055-4B9C-BA64-0d47CA40A232}"
+```
+
+- Monitor all client's DNS queries using an ETW provider
+
+```
+SELECT System.TimeStamp AS Timestamp,
+       EventData.QueryName AS Query,
+       EventData.QueryType AS Type,
+       EventData.QueryResults AS Answer
+FROM watch_etw(guid="{1C95126E-7EEA-49A9-A3FE-A378B03DDB4D}")
+WHERE System.ID = 3020 
+```
+
+### Windows Management Instrumentation (WMI)
+
+A framework to export internal windows state information using a query language (WQL). Consists of classes (providers) and objects. Lots of hooks into many internal system features. Being able to inspect system state using a consistent interface allows a tool to query a wide range of services.
+
+- Query WMI Win32_DiskDrive
+
+```
+SELECT * FROM wmi(query='SELECT * FROM Win32_DiskDrive')
 ```
 
 ### Process Analysis
