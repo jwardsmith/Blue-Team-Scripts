@@ -1,4 +1,4 @@
-![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/9d35dd09-d215-4a25-ad73-e50fb23018ea)# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/6e62fb17-8a5b-4103-94c3-ef4e6b62a287)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/9d35dd09-d215-4a25-ad73-e50fb23018ea)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1129,6 +1129,32 @@ SELECT Key.Mtime AS Mtime, basename(path=Key.FullPath) AS ChannelName,
        OwningPublisher, Enabled
 FROM reg_read_key(globs=Key)
 WHERE ChannelName =~ "bits"
+```
+
+### Event Tracing for Windows (ETW)
+
+ETW is the underlying system by which event logs are generated and collected. ETW and event logs are just two sides of the same coin. Log providers are just ETW providers. In VQL watch_etw() can be used
+instead of watch_evtx().
+
+- Monitor an ETW provider
+
+```
+SELECT * FROM watch_etw(guid="{7D44233D-3055-4B9C-BA64-0d47CA40A232}"
+```
+
+### Process Analysis
+
+- Search for the winhttp.dll DLL module that PowerShell is running
+
+```
+SELECT * FROM foreach(
+row={
+SELECT * FROM pslist()
+WHERE NAME =~ "powershell"
+}, query={
+  SELECT *, Name, Pid FROM vad(pid=Pid)
+  WHERE MappingName =~ "winhttp.dll"
+})
 ```
 
 # VQL + Artifacts
