@@ -783,6 +783,32 @@ SELECT * FROM glob(globs=GlobExpression, accessor='reg')
 LIMIT 5
 ```
 
+- Search for values in the Registry Run key using better control
+
+```
+SELECT Name, FullPath, ModTime, Data.value AS StartupPath
+FROM glob=(globs=['''HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/Run/*''',
+                  '''HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Run/*''',
+                  '''HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/RunOnce/*''',
+                  '''HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/RunOnce/*'''],
+                  accessor="reg")
+LIMIT 5
+```
+
+- Search for values in the Registry Run key using better control and hashing
+
+```
+Let X = SELECT Name, FullPath, ModTime, Data.value AS StartupPath,
+                parse_string_with_regex(string=Data.value, regex=['^"([^"]+)"', '^([^" ]+) ?']) AS Parse
+FROM glob=(globs=['''HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/Run/*''',
+                  '''HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Run/*''',
+                  '''HKEY_LOCAL_MACHINE/Software/Microsoft/Windows/CurrentVersion/RunOnce/*''',
+                  '''HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/RunOnce/*'''],
+                  accessor="reg")
+SELECT Name, FullPath, ModTime, StartupPath, hash(path=expand(path=Parse.g1)) AS Hash
+FROM X
+```
+
 ### Raw Registry Parsing
 
 Any artifacts looking in HKEY_USERS using the Windows API are limited to the set of users currently logged in! We need to parse the raw hive to reliably recover all users. Each user’s setting is stored in: C:\Users\<name>\ntuser.dat. It is a raw registry hive file format. We need to use raw_reg accessor. The raw reg accessor uses a URL scheme to access the underlying file.
