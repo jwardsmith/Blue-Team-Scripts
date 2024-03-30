@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/9d35dd09-d215-4a25-ad73-e50fb23018ea)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1079,6 +1079,37 @@ WHERE Reason =~ "EXTEND" AND FullPath =~ ".pf$"
 SELECT Timestamp, FullPath FROM parse_usn(device="C:")
 WHERE Reason =~ "EXTEND" AND FullPath =~ ".lnk$"
 ```
+
+### Prefetch
+
+- Use the Windows.Forensics.Prefetch() artifact to retrieve Prefetch files
+
+```
+SELECT * FROM Artifact.Windows.Forensic.Prefetch()
+WHERE Executable =~ 'velociraptor'
+```
+
+### Windows Event Logs
+
+Stored in files with extension of *.evtx typically in C:\Windows\System32\WinEVT\Logs\*.evtx
+
+File format features:
+- Rollover - File is divided into chunks and new chunks can overwrite older chunks
+- Binary XML format provides compression
+- Structured records with strong types
+
+- Use parse_evtx to parse Windows Event Logs (he event message is actually written in XML but Velociraptor convert it into a JSON object to make it easier to filter specific fields)
+
+```
+SELECT * FROM parse_evtx(filename='C:/Windows/System32/winevt/logs/System.evtx')
+LIMIT 1
+```
+
+Windows Event Logs architecture does NOT store the event message in the evtx file!
+- This allows for event message internationalization
+- Saves some small amount of space in the evtx files themselves
+- But mostly makes it difficult to analyze offline.
+  - Grabbing all the EVTX files off the system may result in loss of event messages!
 
 # VQL + Artifacts
 
