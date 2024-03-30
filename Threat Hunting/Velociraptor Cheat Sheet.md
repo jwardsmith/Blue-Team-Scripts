@@ -1110,6 +1110,26 @@ Windows Event Logs architecture does NOT store the event message in the evtx fil
 - Saves some small amount of space in the evtx files themselves
 - But mostly makes it difficult to analyze offline.
   - Grabbing all the EVTX files off the system may result in loss of event messages!
+ 
+Velociraptor can automatically follow this process when parsing event logs using the parse_evtx() plugin.
+
+- Show Windows event log channels that are disabled
+
+```
+SELECT basename(path=dirname(path=FullPath)) AS Channel,
+      Data.value FROM glob(globs='''HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\*\Enabled''', accessor="registry")
+LIMIT 50
+```
+
+- Show Windows event log channels that are disabled using read_reg_key()
+
+```
+LET Key = '''HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT\Channels\*'''
+SELECT Key.Mtime AS Mtime, basename(path=Key.FullPath) AS ChannelName,
+       OwningPublisher, Enabled
+FROM reg_read_key(globs=Key)
+WHERE ChannelName =~ "bits"
+```
 
 # VQL + Artifacts
 
