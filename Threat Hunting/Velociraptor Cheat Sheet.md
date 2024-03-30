@@ -1,4 +1,4 @@
-![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/fa042661-12c9-4521-a02d-7d3d83b38f06)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/e5692c45-3b6a-456b-8aa8-79f1a550412e)# Velociraptor Cheat Sheet
+# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1217,7 +1217,7 @@ Being able to efficiently and quickly collect and preserve evidence is important
 
 Windows.Kape.Targets() is the most popular artifact for mass file collection. It does no analysis but just collects a bunch of files. Uses low level NTFS accessor. Simply select the target to collect. Many targets automatically include sub-targets.
 
-- Use the Windows.Kape.Targets() artifact to retrieve collect files
+- Use the Windows.Kape.Targets() artifact to collect files
 
 ```
 SELECT * FROM Artifact.Windows.Kape.Targets()
@@ -1272,6 +1272,50 @@ C:\> velociraptor.exe config show
 ```
 C:\> velociraptor.exe config repack client_config.yaml velociraptor_new.exe
 ```
+
+### Embedding Third-Party Binaries
+
+Sometimes we want to collect the output from other third party executables. It would be nice to be able to package them together with Velociraptor and include their output in the collection file. Velociraptor can append a zip file to the end of the binary and adjust PE headers to ensure it can be properly signed. You can just add any file to the zip file and access it using VQL from within Velociraptor Artifacts
+
+- Repack a Velociraptor binary with a third-party binary
+
+```
+C:\> velociraptor.exe config repack client_config.yaml velociraptor_new.exe --append winpmem_v3.3.rc3.zip
+```
+
+### Importing Third-Party Artifacts
+
+Velociraptor is an open source project. Many contributors may share their artifacts.
+
+- Upload an artifact pack
+
+```
+View Artifacts -> Upload Artifact Pack
+```
+
+### Importing Collections Into GUI
+
+It is possible to import the offline collection back into the GUI This allows:
+- Keeping related information from the same host together
+- Using a notebook to post process the results
+
+Offline collection + Import is very similar to client/server except that instead of the client connecting over the internet, the data is delivered via sneakernet!
+
+- Use the Server.Utils.ImportCollection() artifact to import a collection into the GUI
+
+```
+SELECT * FROM Server.Utils.ImportCollection()
+```
+
+# Threat Hunting
+
+### Typical Hunting Workflow
+
+- Get an idea for a new artifact by reading blogs, articles and doing research!
+- Explore the VQL in the notebook
+- Convert VQL into an artifact
+- Go hunting!
+- Post process and analyse in the notebook
 
 # VQL + Artifacts
 
