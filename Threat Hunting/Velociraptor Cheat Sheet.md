@@ -1138,6 +1138,10 @@ Windows Event Logs architecture does NOT store the event message in the evtx fil
  
 Velociraptor can automatically follow this process when parsing event logs using the parse_evtx() plugin.
 
+If you just collect the EVTX files from one system to another you will lose access to message tables, because the messages are in DLL files scattered across the entire system.
+
+If an application is uninstalled, its message DLLs will be removed and earlier events are not able to be displayed any more.
+
 - Show Windows event log channels that are disabled
 
 ```
