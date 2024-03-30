@@ -736,6 +736,26 @@ Glob is a very useful concept to search hierarchical trees. Velociraptor support
 - ntfs - uses raw NTFS parsing to access low level files
 - reg - uses OS APIs to access the windows registry
 
+### File Accessor
+
+- Search for files in the C:\ drive (file accessor is the default if nothing is specified)
+
+```
+SELECT * FROM glob(globs='''/C:/*''')
+LIMIT 5
+OR
+SELECT * FROM glob(globs='''/C:/*'''), accessor='file'
+LIMIT 5
+```
+
+### NTFS Accessor
+
+- Search for files in the C:\ drive
+
+```
+SELECT * FROM glob(globs='''/C:/*'''), accessor='ntfs'
+```
+
 ### Registry Accessor
 
 - Uses the OS API to access the registry
