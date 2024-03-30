@@ -729,6 +729,15 @@ SELECT * FROM glob(globs=['C:/Users/**/*.exe',
                           'C:/Users/**/*.dll'])
 ```
 
+- Search for column names that include spaces or special characters (use backticks)
+
+```
+SELECT `Full Path` FROM glob(globs='C:\\Users\\**\\*.exe')
+OR
+LET X = SELECT Data.value FROM glob(globs='''/HKEY_CURRENT_USER/Environment/*''', accessor="reg")
+SELECT `Data.value` FROM X
+```
+
 ### Filesystem Accessors
 
 Glob is a very useful concept to search hierarchical trees. Velociraptor supports direct access to many different such trees via accessors (essentially FS drivers):
