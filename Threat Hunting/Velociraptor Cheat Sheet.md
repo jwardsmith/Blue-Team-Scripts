@@ -1387,6 +1387,8 @@ Works by installing a server event monitor API:
 
 Velociraptor pushes data to indices named after the artifact name. This is why it is important to keep your artifacts consistent! always return the same rows even if null. Each artifact creates a unique index (artifact_\<name of artifact>) so we can look at individual ones or groups of artifacts.
 
+# Extending VQL & API
+
 # VQL + Artifacts
 
 While VQL provides the plumbing for performing queries against hosts, “artifacts” provide a way to conveniently store and execute those queries repeatedly. The idea is that analysts need quick and convenient ability to hunt for IOCs. So, Velociraptor “artifacts” are simply preconfigured queries for the most common analysis jobs. Example built-in artifacts include queries for listing user accounts, finding historical evidence of process execution, searches for specific files or directories, file retrieval, and so on.
