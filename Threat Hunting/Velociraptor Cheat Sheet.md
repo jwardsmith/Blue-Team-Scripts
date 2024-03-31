@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/551645c4-3f29-4e08-9369-18c8a2f6e1ee)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1316,6 +1316,74 @@ SELECT * FROM Server.Utils.ImportCollection()
 - Convert VQL into an artifact
 - Go hunting!
 - Post process and analyse in the notebook
+
+### Post Processing Hunts
+
+Running a hunt is easy but how do we deal with the results?
+
+Usually we want to:
+- Filter out the results to identify outliers
+- Group by to do stacking and counting
+
+Hunts typically generate a lot of data. We can export hunt data and process in another tool or use Velociraptor itself. Each hunt generates a notebook that can be used to do the analysis in place.
+
+### Pool Client
+
+Velociraptor includes a load testing tool called a pool client:
+- Creates many clients in separate threads
+- Each client looks like a different client, but they are all running on the same host
+- Each client can be queried separately.
+- When doing a large hunt, queries are cached so as to generate even more load on the server.
+
+- Start a gui in a new directory
+
+```
+C:\> velociraptor.exe gui --datastore filestore
+```
+
+- Start 100 pool clients
+
+```
+C:\> velociraptor.exe gui --config filestore\client.config.yaml pool_client --number 100 --writeback_dir filestore
+```
+
+### Stacking
+
+- Stack a hunt
+
+```
+SELECT *, count() AS Count
+FROM hunt_results(
+    artifact='Windows.System.Services',
+    hunt_id='H.13c65d47')
+GROUP BY Name
+ORDER BY Count
+```
+
+### Parallelize Plugin
+
+Same parameters as the source() plugin with the addition of a query. Splits the source into bitesize batches and then runs the query over each one (in a thread) combining the output. Faster than foreach(workers=30) because the result set parsing is also parallelized.
+
+### Exporting Data
+
+After post processing you can export:
+- The entire notebook as HTML report (includes markdown and inline tables)
+- The entire notebook as a ZIP file (includes results as JSON files for each table)
+- Each table exported as CSV or JSON (Only exports visible columns)
+
+### Sysmon Support
+
+Sysmon is a great tool providing visibility into telemetry. In Velociraptor this is available through the artifact Windows.Sysinternals.SysmonLogForward. It is a simple artifact that is used to just install sysmon and forward events. Sysmon is a client monitoring artifact, and tt can be targeted by label groups.
+
+### Connect to Elastic/Splunk
+
+Velociraptor offers Elastic or Splunk bulk uploaders. Simple Bulk upload API clients - just push data upstream.
+
+Works by installing a server event monitor API:
+- Watch for System.Flow.Completion events
+- Get all the data for each artifact query and upload to Elastic index
+
+Velociraptor pushes data to indices named after the artifact name. This is why it is important to keep your artifacts consistent! always return the same rows even if null. Each artifact creates a unique index (artifact_\<name of artifact>) so we can look at individual ones or groups of artifacts.
 
 # VQL + Artifacts
 
