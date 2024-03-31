@@ -260,7 +260,9 @@ FROM = choose plugin
 WHERE = choose condition (evaluates in left to right order)
 LET = assign a variable
 LIMIT = choose a row limit
-GROUP_BY = create groups like | stats count by
+GROUP BY = create groups like | stats count by
+ORDER BY = order results (asc or desc)
+count() AS Count = count results
 =~ = regex match
 -- = comment
 "" or '' = strings
