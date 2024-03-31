@@ -278,6 +278,9 @@ foreach() = JOIN operator (runs one query given by the rows arg, then for each r
 Function e.g. parse_pe() or base64decode() = takes a value and returns another value - return a single value instead of a sequence of rows
 Plugin e.g. pslist() or stat() = returns lots and lots of rows - VQL plugins are the data sources of VQL queries. While SQL queries refer to static tables of data, VQL queries refer to plugins, which generate data rows to be filtered by the query. VQL plugins are not the same as VQL functions. A plugin is the subject of the VQL query - i.e. plugins always follow the FROM keyword, while functions (which return a single value instead of a sequence of rows) are only present in column specification (e.g. after SELECT) or in condition clauses (i.e. after the WHERE keyword)
 Artifact = an Artifact is a way to package one or more VQL queries in a human readable YAML file, name it, and allow users to collect it. An artifact file simply embodies the query required to collect or answer a specific question about the endpoint
+Client = a Velociraptor instance running on an endpoint. This is denoted by client_id and indexed in the client index
+Flow = a single artifact collection instance. Can contain multiple artifacts with many sources each uploading multiple files
+Hunt = a collection of flows from different clients. Hunt results consist of the results from all the hunt's flows
 ```
 
 ### SELECT
