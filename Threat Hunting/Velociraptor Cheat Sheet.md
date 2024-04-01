@@ -1,4 +1,4 @@
-# Velociraptor Cheat Sheet
+![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/b35bd9bc-f9c4-40fe-9dc5-72f9682dcfc8)![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/6a9a181e-53c1-4bec-971e-64c438af8739)# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
@@ -1500,6 +1500,16 @@ Server automation is performed by exporting server controlling functions as VQL 
 - Server artifacts encapsulate VQL queries to performs certain actions
 - Server monitoring artifacts watch for events on the server and respond.
 
+- Label clients
+
+```
+SELECT *, label(client_id=CLientId, labels="James", op="set")
+FROM hunt_results(
+    artifacts='Windows.Sys.Users',
+    hunt_id='H.C2II0FVI09U56')
+WHERE Name =~ "james"
+``` 
+
 ### Velociraptor API
 
 Velociraptor needs to plug into a much wider ecosystem. Velociraptor can itself control other systems. Can already be done by the execve() and http_client() VQL plugins. Velociraptor can be controlled by external tools. Allows external tools to enrich and automate Velociraptor. This is what the API is for!
@@ -1510,6 +1520,30 @@ The API is extremely powerful so it must be protected! The point of an API is to
 
 ```
 C:\> velociraptor.exe --config server.config.yaml config api_client --name James --role administrator,api api.config.yaml
+```
+
+- Use the API to run a command using pyvelociraptor
+
+```
+C:\> pyvelociraptor .\api.config.yaml "SELECT * FROM info()"
+```
+
+- Schedule an artifact collection
+
+```
+C:\> pyvelociraptor --config .\api.config.yaml "LET collection <= collect_client(client_id='C.cdbd59efbda14627', artifacts='Generic.Client.Info', env=dict())"
+```
+
+- Wait for the client to finish
+
+```
+C:\> pyvelociraptor --config .\api.config.yaml "LET collection <= collect_client(client_id='C.cdbd59efbda14627', artifacts='Generic.Client.Info', env=dict()) SELECT * FROM watch_monitoring(artifact='System.Flow.Completion') WHERE FlowId = collection.flow_id LIMIT 1"
+```
+
+- Read the results
+
+```
+C:\> pyvelociraptor --config .\api.config.yaml "LET collection <= collect_client(client_id='C.cdbd59efbda14627', artifacts='Generic.Client.Info', env=dict()) SELECT * FROM watch_monitoring(artifact='System.Flow.Completion') WHERE FlowId = collection.flow_id LIMIT 1 SELECT * FROM source(client_id=collection.ClientId, flow_id=collection.flow_id, artifact='Generic.Client.Info/BasicInformation')"
 ```
 
 # VQL + Artifacts
