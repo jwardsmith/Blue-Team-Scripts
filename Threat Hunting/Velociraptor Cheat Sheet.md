@@ -1392,7 +1392,7 @@ Velociraptor pushes data to indices named after the artifact name. This is why i
 
 # Extending VQL & API
 
-### Extending ARtifacts - PowerShell
+### Extending Artifacts - PowerShell
 
 - Execute PowerShell using the execve() plugin (the execve() plugin takes a list of args and builds a correctly escaped command line. In many cases we dont need to encode the command line)
 
