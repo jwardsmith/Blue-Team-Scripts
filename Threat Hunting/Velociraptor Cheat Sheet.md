@@ -1,4 +1,4 @@
-![image](https://github.com/jwardsmith/Blue-Team-Scripts/assets/31498830/70f430f2-ea0e-4734-a657-dc786cb0b570)# Velociraptor Cheat Sheet
+# Velociraptor Cheat Sheet
 
 Velociraptor is a unique, advanced open-source endpoint monitoring, digital forensic and cyber response platform that gives the user power and flexibility through the Velociraptor Query Language (VQL). It was developed by Digital Forensic and Incident Response (DFIR) professionals who needed a powerful and efficient way to hunt for specific artifacts and monitor activities across fleets of endpoints. Velociraptor provides you with the ability to more effectively respond to a wide range of digital forensic and cyber incident response investigations and data breaches:
 - Reconstruct attacker activities through digital forensic analysis
