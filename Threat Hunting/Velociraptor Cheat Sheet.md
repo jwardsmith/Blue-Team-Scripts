@@ -1471,6 +1471,11 @@ Velociraptor needs to plug into a much wider ecosystem. Velociraptor can itself 
 
 The API is extremely powerful so it must be protected! The point of an API is to allow a client program (written in any language) to interact with Velociraptor. The server mints a certificate for the client program to use. This allows it to authenticate and establish a TLS connection with the API server. By default the API server only listens on 127.0.0.1 - you need to reconfigure it to open it up.
 
+- Create a client API certificate
+
+```
+C:\> velociraptor.exe --config server.config.yaml config api_client --name James --role administrator,api api.config.yaml
+```
 
 # VQL + Artifacts
 
