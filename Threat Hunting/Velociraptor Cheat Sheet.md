@@ -695,7 +695,7 @@ The GROUP BY clause causes VQL to create groups of same value rows. Each group s
 
 ```
 SELECT *, count() AS Count
-FROM psinfo()
+FROM pslist()
 GROUP BY Command, Arguments
 ```
 
