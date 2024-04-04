@@ -687,6 +687,14 @@ FROM hunt_results(
 LIMIT 50
 ```
 
+- Use the count() function for a count
+
+```
+SELECT count() as Count FROM netstat()
+WHERE Status = "LISTEN"
+GROUP BY Status
+```
+
 ### GROUP BY
 
 The GROUP BY clause causes VQL to create groups of same value rows. Each group shares the same aggregate context - but this is different from other groups. Groups keep only the last row in that group.
