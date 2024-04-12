@@ -204,6 +204,15 @@ index=web | timechart sum(price) as sales
 | trendline wma2(sales) as trend
 ```
 
+### Bin
+
+- Bin the _time values by 1 hour
+
+```
+index=sales
+| bin span=1h _ time
+```
+
 ### Addtotals
 
 - Add up both column and row totals
@@ -239,4 +248,14 @@ index=sales
 ```
 index=sales
 | rare Vendor limit=0 countfield=<string> percentfield=<string> showcount=<True/False> showperc=<True/False> showother=<True/False> otherstr=<string>
+```
+
+### Strftime
+
+- Format _time using (https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchReference/Commontimeformatvariables)
+
+```
+index=sales
+| stats sum(price) as "Sum Price" by _time
+| eval Hour = strftime(_time, "%b %d, %I, %p")
 ```
