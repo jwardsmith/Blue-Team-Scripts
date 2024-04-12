@@ -213,6 +213,16 @@ index=sales
 | bin span=1h _ time
 ```
 
+### Timewrap
+
+- Compare data over a specific time period
+
+```
+index=web earliest=-14d@d latest=@d 
+| timechart span=1d count by action
+| timewrap 1w
+```
+
 ### Addtotals
 
 - Add up both column and row totals
