@@ -535,3 +535,13 @@ index=sales
 ```
 
 ### Appendpipe
+
+- Append output to end of results set
+
+```
+index=network
+| stats count by usage, cs_username
+| appendpipe
+  [stats sum(count) as count by usage
+  | eval username = "Subtotal of usage for ".usage]
+```
