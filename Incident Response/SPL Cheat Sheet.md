@@ -86,3 +86,11 @@ index=web | stats sum(bytes) as Bytes
 ```
 index=games | erex Character fromfield=_raw examples="james, testuser"
 ```
+
+### Rex
+
+- Extract usernames from _raw and put them into a new field named User
+
+```
+index=games | rex field=_raw "^[^'\n]*'(?P<User>[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+)"
+```
