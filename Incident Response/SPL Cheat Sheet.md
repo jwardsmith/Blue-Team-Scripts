@@ -260,6 +260,16 @@ index=sales
 | eval Hour = strftime(_time, "%b %d, %I, %p")
 ```
 
+### Strptime
+
+- Format a time field to a UNIX timestamp (https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchReference/Commontimeformatvariables)
+
+```
+index=sales
+| stats sum(price) as "Sum Price" by _time
+| eval NewAsctime = strptime(asctime, "%Y-%m-%d %H:%M:%S,%N")
+```
+
 ### Now()
 
 - Return the time a search was started
