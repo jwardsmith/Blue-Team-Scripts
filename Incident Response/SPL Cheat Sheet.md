@@ -427,3 +427,15 @@ tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by 
 ### Match(SUBJECT, "<regex>")
 
 - Return true or false based on whether the SUBJECT matches the <regex>
+
+### Nullif(X,Y)
+
+- Return NILL if X=Y, otherwise return X
+
+### Validate(X, Y, ...)
+
+- Return Y for the first expression (X) that evaluates to false (opposite of case())
+
+### Searchmatch(X)
+
+- Return true is the search string X matches the event
