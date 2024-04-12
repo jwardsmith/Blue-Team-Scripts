@@ -125,3 +125,11 @@ index=web src_ip=* | iplocation src_ip
 ```
 index=web src_ip=* | iplocation src_ip | geostats count by Country
 ```
+
+### Timechart
+
+- Create a timechart where _time will always be the X-axis
+
+```
+index=web | timechart count by action
+```
