@@ -1,5 +1,13 @@
 # SPL Cheat Sheet
 
+### Search
+
+- Create a basic search
+
+```
+index=web status=200 AND user=james OR user=testuser AND NOT host=wkstn*
+```
+
 ### Fields
 
 - Include fields
