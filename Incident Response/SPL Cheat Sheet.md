@@ -8,6 +8,13 @@
 index=web status=200 AND user=james OR user=testuser AND NOT host=wkstn*
 ```
 
+- Filter after a basic search
+
+```
+index=web status=200 AND user=james OR user=testuser
+| search host=james-dc
+```
+
 ### Fields
 
 - Include fields
