@@ -408,13 +408,28 @@ tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by 
 
 - Cycle through expressions and return the first value (Y) where the expression (X) evaluates to true
 
+```
+index=access
+| eval location = case(location="BOS" OR location="Boston", "Boston", location="LDN" OR location="London", "London", location="SF" OR location="SanFrancisco", "San Francisco")
+```
+
 ### Cidrmatch("X", Y)
 
 - Return true or false based on whether an IP matches a CIDR notation
 
+```
+index=network
+| eval isLocal = if(cidrmatch("10.10.10.1/16", bcg_ip), "Is local subnet", "Not local subnet")
+```
+
 ### If(X, Y, Z)
 
 - If X evaluates to true, return Y, otherwise return Z
+
+```
+index=sales
+| eval SalesTerritory = if((VendorID>=7000 AND VendorID<8000), "Asia", "Rest of the World")
+```
 
 ### Like(<string>, <pattern>)
 
@@ -424,9 +439,19 @@ tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by 
 
 - Return true if a value in the <value-list> matches a value in <field>
 
+```
+index=access
+| eval error = if(in(status, "404", "500", "503"), "true", "false")
+```
+
 ### Match(SUBJECT, "<regex>")
 
 - Return true or false based on whether the SUBJECT matches the <regex>
+
+```
+index=network
+| eval proper_ip_address = if(match(src, "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$"), "true", "false")
+```
 
 ### Nullif(X,Y)
 
@@ -436,6 +461,16 @@ tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by 
 
 - Return Y for the first expression (X) that evaluates to false (opposite of case())
 
+```
+index=security
+| eval portWarning=validate(src_port > 0, "ERROR: Port is not a positive integer", port >=1 AND port <= 9900, "WARNING: Port is out or range")
+```
+
 ### Searchmatch(X)
 
 - Return true is the search string X matches the event
+
+```
+index=games
+| eval matchResult = if(searchmatch("Got A Case Of The Mondays"), "found", "not found")
+```
