@@ -156,7 +156,7 @@ index=games | rex field=_raw "^[^'\n]*'(?P<User>[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[
 
 ### Iplocation
 
-- Add geographic context to returned events e.g. lat, lon, Country, City
+- Add geographic context to returned events e.g. lat, lon, Country, City, Region
 
 ```
 index=web src_ip=* | iplocation src_ip
