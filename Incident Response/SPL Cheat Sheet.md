@@ -152,6 +152,8 @@ index=sales | chart sum(price) over product_name by vendor
 
 ### Addtotals
 
+- Add up both column and row totals
+
 ```
 index=sales | chart sum(price) over product_name by vendor
 | addtotals col=true row=true label="Total Sales" label_field="product_name" fieldname="Total By Product"
@@ -159,7 +161,28 @@ index=sales | chart sum(price) over product_name by vendor
 
 ### Fieldformat
 
+- Format a field by prepending the dollar sign ($), and adding commas where necessary
+
 ```
 index=sales | stats sum(price) by product_name
 | fieldformat Total = "$" + tostring(Total, "commas")
+```
+
+### Top
+
+
+- Find the most common values in a field
+
+```
+index=sales
+| top Vendor limit=0 countfield=<string> percentfield=<string> showcount=<True/False> showperc=<True/False> showother=<True/False> otherstr=<string>
+```
+
+### Rare
+
+- Find the least common values in a field
+
+```
+index=sales
+| rare Vendor limit=0 countfield=<string> percentfield=<string> showcount=<True/False> showperc=<True/False> showother=<True/False> otherstr=<string>
 ```
