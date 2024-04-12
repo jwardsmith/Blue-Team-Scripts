@@ -87,10 +87,46 @@ index=web | stats count(action) as action
 index=web | stats count by host, status, user
 ```
 
+- Count how many unique values of the action field exist
+
+```
+index=web | stats dc(action)
+```
+
 - Sum the bytes field
 
 ```
 index=web | stats sum(bytes)
+```
+
+- Average the bytes field
+
+```
+index=web | stats avg(bytes)
+```
+
+- Get the minimum value of the bytes field
+
+```
+index=web | stats min(bytes)
+```
+
+- Get the maximum value of the bytes field
+
+```
+index=web | stats max(bytes)
+```
+
+- List all values of the action field
+
+```
+index=web | stats list(action)
+```
+
+- List all unique values of the action field
+
+```
+index=web | stats values(action)
 ```
 
 ### Eval
