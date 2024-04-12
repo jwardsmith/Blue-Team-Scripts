@@ -186,6 +186,15 @@ index=web | timechart count by action
 index=sales | chart sum(price) over product_name by vendor
 ```
 
+### Trendline
+
+- Create a trendline of sales
+
+```
+index=web | timechart sum(price) as sales
+| trendline wma2(sales) as trend
+```
+
 ### Addtotals
 
 - Add up both column and row totals
