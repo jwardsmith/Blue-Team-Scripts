@@ -170,6 +170,15 @@ index=web src_ip=* | iplocation src_ip
 index=web src_ip=* | iplocation src_ip | geostats count by Country
 ```
 
+### Geom
+
+- Display geographic data as a choropleth map
+
+```
+index=web src_ip=* | stats count as connections by src_ip
+| geom geo_countries featureIdField=Country
+```
+
 ### Timechart
 
 - Create a timechart where _time will always be the X-axis
