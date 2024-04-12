@@ -545,3 +545,46 @@ index=network
   [stats sum(count) as count by usage
   | eval username = "Subtotal of usage for ".usage]
 ```
+
+### Eventstats
+
+- Generate statistics of all existing fields in your search results and saves them as new values in new fields
+
+```
+index=web
+| stats sum(price) as lost_revenue by product_name
+| eventstats avg(lost_revenue) as average
+```
+
+### Streamstats
+
+- Calculate statistics for each result row at the time the command encounters it and add these values to the results
+
+```
+index=web
+| table _time, price
+| sort _time
+| streamstats avg(price) as averageOrder
+```
+
+### Xyseries
+
+- Convert results into a tabular format that is suitable for graphing
+
+```
+index=web
+| bin _time span=1h
+| stats sum(bytes) as totalBytes by _time, host
+| eval MB = round(totalBytes/(1024*1024),2)
+| xyseries _time, host, MB
+```
+
+### Untable
+
+- Convert results from a tabular format to a format similar to stats output (opposite of xyseries)
+
+```
+index=sales
+| chart count as prod_count by product_name. VendorCountry limit=5 useother=f
+| untable product_name, VendorCountry, prod_count
+```
