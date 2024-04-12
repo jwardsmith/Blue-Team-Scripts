@@ -375,3 +375,31 @@ count as failures by user
 ```
 | return <count> <field/alias=field/$field>
 ```
+
+### Datamodel
+
+- Display the structure of a data model
+
+```
+| datamodel <data model name> <search/flay>
+```
+
+- Display the events from a datamodel
+
+```
+| from datamodel <data model name>
+```
+
+### Tstats
+
+- Perform statistical queries on tsidx file (indexed metadata)
+
+```
+tstats values(sourcetype) as sourcetype by index
+```
+
+- Perform statistical queries on a data model on tsidx file (indexed metadata)
+
+```
+tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by Processes.host, Processes.user
+```
