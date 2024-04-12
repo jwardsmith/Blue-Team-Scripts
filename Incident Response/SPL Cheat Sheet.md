@@ -533,3 +533,5 @@ index=sales
 | timechart span=15m sum(price) as sum
 | where isnotnull(sum)
 ```
+
+### Appendpipe
