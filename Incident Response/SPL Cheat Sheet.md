@@ -404,6 +404,16 @@ tstats values(sourcetype) as sourcetype by index
 tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by Processes.host, Processes.user
 ```
 
+### Where
+
+- Act as a filter on search results
+
+```
+index=web
+| timechart count(evalaction="changequantity")) as changes, count(eval(action="remove")) as removals
+| where removals > changes
+```
+
 ### Case(X, "Y", ...)
 
 - Cycle through expressions and return the first value (Y) where the expression (X) evaluates to true
@@ -435,6 +445,11 @@ index=sales
 
 - Return true if <string> matches <pattern>
 
+```
+index=security
+| where like(user, "adm%") OR where user like "adm%"
+```
+
 ### In(<field>, <value-list>)
 
 - Return true if a value in the <value-list> matches a value in <field>
@@ -455,7 +470,12 @@ index=network
 
 ### Nullif(X,Y)
 
-- Return NILL if X=Y, otherwise return X
+- Return NULL if X=Y, otherwise return X
+
+```
+index=security
+| eval compare = nullif(user, username)
+```
 
 ### Validate(X, Y, ...)
 
@@ -491,5 +511,25 @@ index=sales
 ```
 index=sales
 | stats count by vendor
-| fillnull
+| fillnull value="No Value"
+```
+
+### Isnull
+
+- Filter fields with null values
+
+```
+index=sales
+| timechart span=15m sum(price) as sum
+| where isnull(sum)
+```
+
+### Isnotnull
+
+- Filter fields with not null values
+
+```
+index=sales
+| timechart span=15m sum(price) as sum
+| where isnotnull(sum)
 ```
