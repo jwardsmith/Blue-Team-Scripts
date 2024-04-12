@@ -109,3 +109,19 @@ index=games | erex Character fromfield=_raw examples="james, testuser"
 ```
 index=games | rex field=_raw "^[^'\n]*'(?P<User>[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+)"
 ```
+
+### Iplocation
+
+- Add geographic context to returned events e.g. lat, lon, Country, City
+
+```
+index=web src_ip=* | iplocation src_ip
+```
+
+### Geostats
+
+- Display geographic data and summarise the data on maps
+
+```
+index=web src_ip=* | iplocation src_ip | geostats count by Country
+```
