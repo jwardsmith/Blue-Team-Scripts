@@ -136,6 +136,23 @@ index=web | stats values(action)
 ```
 index=web | stats sum(bytes) as Bytes
 | eval bandwidth = Bytes/1024/1024
+| eval bandwidth = round(bandwidth, 2)
+```
+
+- Use eval to format strings and numbers
+
+```
+index=sales
+| eval Sales = "$".tostring(Sales, "commas")
+```
+
+- Use eval as a function to count events
+
+```
+index=security
+| stats count(eval(vendor_action="Accepted")) as Accepted,
+count(eval(vendor_action="Failed")) as Failed,
+count(eval(vendor_action="session opened")) as SessionOpened
 ```
 
 ### Erex
