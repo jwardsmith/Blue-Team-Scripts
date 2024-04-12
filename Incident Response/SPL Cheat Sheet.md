@@ -69,3 +69,20 @@ index=web | stats count by host, status, user
 ```
 index=web | stats sum(bytes)
 ```
+
+### Eval
+
+- Create a temporary field
+
+```
+index=web | stats sum(bytes) as Bytes
+| eval bandwidth = Bytes/1024/1024
+```
+
+### Erex
+
+- Extract usernames from _raw and put them into a new field named Character
+
+```
+index=games | erex Character fromfield=_raw examples="james, testuser"
+```
