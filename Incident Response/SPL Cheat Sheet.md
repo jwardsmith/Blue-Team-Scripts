@@ -588,3 +588,15 @@ index=sales
 | chart count as prod_count by product_name. VendorCountry limit=5 useother=f
 | untable product_name, VendorCountry, prod_count
 ```
+
+### Foreach
+
+- Run a search that iterates over elements
+
+```
+index=web
+| chart count by action, host
+| eval total=0
+| foreach www1, www2, www3
+  [eval total=total+'<<FIELD>>']
+```
