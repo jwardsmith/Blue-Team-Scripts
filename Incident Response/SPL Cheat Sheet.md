@@ -259,3 +259,27 @@ index=sales
 | stats sum(price) as "Sum Price" by _time
 | eval Hour = strftime(_time, "%b %d, %I, %p")
 ```
+
+### Now()
+
+- Return the time a search was started
+
+```
+index=sales | eval field1=now()
+```
+
+### Time()
+
+- Return the time an event was processed by eval command
+
+```
+index=sales | eval field1=time()
+```
+
+### Relative_Time()
+
+- Return an epoch timestamp relative to a supplied time
+
+```
+index=sales | eval field1=relative_time(now(), "-1d@h")
+```
