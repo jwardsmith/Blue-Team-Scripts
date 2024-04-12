@@ -474,3 +474,22 @@ index=security
 index=games
 | eval matchResult = if(searchmatch("Got A Case Of The Mondays"), "found", "not found")
 ```
+
+### Replace(X,Y,Z)
+
+- Replace every occurrence of Y, in X using Z
+
+```
+index=sales
+| eval AcctCode = replace(AcctCode, "(\d{4}-)\d{4}", "\1xxxx")
+```
+
+### Fillnull
+
+- Fill empty values with NULL
+
+```
+index=sales
+| stats count by vendor
+| fillnull
+```
