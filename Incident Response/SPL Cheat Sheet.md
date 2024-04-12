@@ -367,3 +367,11 @@ index=security fail* [inputlookup knownusers.csv]
 count as failures by user
 | search failures > 3
 ```
+
+### Return
+
+- Return results from a subsearch
+
+```
+| return <count> <field/alias=field/$field>
+```
