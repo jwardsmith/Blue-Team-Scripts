@@ -320,3 +320,50 @@ index=sales | eval field1=time()
 ```
 index=sales | eval field1=relative_time(now(), "-1d@h")
 ```
+
+### Inputlookup
+
+- Search a lookup table
+
+```
+| inputlookup <lookup table name.csv/lookup definition name>
+```
+
+### Lookup
+
+- Use a lookup to match against events
+
+```
+| lookup <lookup table name.csv> <lookup-field/matching field> OUTPUT/OUTPUTNEW <lookup dest/output fields>
+```
+
+### Outputlookup
+
+- Save results to a lookup table
+
+```
+| outputlookup <lookup table name.csv/lookup definition name>
+```
+
+### Subsearch
+
+- Use a subsearch (subsearch [] executes first and passes results to outer search)
+
+```
+index=security "accepted"
+  [ search index=security "failed password" src_ip!=10.*
+  | stats count by src_ip
+  | where count > 10
+  | fields src_ip]
+| dedup src_ip
+| table src_ip
+```
+
+- Use a subsearch to access lookup data
+
+```
+index=security fail* [inputlookup knownusers.csv]
+| stats values(src_ip) as attackerIP,
+count as failures by user
+| search failures > 3
+```
