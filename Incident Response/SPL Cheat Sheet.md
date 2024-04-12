@@ -403,3 +403,27 @@ tstats values(sourcetype) as sourcetype by index
 ```
 tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by Processes.host, Processes.user
 ```
+
+### Case(X, "Y", ...)
+
+- Cycle through expressions and return the first value (Y) where the expression (X) evaluates to true
+
+### Cidrmatch("X", Y)
+
+- Return true or false based on whether an IP matches a CIDR notation
+
+### If(X, Y, Z)
+
+- If X evaluates to true, return Y, otherwise return Z
+
+### Like(<string>, <pattern>)
+
+- Return true if <string> matches <pattern>
+
+### In(<field>, <value-list>)
+
+- Return true if a value in the <value-list> matches a value in <field>
+
+### Match(SUBJECT, "<regex>")
+
+- Return true or false based on whether the SUBJECT matches the <regex>
