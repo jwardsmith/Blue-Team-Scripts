@@ -59,6 +59,14 @@ index=web | sort user
 index=web | sort -user
 ```
 
+### Dedup
+
+- Deduplicate field values
+
+```
+index=web | dedup user
+```
+
 ### Stats
 
 - Count all events
@@ -132,4 +140,12 @@ index=web src_ip=* | iplocation src_ip | geostats count by Country
 
 ```
 index=web | timechart count by action
+```
+
+### Chart
+
+- Create a chart where any field can be the X-axis
+
+```
+index=sales | chart sum(price) over product_name by vendor
 ```
