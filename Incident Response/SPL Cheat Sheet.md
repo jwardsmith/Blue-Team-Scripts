@@ -600,3 +600,5 @@ index=web
 | foreach www1, www2, www3
   [eval total=total+'<<FIELD>>']
 ```
+
+### Tostring(X[,Y])
