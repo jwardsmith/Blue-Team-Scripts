@@ -628,14 +628,27 @@ TotalLostRevenue = "$".tostring(TotalLostRevenuw, "commas")
 
 - Convert a string to a lowercase
 
+```
+| eval lowercase_product = lower(product_name)
+```
+
 ### Upper(X)
 
 - Convert a string to uppercase
+
+```
+| eval uppercase_product = upper(product_name)
+```
 
 ### Substr(X, Y, Z)
 
 - Return a substring of X, starting at the index specified by Y with the number of characters specified by Z
 
-### Coalescs(X, ...)
+```
+| eval substr_category = substr(categoryId, 1, 3)
+| eval substr_item = substr(itemId, 5)
+```
+
+### Coalesce(X, ...)
 
 - Take an arbitrary number of arguments (X) and return the first value that is not NULL
