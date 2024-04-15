@@ -468,7 +468,7 @@ index=security
 
 ### In(<field>, <value-list>)
 
-- Return true if a value in the <value-list> matches a value in <field>
+- Return true if a value in the <value-list> matches a value in <field> (you must use the "in" function inside the "if" function)
 
 ```
 index=access
@@ -530,7 +530,7 @@ index=sales
 | fillnull value="No Value"
 ```
 
-### Isnull
+### Isnull(X)
 
 - Filter fields with null values
 
@@ -540,7 +540,7 @@ index=sales
 | where isnull(sum)
 ```
 
-### Isnotnull
+### Isnotnull(X)
 
 - Filter fields with not null values
 
