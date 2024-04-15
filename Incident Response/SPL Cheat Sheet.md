@@ -605,6 +605,15 @@ index=web
 
 - Convert an input number or Boolean to a string
 
+```
+index=web action=purchase status=503
+| stats count(price) as NumberOfLastSales,
+avg(price) as AverageLostSales,
+sum(price) as TotalLostRevenue
+| eval AverageLostSales = "$".tostring(AverageLostSales, "commas"),
+TotalLostRevenue = "$".tostring(TotalLostRevenuw, "commas")
+```
+
 ### Tonumber(NUMSTR[,BASE])
 
 - Convert an input string to a number
