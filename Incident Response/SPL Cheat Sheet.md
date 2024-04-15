@@ -197,7 +197,7 @@ index=web src_ip=* | iplocation src_ip
 
 ### Geostats
 
-- Display geographic data and summarise the data on maps
+- Display geographic data and summarise the data on a map
 
 ```
 index=web src_ip=* | iplocation src_ip | geostats count by Country
@@ -295,7 +295,7 @@ index=sales
 
 ### Strftime
 
-- Format _time using (https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchReference/Commontimeformatvariables)
+- Format _time using date/time variables (https://docs.splunk.com/Documentation/SplunkCloud/latest/SearchReference/Commontimeformatvariables)
 
 ```
 index=sales
