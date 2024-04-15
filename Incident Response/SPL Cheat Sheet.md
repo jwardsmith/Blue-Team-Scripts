@@ -397,7 +397,7 @@ count as failures by user
 - Display the structure of a data model
 
 ```
-| datamodel <data model name> <search/flay>
+| datamodel <data model name> <search/flat>
 ```
 
 - Display the events from a datamodel
