@@ -652,3 +652,9 @@ TotalLostRevenue = "$".tostring(TotalLostRevenuw, "commas")
 ### Coalesce(X, ...)
 
 - Take an arbitrary number of arguments (X) and return the first value that is not NULL
+
+```
+index=network OR index=web
+| eval oneIP = coalesce(clientip, c_ip)
+| table c_ip, clientip, oneIP, sourcetype
+```
