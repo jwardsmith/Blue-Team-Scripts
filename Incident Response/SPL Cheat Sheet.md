@@ -658,3 +658,13 @@ index=network OR index=web
 | eval oneIP = coalesce(clientip, c_ip)
 | table c_ip, clientip, oneIP, sourcetype
 ```
+
+### Transaction
+
+- Group events that share one or more fields
+
+```
+index=web
+| sort -_time
+| transaction JSESSIONID endswith=(status=503) maxevents=5
+```
