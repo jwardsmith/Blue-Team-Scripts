@@ -602,3 +602,25 @@ index=web
 ```
 
 ### Tostring(X[,Y])
+
+- Convert an input number or Boolean to a string
+
+### Tonumber(NUMSTR[,BASE])
+
+- Convert an input string to a number
+
+### Lower(X)
+
+- Convert a string to a lowercase
+
+### Upper(X)
+
+- Convert a string to uppercase
+
+### Substr(X, Y, Z)
+
+- Return a substring of X, starting at the index specified by Y with the number of characters specified by Z
+
+### Coalescs(X, ...)
+
+- Take an arbitrary number of arguments (X) and return the first value that is not NULL
