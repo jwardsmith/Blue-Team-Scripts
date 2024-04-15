@@ -712,3 +712,8 @@ index=security src_ip=10.0.0.0/8 "Failed"
 
 - Merge the results from two or more datasets into one dataset
 
+```
+| union datamodel:Sales.successful_purchase,
+  [search index=sales sourcetype=vendor_sales]
+| table sourcetype, product_name
+```
