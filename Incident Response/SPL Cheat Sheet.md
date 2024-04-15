@@ -618,6 +618,12 @@ TotalLostRevenue = "$".tostring(TotalLostRevenuw, "commas")
 
 - Convert an input string to a number
 
+```
+| eval myValue "1.4848974e+12"
+| eval myValueAsInteger = tonumber(myValue)
+| eval n1 = tonumber("244", 8)
+```
+
 ### Lower(X)
 
 - Convert a string to a lowercase
