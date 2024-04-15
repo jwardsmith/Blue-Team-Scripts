@@ -67,6 +67,22 @@ index=web | sort -user
 index=web | dedup user
 ```
 
+### Head
+
+- Return the first N results
+
+```
+index=web | head 5
+```
+
+### Tail
+
+- Return the last N results
+
+```
+index=web | tail 5
+```
+
 ### Stats
 
 - Count all events
@@ -406,7 +422,7 @@ tstats count from datamodel=Endpoint.Processes where Processes.user=testuser by 
 
 ### Where
 
-- Act as a filter on search results
+- Act as a filter on search results to compare two different fields
 
 ```
 index=web
@@ -416,7 +432,7 @@ index=web
 
 ### Case(X, "Y", ...)
 
-- Cycle through expressions and return the first value (Y) where the expression (X) evaluates to true
+- Cycle through expressions and return the first value (Y) where the expression (X) evaluates to true (similar to if/elif/else)
 
 ```
 index=access
@@ -661,7 +677,7 @@ index=network OR index=web
 
 ### Transaction
 
-- Group events that share one or more fields
+- Group events that share one or more fields into transactions
 
 ```
 index=web
