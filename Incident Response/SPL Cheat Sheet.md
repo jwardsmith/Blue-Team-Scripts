@@ -668,3 +668,47 @@ index=web
 | sort -_time
 | transaction JSESSIONID endswith=(status=503) maxevents=5
 ```
+
+### Append
+
+-  Add the result of the subsearch to the bottom of the table
+
+```
+index=security "failed password" NOT "invalid user"
+| timechart count as known_users
+| append
+  [search index=security "failed password" "invalid user"
+  | timechart count as unknown_users]
+```
+
+### Appendcols
+
+-  Add the result of the subsearch to a new column
+
+```
+index=security "failed password" NOT "invalid user"
+| timechart count as known_users
+| appendcols
+  [search index=security "failed password" "invalid user"
+  | timechart count as unknown_users]
+```
+
+### Join
+
+- Join datasets on fields that have the same name
+
+```
+index=security src_ip=10.0.0.0/8 "Failed"
+| join src_ip
+  [search index=security bcg_ip=*
+  | dedup bcg_workstation
+  | rename bcg_ip as src_ip
+  | fields src_ip, bcg_workstation]
+| dedup src_ip
+| table src_ip, bcg_workstation
+```
+
+### Union
+
+- Merge the results from two or more datasets into one dataset
+
