@@ -16,3 +16,4 @@ Blue Team
 - Malware Unicorn: https://malwareunicorn.org/#/
 - Investigating Windows Endpoints 13Cubed: https://training.13cubed.com/investigating-windows-endpoints
 - Practical Threat Hunting: https://www.networkdefense.io/library/practical-threat-hunting-29861/87345/about/
+- Hack The Box Certified Defensive Security Analyst (HTB CDSA): https://academy.hackthebox.com/preview/certifications/htb-certified-defensive-security-analyst
