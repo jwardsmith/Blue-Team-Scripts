@@ -9,7 +9,7 @@ Install-Module powershell-yaml
 - Get an object of forensic artifacts
 
 ```
-$WindowsArtifacts=$(curl https://raw.githubusercontent.com/ForensicArtifacts/artifacts/master/data/windows.yaml)
+$WindowsArtifacts=$(curl https://raw.githubusercontent.com/ForensicArtifacts/artifacts/main/artifacts/data/windows.yaml)
 $obj = ConvertFrom-Yaml $WindowsArtifacts.Content -AllDocuments
 ```
 
