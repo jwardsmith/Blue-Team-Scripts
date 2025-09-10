@@ -54,3 +54,20 @@ sources:
 ```
 
 # Debugging
+
+- processes
+
+<img width="1850" height="815" alt="image" src="https://github.com/user-attachments/assets/1ca24d66-0961-444b-ab2e-2e07c7f4e66e" />
+
+- query_mutant
+
+<img width="1844" height="826" alt="image" src="https://github.com/user-attachments/assets/e40f4116-da69-4f44-bab1-a384aac9fcbd" />
+
+- query_enriched
+
+<img width="1836" height="875" alt="image" src="https://github.com/user-attachments/assets/7c0eb5f4-e101-45a6-8139-4d5871bd7694" />
+
+- query_diff
+
+<img width="1843" height="892" alt="image" src="https://github.com/user-attachments/assets/256b6504-6c96-4ff8-b832-c382dc8151cb" />
+
